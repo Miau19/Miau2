@@ -1,7 +1,5 @@
 function crear() {
-
-    document.getElementById("btnR").click(); //RESETAR FORMULARIO, EL BOTON ESTA EN visibility: hidden SOLO DEBE HACER CLIC CUANDO CARGE O RECARGE LA PAGINA.
-
+    document.getElementById("btnR").click(); 
     var f = ["Banana XT", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
     var N = f.length;
     var n = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
@@ -15,14 +13,14 @@ function crear() {
     document.getElementsByClassName("propDiv1")[0].innerHTML = p1;
     var showNextInterval = setInterval(showNext, 500);
 }
-  
+var cont=0;
 function showNext() {
-    document.getElementById("t").value =Number(document.getElementById("t").value)+1;
-    var n = document.getElementById("t").value;
+    cont++;
+    var n = cont;
     if(n == 9){
-      document.getElementById("t").value = 1;
+        cont=1;
     }
-    var x = document.getElementById("t").value;
+    var x =cont;
     document.getElementById("I"+x).click();
 
     if(document.getElementById("I"+x).checked==true){
@@ -35,5 +33,5 @@ function showNext() {
       }else{document.getElementById("ID"+i).checked=false;document.getElementById("div2C"+i).style.opacity=1;
       }
     }
-    document.getElementById("t1").value = "id"+x + "    div1C"+x+ "    div2C"+x;
+    document.getElementById("t1").value ="cont="+cont+ "   id"+x + "    div1C"+x+ "    div2C"+x;
 }
