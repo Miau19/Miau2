@@ -13,25 +13,23 @@ function crear() {
     document.getElementsByClassName("propDiv1")[0].innerHTML = p1;
     var showNextInterval = setInterval(showNext, 500);
 }
-var cont=0;
+var c=0;
 function showNext() {
-    cont++;
-    var n = cont;
-    if(n == 9){
-        cont=1;
+    c++;
+    if(c == 9){
+        c=1;
     }
-    var x =cont;
-    document.getElementById("I"+x).click();
+    document.getElementById("I"+c).click();
 
-    if(document.getElementById("I"+x).checked==true){
-      document.getElementById("div1C"+x).style.opacity=0.8;
-     }else{document.getElementById("div1C"+x).style.opacity=1;
+    if(document.getElementById("I"+c).checked==true){
+      document.getElementById("div1C"+c).style.opacity=0.8;
+     }else{document.getElementById("div1C"+c).style.opacity=1;
     }
 
     for (var i = 1; i < 9; i++){
-      if(x==i){document.getElementById("ID"+i).checked=true;document.getElementById("div2C"+i).style.opacity=0.8;
+      if(c==i){document.getElementById("ID"+i).checked=true;document.getElementById("div2C"+i).style.opacity=0.8;
       }else{document.getElementById("ID"+i).checked=false;document.getElementById("div2C"+i).style.opacity=1;
       }
     }
-    document.getElementById("t1").value ="cont="+cont+ "   id"+x + "    div1C"+x+ "    div2C"+x;
+    document.getElementById("t1").value ="c="+c+ "   id"+c + "    div1C"+c+ "    div2C"+c;
 }
