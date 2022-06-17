@@ -1,6 +1,6 @@
 function crear() {
     document.getElementById("btnR").click(); 
-    var f = ["Banana XT", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
+    var f = ["Banana", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
     var N = f.length;
     var n = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
     var p = "";var p1 = "";
