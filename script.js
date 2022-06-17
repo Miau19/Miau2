@@ -2,17 +2,17 @@ function crear() {
 
     document.getElementById("btnR").click(); //RESETAR FORMULARIO, EL BOTON ESTA EN visibility: hidden SOLO DEBE HACER CLIC CUANDO CARGE O RECARGE LA PAGINA.
 
-    var N = [1,2,3,4,5,6,7,8];// ["Banana", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
-    var frutas = ["Banana XT", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
-    var nombres = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
-    var props = "";var props1 = "";
+    var f = ["Banana XT", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
+    var N = f.length;
+    var n = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
+    var p = "";var p1 = "";
     
-    for (var i = 0; i < N.length;i++) {//N.length=8;
-      props += "<div id='div1C"+N[i]+"' class='dB' >"+"&nbsp"+N[i]+"<input type='checkbox'  id='I"+N[i]+"' class='ch'>"+frutas[i]+"&nbsp</div>";
-      props1 += "<div id='div2C"+N[i]+"' class='dB1' >"+"&nbsp"+N[i]+"<input type='radio'  id='ID"+N[i]+"' class='ch1'>"+nombres[i]+"&nbsp</div>";
+    for (var i = 1; i <= N;i++) {
+      p += "<div id='div1C"+i+"' class='dB' >"+"&nbsp"+i+"<input type='checkbox'  id='I"+i+"' class='ch'>"+f[i-1]+"&nbsp</div>";
+      p1 += "<div id='div2C"+i+"' class='dB1' >"+"&nbsp"+i+"<input type='radio'  id='ID"+i+"' class='ch1'>"+n[i-1]+"&nbsp</div>";
     }
-    document.getElementsByClassName("propDiv")[0].innerHTML = props;
-    document.getElementsByClassName("propDiv1")[0].innerHTML = props1;
+    document.getElementsByClassName("propDiv")[0].innerHTML = p;
+    document.getElementsByClassName("propDiv1")[0].innerHTML = p1;
     var showNextInterval = setInterval(showNext, 500);
 }
   
