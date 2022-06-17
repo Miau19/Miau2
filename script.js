@@ -5,25 +5,18 @@ function crear() {
     var N = [1,2,3,4,5,6,7,8];// ["Banana", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
     var frutas = ["Banana XT", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
     var nombres = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
-    var aproperty;
     var props = "";var props1 = "";
-    aproperty = "z-index";
-
+    
     for (var i = 0; i < N.length;i++) {//N.length=8;
       props += "<div id='div1C"+N[i]+"' class='dB' >"+"&nbsp"+N[i]+"<input type='checkbox'  id='I"+N[i]+"' class='ch'>"+frutas[i]+"&nbsp</div>";
       props1 += "<div id='div2C"+N[i]+"' class='dB1' >"+"&nbsp"+N[i]+"<input type='radio'  id='ID"+N[i]+"' class='ch1'>"+nombres[i]+"&nbsp</div>";
     }
-    //document.getElementsByTagName("head");
-    //document.getElementsByClassName("propDiv")[0].innerHTML = props;
-    //document.getElementById("div1").innerHTML = props;
     document.getElementsByClassName("propDiv")[0].innerHTML = props;
     document.getElementsByClassName("propDiv1")[0].innerHTML = props1;
-
     var showNextInterval = setInterval(showNext, 500);
-    document.getElementById("p1").innerText = ' <input id="btnR" type="reset" value="RESETAR"  style="background-color:rgb(0, 96, 223);border-radius: 5px;visibility: hidden;">'
-  }
+}
   
-  function showNext() {
+function showNext() {
     document.getElementById("t").value =Number(document.getElementById("t").value)+1;
     var n = document.getElementById("t").value;
     if(n == 9){
@@ -42,5 +35,5 @@ function crear() {
       }else{document.getElementById("ID"+i).checked=false;document.getElementById("div2C"+i).style.opacity=1;
       }
     }
-    document.getElementById("t1").value = "ID"+x + "    div1C"+x+ "    div2C"+x;
-  }
+    document.getElementById("t1").value = "id"+x + "    div1C"+x+ "    div2C"+x;
+}
