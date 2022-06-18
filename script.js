@@ -1,5 +1,5 @@
+var c=0;
 function crear() {
-    document.getElementById("btnR").click(); 
     var f = ["Banana", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
     var N = f.length;
     var n = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
@@ -13,7 +13,7 @@ function crear() {
     document.getElementsByClassName("propDiv1")[0].innerHTML = p1;
     var showNextInterval = setInterval(showNext, 500);
 }
-var c=0;
+
 function showNext() {
     c++;
     if(c == 9){
