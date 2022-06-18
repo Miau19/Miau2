@@ -33,3 +33,7 @@ function showNext() {
     }
     document.getElementById("t1").value ="c="+c+ "   id"+c + "    div1C"+c+ "    div2C"+c;
 }
+
+
+
+
