@@ -1,5 +1,5 @@
 function crear() {
-    document.getElementById("btnR").click(); 
+    resetar(); 
     var f = ["Banana", "Orange", "Apple", "Mango","Banana", "Orange", "Apple", "Mango"];
     var N = f.length;
     var n = ["Anastacia", "Jhon", "Vladimiro", "Julio","Laura", "Albert", "Vanessa", "will"];
@@ -33,3 +33,10 @@ function showNext() {
     }
     document.getElementById("t1").value ="c="+c+ "   id"+c + "    div1C"+c+ "    div2C"+c;
 }
+function resetar() {
+    document.getElementById("btnR").click();
+}
+
+
+
+
