@@ -5,52 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animacion de imputs 1</title>
-    <style type="text/css">
-        body {
-            background-color: rgb(13, 0, 0);
-            padding:0px;margin: 0px;
-            
-        }
-        .dB{
-            background-color: rgb(88, 3, 167);
-            margin: 5px;
-            border-radius: 5px;
-            color: bisque;
-            text-align: left;
-            font: 14px Times New Roman;
-            opacity: 1;
-        }
-        .dB1{
-            background-color: rgb(78, 100, 0);
-            margin: 5px;
-            border-radius: 5px;
-            color: bisque;
-            text-align: left;
-            font: 14px Times New Roman;
-            opacity: 1;
-        }
-        .ch{
-            width: 15px;height: 15px;
-        }
-        .ch1{
-            width: 15px;height: 15px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
 </head>
-<body onload="crear(), resetar()">
+<body onload="crear()">
         <form action="">
         <div style="width: 100%;height: 100%; ;text-align: center;">
-        <div id="div0" class="propDiv" style="background-color: rgb(168, 110, 3);display:inline-block;">
-        </div>
-        <div id="div1" class="propDiv1" style="background-color: rgb(81, 1, 56);display:inline-block;">
-        </div>
+         <div id="div0"></div>
+         <div id="div1"></div>
         </div>
         <br>
+        <input id="t" class="tt" type="text" value="0" style="background-color:rgb(46, 42, 1) ;color: rgb(137, 135, 137);width: 100%;border: none;">
         <input id="t1" class="tt" type="text" value="0" style="background-color:rgb(46, 42, 1) ;color: rgb(137, 135, 137);width: 100%;border: none;">
-        <input id="btnR" type="reset" value="RESETAR"  style="background-color:rgb(0, 96, 223);border-radius: 5px;visibility: hidden;">
+        <input id="bR" type="reset" value="RESETAR"  style="background-color:rgb(0, 96, 223);border-radius: 5px;visibility: hidden;">
       </form>   
         <!--
         -->

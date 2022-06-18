@@ -1,2 +1,36 @@
-
+        body {
+            background-color: rgb(0, 0, 0);
+            padding:0px;margin: 0px;
+            
+        }
+        #div0{
+            background-color: rgb(108, 72, 4);display:inline-block;
+        }
+        #div1{
+            background-color: rgb(3, 36, 1);display:inline-block;
+        }
+        .dB{
+            background-color: rgb(88, 3, 167);
+            margin: 5px;
+            border-radius: 5px;
+            color: bisque;
+            text-align: left;
+            font: 14px Times New Roman;
+            opacity: 1;
+        }
+        .dB1{
+            background-color: rgb(78, 100, 0);
+            margin: 5px;
+            border-radius: 5px;
+            color: bisque;
+            text-align: left;
+            font: 14px Times New Roman;
+            opacity: 1;
+        }
+        .ch{
+            width: 15px;height: 15px;
+        }
+        .ch1{
+            width: 15px;height: 15px;
+        }
 
