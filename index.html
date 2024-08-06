@@ -9,6 +9,68 @@
     <script src="script.js"></script>
 </head>
 <body onload="crear()">
+    <article class=" card_center" id="article_center2">
+        <div class="card_subtitle">
+          <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS</p><p class="card_subtitle_tex2" id="simbolo">BTC/USDT:</p></div>
+
+          </div>
+        </div>
+
+        <div class="div_padding" id="dp5">
+          <div class="datos" >
+          <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
+          <input id="cuentaSpotI" name="box" class="text" type="text" value="2,309.10" disabled><!-- box[5] -->
+        </div>
+        </div>
+        <div class="div_padding_6" id="dp6">
+          <div class="datos" >
+           <div><p>6 Precio de compra</p><span id="moneda2">(USDT)</span><p>:</p></div>
+           <input id="precioCompra" name="box" class="text_6" type="text" value="66,600.00" disabled><!-- box[6] -->
+          </div>
+        </div>
+        <div class="div_padding_7" id="dp7">
+          <div class="datos" >
+           <div><p>7 Diferencia de precios</p><span id="moneda2">(USDT)</span><p>:&nbsp;</p></div>
+           <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
+            <div id="arrow" >  </div>
+            <input id="Difprecio" name="box" class="text_7" type="text" value="1,000.00" disabled><!-- box[7] -->
+           </div>
+          </div>
+        </div>
+        <div class="div_padding_8" id="dp8">
+          <div class="datos" >
+           <div><p>8 Precio de venta</p><span id="moneda2">(USDT)</span><p>:</p></div>
+           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" disabled>
+           <input id="precioVentaVivo" name="box" class="text_8" type="text" value="100" disabled><!-- box[8] -->
+          </div>
+        </div>
+        <div class="div_padding_9" id="dp9">
+          <div class="datos" >
+           <div><p>9 Comisi&oacute;n</p><span id="moneda3">(%)</span><p>:</p></div>
+           <input id="commission" name="box" class="text_9" type="text" value="0.10" disabled><!-- box[9] -->
+          </div>
+        </div> 
+        <div class="div_padding_10" id="dp10">
+          <div class="datos" >
+           <div><p>10 Ganancia</p><span id="moneda3">(USDT)</span><p>:</p></div>
+           <input id="profit" name="box" class="text_10" type="text" value="122.87" disabled ><!-- box[10] -->
+          </div>
+        </div>
+        <div class="div_padding_11" id="dp11">
+          <div class="datos" >
+          <div><p>11 Cuenta Spot Final</p><span id="moneda4">(USDT)</span><p>:</p></div>
+           <input id="cuentaSpotF" name="box" class="text_11" type="text" value="1,122.87" disabled ><!-- box[11] --> 
+          </div>
+        </div>
+
+        <div class="buttons" >
+          <div type="button" class="button button--primary" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
+           <div type="button" class="button button--primary" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
+           <!-- <div type="button" class="button button--primary" id="actualizarPrecioV" onclick="">Actualizar venta</div>
+           <div type="button" class="button button--primary" id="btnAuto" onclick="">Stop auto</div>  -->
+          </div>
+      </article>
+    
         <form action="">
         <div style="width: 100%;height: 100%; ;text-align: center;">
          <div id="div0"></div>
