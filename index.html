@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>CF[2024]-2b-paraVerShsdow</title>
+    <title>CF[2024]-2b-paratelefono</title>
 
     <style type="text/css">
  
@@ -18,8 +18,10 @@
    --pr1mary-color: rgb(227, 238, 255);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
    --text-color:rgb(130, 130, 130);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
    --bg-color:rgb(14, 14, 14);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
+   --bg-color_b:rgb(12, 12, 12);
    --html-color: hsla(240, 100%, 6%, 1.0);
-   --bg-card-color: rgb(9, 9, 9);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
+   --bg-card-color: rgb(9, 9, 9); 
+   --bg-card-color_b: rgb(29, 29, 29);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
    --border-color: rgb(106, 106, 106);
    --bg-table-color: rgb(28, 28, 28);
    --bg-table-color2: rgb(48, 48, 48);
@@ -66,7 +68,7 @@ body{
   body::-webkit-scrollbar-thumb:hover{background: #292844;} 
 
   .card_center{ /* NUEVO */
-    width: 600px;
+    width: 800px;
     background-color: var(--bg-card-color);
     display: block;
     flex-direction: column;
@@ -84,8 +86,6 @@ body{
 .card_center .card_trade_subtitle p{
     font-size: var(--font-size1); margin: 5px;
 }
-@media screen and (max-width: 450px) {.card_center .card_trade_subtitle p{font-size: var(--font-size4)}}
-
 .div_padding{
     background-color: var(--bg-card-color);opacity: 1;
     padding: 5px 6px;margin: 15px 15px;
@@ -120,6 +120,52 @@ body{
     background-color: var(--bg-card-color);opacity: 1;
     padding: 5px 6px;margin: 15px 15px;
     border: 1px solid  var(--border-color);border-radius: 10px; box-shadow: var(--box-shadow1);
+}
+
+.card_center_2{ /* NUEVO */
+    width: 800px;
+    background-color: var(--bg-card-color);
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;  
+    border-radius: 10px; box-shadow: none;
+    padding: 0 5px 5px 5px ; margin: 20px 100px;
+}
+
+.div_padding_5b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+}
+.div_padding_6b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: 15px; box-shadow:  0 0 1px var(--border-color);;
+}
+.div_padding_7b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: 15px; box-shadow:  0 0 2px var(--border-color);;
+}
+.div_padding_8b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: 15px; box-shadow:  0 0 4px var(--border-color);;
+}
+.div_padding_9b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: 15px; box-shadow: 0 0 6px var(--border-color);;
+}
+.div_padding_10b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: 10px; box-shadow: none;
+}
+.div_padding_11b{
+    background-color: var(--bg-card-color_b);opacity: 1;
+    padding: 5px 6px;margin: 15px 15px;
+    border-radius: 10px; 
 }
 .datos{
     width: 100%; 
@@ -194,7 +240,7 @@ body{
   font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
   /* font-size: 0.8rem; */
   color: var(--text-color);
-  border: 3px solid var(--border-color);border-radius: 7px; box-shadow: var(--box-shadow1);
+  border: 3px solid var(--border-color);border-radius: 7px; box-shadow: none;
   background-color: var(--bg-color);
 }
 .datos .text_11{ 
@@ -206,6 +252,73 @@ body{
   border: 1px solid var(--border-color);border-radius: 7px; box-shadow: var(--box-shadow1);
   background-color: var(--bg-color);
 }
+
+.datos .text_b{ 
+  width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+  background-color: var(--bg-color_b);
+  border: none; 
+}
+.datos .text_6b{ 
+    width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: 10px; box-shadow:  0 0 1px  var(--border-color);;
+  background-color: var(--bg-color_b);border: none;border: none;
+}
+.datos .text_7b{ 
+  width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: 10px; box-shadow:  0 0 2px var(--border-color);;
+  background-color: var(--bg-color_b);border: none;
+   
+}
+.datos .text_8b{ 
+    width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: 10px; box-shadow: 0 0 4px var(--border-color);;
+  background-color: var(--bg-color_b);border: none;
+}
+.datos .text_9b{ 
+    width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: 10px; box-shadow: 0 0 6px var(--border-color);;
+  background-color: var(--bg-color_b);border: none;
+}
+.datos .text_10b{ 
+  width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: 7px; box-shadow: var(--box-shadow1);
+  background-color: var(--bg-color_b);border: none;
+}
+.datos .text_11b{ 
+  width: 12rem;height: 1.8rem;
+  text-align: center;
+  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+  /* font-size: 0.8rem; */
+  color: var(--text-color);
+  border-radius: 7px; 
+  background-color: var(--bg-color_b);border: none;
+}
+
 .buttons {
     width: 100%;
     display: flex;
@@ -247,13 +360,13 @@ body{
         <div class="div_padding" id="dp5">
           <div class="datos" >
           <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
-          <input id="cuentaSpotI" name="box" class="text" type="text" value="2,309.10" disabled><!-- box[5] -->
+          <input id="cuentaSpotI" name="box" class="text" type="text" value="2,309.10" ><!-- box[5] -->
         </div>
         </div>
         <div class="div_padding_6" id="dp6">
           <div class="datos" >
            <div><p>6 Precio de compra</p><span id="moneda2">(USDT)</span><p>:</p></div>
-           <input id="precioCompra" name="box" class="text_6" type="text" value="66,600.00" disabled><!-- box[6] -->
+           <input id="precioCompra" name="box" class="text_6" type="text" value="66,600.00" ><!-- box[6] -->
           </div>
         </div>
         <div class="div_padding_7" id="dp7">
@@ -261,33 +374,33 @@ body{
            <div><p>7 Diferencia de precios</p><span id="moneda2">(USDT)</span><p>:&nbsp;</p></div>
            <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
             <div id="arrow" >  </div>
-            <input id="Difprecio" name="box" class="text_7" type="text" value="1,000.00" disabled><!-- box[7] -->
+            <input id="Difprecio" name="box" class="text_7" type="text" value="1,000.00" ><!-- box[7] -->
            </div>
           </div>
         </div>
         <div class="div_padding_8" id="dp8">
           <div class="datos" >
            <div><p>8 Precio de venta</p><span id="moneda2">(USDT)</span><p>:</p></div>
-           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" disabled>
-           <input id="precioVentaVivo" name="box" class="text_8" type="text" value="100" disabled><!-- box[8] -->
+           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" >
+           <input id="precioVentaVivo" name="box" class="text_8" type="text" value="100" ><!-- box[8] -->
           </div>
         </div>
         <div class="div_padding_9" id="dp9">
           <div class="datos" >
            <div><p>9 Comisi&oacute;n</p><span id="moneda3">(%)</span><p>:</p></div>
-           <input id="commission" name="box" class="text_9" type="text" value="0.10" disabled><!-- box[9] -->
+           <input id="commission" name="box" class="text_9" type="text" value="0.10" ><!-- box[9] -->
           </div>
         </div> 
         <div class="div_padding_10" id="dp10">
           <div class="datos" >
            <div><p>10 Ganancia</p><span id="moneda3">(USDT)</span><p>:</p></div>
-           <input id="profit" name="box" class="text_10" type="text" value="122.87" disabled ><!-- box[10] -->
+           <input id="profit" name="box" class="text_10" type="text" value="122.87"  ><!-- box[10] -->
           </div>
         </div>
         <div class="div_padding_11" id="dp11">
           <div class="datos" >
           <div><p>11 Cuenta Spot Final</p><span id="moneda4">(USDT)</span><p>:</p></div>
-           <input id="cuentaSpotF" name="box" class="text_11" type="text" value="1,122.87" disabled ><!-- box[11] --> 
+           <input id="cuentaSpotF" name="box" class="text_11" type="text" value="1,122.87"  ><!-- box[11] --> 
           </div>
         </div>
 
@@ -301,57 +414,57 @@ body{
 
       <br>
 
-      <article class=" card_center" id="article_center2" style="background-color: #1e1e1e;">
+      <article class=" card_center_2" id="article_center2">
         <div class="card_subtitle">
           <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS</p><p class="card_subtitle_tex2" id="simbolo">BTC/USDT:</p></div>
 
           </div>
         </div>
 
-        <div class="div_padding" id="dp5" style="background-color: #1b1b1b;">
+        <div class="div_padding_5b" id="dp5">
           <div class="datos" >
           <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
-          <input id="cuentaSpotI" name="box" style="background-color: #1a1a1a;" class="text" type="text" value="2,309.10" disabled><!-- box[5] -->
+          <input id="cuentaSpotI" name="box" class="text_b" type="text" value="2,309.10" ><!-- box[5] -->
         </div>
         </div>
-        <div class="div_padding_6" id="dp6">
+        <div class="div_padding_6b" id="dp6">
           <div class="datos" >
-           <div><p>6 Precio de compra</p><span id="moneda2">(USDT)</span><p>:</p></div>
-           <input id="precioCompra" name="box" class="text_6" type="text" value="66,600.00" disabled><!-- box[6] -->
+           <div><p>6 Precio de compra</p><span id="moneda2">(USDT)box-shadow:  0 0 1px</span><p>:</p></div>
+           <input id="precioCompra" name="box" class="text_6b" type="text" value="66,600.00" ><!-- box[6] -->
           </div>
         </div>
-        <div class="div_padding_7" id="dp7">
+        <div class="div_padding_7b" id="dp7">
           <div class="datos" >
-           <div><p>7 Diferencia de precios</p><span id="moneda2">(USDT)</span><p>:&nbsp;</p></div>
+           <div><p>7 Diferencia de precios</p><span id="moneda2">(USDT)box-shadow:  0 0 2px</span><p>:&nbsp;</p></div>
            <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
             <div id="arrow" >  </div>
-            <input id="Difprecio" name="box" class="text_7" type="text" value="1,000.00" disabled><!-- box[7] -->
+            <input id="Difprecio" name="box" class="text_7b" type="text" value="1,000.00" ><!-- box[7] -->
            </div>
           </div>
         </div>
-        <div class="div_padding_8" id="dp8">
+        <div class="div_padding_8b" id="dp8">
           <div class="datos" >
-           <div><p>8 Precio de venta</p><span id="moneda2">(USDT)</span><p>:</p></div>
-           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" disabled>
-           <input id="precioVentaVivo" name="box" class="text_8" type="text" value="100" disabled><!-- box[8] -->
+           <div><p>8 Precio de venta</p><span id="moneda2">(USDT) box-shadow:  0 0 4px</span><p>:</p></div>
+           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" >
+           <input id="precioVentaVivo" name="box" class="text_8b" type="text" value="100" ><!-- box[8] -->
           </div>
         </div>
-        <div class="div_padding_9" id="dp9">
+        <div class="div_padding_9b" id="dp9">
           <div class="datos" >
-           <div><p>9 Comisi&oacute;n</p><span id="moneda3">(%)</span><p>:</p></div>
-           <input id="commission" name="box" class="text_9" type="text" value="0.10" disabled><!-- box[9] -->
+           <div><p>9 Comisi&oacute;n</p><span id="moneda3">(%) box-shadow:  0 0 6px</span><p>:</p></div>
+           <input id="commission" name="box" class="text_9b" type="text" value="0.10" ><!-- box[9] -->
           </div>
         </div> 
-        <div class="div_padding_10" id="dp10">
+        <div class="div_padding_10b" id="dp10">
           <div class="datos" >
-           <div><p>10 Ganancia</p><span id="moneda3">(USDT)</span><p>:</p></div>
-           <input id="profit" name="box" class="text_10" type="text" value="122.87" disabled ><!-- box[10] -->
+           <div><p>10 Ganancia</p><span id="moneda3">(USDT) box-shadow: none</span><p>:</p></div>
+           <input id="profit" name="box" class="text_10b" type="text" value="122.87"  ><!-- box[10] -->
           </div>
         </div>
-        <div class="div_padding_11" id="dp11">
+        <div class="div_padding_11b" id="dp11">
           <div class="datos" >
           <div><p>11 Cuenta Spot Final</p><span id="moneda4">(USDT)</span><p>:</p></div>
-           <input id="cuentaSpotF" name="box" class="text_11" type="text" value="1,122.87" disabled ><!-- box[11] --> 
+           <input id="cuentaSpotF" name="box" class="text_11b" type="text" value="1,122.87"  ><!-- box[11] --> 
           </div>
         </div>
 
