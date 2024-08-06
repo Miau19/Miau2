@@ -7,8 +7,8 @@
     <title>CF[2024]-2b-paratelefono</title>
 
     <style type="text/css">
- 
- @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+  
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 /* 
 @font-face {font-family: "Saira Expanded";src: url("Saira_Expanded-Bold.ttf");}
 @font-face {font-family: "Saira Expanded SemiBold";src: url("Saira_Expanded-SemiBold.ttf");}
@@ -17,15 +17,14 @@
    --y: hsl(0, 100%, 50%);--x: #0E2339;--x1: #101a29;--x2: #182436;--x3: #141C29;
    --pr1mary-color: rgb(227, 238, 255);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
    --text-color:rgb(130, 130, 130);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
-   --bg-color:rgb(14, 14, 14);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
-   --bg-color_b:rgb(12, 12, 12);
+   --bg-color:rgb(24, 24, 24);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
    --html-color: hsla(240, 100%, 6%, 1.0);
-   --bg-card-color: rgb(9, 9, 9); 
-   --bg-card-color_b: rgb(29, 29, 29);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
+   --bg-card-color: rgb(14, 14, 14);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
    --border-color: rgb(106, 106, 106);
    --bg-table-color: rgb(28, 28, 28);
    --bg-table-color2: rgb(48, 48, 48);
-   --border-radius: 5px;
+   --border-radius: 0.75rem;
+   --border-radius_tex: 0.5rem;
    --transition: color 0.1s, background-color 0.6s ease-in-out;
    --skill-bar-length:0%;
    --font-family1: 'Saira', 'Saira Expanded SemiBold', sans-serif;/*font-family: "Roboto", sans-serif;*/ /*font-family: Impact, sans-serif;'Times New Roman'; 'Consolas'; 'Oswald'*/
@@ -33,12 +32,12 @@
    --font-size1: 0.9rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
    --font-size2: 1.25rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
    --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
-   --font-size4: 0.8rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
+   --font-size4: 0.75rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
    --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
    --font-weight2: 700;  /*GROSOR TEXTO NORMAL*/
    --font-weight3: 700;  /*GROSOR TEXTO TABLA*/
    --font-style1: italic; 
-   --box-shadow1: none; /* 0 0 4px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
+   --box-shadow1: 0 0 2px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
 }
 /*
 html{background-color: var(--html-color);}   CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
@@ -65,17 +64,280 @@ body{
   body::-webkit-scrollbar{width: 10px;}
   body::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
   body::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-  body::-webkit-scrollbar-thumb:hover{background: #292844;} 
+  body::-webkit-scrollbar-thumb:hover{background: #292844;}
 
-  .card_center{ /* NUEVO */
-    width: 800px;
+.container_flex_1{
+    position: absolute;
+    top: 0px; left: 0px; width: 100%;height: 40px; z-index: 20;
     background-color: var(--bg-card-color);
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+@media screen and  (max-width: 900px) {.container_flex_1{position: fixed;top: 0px; left: 0px; width: 100%;height: 40px; }} 
+
+.container_flex_2{
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px; 
+}
+@media screen and  (max-width: 1070px) {.container_flex_2{ z-index: 10;}} 
+
+.header1{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: var(--bg-card-color);
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;margin: 0;
+}
+.switches{    
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.nav-toggle {
+    position: relative;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;margin-left: 10px;
+}
+.nav-toggle svg{
+    display: none;
+    fill: var(--text-color);
+    cursor: pointer;
+}
+.nav-toggle svg:hover {
+  transition: 0.2s; /*2 ANIMAR p */
+  transform: scaleX(1.15) scaleY(1.15) translateX(0px) translateY(0px); /*1 ANIMAR p */
+
+}
+
+@media screen and  (max-width: 900px) {.nav-toggle svg{display: inline;}}
+
+.title{
+    color: var(--text-color);;font-family: var(--font-family2);
+    font-size: var(--font-size2);  /* border-bottom: 1.5px solid  var(--text-color);*/
+    display: inline-block;
+    padding: 0;margin-left: 10px;
+} 
+@media screen and  (max-width: 900px) {.title {margin-left: 10px;display: none;}}
+@media screen and  (max-width: 450px) {.title{font-size: var(--font-size1);}}
+
+.title p{padding: 0;margin: 0; }
+
+.title2{font-size: var(--font-size2);}
+@media screen and  (max-width: 450px) {.title2{font-size: var(--font-size1);}}
+
+.colors{
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row;
+    align-items:center;
+    width: 255px;
+    padding-right: 10px;
+}
+
+.colors__item{
+    height: 30px; width: 30px;
+    border: 1px solid var(--border-color); background-color: var(--pr1mary-color);
+}
+
+.colors__item:hover,  #color:hover, #palette_svg:hover{
+  cursor: pointer;  transition: 0.2s; /*2 ANIMAR p */
+  transform: scaleX(1.15) scaleY(1.15) translateX(0px) translateY(0px); /*1 ANIMAR p */
+}
+
+.colors__item--blue  {--pr1mary-color: rgb(2, 0, 16);}
+.colors__item--b  {--pr1mary-color: rgb(14, 35, 57);}
+.colors__item--green {--pr1mary-color: rgb(55, 55, 56);}
+.colors__item--purple{--pr1mary-color: rgb(90, 104, 128);}
+.colors__item--orange{--pr1mary-color: rgb(208, 208, 208) ;}
+#palette{--pr1mary-color: rgb(109, 109, 109) ;}
+
+#palette {height: 30px; width: 30px;border: none;}
+#palette_svg {position: relative;z-index: 6;height: 30px; width: 30px;left: -2px;top: 0px;border: 1px solid var(--border-color);}
+#palette #color{position: relative;z-index: 5; top: -24px;left: -1px; height: 20px; width: 20px; opacity: 0.0;}
+#palette_svg .cls-1{fill:#ff0800;}#palette_svg .cls-2{fill:rgb(0, 240, 8);}#palette_svg .cls-3{fill:rgb(0, 4, 250);}#palette_svg .cls-4{fill:#0091b1;}#palette_svg .cls-5{fill:rgb(226, 215, 2);}#palette_svg .cls-6{fill:#740286;}#palette_svg .cls-7{fill:#faf7fb;}
+
+/* ########################################## MENU BAR TOGGLE ##############################################  */
+.navbar1{
+position: fixed;
+display: none;
+flex-direction: column;
+align-items:flex-start;
+height: 100%;
+left: -100%;
+top: 41px;
+padding: 10px;
+/*overflow-y: auto;*/
+background-color: rgba(21, 21, 21,0.75); 
+overflow-y:auto;
+backdrop-filter: blur(2px);
+transition: var(--transition);
+transition: left 0.3s;
+z-index: 10;
+/* height: 427px;width: 240px; */ /******* ALTURA DE .card__options*********/
+}
+@media screen and  (max-width: 1070px) {/* max-width: 800px ❰❰❰ 3 ❱❱❱ */
+    .navbar1 {display: flex;}
+  }
+  .navbar1::-webkit-scrollbar{width: 10px;}
+  .navbar1::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
+  .navbar1::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
+  .navbar1::-webkit-scrollbar-thumb:hover{background: #292844;}
+
+  
+.card{
+    padding: 5px ; /*padding: 0 5px 5px 5px ; */
+    background: var(--bg-card-color);transition: var(--transition);
+    border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+}
+.card_left{
+    border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+    padding: 0 5px ; /*padding: 10px; margin: -20px 0 0 0; */
+    background: var(--bg-card-color);transition: var(--transition);
+    width: 310px; ;
+}    
+
+.card__options{background-color: rgba(0, 0, 0, 0);
+     /******* ALTURA DE .card__options*********/
+}
+
+.card__options .card__option1 .s2 {
+    font-size: var(--font-size1); font-family: var(--font-family2);font-weight: var(--font-weight2);
+    color: var(--text-color);
+    margin: 0;padding: 0em 0.5em 0.5em 0.5em;
+}
+@media screen and  (max-width: 450px) {.card__options .card__option1 .s2 {font-size: var(--font-size4);}}
+
+.card__options .card__option , .card__options .card__option1{
+    transition: 0.2s; /*2 ANIMAR p */
+    background-color: var(--bg-card-color);
+    border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+    padding: 0.75rem ;margin: 0.75rem 0.25rem;
+}
+.card__options .card__option1:hover {
+    background-color: var(--bg-card-color);
+    transform: scaleX(1.02) scaleY(1.05) translateX(0px) translateY(0px); /*1 ANIMAR card__option */
+}
+.card__options .card__option1 .div1 {
+    display: flex;align-items: center;
+    padding: 0.5em 0.5em 0.5em 0.5em; margin: 0.75em;;
+    border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+}
+.card__options .card__option1 .s1  {
+    margin: 0;
+    font-size: var(--font-size1); font-family: var(--font-family2);font-weight: var(--font-weight2);
+    color: var(--text-color);
+    text-transform: uppercase;
+    transform: scaleX(1.02) scaleY(1.05) translateX(0px) translateY(0px);
+}
+@media screen and  (max-width: 450px) {.card__options .card__option1 .s1 {font-size: var(--font-size4);}}
+
+.card__options .card__option .s {
+    margin: 0;
+    font-size: var(--font-size1); font-family: var(--font-family2);font-weight: var(--font-weight2);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+@media screen and  (max-width: 450px) {.card__options .card__option .s {font-size: var(--font-size4);}}
+
+.card__options .card__option1 .div1:hover , .card__options .card__option:hover{
+    background-color: var(--bg-card-color);
+    transform: scaleX(1.02) scaleY(1.05) translateX(0px) translateY(0px);
+    opacity: 0.75; 
+}
+
+
+
+
+  .nav-menu_visible {
+    left: 0;
+  }
+
+/* ################################## FIN DE: MENU BAR TOGGLE ##################################################  */
+
+
+.header2 {
+    background-color: var(--bg-card-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and  (max-width: 900px) {/* max-width: 800px ❰❰❰ 3 ❱❱❱ */
+    .header2  {display: flex;}
+  }
+.header2 p{
+    background-color: var(--bg-card-color);
+    font-family: var(--font-family2);
+    font-size: var(--font-size2);
+    /*text-decoration: underline;*/
+    color: var(--text-color);
+    margin: 0px;padding:  5px;
+}
+@media screen and  (max-width: 450px) {
+    .header2 p{font-size: var(--font-size1);}
+}
+
+.main_grid_1 {
+    display: grid;
+   grid-template-columns: 310px 1fr 310px;
+}
+@media screen and  (max-width: 1070px) {
+    .main_grid_1{grid-template-columns: 310px 1fr ; }
+}
+@media screen and  (max-width: 900px) {
+    .main_grid_1{grid-template-columns:  1fr ;}
+}
+
+.columnLeft{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0px;padding: 5px;
+    display: flex;
+}
+@media screen and  (max-width: 900px) {
+    .columnLeft{display: none;}
+}
+
+.columnCenter_1{
+    display: flex;
+    justify-content: center;
+}
+
+.column--center{
+    background: var(--bg-color); 
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+#form1{ /* NUEVO */
+    display:flex; flex-direction: column; 
+}
+.card_center{ /* NUEVO */
+    background-color: var(--bg-card-color);
+    display: none;
     flex-direction: column;
     align-items: flex-start;  
-    border: 1px solid var(--border-color);;
-    border-radius: 10px; box-shadow:  0 0 4px var(--border-color);
-    padding: 0 5px 5px 5px ; margin: 20px 100px;
+    border:none;
+    border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem ;
 }
 .card_center .card_trade_subtitle {
     display: flex;
@@ -86,87 +348,74 @@ body{
 .card_center .card_trade_subtitle p{
     font-size: var(--font-size1); margin: 5px;
 }
+@media screen and (max-width: 450px) {.card_center .card_trade_subtitle p{font-size: var(--font-size4)}}
+
+
+#article_center2{ /* NUEVO */
+    display: inline;  
+}
+
+.card_subtitle {
+    display: flex;
+    flex-wrap: wrap; /* EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA*/
+    justify-content: space-between; 
+    padding-top: 5px;
+}
+@media screen and (max-width: 450px){
+    .card_subtitle{flex-direction: column;}
+}
+
+.card_subtitle #simbolo{    
+    opacity: 0.75;
+} 
+.card_subtitle .card_arrows1, .card_subtitle .card_subtitle_tex1{
+    display: flex;
+    align-items:center;
+    justify-content:left;
+}
+
+.card_subtitle .arrows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_arrows1 #svgUP1, .card_arrows1 #svgDOWN1{
+    width: 1.2rem;height: 1.2rem;
+}
+@media screen and (max-width: 450px) {.card_arrows1 #svgUP1, .card_arrows1 #svgDOWN1{width: 1.0rem;height: 1.0rem;}}
+
+.card_arrows1 div{margin: 0;padding: 0px;}
+
+.card_subtitle_tex1 p, .card_arrows1 p{ 
+    /* display: inline; */  
+    margin: 0 0 0 5px;padding: 0;
+    font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
+} /* TEXT 1 */
+@media screen and (max-width: 1070px){.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size1)}}
+@media screen and (max-width: 450px) {.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size4)}}
+
+.card_arrows1 #cotizacionBTC{font-size: var(--font-size2);}
+@media screen and (max-width: 450px) {.card_arrows1 #cotizacionBTC{font-size: var(--font-size3)}}
+
+.card_subtitle .TC2{    
+    display: inline;
+} 
+@media screen and (max-width: 900px){
+    .card_subtitle .TC2{display: inline;}
+   }
+
+
 .div_padding{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 1px solid  var(--border-color);border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
-}
-.div_padding_6{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 1px solid  var(--border-color);border-radius: 15px; box-shadow:  0 0 2px rgb(255, 255, 255);
-}
-.div_padding_7{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 1px solid  var(--border-color);border-radius: 15px; box-shadow:  0 0 2px var(--border-color);;
-}
-.div_padding_8{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 2px solid  var(--border-color);border-radius: 15px; box-shadow:  0 0 4px var(--border-color);;
-}
-.div_padding_9{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 3px solid  var(--border-color);border-radius: 15px; box-shadow: 0 0 6px var(--border-color);;
-}
-.div_padding_10{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 3px solid  var(--border-color);border-radius: 10px; box-shadow: var(--box-shadow1);
-}
-.div_padding_11{
-    background-color: var(--bg-card-color);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border: 1px solid  var(--border-color);border-radius: 10px; box-shadow: var(--box-shadow1);
-}
-
-.card_center_2{ /* NUEVO */
-    width: 800px;
-    background-color: var(--bg-card-color);
-    display: block;
-    flex-direction: column;
-    align-items: flex-start;  
-    border-radius: 10px; box-shadow: none;
-    padding: 0 5px 5px 5px ; margin: 20px 100px;
-}
-
-.div_padding_5b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
+    background-color: var(--bg-color);opacity: 1;
+    padding:0.25rem 0.5rem;margin: 0.75rem 0;
     border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
 }
-.div_padding_6b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border-radius: 15px; box-shadow:  0 0 1px var(--border-color);;
+.div_padding_TED{
+    padding: 0px;margin-bottom: 5px;
 }
-.div_padding_7b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border-radius: 15px; box-shadow:  0 0 2px var(--border-color);;
-}
-.div_padding_8b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border-radius: 15px; box-shadow:  0 0 4px var(--border-color);;
-}
-.div_padding_9b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border-radius: 15px; box-shadow: 0 0 6px var(--border-color);;
-}
-.div_padding_10b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border-radius: 10px; box-shadow: none;
-}
-.div_padding_11b{
-    background-color: var(--bg-card-color_b);opacity: 1;
-    padding: 5px 6px;margin: 15px 15px;
-    border-radius: 10px; 
-}
+
+
 .datos{
     width: 100%; 
     padding: 0;
@@ -185,6 +434,14 @@ body{
     margin-top: 0.4em; margin-bottom: 0.4em; margin-left: 0;margin-right: 0;
     font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
 } 
+@media screen and  (max-width: 900px) { .datos p , .datos span{font-size: var(--font-size1)}}
+@media screen and  (max-width: 450px) { .datos p , .datos span{font-size: var(--font-size4)}}
+
+.datos .spanD2{display: none;}
+@media screen and  (max-width: 900px) { .datos .spanD2{display: inline;}}
+
+.datos .spanD0, .datos .spanD1{display: inline;}  
+@media screen and  (max-width: 900px){.datos .spanD0, .datos .spanD1{display: none;}}
 
 .datos .text{ 
   width: 12rem;height: 1.8rem;
@@ -192,132 +449,79 @@ body{
   font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
   /* font-size: 0.8rem; */
   color: var(--text-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
-  background-color: var(--bg-color);
+  border-radius: var(--border-radius_tex); box-shadow: var(--box-shadow1);
+  border: none;
+  background-color: var(--bg-card-color);
    
 }
-.datos .text_6{ 
+.datos select{
     width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border: 1px solid var(--border-color);border-radius: 10px; box-shadow:  0 0 2px rgb(255, 255, 255);
-  background-color: var(--bg-color);
+    text-align: center;
+    font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2); 
+    color: var(--text-color);;
+    border-radius: var(--border-radius_tex); box-shadow: var(--box-shadow1);
+    background-color: var(--bg-color);
 }
-.datos .text_7{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border: 1px solid var(--border-color);border-radius: 10px; box-shadow:  0 0 2px var(--border-color);;
-  background-color: var(--bg-color);
-   
+@media screen and  (max-width: 900px) {
+    .datos .text{ width: 12rem;font-size: var(--font-size1)}
+    .datos select{width: 12rem;font-size: var(--font-size1)}
+  } 
+  @media screen and  (max-width: 450px) {
+    .datos .text {width: 5.5rem;height: 1.5rem;font-size: var(--font-size4)}
+    .datos select{width: 5.5rem;height: 1.5rem;font-size: var(--font-size4)}
+  } 
+   .datos select option{/*NOTAS: Cualquier cambio en los estilos del select y option puede no verse igual en todos los navegadores. En Firefox no carga fuente 'Saira' para option; pero si: Verdana, sans-serif,'Tahoma'*/ 
+    font-size: var(--font-size1);font-family: 'Saira Expanded SemiBold', Verdana, sans-serif,'Tahoma'; font-weight: 400;
+    /*FUENTES PARECIDAS A 'Saira' : Verdana, 'Tahoma', sans-serif */  /**/
+    /*
+    font-family:'Courier New', Courier, monospace;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Times New Roman', Times, serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    */ 
 }
-.datos .text_8{ 
-    width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border: 2px solid var(--border-color);border-radius: 10px; box-shadow: 0 0 4px var(--border-color);;
-  background-color: var(--bg-color);
+@media screen and  (max-width: 900px) {
+    .datos select option{font-size: var(--font-size1);}
+  } 
+
+  #arrow{ width: 15px;height: 15px; }
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+.colorCasillas{color: var(--text-color); border: 1px solid var(--border-color);}
+/*//////////////////////////////////////////////////////////////////////////////////*/
+.checkboxs{
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap; /* EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA*/
+    justify-content: left;
+    
 }
-.datos .text_9{ 
-    width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border: 3px solid var(--border-color);border-radius: 10px; box-shadow: 0 0 6px var(--border-color);;
-  background-color: var(--bg-color);
-}
-.datos .text_10{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border: 3px solid var(--border-color);border-radius: 7px; box-shadow: none;
-  background-color: var(--bg-color);
-}
-.datos .text_11{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border: 1px solid var(--border-color);border-radius: 7px; box-shadow: var(--box-shadow1);
-  background-color: var(--bg-color);
+.checkboxs div {
+    display: flex;
+    flex-wrap: wrap; /* EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA*/
+    justify-content: left;
+    align-items: center;
+    margin-top: 0.3em; margin-bottom: 0.3em; margin-left: 0;margin-right: 1em;
 }
 
-.datos .text_b{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
-  background-color: var(--bg-color_b);
-  border: none; 
-}
-.datos .text_6b{ 
-    width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: 10px; box-shadow:  0 0 1px  var(--border-color);;
-  background-color: var(--bg-color_b);border: none;border: none;
-}
-.datos .text_7b{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: 10px; box-shadow:  0 0 2px var(--border-color);;
-  background-color: var(--bg-color_b);border: none;
-   
-}
-.datos .text_8b{ 
-    width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: 10px; box-shadow: 0 0 4px var(--border-color);;
-  background-color: var(--bg-color_b);border: none;
-}
-.datos .text_9b{ 
-    width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: 10px; box-shadow: 0 0 6px var(--border-color);;
-  background-color: var(--bg-color_b);border: none;
-}
-.datos .text_10b{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: 7px; box-shadow: var(--box-shadow1);
-  background-color: var(--bg-color_b);border: none;
-}
-.datos .text_11b{ 
-  width: 12rem;height: 1.8rem;
-  text-align: center;
-  font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
-  /* font-size: 0.8rem; */
-  color: var(--text-color);
-  border-radius: 7px; 
-  background-color: var(--bg-color_b);border: none;
-}
+.checkboxs div p {margin: 0; font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);}
+@media screen and  (max-width: 450px) { .checkboxs div p {font-size: var(--font-size4)}}
+
+.checkboxs div .checkbox{ 
+    accent-color: rgb(1, 61, 225); box-shadow: 0 0 0 1px var(--text-color);border: 0; width: 1em;height: 1em; cursor:pointer;
+} 
+ @media screen and  (max-width: 1070px) {
+.checkboxs div .checkbox{width: 0.8em;height: 0.8em;}
+} 
 
 .buttons {
     width: 100%;
@@ -330,7 +534,7 @@ body{
 
 .buttons div{
     text-align: center;
-    margin-top: 0.5rem;margin-bottom: 0.5rem;margin-left: 0.5rem;margin-right: 0.5rem;
+    margin-top: 0;margin-bottom: 0.5rem;margin-left: 0.5rem;margin-right: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);
     background-color: rgb(1, 61, 225); color: var(--text-color);
@@ -346,135 +550,1066 @@ body{
     cursor: pointer;
     transform: scaleX(1.05) scaleY(1.25) translateX(0px) translateY(0px); /*1 ANIMAR p */
 } 
+
+#btnAuto{
+    background-color: rgb(0,80,0) ; 
+} 
+
+.columnCenter_2{
+    background-color: var(--bg-card-color);
+    color: var(--text-color);
+    font: 1em sans-serif;
+    margin: 10px;
+    
+}
+.columnRight{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font: 1em sans-serif;
+    margin: 0px;padding: 5px;
+    display: flex;
+}
+
+@media screen and  (max-width: 1070px) {
+    .columnRight{display: none;}
+}
+.columnRight_2{
+    background-color: var(--bg-card-color);
+    color: var(--text-color);
+    font: 1em sans-serif;
+    margin: 10px;
+    display: none;
+}
+@media screen and  (max-width: 1070px) {
+    .columnRight_2{display: inline-block;}
+}
+
+.main_grid_2{
+    background-color: var(--bg-card-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px; 
+    overflow: auto;
+}
+.main_grid_2::-webkit-scrollbar{width: 10px;}
+.main_grid_2::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb:hover{background: #292844;}
+
+.main_grid_2 .tabla-css{
+    background-color: var(--bg-card-color);
+    border-collapse: collapse;
+    color: var(--text-color);
+}
+.main_grid_2 .tabla-css .tdHead{
+    border: 1px solid var(--text-color);
+    padding: 0.25rem  0.525rem ;
+}
+.main_grid_2 .tabla-css td{
+    font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
+    text-align: center;
+    color: var(--text-color);
+    white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
+}
+.main_grid_2 .tabla-css .td_cf{
+    font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
+    border: 1px solid var(--text-color);
+    text-align: right;
+    color: var(--text-color);
+    padding: 0.25rem  0.525rem ;
+    white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
+}
+.main_grid_2 .tabla-css .td_x{
+    border: 1px solid var(--text-color);
+}
+.main_grid_2 .tabla-css .td_x div{
+    display: flex;justify-content: center;
+}
+.main_grid_2 .tabla-css .td_x:hover{
+    cursor: pointer; background-color: #680101;
+}
+.main_grid_2 .tabla-css .td_x svg{/* viewBox='-30 -36 100 100' width='21px' height='16px' */
+    fill: var(--text-color); width: 16px;height: 16px;
+}
+.main_grid_2 .tabla-css .tdFinalT1, .main_grid_2 .tabla-css .tdFinalT2{
+    border: 1px solid var(--text-color);
+    padding: 0.25rem  0.525rem ;
+}
+.main_grid_2 .tabla-css .tdFinalT1{text-align: left;border-right: none;}
+.main_grid_2 .tabla-css .tdFinalT2{text-align: right;border-left: none;}
+.main_grid_2 .tabla-css .td_separador{height: 1.525rem; border: 1px solid var(--text-color);}
+
+.tablas{
+    display: flex; justify-content: center; flex-direction: column; 
+    margin-left: auto; margin-right: auto;  padding: 0 20px;
+}
+.td_Dtitulo{border: 1px solid var(--text-color); padding: 0;margin: 0;}
+.div_Dtitulo{width: 100%; display: flex;justify-content: space-between; align-items: center; padding-left: 0.525rem;}
+#div_Dsvg{display: flex;justify-content: center; align-items: center; padding: 0.25rem  0.525rem;margin: 0;}
+#div_Dsvg:hover{cursor: pointer; background-color: #680101;}
+#div_Dsvg svg{fill: var(--text-color); width: 16px;height: 16px;}
+#tabla_2a{display: none;}
+
+.main_grid_3{
+    display: none;
+    padding: 10px;
+    
+}
+@media screen and  (max-width: 1070px) {
+    .main_grid_3{display: inline-block;}
+}
+
+
+
+.card_2{ font-size: var(--font-size1);height: 440px;padding: 5px; overflow: auto;}  
+/*@media screen and  (max-width: 1100px) {.card_2{width: auto;}}****** ALTURA DE .card_2 ********
+*/
+.card_2::-webkit-scrollbar{width: 10px;}
+.card_2::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
+.card_2::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
+.card_2::-webkit-scrollbar-thumb:hover{background: #292844;}
+
+.card_2 p{padding: 0em;}
+/*@media screen and  (max-width: 1100px) {.card_2 p{padding-right: 0em;}}*/
+
+.card_2 p, .card_2 ul, .table_ejemplo {font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);}
+.card_2 h3,.card_2 .formula p {font-size: var(--font-size1); font-family: var(--font-family1);font-weight: var(--font-weight1);}
+@media screen and  (max-width: 450px) {
+ .card_2 p, .card_2 ul, .table_ejemplo {font-size:var(--font-size4)}
+ .card_2 h3, .card_2 .formula p {font-size: var(--font-size4)}
+}
+
+.card_2 h3{text-decoration: underline;}
+
+.formula{display: flex;justify-content: center;align-items: center; margin: 0;padding: 0;  background-color: #1b0162;}
+
+.card_2 .formula p{background-color: #3c0145;
+ border: 1px solid  var(--border-color);
+ border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
+ padding: .5em .5em;margin: 5px;
+ text-align: center;
+}
+
+.table_ejemplo{border-collapse: collapse;margin-right: auto;margin-left: auto;}  
+  @media screen and (max-width: 600px){.table_ejemplo{margin-right: auto;margin-left: auto;}}
+  
+.table_ejemplo td{
+    border: 1px solid #7e7e7e;
+    text-align: center;
+    padding: 0.5em ;
+    font-size: var(--font-size4);
+} 
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    background-color: var(--bg-card-color);
+    color: var(--text-color);
+} 
+.footer .socialmedia_1{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+.footer .socialmedia_1 .socialmedia{
+    width: 50%;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    padding-left: auto;padding-right: auto;
+}
+@media screen and  (max-width: 900px) {.footer .socialmedia_1 .socialmedia {width: 80%}}
+
+.footer .copyright_1{
+    display: flex;
+    justify-content: center;
+}
+.socialmedia svg {width: 30px;height: 30px;}
+.socialmedia div {width: 30px;height: 30px; margin: 10px;}
+@media screen and  (max-width: 800px) {
+    .socialmedia svg {width: 20px;height: 20px; }
+    .socialmedia div {width: 20px;height: 20px; margin: 5px;}
+}
+
+.footer .copyright{width: 100%; text-align: center; padding: 10px 10px;}
+.footer .copyright p{font-size: var(--font-size1);margin: 0;}
+#Copyright{background-color: rgba(0, 0, 0, 0);}
+@media screen and  (max-width: 450px) {.footer .copyright p {font-size: var(--font-size4)}}
+.svgInstagram #SVGID_1_ stop{stop-color: var(--text-color);}
+.svgInstagram .st0{fill:url(#SVGID_1_);}
+.svgInstagram .st1{fill:  var(--bg-color);}
+
+.svgFacebook .path1, .path2,  .path3{fill: var(--text-color)}
+.svgFacebook .path4{fill: var(--bg-color)}
+.svgFacebook .rect1{fill: var(--text-color)}
+
+.svgYoutube #linearGradient-1 stop{stop-color: var(--text-color);}
+.svgYoutube .path1, .path2{fill: var(--bg-color)}
+
+.svgTwitter .path1, .path2, .path3{fill: var(--text-color)}
+.svgTwitter .path4{fill: var(--bg-color)}
+
+.svgWhatsapp .st01{fill-rule:evenodd;clip-rule:evenodd;fill: var(--text-color);}
+
+.svgLinkedin .path1{fill: var(--text-color)} 
+.svgLinkedin .path2{fill: var(--bg-color)} 
+
+.svgInstagram:hover, .svgFacebook:hover, .svgYoutube:hover, .svgTwitter:hover, .svgWhatsapp:hover, .svgLinkedin:hover{cursor: pointer;}
+
+
     </style>
 
   </head>
   <body onload="onload()">
-    <article class=" card_center" id="article_center2">
-        <div class="card_subtitle">
-          <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS</p><p class="card_subtitle_tex2" id="simbolo">BTC/USDT:</p></div>
-
-          </div>
+    <div class="container_flex_1">
+      <header class="header1">
+        <div class="switches">  
+           <div id="navToggle" class="nav-toggle" onclick="navToggle()">
+             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="10 0 48 48" width="30px" height="30px">
+               <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
+             </svg>
+            </div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS</p></div>
         </div>
-
-        <div class="div_padding" id="dp5">
-          <div class="datos" >
-          <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
-          <input id="cuentaSpotI" name="box" class="text" type="text" value="2,309.10" ><!-- box[5] -->
-        </div>
-        </div>
-        <div class="div_padding_6" id="dp6">
-          <div class="datos" >
-           <div><p>6 Precio de compra</p><span id="moneda2">(USDT)</span><p>:</p></div>
-           <input id="precioCompra" name="box" class="text_6" type="text" value="66,600.00" ><!-- box[6] -->
-          </div>
-        </div>
-        <div class="div_padding_7" id="dp7">
-          <div class="datos" >
-           <div><p>7 Diferencia de precios</p><span id="moneda2">(USDT)</span><p>:&nbsp;</p></div>
-           <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
-            <div id="arrow" >  </div>
-            <input id="Difprecio" name="box" class="text_7" type="text" value="1,000.00" ><!-- box[7] -->
-           </div>
-          </div>
-        </div>
-        <div class="div_padding_8" id="dp8">
-          <div class="datos" >
-           <div><p>8 Precio de venta</p><span id="moneda2">(USDT)</span><p>:</p></div>
-           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" >
-           <input id="precioVentaVivo" name="box" class="text_8" type="text" value="100" ><!-- box[8] -->
-          </div>
-        </div>
-        <div class="div_padding_9" id="dp9">
-          <div class="datos" >
-           <div><p>9 Comisi&oacute;n</p><span id="moneda3">(%)</span><p>:</p></div>
-           <input id="commission" name="box" class="text_9" type="text" value="0.10" ><!-- box[9] -->
+        <div id="toggle-colors" class="colors">
+          <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(150, 150, 152)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
+          <div data-bg="rgb(14, 35, 57)"    data-card="rgb(16, 26, 41)"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 23, 56)" class="colors__item colors__item--b" ></div>
+          <div data-bg="rgb(20, 20, 20)"    data-card="rgb(27, 27, 28)"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(41, 42, 44)" class="colors__item colors__item--green" ></div>
+          <div data-bg="rgb(74, 89, 113)"   data-card="rgb(90, 104, 128)"  data-text="rgb(10, 10, 10)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(78, 96, 124)" class="colors__item colors__item--purple"></div>
+          <div data-bg="rgb(218, 230, 237)" data-card="rgb(233, 247, 255)" data-text="rgb(10, 10, 10)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
+          
+          <div id="palette" >
+            <svg id="palette_svg" viewBox="20 20 475 475" >
+            <circle class="cls-1" cx="256" cy="169.651" r="137.651"/>
+            <circle class="cls-2" cx="342.349" cy="342.349" r="137.651"/>
+            <circle class="cls-3" cx="169.651" cy="342.349" r="137.651"/>
+            <path class="cls-4" d="M307.3,342.347a137.415,137.415,0,0,1-51.3,107.21A137.861,137.861,0,0,1,211.366,299.9a138.261,138.261,0,0,0,89.27,0A137.515,137.515,0,0,1,307.3,342.347Z"/>
+            <path class="cls-5" d="M386.982,212.1A138,138,0,0,1,300.636,299.9a137.963,137.963,0,0,0-44.63-64.768A137.852,137.852,0,0,1,386.982,212.1Z"/>
+            <path class="cls-6" d="M256.006,235.136a137.94,137.94,0,0,0-44.64,64.768A138,138,0,0,1,125.02,212.1a137.871,137.871,0,0,1,130.986,23.04Z"/>
+            <path class="cls-7" d="M300.636,299.9a138.261,138.261,0,0,1-89.27,0,137.94,137.94,0,0,1,44.64-64.768A137.963,137.963,0,0,1,300.636,299.9Z"/>
+            </svg>
+            <input id="color" type="color" value="#440000" onclick=""> 
           </div>
         </div> 
-        <div class="div_padding_10" id="dp10">
-          <div class="datos" >
-           <div><p>10 Ganancia</p><span id="moneda3">(USDT)</span><p>:</p></div>
-           <input id="profit" name="box" class="text_10" type="text" value="122.87"  ><!-- box[10] -->
-          </div>
-        </div>
-        <div class="div_padding_11" id="dp11">
-          <div class="datos" >
-          <div><p>11 Cuenta Spot Final</p><span id="moneda4">(USDT)</span><p>:</p></div>
-           <input id="cuentaSpotF" name="box" class="text_11" type="text" value="1,122.87"  ><!-- box[11] --> 
-          </div>
-        </div>
+      </header>
+      <nav class="navbar1" id="navbar1">
+            <div class="card__options">
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS</p>
+                <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
+                <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
+              </div>
+              <a class="a2" href="https://miau19.github.io/Miau4/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Mercados</p></div></a>
+              <a class="a2" href="https://miau19.github.io/Miau3/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Tipo de cambio</p></div></a>
+              <a class="a2" href="https://miau19.github.io/Miau2/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Evolución del dólar</p></div></a>
+              <a class="a2" href="https://miau19.github.io/Miau1/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Criptomonedas</p></div></a>
+              <a class="a2" href="#">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
 
-        <div class="buttons" >
-          <div type="button" class="button button--primary" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
-           <div type="button" class="button button--primary" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
-           <!-- <div type="button" class="button button--primary" id="actualizarPrecioV" onclick="">Actualizar venta</div>
-           <div type="button" class="button button--primary" id="btnAuto" onclick="">Stop auto</div>  -->
+            </div><!-- 
+            <div class="card__image-container">
+              <img src="assets/images/estadisticas-1.jpg" alt="">  
+            </div> -->
+    
+      </nav>
+    </div><!-- FIN DE: div class="container_flex_1" -->
+  
+    <div class="container_flex_2">
+      <div class="header2">
+        <!-- <div class="TC" id="TC"><p>TRADE CRIPTOMONEDAS</p></div> -->
+        <div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS</p></div>
+      </div> 
+    
+      <article class="main_grid_1">
+        <div id="columnLeft" class="columnLeft">
+            <div class="card_left">
+            <div class="card__options">
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS</p>
+                <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
+                <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
+              </div>
+              <a class="a2" href="https://miau19.github.io/Miau4/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Mercados</p></div></a>
+              <a class="a2" href="https://miau19.github.io/Miau3/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Tipo de cambio</p></div></a>
+              <a class="a2" href="https://miau19.github.io/Miau2/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Evolución del dólar</p></div></a>
+              <a class="a2" href="https://miau19.github.io/Miau1/">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Criptomonedas</p></div></a>
+              <a class="a2" href="#">
+                <div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
+
+
+                
+            </div>
+            </div>
+        </div>
+        <div id="columnCenter_1" class="columnCenter_1">
+          
+          <div class="column--center">
+            <form action="" id="form1">
+              <article class=" card_center" id="article_center" >
+               <div class="card_trade_subtitle"><p >DEP&Oacute;SITOS A PLAZO FIJO</p></div>
+               <div class="div_padding">
+               <div class="datos" >
+                 <p>Moneda:</p>
+                  <select id="Selector1" name="Selector"><!-- class="text" -->
+                    <option id="option1" value="USD" selected>USD</option>
+                    <option id="option2" value="Dolares">Dolares</option>
+                    <option id="option3" value="PEN">PEN </Option>
+                    <option id="option4" value="Soles">Soles</option>
+                    <option id="option5" value="EUR">EUR</option>
+                    <option id="option6" value="Euros">Euros</option>
+                    <option id="option7" value="€">€</option>
+                    <option id="option8" value="$">$</option>
+                  </select>
+               </div>    
+               </div>
+               <div class="div_padding">
+               <div class="datos" >
+               <div>
+                <p>Aporte inicial</p><span id="money1">(USD)</span><p>:</p>
+               </div>
+                <input id="cuotaI" name="box" class="text"  type="text" value="30,000.00"><!-- box[0] -->
+               </div>
+               </div>
+               <div class="div_padding">
+               <div class="datos" >
+                <div>
+                <p>Aportes periódicos</p><span id="money2">(USD)</span><p>:</p>
+               </div>
+                <input id="cuota" name="box" class="text" type="text" value="1,000.00"><!-- box[1] -->
+               </div>
+               </div>
+      
+               <div class="div_padding">
+               <div class="datos">
+                <p>Período(días):<span id="span2"></span></p>
+                <select id="Selector2" > <!-- class="text" --> 
+                  <option id="rb0" value="1" > 1 </option>
+                  <option id="rb1" value="30"> 30 </option>
+                  <option id="rb2" value="60"> 60 </option>
+                  <option id="rb3" value="90"> 90 </Option>
+                  <option id="rb4" value="180">180</option>
+                  <option id="rb5" value="270">270</option>
+                  <option id="rb6" value="360" selected>360 </Option>
+                </select>       
+                <!-- select          
+                <select class="text" id="">
+                  <option value="1">...</option>
+                  <option value="2">30 días</option>
+                  <option value="3">60 días</option>
+                  <option value="4">90 días </Option>
+                  <option value="5">120 días</option>
+                  <option value="6">150 días</option>
+                  <option value="7">180 días</option>
+                  <option value="8">210 días</option>
+                  <option value="9">240 días </Option>
+                  <option value="10">270 días</option>
+                  <option value="11">300 días</option>
+                  <option value="12">330 días</option>
+                  <option value="13" selected>360 días </Option>
+                </select>    
+                -->
+               </div>
+               </div> 
+      
+               <div class="div_padding"> <!-- 1 -->
+                 <div class="div_padding_TED">
+                   <div class="datos" >
+                     <div><p>Taza Efectiva&nbsp;</p><span id="span3" class="spanN" >360</span><p>&nbsp;días(%):&nbsp;</p></div>
+                     <input id="boxTED" name="box" class="text" type="text" value="3.00"><!-- box[2] -->
+                   </div>
+                  </div>
+                  <div class="div_padding_TEA">
+                    <div class="datos" >
+                      <div><span id="span3_TEA">Taza Efectiva Anual</span><p>(%):</p></div>
+                      <input id="tea1" name="box" class="text" type="text" value="3.00"> <!-- box[3] -->
+                    </div>
+                  </div>
+               </div> <!-- FIN DE 1 -->
+      
+                 <div class="div_padding">
+                   <div class="datos" >
+                     <div>
+                     <p class="spanD0">Períodos de ahorro<span id="span1" class="spanD1" >(máximo=1,000)</span></p><p><span class="spanD2" >Períodos de ahorro</span></p><p>:&nbsp;</p>
+                     </div>
+                     <input id="N" name="box" class="text" type="text" value="10" maxlength=""><!-- box[4] -->
+                   </div>
+                  </div> 
+      
+      
+               <div class="div_padding">
+                 <div class="checkboxs">
+                  <div>
+                    <input id="ck1" class="checkbox" type="checkbox"  checked="checked"  value="">&nbsp;
+                    <p>Con aportes periódicos</p>
+                 </div>
+                  <div>
+                    <input id="ck2" class="checkbox" type="checkbox" checked="checked" value="">&nbsp;
+                    <p>Sin aportes periódicos</p>
+                 </div>
+                 </div>
+               </div>
+               
+               <div class="buttons" >
+                <div type="button" class="button button--primary" onclick="iniciar()">Genera una tabla</div>
+                <div type="button" class="button button--primary" id="btnR" onclick="resetar()">Resetar</div> 
+               </div>
+      
+              </article>
+      
+              <article class="card card_center" id="article_center2">
+                <div class="card_subtitle">
+                  <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS</p><p class="card_subtitle_tex2" id="simbolo">BTC/USDT:</p></div>
+                  <div class="card_arrows1" >
+                    <div></div><div class="arrows"><p id="cotizacionBTC">70,000.00</p>
+                    <svg id="svgUP1"  style="display: none;fill: rgb(0,200,0);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
+                    <svg id="svgDOWN1" style="display: inline; fill: rgb(200,0,0);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
+                  </div>
+                  </div>
+                </div>
+      
+                <div class="div_padding" id="dp5">
+                  <div class="datos" >
+                  <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
+                  <input id="cuentaSpotI" name="box" class="text" type="text" value="2,309.10" disabled><!-- box[5] -->
+                </div>
+                </div>
+                <div class="div_padding" id="dp6">
+                  <div class="datos" >
+                   <div><p>Precio de compra</p><span id="moneda2">(USDT)</span><p>:</p></div>
+                   <input id="precioCompra" name="box" class="text" type="text" value="66,600.00" disabled><!-- box[6] -->
+                  </div>
+                </div>
+                <div class="div_padding" id="dp7">
+                  <div class="datos" >
+                   <div><p>Diferencia de precios</p><span id="moneda2">(USDT)</span><p>:&nbsp;</p></div>
+                   <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
+                    <div id="arrow" >
+                      <svg id="svgUP"  style="display: inline;fill: rgb(0,200,0);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
+                      <svg id="svgDOWN" style="display: none; fill: rgb(200,0,0);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
+                   </div>
+                    <input id="Difprecio" name="box" class="text" type="text" value="1,000.00" disabled><!-- box[7] -->
+                   </div>
+                  </div>
+                </div>
+                <div class="div_padding" id="dp8">
+                  <div class="datos" >
+                   <div><p>Precio de venta</p><span id="moneda2">(USDT)</span><p>:</p></div>
+                   <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" disabled>
+                   <input id="precioVentaVivo" name="box" class="text" type="text" value="100" disabled><!-- box[8] -->
+                  </div>
+                </div>
+                <div class="div_padding" id="dp9">
+                  <div class="datos" >
+                   <div><p>Comisi&oacute;n</p><span id="moneda3">(%)</span><p>:</p></div>
+                   <input id="commission" name="box" class="text" type="text" value="0.10" disabled><!-- box[9] -->
+                  </div>
+                </div> 
+                <div class="div_padding"id="dp10">
+                  <div class="datos" >
+                   <div><p>Ganancia</p><span id="moneda3">(USDT)</span><p>:</p></div>
+                   <input id="profit" name="box" class="text" type="text" value="122.87" disabled ><!-- box[10] -->
+                  </div>
+                </div>
+                <div class="div_padding"id="dp11">
+                  <div class="datos" >
+                  <div><p>Cuenta Spot Final</p><span id="moneda4">(USDT)</span><p>:</p></div>
+                   <input id="cuentaSpotF" name="box" class="text" type="text" value="1,122.87" disabled ><!-- box[11] --> 
+                  </div>
+                </div>
+      
+                <div class="buttons" >
+                  <div type="button" class="button button--primary" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
+                   <div type="button" class="button button--primary" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
+                   <!-- <div type="button" class="button button--primary" id="actualizarPrecioV" onclick="">Actualizar venta</div>
+                   <div type="button" class="button button--primary" id="btnAuto" onclick="">Stop auto</div>  -->
+                  </div>
+              </article>
+              <!-- <div style="width: 300px;height: 30px; background: rgb(51, 53, 53);text-align: center;">300px x 30px</div>
+              <div style="width: 160px;height: 30px; background: rgb(73, 73, 73);text-align: center;">160px x 30px</div> -->
+            </form>
+          </div><!-- FIN DE div class="column column--center" -->
+  
+  
+        </div> <!--   FIN DE div id="columnCenter_1" -->
+        <!-- <div id="columnCenter_2" class="columnCenter_2">columnCenter_2columnCenter_2columnCenter_2</div> -->
+        <div id="columnRight" class="columnRight">
+          <div class="card">
+            <div class="card_2" id="card_2">
+  
+                <h3 >
+                  <!--  Interés simple e interés compuesto: Ejemplos, gráficos y fórmulas  -->
+                  INTERÉS SIMPLE E INTERÉS COMPUESTO: EJEMPLOS, GRÁFICOS Y FÓRMULAS
+                </h3>
+                <p></p>
+                <p>
+                  ¿Cuál es la diferencia entre el interés simple y el compuesto? ¿Cómo se calculan? Para una mejora radical de tus finanzas, es fundamental que conozcas ambos conceptos porque te darás cuenta de que actúan de forma exponencial para tus finanzas.
+                  <br>
+                  Diferencia entre interés simple e interés compuesto
+    
+                  Básicamente la diferencia está en que en el interés simple, el dinero que generan los intereses se calcula solo sobre 
+                  el capital invertido al principio (principal) sin tener en cuenta la posible reinversión de los intereses que vaya 
+                  generando nuestro dinero. Por otro lado, en el interés compuesto los intereses obtenidos se reinvierten creando con el 
+                  paso del tiempo un "efecto bola de nieve" y obteniéndose un resultado sensiblemente mayor.
+                  <br><br>Ejemplo sobre el interés simple y el interés compuesto
+                  
+                  Imaginemos que tenemos <span class="spanN">10,000</span> dólares ahorrados y los invertimos consiguiendo un
+                   <span class="spanN">10%</span> de interés anual durante <span class="spanN">5</span> años.
+                  
+                  En el caso del interés simple, recibiríamos <span class="spanN">1,000</span> dólares de intereses el primer año, 
+                  el segundo año, el tercer año... y así sucesivamente. Cada año, retiraríamos esos <span class="spanN">1,000</span> 
+                  dólares y simplemente seguiríamos consiguiendo el <span class="spanN">10%</span> de <span class="spanN">10,000</span> 
+                  dólares cada <span class="spanN">12</span> meses. Esto sería así porque el capital sobre los que se calculan los 
+                  intereses se mantendría invariable en los <span class="spanN">10,000</span> dólares iniciales. 
+                  
+                  En el caso del interés compuesto, los <span class="spanN">1,000</span> dólares que consigo de intereses los 
+                  reinvertiría y permitiría que el <span class="spanN">10%</span> fuese "trabajando" cada cada vez sobre una cantidad
+                   mayor. El primer año, obtendría <span class="spanN">1,000</span> dólares, los sumaría a los <span class="spanN">
+                    10,000</span> iniciales y pondría a "trabajar" <span class="spanN">11,000</span> dólares el segundo año. 
+                    Esos <span class="spanN">11,000</span> dólares al 10% de interés, generarían ya al año siguiente <span class="spanN">1,100</span> dólares de intereses. Los reinvierto y tendría una nueva cantidad de <span class="spanN">12,100</span> dólares               
+                  sobre los que calcular la rentabilidad. Generaría <span class="spanN">1,210</span> dólares. Y así sucesivamente 
+                  durante <span class="spanN">5</span> años. 
+                  
+                  En los primeros años, las diferencias existen pero no son muy abultadas. Sin embargo, tal y como se observa en la 
+                  Tabla #1 a medida que pasa el tiempo esas diferencias son cada vez más y más grandes, hasta tal punto que en el último
+                   año estaré generando un interés anual de <span class="spanN">1,464.10 </span> dólares en el caso del interés compuesto y
+                    solo <span class="spanN">1,000</span> dólares en el caso del interés simple.
+                  
+                  Si sumamos las cantidades obtenidas en ambos casos, vemos como en el caso del interés simple acabaré con
+                   <span class="spanN">15,000</span> dólares (<span class="spanN">10,000</span> iniciales y
+                    <span class="spanN">5</span> pagos de <span class="spanN">1,000</span> dólares cada año) y que en el caso del 
+                    interés compuesto terminaré con un montante acumulado de <span class="spanN">16,105.10</span> dólares (
+                      <span class="spanN">10,000</span> dólares de inicio y <span class="spanN">6,105.10</span> dólares de intereses).
+                       La diferencia es muy llamativa como puede verse en la siguiente tabla.
+                </p>
+                <p>Tabla #1:</p>
+                <table class="table_ejemplo" >
+                  <tr>
+                    <td >Año</td><td>Interes simple</td><td>Interés compuesto</td>
+                  </tr>
+                  <tr>
+                    <td><span class="spanN">0</span></td><td><span class="spanN">10,000.00</span><br>(inicial)</td><td><span class="spanN">10,000.00</span><br>(inicial)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="spanN">1</span></td><td><span class="spanN">11,000.00</span></td><td><span class="spanN">11,000.00</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="spanN">2</span></td><td><span class="spanN">12,000.00</span></td><td><span class="spanN">12,100.00</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="spanN">3</span></td><td><span class="spanN">13,000.00</span></td><td><span class="spanN">13,310.00</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="spanN">4</span></td><td><span class="spanN">14,000.00</span></td><td><span class="spanN">14,641.00</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="spanN">5</span></td><td><span class="spanN">15,000.00</span></td><td><span class="spanN">16,105.10</span></td>
+                  </tr>
+                </table><br>
+                <p>
+    
+                </p>
+                <p>
+                <h3 >Interés Simple: Fórmula</h3>
+                <p>A continuación se muestra la fórmula del interés simple:</p> 
+                <div class="formula">
+                <p class="">V<sub>f</sub> = V<sub>a</sub> (<span class="spanN">1</span> + n * i)</p> 
+                </div>
+                <p>
+                  Donde: <br>
+                  V<sub>f</sub> = Valor Futuro<br>
+                  V<sub>a</sub> = Valor Actual<br>
+                  i = Tasa de interés<br>
+                  n = Periodo de tiempo
+                </p>
+                <p>Para aplicar la fórmula anterior se debe tener en cuenta que la tasa de interés y el número de períodos deben estar expresados en la misma unidad de tiempo.
+                </p>
+    
+                <h3>Interés Compuesto: Fórmula</h3>
+                <p>A continuación se muestra la fórmula del Interés Compuesto y sus componentes:</p> 
+                <div class="formula">
+                  <p class="">V<sub>f</sub> = V<sub>a</sub>(<span class="spanN">1</span> + i) <sup>n</sup></p>
+                </div>
+                <p>
+                  Donde: <br>
+                  V<sub>f</sub> = Valor Futuro <br>
+                  V<sub>a</sub> = Valor Actual<br>
+                  i = Tasa de interés<br>
+                  n = Periodo de tiempo</p>   
+                  <p>Para aplicar la fórmula anterior se debe tener en cuenta que la tasa de interés y el número de períodos deben estar expresados en la misma unidad de tiempo.</p>        
+                </p>
+    
+                <h3 >
+                  DEPÓSITO A PLAZO FIJO 
+                </h3>
+                <p>CÁLCULO DE INTERESES:</p>
+                <p>Caso <span class="spanN">1</span> : Depósito y cancelación al vencimiento:</p>
+                <p>Se apertura un depósito de <span class="spanN">$30,000</span> a <span class="spanN">180</span> días
+                A plazo fijo, le corresponde una tasa de <span class="spanN">3.00%</span> efectiva anual.</p>
+                <p><span class="spanN">1</span>.-Se calcula la tasa efectiva diaria, la cual se obtiene de la siguiente manera:</p>
+                <div class="formula">
+                  <p class="">id = ((<span class="spanN">1</span> + i)<sup><span class="spanN">1/360</span></sup> - <span class="spanN">1</span>)</p>
+                </div>
+                <p>
+                  Donde: <br>
+                  <p>id: Es la tasa efectiva diaria.<br>
+                    i: Es la tasa de interés efectiva anual (<span class="spanN">360</span> días).<br>
+                  </p>
+                </p> 
+                <p>id = ((<span class="spanN">1 + 0.030</span>)<sup><span class="spanN">1/360</span></sup> - <span class="spanN">1</span>)<br>id = 0.00008211<br>id = <span class="spanN">0.008211 %</span></p>
+               <p><span class="spanN">2</span>.-Se calcula la tasa de interés del periodo (180 días), la cual se obtiene de la siguiente manera:</p>
+                <div class="formula">
+                  <p class="">ip = ((<span class="spanN">1</span> + id)<sup>n</sup> - <span class="spanN">1</span>)</p>
+                </div>
+                <p>
+                  Donde: <br>
+                  ip: Es la tasa de interés efectiva del periodo de vencimiento del depósito.<br>
+                    n: Periodo en que se requiere expresar la tasa de interés.<br>
+                  <p>ip = ((<span class="spanN">1 + 0.00008211</span>)<sup>180</sup> - <span class="spanN">1</span>)<br>ip = <span class="spanN">0.014889</span><br>ip = <span class="spanN">1.4889 %</span><br><br>
+                <span class="spanN">3</span>.-Se obtiene el interés(I) al vencimiento:</p>
+                <p>            
+                  <div class="formula">
+                  <p>I = ip * Depósito</p>
+                  </div><p>I = <span class="spanN">0.014889</span> * <span class="spanN">30,000</span> <br>
+                I = <span class="spanN">$ 446.67</span></p> 
+               </p>
+    
+                
+            </div>
           </div>
+        </div>
       </article>
+  
+      <article class="main_grid_2">
+        <div class="tablas"> <br>
+          <table class="tabla-css" id="tabla_1a">
+            <thead>
+              <tr>
+                <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+              </tr>
+              <tr >
+                <td class="tdHead">S&iacute;mbolo</td>
+                <td class="tdHead">Capital inicial	</td>
+                <td class="tdHead">Compra</td>
+                <td class="tdHead">Venta</td>
+                <td class="tdHead">Diferencia</td>
+                <td class="tdHead">Comisi&oacute;n</td>
+                <td class="tdHead">Ganancia</td>
+                <td class="tdHead">Capital final</td>
+                <td class="tdHead">Eliminar</td>
+              </tr>
+              <tr id="tr_1">
+                <td id="td_sp1" class="td_cf">BTC/USDT</td>
+                <td id="td_ci1" class="td_cf">1,550.46366</td>
+                <td id="td_pc1" class="td_cf">64,522.00</td>
+                <td id="td_pv1" class="td_cf">70,000.00</td>
+                <td id="td_dp1" class="td_cf">0</td>
+                <td id="td_c1"  class="td_cf">0.10</td>
+                <td id="td_p1"  class="td_cf">0</td>
+                <td id="td_cf1" class="td_cf">0</td>
+                <td class="td_x" onclick="eliminarTr(1)">
+                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>
+              <tr id="tr_2">
+                <td id="td_sp2" class="td_cf">BTC/USDT</td>
+                <td id="td_ci2" class="td_cf">617.236</td>
+                <td id="td_pc2" class="td_cf">58,000.00</td>
+                <td id="td_pv2" class="td_cf">70,000.00</td>
+                <td id="td_dp2" class="td_cf">0</td>
+                <td id="td_c2"  class="td_cf">0.10</td>
+                <td id="td_p2"  class="td_cf">0</td>
+                <td id="td_cf2" class="td_cf">0</td>
+                <td class="td_x" onclick="eliminarTr(2)">
+                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>
+            </thead> 
+            <tbody id="dataD"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="9" rowspan="1" class="td_separador"></td>
 
-      <br>
+              </tr>
+              <tr>
+                <td colspan="6" rowspan="1" class="tdFinalT1">Capital inicial total</td>
+                <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalIniciaTotal">0</td>
 
-      <article class=" card_center_2" id="article_center2">
-        <div class="card_subtitle">
-          <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS</p><p class="card_subtitle_tex2" id="simbolo">BTC/USDT:</p></div>
 
-          </div>
-        </div>
+              </tr>
+              <tr>
+                <td colspan="6" rowspan="1" class="tdFinalT1">Capital final total</td>
+                <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalFinalTotal">0</td>
+              </tr>
+              <tr>
+                <td colspan="6" rowspan="1" class="tdFinalT1" id="gananciasPerdidas">Ganancias/P&eacute;rdidas</td>
+                <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotal">0</td>
+              </tr>
+            </tfoot>
+          </table> <br>
+         
+         <table class="tabla-css" id="tabla_2a">
+          <thead>
+            <tr>
+              <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+            </tr>
+            <tr >
+              <td class="tdHead">S&iacute;mbolo</td>
+              <td class="tdHead">Capital inicial	</td>
+              <td class="tdHead">Compra</td>
+              <td class="tdHead">Venta</td>
+              <td class="tdHead">Diferencia</td>
+              <td class="tdHead">Comisi&oacute;n</td>
+              <td class="tdHead">Ganancia</td>
+              <td class="tdHead">Capital final</td>
+              <td class="tdHead">Eliminar</td>
+            </tr>
+            <tr id="tr_E1" style="display: none;">
+              <td id="td_spE1" class="td_cf">BTC/USDT</td>
+              <td id="td_ciE1" class="td_cf">0</td>
+              <td id="td_pcE1" class="td_cf">10</td>
+              <td id="td_pvE1" class="td_cf">10</td>
+              <td id="td_dpE1" class="td_cf">0</td>
+              <td id= "td_cE1"  class="td_cf">0</td>
+              <td id= "td_pE1"  class="td_cf">0</td>
+              <td id="td_cfE1" class="td_cf">0</td>
+              <td class="td_x" onclick="eliminarTrE(1)">
+                <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+              </td>
+            </tr>
+            <tr id="tr_E2" style="display: none;">  
+              <td id="td_spE2" class="td_cf">BTC/USDT</td>
+              <td id="td_ciE2" class="td_cf">0</td>
+              <td id="td_pcE2" class="td_cf">10</td>
+              <td id="td_pvE2" class="td_cf">10</td>
+              <td id="td_dpE2" class="td_cf">0</td>
+              <td id= "td_cE2"  class="td_cf">0</td>
+              <td id= "td_pE2"  class="td_cf">0</td>
+              <td id="td_cfE2" class="td_cf">0</td>
+              <td class="td_x" onclick="eliminarTrE(2)">
+                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+              </td>
+            </tr>
+          </thead> 
+          <tbody id="dataE"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="9" rowspan="1" class="td_separador"></td>
 
-        <div class="div_padding_5b" id="dp5">
-          <div class="datos" >
-          <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
-          <input id="cuentaSpotI" name="box" class="text_b" type="text" value="2,309.10" ><!-- box[5] -->
-        </div>
-        </div>
-        <div class="div_padding_6b" id="dp6">
-          <div class="datos" >
-           <div><p>6 Precio de compra</p><span id="moneda2">(USDT)box-shadow:  0 0 1px</span><p>:</p></div>
-           <input id="precioCompra" name="box" class="text_6b" type="text" value="66,600.00" ><!-- box[6] -->
-          </div>
-        </div>
-        <div class="div_padding_7b" id="dp7">
-          <div class="datos" >
-           <div><p>7 Diferencia de precios</p><span id="moneda2">(USDT)box-shadow:  0 0 2px</span><p>:&nbsp;</p></div>
-           <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
-            <div id="arrow" >  </div>
-            <input id="Difprecio" name="box" class="text_7b" type="text" value="1,000.00" ><!-- box[7] -->
-           </div>
-          </div>
-        </div>
-        <div class="div_padding_8b" id="dp8">
-          <div class="datos" >
-           <div><p>8 Precio de venta</p><span id="moneda2">(USDT) box-shadow:  0 0 4px</span><p>:</p></div>
-           <input id="precioVenta" name="box" class="text" type="text" value="67,600.00" >
-           <input id="precioVentaVivo" name="box" class="text_8b" type="text" value="100" ><!-- box[8] -->
-          </div>
-        </div>
-        <div class="div_padding_9b" id="dp9">
-          <div class="datos" >
-           <div><p>9 Comisi&oacute;n</p><span id="moneda3">(%) box-shadow:  0 0 6px</span><p>:</p></div>
-           <input id="commission" name="box" class="text_9b" type="text" value="0.10" ><!-- box[9] -->
-          </div>
-        </div> 
-        <div class="div_padding_10b" id="dp10">
-          <div class="datos" >
-           <div><p>10 Ganancia</p><span id="moneda3">(USDT) box-shadow: none</span><p>:</p></div>
-           <input id="profit" name="box" class="text_10b" type="text" value="122.87"  ><!-- box[10] -->
-          </div>
-        </div>
-        <div class="div_padding_11b" id="dp11">
-          <div class="datos" >
-          <div><p>11 Cuenta Spot Final</p><span id="moneda4">(USDT)</span><p>:</p></div>
-           <input id="cuentaSpotF" name="box" class="text_11b" type="text" value="1,122.87"  ><!-- box[11] --> 
-          </div>
-        </div>
+            </tr>
+            <tr>
+              <td colspan="6" rowspan="1" class="tdFinalT1">Capital inicial total</td>
+              <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalIniciaTotalE">0</td>
 
-        <div class="buttons" >
-          <div type="button" class="button button--primary" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
-           <div type="button" class="button button--primary" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
-           <!-- <div type="button" class="button button--primary" id="actualizarPrecioV" onclick="">Actualizar venta</div>
-           <div type="button" class="button button--primary" id="btnAuto" onclick="">Stop auto</div>  -->
+
+            </tr>
+            <tr>
+              <td colspan="6" rowspan="1" class="tdFinalT1">Capital final total</td>
+              <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalFinalTotalE">0</td>
+            </tr>
+            <tr>
+              <td colspan="6" rowspan="1" class="tdFinalT1" id="gananciasPerdidasE">Ganancias/P&eacute;rdidas</td>
+              <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotalE">0</td>
+            </tr>
+          </tfoot>
+         </table> <br>
+        </div><!--  FIN DE <div class="tablas"></div> -->
+        
+      </article><!--   FIN DE article class="main_grid_2" -->
+      <article class="main_grid_3">
+        <div class="card">
+          <div class="card_2" id="card_2">
+
+              <h3 >
+                <!--  Interés simple e interés compuesto: Ejemplos, gráficos y fórmulas  -->
+                INTERÉS SIMPLE E INTERÉS COMPUESTO: EJEMPLOS, GRÁFICOS Y FÓRMULAS
+              </h3>
+              <p></p>
+              <p>
+                ¿Cuál es la diferencia entre el interés simple y el compuesto? ¿Cómo se calculan? Para una mejora radical de tus finanzas, es fundamental que conozcas ambos conceptos porque te darás cuenta de que actúan de forma exponencial para tus finanzas.
+                <br>
+                Diferencia entre interés simple e interés compuesto
+  
+                Básicamente la diferencia está en que en el interés simple, el dinero que generan los intereses se calcula solo sobre 
+                el capital invertido al principio (principal) sin tener en cuenta la posible reinversión de los intereses que vaya 
+                generando nuestro dinero. Por otro lado, en el interés compuesto los intereses obtenidos se reinvierten creando con el 
+                paso del tiempo un "efecto bola de nieve" y obteniéndose un resultado sensiblemente mayor.
+                <br><br>Ejemplo sobre el interés simple y el interés compuesto
+                
+                Imaginemos que tenemos <span class="spanN">10,000</span> dólares ahorrados y los invertimos consiguiendo un
+                 <span class="spanN">10%</span> de interés anual durante <span class="spanN">5</span> años.
+                
+                En el caso del interés simple, recibiríamos <span class="spanN">1,000</span> dólares de intereses el primer año, 
+                el segundo año, el tercer año... y así sucesivamente. Cada año, retiraríamos esos <span class="spanN">1,000</span> 
+                dólares y simplemente seguiríamos consiguiendo el <span class="spanN">10%</span> de <span class="spanN">10,000</span> 
+                dólares cada <span class="spanN">12</span> meses. Esto sería así porque el capital sobre los que se calculan los 
+                intereses se mantendría invariable en los <span class="spanN">10,000</span> dólares iniciales. 
+                
+                En el caso del interés compuesto, los <span class="spanN">1,000</span> dólares que consigo de intereses los 
+                reinvertiría y permitiría que el <span class="spanN">10%</span> fuese "trabajando" cada cada vez sobre una cantidad
+                 mayor. El primer año, obtendría <span class="spanN">1,000</span> dólares, los sumaría a los <span class="spanN">
+                  10,000</span> iniciales y pondría a "trabajar" <span class="spanN">11,000</span> dólares el segundo año. 
+                  Esos <span class="spanN">11,000</span> dólares al 10% de interés, generarían ya al año siguiente <span class="spanN">1,100</span> dólares de intereses. Los reinvierto y tendría una nueva cantidad de <span class="spanN">12,100</span> dólares               
+                sobre los que calcular la rentabilidad. Generaría <span class="spanN">1,210</span> dólares. Y así sucesivamente 
+                durante <span class="spanN">5</span> años. 
+                
+                En los primeros años, las diferencias existen pero no son muy abultadas. Sin embargo, tal y como se observa en la 
+                Tabla #1 a medida que pasa el tiempo esas diferencias son cada vez más y más grandes, hasta tal punto que en el último
+                 año estaré generando un interés anual de <span class="spanN">1,464.10 </span> dólares en el caso del interés compuesto y
+                  solo <span class="spanN">1,000</span> dólares en el caso del interés simple.
+                
+                Si sumamos las cantidades obtenidas en ambos casos, vemos como en el caso del interés simple acabaré con
+                 <span class="spanN">15,000</span> dólares (<span class="spanN">10,000</span> iniciales y
+                  <span class="spanN">5</span> pagos de <span class="spanN">1,000</span> dólares cada año) y que en el caso del 
+                  interés compuesto terminaré con un montante acumulado de <span class="spanN">16,105.10</span> dólares (
+                    <span class="spanN">10,000</span> dólares de inicio y <span class="spanN">6,105.10</span> dólares de intereses).
+                     La diferencia es muy llamativa como puede verse en la siguiente tabla.
+              </p>
+              <p>Tabla #1:</p>
+              <table class="table_ejemplo" >
+                <tr>
+                  <td >Año</td><td>Interes simple</td><td>Interés compuesto</td>
+                </tr>
+                <tr>
+                  <td><span class="spanN">0</span></td><td><span class="spanN">10,000.00</span><br>(inicial)</td><td><span class="spanN">10,000.00</span><br>(inicial)</td>
+                </tr>
+                <tr>
+                  <td><span class="spanN">1</span></td><td><span class="spanN">11,000.00</span></td><td><span class="spanN">11,000.00</span></td>
+                </tr>
+                <tr>
+                  <td><span class="spanN">2</span></td><td><span class="spanN">12,000.00</span></td><td><span class="spanN">12,100.00</span></td>
+                </tr>
+                <tr>
+                  <td><span class="spanN">3</span></td><td><span class="spanN">13,000.00</span></td><td><span class="spanN">13,310.00</span></td>
+                </tr>
+                <tr>
+                  <td><span class="spanN">4</span></td><td><span class="spanN">14,000.00</span></td><td><span class="spanN">14,641.00</span></td>
+                </tr>
+                <tr>
+                  <td><span class="spanN">5</span></td><td><span class="spanN">15,000.00</span></td><td><span class="spanN">16,105.10</span></td>
+                </tr>
+              </table><br>
+              <p>
+  
+              </p>
+              <p>
+              <h3 >Interés Simple: Fórmula</h3>
+              <p>A continuación se muestra la fórmula del interés simple:</p> 
+              <div class="formula">
+              <p class="">V<sub>f</sub> = V<sub>a</sub> (<span class="spanN">1</span> + n * i)</p> 
+              </div>
+              <p>
+                Donde: <br>
+                V<sub>f</sub> = Valor Futuro<br>
+                V<sub>a</sub> = Valor Actual<br>
+                i = Tasa de interés<br>
+                n = Periodo de tiempo
+              </p>
+              <p>Para aplicar la fórmula anterior se debe tener en cuenta que la tasa de interés y el número de períodos deben estar expresados en la misma unidad de tiempo.
+              </p>
+  
+              <h3>Interés Compuesto: Fórmula</h3>
+              <p>A continuación se muestra la fórmula del Interés Compuesto y sus componentes:</p> 
+              <div class="formula">
+                <p class="">V<sub>f</sub> = V<sub>a</sub>(<span class="spanN">1</span> + i) <sup>n</sup></p>
+              </div>
+              <p>
+                Donde: <br>
+                V<sub>f</sub> = Valor Futuro <br>
+                V<sub>a</sub> = Valor Actual<br>
+                i = Tasa de interés<br>
+                n = Periodo de tiempo</p>   
+                <p>Para aplicar la fórmula anterior se debe tener en cuenta que la tasa de interés y el número de períodos deben estar expresados en la misma unidad de tiempo.</p>        
+              </p>
+  
+              <h3 >
+                DEPÓSITO A PLAZO FIJO 
+              </h3>
+              <p>CÁLCULO DE INTERESES:</p>
+              <p>Caso <span class="spanN">1</span> : Depósito y cancelación al vencimiento:</p>
+              <p>Se apertura un depósito de <span class="spanN">$30,000</span> a <span class="spanN">180</span> días
+              A plazo fijo, le corresponde una tasa de <span class="spanN">3.00%</span> efectiva anual.</p>
+              <p><span class="spanN">1</span>.-Se calcula la tasa efectiva diaria, la cual se obtiene de la siguiente manera:</p>
+              <div class="formula">
+                <p class="">id = ((<span class="spanN">1</span> + i)<sup><span class="spanN">1/360</span></sup> - <span class="spanN">1</span>)</p>
+              </div>
+              <p>
+                Donde: <br>
+                <p>id: Es la tasa efectiva diaria.<br>
+                  i: Es la tasa de interés efectiva anual (<span class="spanN">360</span> días).<br>
+                </p>
+              </p> 
+              <p>id = ((<span class="spanN">1 + 0.030</span>)<sup><span class="spanN">1/360</span></sup> - <span class="spanN">1</span>)<br>id = 0.00008211<br>id = <span class="spanN">0.008211 %</span></p>
+             <p><span class="spanN">2</span>.-Se calcula la tasa de interés del periodo (180 días), la cual se obtiene de la siguiente manera:</p>
+              <div class="formula">
+                <p class="">ip = ((<span class="spanN">1</span> + id)<sup>n</sup> - <span class="spanN">1</span>)</p>
+              </div>
+              <p>
+                Donde: <br>
+                ip: Es la tasa de interés efectiva del periodo de vencimiento del depósito.<br>
+                  n: Periodo en que se requiere expresar la tasa de interés.<br>
+                <p>ip = ((<span class="spanN">1 + 0.00008211</span>)<sup>180</sup> - <span class="spanN">1</span>)<br>ip = <span class="spanN">0.014889</span><br>ip = <span class="spanN">1.4889 %</span><br><br>
+              <span class="spanN">3</span>.-Se obtiene el interés(I) al vencimiento:</p>
+              <p>            
+                <div class="formula">
+                <p>I = ip * Depósito</p>
+                </div><p>I = <span class="spanN">0.014889</span> * <span class="spanN">30,000</span> <br>
+              I = <span class="spanN">$ 446.67</span></p> 
+             </p>
+  
+              
           </div>
-      </article>
+          <div style="background-color: rgb(31, 0, 65);">
+            <p id="screen"></p>
+            <p id="window"></p>
+            <p id="page"></p>
+          </div>
+        </div>
+      </article><!--   FIN DE article class="main_grid_3" -->
+
+      <footer class="footer">
+          <div class="socialmedia_1">
+          <div class="socialmedia">
+          <div>
+          <svg class="svgInstagram" version="1.1" id="Layer_1" x="0px" y="0px"
+             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+             <style type="text/css">
+             </style>
+             <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="40.7386" y1="470.924" x2="586.2218" y2="-74.5592">
+              <stop  offset="0.0011" />
+              <stop  offset="0.2094" />
+              <stop  offset="0.3765" />
+              <stop  offset="0.5238" />
+              <stop  offset="0.7394" />
+              <stop  offset="1"      />
+             </linearGradient>
+             <circle class="st0" cx="255.9759" cy="255.6866" r="252.4099"/>
+             <g>
+              <circle class="st1" cx="345.3287" cy="167.778" r="19.6088"/>
+              <path class="st1" d="M258.1521,173.3155c-45.419,0-82.3722,36.952-82.3722,82.371s36.9532,82.3709,82.3722,82.3709
+                s82.3697-36.9519,82.3697-82.3709S303.5711,173.3155,258.1521,173.3155z M258.1521,308.451
+                c-29.0947,0-52.7658-23.6693-52.7658-52.7646c0-29.0947,23.6711-52.7639,52.7658-52.7639s52.7627,23.6692,52.7627,52.7639
+                C310.9148,284.7818,287.2469,308.451,258.1521,308.451z"/>
+              <g>
+                <path class="st1" d="M323.5443,422.9243h-133.537c-55.3983,0-100.4662-45.0678-100.4662-100.4662V188.9154
+                  c0-55.399,45.0678-100.4662,100.4662-100.4662h133.537c55.3983,0,100.4718,45.0672,100.4718,100.4662v133.5427
+                  C424.0161,377.8564,378.9427,422.9243,323.5443,422.9243z M190.0073,119.9159c-38.0489,0-68.9995,30.9506-68.9995,68.9995
+                  v133.5427c0,38.0489,30.9506,68.9995,68.9995,68.9995h133.537c38.0489,0,69.0052-30.9506,69.0052-68.9995V188.9154
+                  c0-38.0489-30.9563-68.9995-69.0052-68.9995H190.0073z"/>
+              </g>
+             </g>
+          </svg>
+          </div>
+          <div>
+          <svg class="svgFacebook" viewBox="0 1 23 23">
+              <g transform="translate(0 -1028.4)">
+               <g>
+                <path class="path1" d="m4 1031.4c-1.1046 0-2 0.9-2 2v16c0 1.1 0.8954 2 2 2h16c1.105 0 2-0.9 2-2v-16c0-1.1-0.895-2-2-2h-16z"                                     fill=""/>
+                <path class="path2"d="m4 2c-1.1046 0-2 0.8954-2 2v16c0 1.105 0.8954 2 2 2h16c1.105 0 2-0.895 2-2v-16c0-1.1046-0.895-2-2-2h-16z" transform="translate(0 1028.4)" fill=""/>
+                <path class="path3"d="m17 1034.4c-2.209 0-4 1.8-4 4v3h-2v3h2v7h3v-7h2.454l0.546-3h-3v-3c0-0.6 0.448-1 1-1h2v-3z"                                                fill=""/>
+                <path class="path4"d="m17 5c-2.209 0-4 1.7909-4 4v3h-2v3h2v7h3v-7h2.454l0.546-3h-3v-3c0-0.5523 0.448-1 1-1h2v-3z" transform="translate(0 1028.4)"               fill=""/>
+                <rect class="rect1" transform="translate(0 1028.4)" height="1" width="3" y="22" x="13" 
+                fill=""/>
+               </g>
+              </g>
+          </svg>
+          </div>
+          <div>
+          <svg class="svgYoutube" viewBox="0 0 256 180">
+                <linearGradient id="linearGradient-1" x1="49.9804764%" y1="8.68053889e-07%" x2="49.9804764%" y2="100.030167%">
+                    <stop stop-color="" offset="0%"></stop>
+                    <stop stop-color="" offset="100%"></stop>
+                </linearGradient>
+            <g>
+                <g>
+                    <path  class="path1"d="M101.6,123.2 L170.8,87.4 L101.6,51.3 L101.6,123.2 L101.6,123.2 Z" 
+                    fill=""></path>
+                    <path  class="path2"d="M101.6,51.3 L162.3,91.8 L170.8,87.4 L101.6,51.3 L101.6,51.3 Z" 
+                    fill="" opacity="0.12"></path>
+                    <path  class="path3"d="M253.301054,38.8 C253.301054,38.8 250.80203,21.2 243.105037,13.4 C233.408825,3.2 222.513081,3.2 217.415072,2.6 C181.729012,0 128.04998,0 128.04998,0 L127.95002,0 C127.95002,0 74.2709879,0 38.3850059,2.6 C33.3869582,3.2 22.4912144,3.2 12.695041,13.4 C5.09800859,21.2 2.59898477,38.8 2.59898477,38.8 C2.59898477,38.8 0,59.6 0,80.3 L0,99.7 C0,120.4 2.59898477,141.1 2.59898477,141.1 C2.59898477,141.1 5.09800859,158.7 12.795002,166.5 C22.4912144,176.7 35.2862163,176.4 40.9839906,177.4 C61.4759859,179.4 127.95002,180 127.95002,180 C127.95002,180 181.729012,179.9 217.515033,177.3 C222.513081,176.7 233.408825,176.7 243.204998,166.5 C250.901991,158.7 253.401015,141.1 253.401015,141.1 C253.401015,141.1 256,120.4 256,99.7 L256,80.3 C255.900039,59.6 253.301054,38.8 253.301054,38.8 L253.301054,38.8 Z M101.560328,123.2 L101.560328,51.3 L170.733307,87.4 L101.560328,123.2 L101.560328,123.2 Z" 
+                     fill="url(#linearGradient-1)"></path>
+                </g>
+            </g>
+          </svg>
+          </div>
+          <div>
+          <svg class="svgTwitter"  viewBox="0 1 23 23" >
+              <g transform="translate(0 -1028.4)">
+                <g>
+                <path class="path1" d="m4 1031.4c-1.1046 0-2 0.9-2 2v16c0 1.1 0.8954 2 2 2h16c1.105 0 2-0.9 2-2v-16c0-1.1-0.895-2-2-2h-16z" 
+                fill=""/>
+                <path class="path2" d="m4 2c-1.1046 0-2 0.8954-2 2v16c0 1.105 0.8954 2 2 2h16c1.105 0 2-0.895 2-2v-16c0-1.1046-0.895-2-2-2h-16z" 
+                fill="" transform="translate(0 1028.4)"/>
+                <path class="path3" fill="" d="m15.474 1036.5c-0.811 0-1.532 0.2-2.107 0.8-0.569 0.6-0.835 1.3-0.835 2.1 0 0.2 0.024 0.4 0.072 0.7-1.198-0.1-2.325-0.4-3.378-0.9-1.0475-0.6-1.9556-1.3-2.6882-2.2-0.2664 0.4-0.3996 0.9-0.3996 1.5 0 0.5 0.1272 1 0.3633 1.4s0.5449 0.7 0.9445 1c-0.4723 0-0.8961-0.1-1.3078-0.4v0.1c0 0.7 0.2119 1.3 0.6539 1.9 0.448 0.5 1.0292 0.8 1.7073 1-0.2543 0-0.5388 0.1-0.7992 0.1-0.1695 0-0.3451 0-0.5448-0.1 0.1876 0.6 0.5509 1.1 1.0534 1.5s1.0716 0.5 1.7074 0.6c-1.0656 0.8-2.3068 1.2-3.669 1.2h-0.6902c1.3622 0.8 2.8637 1.3 4.504 1.3 1.042 0 2.029-0.2 2.943-0.5s1.677-0.8 2.325-1.3c0.648-0.6 1.205-1.2 1.671-1.9 0.472-0.8 0.823-1.5 1.053-2.3s0.363-1.6 0.363-2.4c0-0.1-0.03-0.3-0.036-0.4 0.575-0.4 1.084-0.8 1.49-1.4-0.564 0.2-1.145 0.3-1.708 0.4 0.636-0.4 1.084-0.9 1.308-1.6-0.581 0.3-1.193 0.6-1.853 0.7-0.581-0.6-1.295-0.9-2.143-0.9z"/>
+                <path class="path4" fill="" d="m15.474 1035.5c-0.811 0-1.531 0.2-2.107 0.8-0.569 0.6-0.835 1.3-0.835 2.1 0 0.2 0.024 0.4 0.073 0.7-1.199-0.1-2.325-0.4-3.3788-0.9-1.0474-0.6-1.9556-1.3-2.6882-2.2-0.2664 0.4-0.3995 0.9-0.3995 1.5 0 0.5 0.1271 1 0.3632 1.4s0.5449 0.7 0.9445 1c-0.4722 0-0.8961-0.1-1.3077-0.4v0.1c0 0.7 0.2119 1.3 0.6538 1.9 0.448 0.5 1.0293 0.8 1.7074 1-0.2543 0-0.5389 0.1-0.7992 0.1-0.1695 0-0.3451 0-0.5449-0.1 0.1877 0.6 0.5509 1.1 1.0534 1.5 0.5026 0.4 1.0717 0.5 1.7074 0.6-1.0656 0.8-2.3067 1.2-3.669 1.2h-0.6902c1.3623 0.8 2.8637 1.3 4.5048 1.3 1.041 0 2.028-0.2 2.942-0.5s1.677-0.8 2.325-1.3c0.648-0.6 1.205-1.2 1.671-1.9 0.472-0.8 0.823-1.5 1.053-2.3 0.231-0.8 0.364-1.6 0.364-2.4 0-0.1-0.031-0.3-0.037-0.4 0.576-0.4 1.084-0.8 1.49-1.4-0.563 0.2-1.145 0.3-1.708 0.4 0.636-0.4 1.084-0.9 1.308-1.6-0.581 0.3-1.193 0.6-1.852 0.7-0.582-0.6-1.296-0.9-2.144-0.9z"/>
+               </g>
+              </g>
+          </svg>
+          </div>
+          <div>
+          <svg class="svgWhatsapp" viewBox="-20 -10 550 550" style="enable-background:new 0 0 512 512;" xml:space="preserve" x="0px" y="0px">
+          <g>
+            <g>
+              <g>
+                <path class="st01" d="M255.5895,7.4681c-135.9882,0-246.6193,110.6311-246.6193,246.6178
+                  c0,47.8372,13.5796,93.7824,39.39,133.6586l-37.4639,82.5239c-3.453,7.6089-2.1955,16.5236,3.2249,22.8793
+                  c4.153,4.8687,10.1751,7.5604,16.3867,7.5604c1.8976,0,3.8123-0.2509,5.6956-0.7684l103.2261-28.3211
+                  c35.6362,19.0584,75.6008,29.0895,116.1599,29.0895c135.9867,0,246.6207-110.6339,246.6207-246.6221
+                  C502.2101,118.0992,391.5762,7.4681,255.5895,7.4681z M255.5895,457.6355c-36.0183,0-71.4592-9.582-102.489-27.7137
+                  c-3.3261-1.9432-7.0813-2.9398-10.8637-2.9398c-1.9104,0-3.8265,0.2552-5.6984,0.7684l-67.4345,18.501l23.488-51.7421
+                  c3.1921-7.0357,2.3738-15.2391-2.1456-21.5021c-25.1247-34.825-38.4034-75.9444-38.4034-118.9214
+                  c0-112.2364,91.3103-203.5467,203.5467-203.5467c112.2378,0,203.5481,91.3103,203.5481,203.5467
+                  C459.1376,366.3237,367.8273,457.6355,255.5895,457.6355z"/>
+              </g>
+              <g>
+                <path class="st01" d="M350.407,291.0181c-10.329-6.1775-23.7689-13.0749-35.9356-8.0964
+                  c-9.3325,3.8194-15.2932,18.4312-21.3395,25.8932c-3.1065,3.8294-6.8105,4.4282-11.5765,2.5092
+                  c-35.0389-13.9574-61.8915-37.3499-81.2265-69.5787c-3.2748-5.0098-2.6874-8.959,1.2603-13.6038
+                  c5.8439-6.8746,13.1761-14.6845,14.7558-23.9556c1.5797-9.2669-2.7658-20.1035-6.598-28.3553
+                  c-4.8958-10.5457-10.3704-25.5852-20.9318-31.5502c-9.7146-5.486-22.5029-2.4151-31.1553,4.6306
+                  c-14.9325,12.161-22.1365,31.2123-21.9212,50.0997c0.0613,5.3663,0.7214,10.7182,1.9746,15.8977
+                  c3.0125,12.4576,8.7693,24.0882,15.2505,35.1486c4.8844,8.3374,10.1936,16.4295,15.922,24.2108
+                  c18.7434,25.4612,42.0603,47.5862,69.0569,64.1212c13.4898,8.2618,28.0203,15.5085,43.0654,20.4784
+                  c16.8743,5.5744,31.9095,11.3798,50.1296,7.9182c19.0784-3.6227,37.8845-15.4287,45.4563-33.8142
+                  c2.2397-5.4404,3.3646-11.5038,2.11-17.2521C376.1105,303.8335,360.0203,296.7678,350.407,291.0181z"/>
+              </g>
+            </g>
+          </g>
+         </svg>
+          </div>
+          <div>
+          <svg  class="svgLinkedin" viewBox="-5 -5 82 82">
+               <g id="Page-1" stroke="none" stroke-width="1" fill="#ffffff" fill-rule="evenodd">
+                    <g id="Social-Icons---Rounded" transform="translate(-376.000000, -267.000000)">
+                        <g id="Linkedin" transform="translate(376.000000, 267.000000)">
+                            <path class="path1" d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" 
+                            fill="" id="Rounded" ></path>
+                            <path class="path2" d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z" 
+                            fill=""></path>
+                        </g>
+                    </g>
+                </g>
+          </svg>
+          </div>
+        </div>
+          </div><!-- FIN DE div class="socialmedia_1" --> 
+          <div class="copyright_1">
+            <div class="copyright">
+             <p>
+              Copyright <span id="Copyright">2024</span>. All Rights Reserved.
+             </p>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- FIN DE: div class="container_flex_2" -->
    <!--
    <script src="js/CF[2024]-2b.js"></script>
    
@@ -482,6 +1617,504 @@ body{
    -->
 <script> 
 
+var ws='', r="rgb(200,0,0)", v='rgb(0,200,0)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1
+, simboloPar='',cuentaInicial='', gananciaXBTC='', comision='',gananciaXBTC='', gananciaXFraccion='', cuentaFinal='',pCompra='', pVenta=''
+, n=2, contD=0+n , contE=0+n , contTD=2 , contTE=0;
+var cuentaInicialT='', gananciaXBTCT='', comisionT='',gananciaXBTCT='', gananciaXFraccionT='', cuentaFinalT='',pCompraT='', pVentaT='';
+var  arrayBox=[0,0,0,0,0,0,0,0];
+
+function formato(input) { 
+  var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
+  var x1 =  x[0];//PARTE ENTERA
+  var x2 = "";//PARTE DECIMAL 
+  var rgx0 = /[a-zA-Z]/;
+  var c=""; var moneda="Soles"; // var moneda=document.getElementById("money").value;
+  if (rgx0.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+    return cadena; //PENDIENTE DE REVISION: /\d+/.test(cadena) ? c= cadena+" "+moneda :c= cadena; return c; ////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
+    }
+    else {//SI ENCUENTRA SOLO NUMEROS EN LA CADENA
+      for (var j = 0; j < cadena.length; j++) { if (cadena.charAt(j)==".") break; }
+      var d = cadena.substring(j,j+2+1);//CORTAR CADENA DE DECIMALES A 2 DIGITOS INCLUIDO EL PUNTO
+      if (d.length==0) {x2= d + ".00";} else if(d.length==2){x2= d + "0";} else{x2= d + "";}
+      //if (d.length==0) {x2= d + "";} else if(d.length==2){x2= d + "";} else{x2= d + "";}
+      var rgx = /(\d+)(\d{3})/;
+      for (i = 1; i <= Math.trunc(x1.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE x1 DIVIDIDO POR 3
+          x1 = x1.replace(rgx, '$1' + ',' + '$2');  
+        }       
+      return x1+x2;
+    }  
+}
+
+function formato1(input) { //FORMATO SOLO PARA CASILLA id="tea1", SOLO CAMBIA UNA LINEA: var d = cadena.substring(j,j+20+1);  
+  var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
+  var x1 =  x[0];//PARTE ENTERA
+  var x2 = "";//PARTE DECIMAL 
+  var rgx0 = /[a-zA-Z]/;
+  var c=""; var moneda="Soles"; // var moneda=document.getElementById("money").value;
+  if (rgx0.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+    return cadena; //PENDIENTE DE REVISION: /\d+/.test(cadena) ? c= cadena+" "+moneda :c= cadena; return c; ////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
+    }
+    else {//SI ENCUENTRA SOLO NUMEROS EN LA CADENA
+      for (var j = 0; j < cadena.length; j++) { if (cadena.charAt(j)==".") break; }
+      var d = cadena.substring(j,j+20+1);//CORTAR CADENA DE DECIMALES A 20 DIGITOS INCLUIDO EL PUNTO
+      if (d.length==0) {x2= d + ".00";} else if(d.length==2){x2= d + "0";} else{x2= d + "";}
+      var rgx = /(\d+)(\d{3})/;
+      for (i = 1; i <= Math.trunc(x1.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE x1 DIVIDIDO POR 3
+          x1 = x1.replace(rgx, '$1' + ',' + '$2');  
+        }       
+      return x1+x2;
+    } 
+} 
+
+function cleanBoxes(box){
+  var cb0= new String(box);
+  var cb1 = cb0.replace(/ /g, '');//La g significa repetir la búsqueda a través de toda la cadena. // [ CI0.split(/\s/).join('')) ] //[ CI0.replaceAll(" ","") NO FUNCIONA EN EXPLORER ]          
+  return cb1; // RETORNA CADENA SIN ESPACIOS VACIOS.
+} 
+
+function cotizaciónBtc_WebSocket() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view
+  ws=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); 
+  price=0;
+  old_price=0;
+  ws.onmessage=(event)=>{
+    data=JSON.parse(event.data);
+    price=parseFloat(data.p).toFixed(2);
+    if(price>old_price){cotizacionBTC.style.color=v;svgDOWN1.style.display='none'; svgUP1.style.display='inline';} //else if(price==old_price){cotizacionBTC.style.color="white";}
+    else{cotizacionBTC.style.color=r;svgDOWN1.style.display='inline'; svgUP1.style.display='none';}
+    old_price=price; simboloPar=data.s;	
+    cotizacionBTC.innerText=formato(data.p); 
+    document.getElementById('precioVentaVivo').value = formato(data.p);
+    //simbolo.innerText=formato(simboloPar)+':'; 
+    // title.innerText=formato(profit.value) +' | '+ formato(data.p) +  '' +' | CF[2024]-0b';
+  }
+}
+
+ function actualizaDiferenciaPrecio(){
+  let pc=Number(document.getElementById('precioCompra').value.replace(/[-,]/g,"")); let pv=Number(document.getElementById('precioVenta').value.replace(/[-,]/g,""));
+  let DF=formato(pv - pc);//formato(Math.abs(pc - pv));
+  Difprecio.value=DF;
+  if (pv == pc){
+    svgDOWN.style.display='none' ; svgUP.style.display='none'; 
+  }
+  else  if (pv > pc) {
+    svgDOWN.style.display='none' ; svgUP.style.display='inline'; svgUP.style.fill=v; 
+  } else {
+    svgUP.style.display='none' ; svgDOWN.style.display='inline'; svgDOWN.style.fill=r; 
+  }
+  actualizaColor(document.getElementById('Difprecio'),pv,pc);
+}
+
+function actualizaPreciosCard() { ///ACTUALIZA LAS RESPUESTAS CON EL PRECIO DEL MOMENTO. 
+  var precioActual=Number(cleanBoxes(cotizacionBTC.textContent.replace(/[-,]/g,"")));
+
+      cuentaInicial= Number(cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
+      pCompra= Number(cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
+      (EDITAR==1)? pVenta= Number(cleanBoxes(document.getElementById("precioVentaVivo").value.replace(/[-,]/g,""))) : pVenta= Number(cleanBoxes(document.getElementById("precioVenta").value.replace(/[-,]/g,"")));
+      comision= Number(cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
+
+      gananciaXBTC= pVenta - pCompra;
+  var gananciaXFraccion0= (gananciaXBTC - (((pCompra/100)*comision) +(((pCompra + gananciaXBTC)/100)*comision)))*(cuentaInicial/pCompra) ;
+      cuentaFinal= cuentaInicial+gananciaXFraccion0;
+      gananciaXFraccion= gananciaXFraccion0;
+  
+  profit.value= formato(gananciaXFraccion); //(gananciaXFraccion > 0)? profit.style.color=v : profit.style.color=r;
+  cuentaSpotF.value= formato(cuentaFinal); 
+  
+  actualizaColor(document.getElementById("profit"),gananciaXFraccion,0);
+  actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,cuentaInicial);
+
+  document.getElementById('precioCompra').value = formato(pCompra);
+  document.getElementById('precioVenta').value = formato(pVenta);
+  document.getElementById('Difprecio').value = formato(gananciaXBTC);
+  document.getElementById('cuentaSpotI').value = formato(cuentaInicial);
+  document.getElementById('commission').value = formato(comision);
+
+  var now = new Date().getTime();// document.getElementById("cuentaInicial").value= now;
+  actualizaDiferenciaPrecio(); 
+} 
+
+function agregarAtabla(){ 
+  actualizaPreciosCard();//FUNCION NESESARIA PARA INSERTAR VALORES EN TABLA  class='td_cf'
+  var contC=0 , est='';
+  //contE = contE+1;
+  //contD = contD+1;
+  (TABLADINAMICA==1)? (est='', contD=contD+1 ,contC=contD, contTD=contTD+1):(est='E', contE=contE+1 ,contC=contE, contTE=contTE+1);
+
+  var TR= "<tr id='tr_"+est+contC+"'"+" ><td class='td_cf' id='td_sp"+est+contC+"'>"+simbolo.textContent.replace(':','')+"</td><td class='td_cf' id='td_ci"+est+contC+"'>"+formato(cuentaInicial)+"</td><td class='td_cf' id='td_pc"+est+contC+"'>"+
+  formato(pCompra)+"</td><td class='td_cf' id='td_pv"+est+contC+"'>"+formato(pVenta)+"</td><td class='td_cf' id='td_dp"+est+contC+"'>"+formato(gananciaXBTC)+"</td><td class='td_cf' id='td_c"+est+contC+"'>"+formato(comision)+"</td><td class='td_cf' id='td_p"+est+contC+"'>"+
+  formato(gananciaXFraccion)+"</td><td class='td_cf' id='td_cf"+est+contC+"'>"+formato(cuentaFinal)+"</td><td onclick='eliminarTr"+est+"("+contC+")'"+" class='td_x' id='td_x"+est+contC+"'"+
+  ">"+"<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
+ 
+  (TABLADINAMICA==1)? (document.getElementById('tabla_1a').style.display='inline', document.getElementById('dataD').innerHTML += TR) : (document.getElementById('tabla_2a').style.display='inline', document.getElementById('dataE').innerHTML += TR);
+  
+  //document.getElementById('dataD').innerHTML +=  "<tr id='tr_"+contC+"'"+" ><td class='td_cf' id='td_sp"+contC+"'>"+simbolo.textContent.replace(':','')+"</td><td class='td_cf' id='td_ci"+contC+"'>"+formato(cuentaInicial)+"</td><td class='td_cf' id='td_pc"+contC+"'>"+
+  //formato(pCompra)+"</td><td class='td_cf' id='td_pv"+contC+"'>"+formato(pVenta)+"</td><td class='td_cf' id='td_dp"+contC+"'>"+formato(gananciaXBTC)+"</td><td class='td_cf' id='td_c"+contC+"'>"+formato(comision)+"</td><td class='td_cf' id='td_p"+contC+"'>"+
+  //formato(gananciaXFraccion)+"</td><td class='td_cf' id='td_cf"+contC+"'>"+formato(cuentaFinal)+"</td><td onclick='eliminarTr("+contC+")'"+" class='td_x' id='td_x"+contC+"'"+
+  //">"+"<div><svg onclick='eliminarTr("+contC+")'"+" xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
+
+  for (let i = 1; i <= contC; i++) { 
+  actualizaColor(document.getElementById('td_dp'+est+contC), pVenta, pCompra);
+  actualizaColor(document.getElementById('td_p'+est+contC), gananciaXFraccion, 0);
+  actualizaColor( document.getElementById('td_cf'+est+contC), cuentaFinal, cuentaInicial);
+  }
+  suma(contD,'');suma(contE,'E');
+}
+
+function actualizaPreciosTablaDinamica(n,s){
+  pVentaT= Number(cleanBoxes(cotizacionBTC.textContent.replace(/[,]/g,"")));
+  for (let i = 1; i <= n; i++) {
+  cuentaInicialT= Number(cleanBoxes(document.getElementById("td_ci"+s+i).textContent.replace(/[,]/g,"")));
+  pCompraT= Number(cleanBoxes(document.getElementById("td_pc"+s+i).textContent.replace(/[,]/g,"")));
+
+  comisionT= Number(cleanBoxes(document.getElementById("td_c"+s+i).textContent.replace(/[,]/g,"")));
+  gananciaXBTCT= pVentaT - pCompraT;
+  var gananciaXFraccion0= (gananciaXBTCT - (((pCompraT/100)*comisionT) +(((pCompraT + gananciaXBTCT)/100)*comisionT)))*(cuentaInicialT/pCompraT) ;
+  cuentaFinalT= cuentaInicialT+gananciaXFraccion0;
+  gananciaXFraccionT= gananciaXFraccion0;
+  
+  document.getElementById('td_p'+s+i).innerText= formato(gananciaXFraccionT); //(gananciaXFraccionT > 0)? profit.style.color=v : profit.style.color=r;
+  document.getElementById('td_cf'+s+i).innerText= formato(cuentaFinalT); 
+  
+  actualizaColor(document.getElementById('td_p'+s+i),gananciaXFraccionT,0);
+  actualizaColor(document.getElementById('td_dp'+s+i),cuentaFinalT,cuentaInicialT);
+  actualizaColor(document.getElementById('td_cf'+s+i),cuentaFinalT,cuentaInicialT);
+
+
+  document.getElementById('td_pc'+s+i).innerText = formato(pCompraT);
+  document.getElementById('td_pv'+s+i).innerText = formato(pVentaT);
+  document.getElementById('td_dp'+s+i).innerText = formato(gananciaXBTCT);
+  document.getElementById('td_ci'+s+i).innerText = formato(cuentaInicialT);
+  document.getElementById('td_c' +s+i).innerText = formato(comisionT); 
+
+  document.getElementById('td_sp'+s+i).innerText = simbolo.textContent.replace(':','');
+ }
+ suma(contD,'');suma(contE,'E');
+}
+
+
+var cuentainicial=0, cuentaFinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
+function suma(n,s){//console.log("n, s:", n,s);
+  array_cf=[];array_ci=[];
+  for (let i = 1; i < n+1; i++) {
+    //console.log("Valor de i:", i);
+    cuentainicial = Number(cleanBoxes(document.getElementById('td_ci'+s+i).textContent.replace(/[,]/g,"")));;
+    cuentaFinal = Number(cleanBoxes(document.getElementById('td_cf'+s+i).textContent.replace(/[,]/g,"")));; 
+
+    //console.log("cuentaFinal:", cuentaFinal);
+    array_ci.push(cuentainicial);array_cf.push(cuentaFinal);
+  }
+  sumaTotal_ci=0;sumaTotal_cf=0;
+  for (let i = 0; i < array_cf.length; i++) {
+    sumaTotal_ci += array_ci[i];sumaTotal_cf += array_cf[i];
+  }
+  //console.log("array_cf:", array_cf);console.log("sumaTotal_cf:", sumaTotal_cf);
+  //console.log("------------------");
+  document.getElementById('capitalIniciaTotal'+s).innerText = formato(sumaTotal_ci);
+  document.getElementById('capitalFinalTotal'+s).innerText = formato(sumaTotal_cf); 
+  document.getElementById('diferenciaTotal'+s).innerText = formato(sumaTotal_cf - sumaTotal_ci); 
+
+  if (sumaTotal_cf>sumaTotal_ci) {
+    document.getElementById('gananciasPerdidas'+s).innerText = 'Ganancias';
+  } else if(sumaTotal_cf==sumaTotal_ci){
+    document.getElementById('gananciasPerdidas'+s).innerText = '';
+  }
+  else{
+    document.getElementById('gananciasPerdidas'+s).innerText = 'Pérdidas';
+  }
+  
+  //actualizaColor(document.getElementById('capitalIniciaTotal'),cuentaFinalT,cuentaInicialT);
+  actualizaColor(document.getElementById('capitalFinalTotal'+s),sumaTotal_cf,sumaTotal_ci);
+  actualizaColor(document.getElementById('diferenciaTotal'+s),sumaTotal_cf,sumaTotal_ci); 
+}
+///suma();
+
+function actualizaColor(casilla,pv,pc) {
+  let colorLetra = getComputedStyle(document.querySelector("#cuentaSpotI"));//
+   if (pv == pc){ casilla.style.color=colorLetra.getPropertyValue("color");} //Obtener el color de un texto de la casilla "#cuentaSpotI" .
+   else  if (pv > pc) {
+     casilla.style.color=v;
+   } else {
+     casilla.style.color=r;
+   }
+ }
+function onload() {
+  cotizaciónBtc_WebSocket();startTimer();
+}
+
+function navToggle(){
+  if (TOGGLE==1)  {document.getElementById("navbar1").style.left= 0+"%";TOGGLE=0;}
+  else {document.getElementById("navbar1").style.left= -100+"%";TOGGLE=1;}
+}
+function editar(){
+  if (EDITAR==1)  {
+    stopTimer();editando.innerText='Terminar edición';EDITAR=0;  ;agregarATabla.innerText='Insertar en tabla estática';TABLADINAMICA=0;
+    cuentaSpotI.disabled = false; precioCompra.disabled = false; precioVenta.disabled = false; Difprecio.disabled = true; commission.disabled = false; profit.disabled = true; cuentaSpotF.disabled = true;
+    dp11.style.opacity='0.5';dp10.style.opacity='0.5';dp7.style.opacity='0.5'; //document.getElementsByClassName("colors__item");
+    document.getElementById("precioVentaVivo").style.display="none"; document.getElementById("precioVenta").style.display="inline"; //document.getElementById("precioVenta").style.color="rgb(255,255,0)";
+    precioVenta.value=precioVentaVivo.value;
+  }
+  else {startTimer();editando.innerText='Iniciar edición';EDITAR=1;  ;agregarATabla.innerText='Insertar en tabla dinámica';TABLADINAMICA=1;
+    cuentaSpotI.disabled = true; precioCompra.disabled = true; precioVenta.disabled = false; Difprecio.disabled = true; commission.disabled = true; profit.disabled = true; cuentaSpotF.disabled = true;
+    dp11.style.opacity='1';dp10.style.opacity='1';dp7.style.opacity='1';
+    document.getElementById("precioVentaVivo").style.display="inline"; document.getElementById("precioVenta").style.display="none"; //document.getElementById("precioVentaVivo").style.color="rgb(0,255,255)"
+  }
+}
+
+function article1(){
+  document.getElementById("article_center").style.display="inline";
+  document.getElementById("article_center2").style.display="none";
+  document.getElementById("GENERATABLA1").style.display="inline";
+  document.getElementById("GENERATABLA2").style.display="none";
+  document.getElementById("cuentaRegresiva").style.display="inline";
+  document.getElementById("almacenamientoLocal").style.display="none";
+}
+function article2(){
+  document.getElementById("article_center").style.display="none";
+  document.getElementById("article_center2").style.display="inline";
+  document.getElementById("GENERATABLA1").style.display="none";
+  document.getElementById("GENERATABLA2").style.display="inline";
+  document.getElementById("cuentaRegresiva").style.display="none";
+  document.getElementById("almacenamientoLocal").style.display="inline";
+}
+function article1_navbar1(){
+  booleanGT=0; navToggle(); article1();
+}
+function article2_navbar1(){
+  booleanGT=1; navToggle(); article2();
+}
+function article1_columnLeft(){
+  booleanGT=0; article1();
+} 
+function article2_columnLeft(){
+  booleanGT=1; article2();
+}
+
+function eliminarTablaD(){
+  contTD=0;
+  document.getElementById('tabla_1a').style.display='none';//document.getElementById('tr_'+c).remove(); 
+  for (let i = 1; i <= contD; i++) {
+    document.getElementById('tr_'+i).style.display='none';document.getElementById("td_ci"+i).innerText=0;
+  }
+  actualizaPreciosTablaDinamica(contD,'');
+
+}
+function eliminarTablaE(){
+  contTE=0;
+  document.getElementById('tabla_2a').style.display='none';//document.getElementById('tr_'+c).remove(); 
+  for (let i = 1; i <= contE; i++) {
+    document.getElementById('tr_E'+i).style.display='none';document.getElementById("td_ciE"+i).innerText=0;
+  }
+  actualizaPreciosTablaDinamica(contE,'E');
+
+}
+function eliminarTr(c){
+  contTD=contTD-1; console.log("contTD:", contTD);
+  document.getElementById('tr_'+c).style.display='none';//document.getElementById('tr_'+c).remove();
+  document.getElementById("td_ci"+c).innerText=0;
+  actualizaPreciosTablaDinamica(contD,'');
+  if (contTD==0) {document.getElementById('tabla_1a').style.display='none';}
+}
+function eliminarTrE(c){
+  contTE=contTE-1; console.log("contTE:", contTE);
+  document.getElementById('tr_E'+c).style.display='none';//document.getElementById('tr_'+c).remove();
+  document.getElementById("td_ciE"+c).innerText=0;
+  actualizaPreciosTablaDinamica(contE,'E');
+  if (contTE==0) {document.getElementById('tabla_2a').style.display='none';}
+}
+
+///------------------------------------------------------------------------------------------------------------------------
+// EVITAR QUE INGRESEN LETRAS A LAS CASILLAS (SOLO ',,,,' Y '.' LA: 'E e + -' DE NOTACION CIENT. FALTA CORREGIR): 
+var boxes = document.getElementsByName("box");
+var cadena = "";  var arrayCadenaE="";  var arrayCadenaD=[""]; var arrayEnteros = [""]; var arrayDecimal=[""];  var stringBoxD = ""; var stringBoxD0 = "";var stringBoxE = ""; var stringBoxE0 = ""; var E = ""; var D = "";
+var punto= ""; var numero= ""; var entero= "";  var decimal= "";
+var arrayCadena = [""]; var sumarBoxes = ""; var sumarBoxes0 = "",sumarBoxes1 = ""; var box = "";
+
+for (let y = 0; y < boxes.length; y++) { // RECORRE CADA CASILLA
+  boxes[y].addEventListener("mousedown", (e) => { // "click" , "mousedown" , "mouseup"
+    arrayCadena = [boxes[y].value]; // OBTIENE EL VALOR DE LA CASILLA EN LA Q' SE PRESIONO EL MOUSE
+  });
+  boxes[y].addEventListener("input", (e) => {
+    //CAPTURAR POSICION DEL CURSOR(1):
+    var startCursorPosition = boxes[y].selectionStart;
+    var endCursorPosition = boxes[y].selectionEnd; ///console.log("startCursorPosition= "+startCursorPosition); console.log("endCursorPosition= "+endCursorPosition);
+  
+    sumarBoxes = "";
+    arrayCadena.push(boxes[y].value);//arrayCadena.push(formato(boxes[y].value)); // AGREGAR ELEMENTO AL FINAL DE LA CADENA
+    // TRUCO:
+      sumarBoxes0 = boxes[y].value.replace(/[eE]/g,"@");// BLOQUEAR "e" Y "E" DE FORMATO NOTACION CIENTIFICA
+      sumarBoxes1 = sumarBoxes0.replace(/ /g,"@");//NO SE PERMITE EL INGRESO DE ESPACIOS VACIOS.
+      sumarBoxes = (cleanBoxes(sumarBoxes1.replace(/,/g,"")))*1;// MULTIPLICA EL VALOR DE LA CADENA POR 1 Y SE OBTENDRA UN NUMERO O UN "NaN"
+  
+      if (/[a-zA-Z]/.test(sumarBoxes)==true){ // SI ES UN "NaN":
+      arrayCadena.pop();// ELIMINAR ULTIMO ELEMENTO DE LA CADENA
+      box = cleanBoxes(arrayCadena[arrayCadena.length-1]); // COLOCA A LA CASILLA EL VALOR ANTERIOR AL ERROR
+      boxes[y].value= box;//boxes[y].value= formato(box);
+      //COLOCAR CURSOR EN POSICION CAPTURADA:
+      var input= boxes[y]; var inicio= startCursorPosition; var fin= startCursorPosition;
+      input.setSelectionRange(inicio-1,fin-1); //input.setSelectionRange(startCursorPosition-1,startCursorPosition-1);
+      input.focus();
+    }
+  }); 
+} ;
+
+// * INTRODUCIR TEXTO EN VIVO A CASILLAS 
+boxes[2].addEventListener("input", (e) => { 
+  boleano=2;
+  var tazaED= Number(cleanBoxes(document.getElementById("boxTED").value.replace(/[-,]/g,""))); 
+  var dia=document.getElementById("Selector2").value;
+  if (Selector2.value=="360") {
+    document.getElementById("tea1").value= formato1(tazaED);       
+  } else {
+    document.getElementById("tea1").value= formato1(TAZA(tazaED, dia, boleano));       
+  }
+}); 
+boxes[3].addEventListener("input", (e) => {
+  boleano=3;
+  var tea1= Number(cleanBoxes(document.getElementById("tea1").value.replace(/[-,]/g,"")));
+  var td=document.getElementById("Selector2").value;
+  if (Selector2.value=="360") {
+    boxTED.value= formato1(tea1);       
+  } else {
+    boxTED.value= formato1(TAZA(tea1, td));       
+  }
+}); 
+
+for (let i = 5; i < boxes.length - 2; i++) { // RECORRE CASILLAS, DESDE CASILLA 5 HASTA CASILLA 8('TRADE CRIPTOMONEDAS'). 
+boxes[i].addEventListener("input", (e) => {
+  var  GANANCIA="", CUENTASPOTF="", b= String(boxes[i].value); 
+  var cuentaSpotI= Number(cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
+  var precioCompra= Number(cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
+  var precioVenta= Number(cleanBoxes(document.getElementById("precioVenta").value.replace(/[-,]/g,"")));
+  var comision= Number(cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
+  var gananciaXBTC= precioVenta - precioCompra;
+  var gananciaXFraccion0= (gananciaXBTC - (((precioCompra/100)*comision) +(((precioCompra + gananciaXBTC)/100)*comision)))*(cuentaSpotI/precioCompra) ;
+  var cuentaFinal= cuentaSpotI+gananciaXFraccion0, gananciaXFraccion= gananciaXFraccion0; 
+  //var patron1 = new RegExp(/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm);//'111,111.111' Validar coma al separar miles con expresión regular: https://es.stackoverflow.com/questions/202880/validar-coma-al-separar-miles-con-expresi%C3%B3n-regular      var patron2 = new RegExp(/^\d{1,3}(?:,\d{3})*(?:\.)?$/gm);//'111,111.' Validar coma al separar miles con expresión regular: https://es.stackoverflow.com/questions/202880/validar-coma-al-separar-miles-con-expresi%C3%B3n-regular
+  var ch1 = b.slice(0, 1), ch2 = b.slice(1, 2), ch3 = b.slice(2, 3); //Encontrar primer caracter de la cadena //Encontrar segundo caracter de la cadena //Encontrar tercer caracter de la cadena
+  if (b=="") {GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i);} //if: SI LA CASILLA ESTA VACIA
+  else { //else: SI LA CASILLA NO ESTA VACIA
+    if (/[-,]/.test(b)==true && ch1!='0') {//BUSCA COMA Y SIN CEROS AL INICIO DEL NUMERO 
+      (/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION CON COMAS:111,222.55➞ /^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm 
+      //if (/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm.test(b)==true) {//REJEX PARA NUMERACION CON COMAS:111,222.55➞ /^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm 
+      //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
+      //} else {
+      //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i); 
+      //}
+    } else {
+      b.replace(/,/g,"")
+      if (ch1!="0") {
+        (/^\d+(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
+        //if (/^\d+(?:\.\d+)?$/gm.test(b)==true) {//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
+        //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
+        //} else {
+        //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i);  
+        //}
+      } else {
+        if (/^0+$/gm.test(b)==true) {//REJEX PARA UNO O MÁS CEROS:000000➞ /^0+$/gm
+          //GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
+          (b=="0")? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i)); 
+        } else {
+          if (ch1!="0") {
+            (/^\d+(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
+            //if (/^\d+(?:\.\d+)?$/gm.test(b)==true) {//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
+            //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
+            //} else {
+            //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i); 
+            //}
+          } else {
+            (ch2=="." && ch3!="" && /[-,]/.test(b)==false)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));
+            //if (ch2==".") {
+            //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
+            //} else {
+            //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i); 
+            //}
+          }
+        }
+      }
+    }
+  } console.log(arrayBox);
+  let sum = 0;//SUMAR ELEMENTOS DEL ARRAY P' IMPRIMIR TEXTO EN CASILLAS Ó DEJARLO VACIO.
+  for (let index = 0; index < arrayBox.length; index++) {sum += arrayBox[index];}//arrayBox=[0, 0, 0, 0, 0, 0, 0, 0, 0] → [0, 0, 0, 0, 0, 0, 0, 0, 8] → [0, 0, 0, 0, 0, 0, 0, 7, 8] → ...      
+  if (sum==0) { 
+    profit.value= GANANCIA; cuentaSpotF.value= CUENTASPOTF; IMPRIMIRTEXTO=1;
+    actualizaColor(document.getElementById("profit"),gananciaXFraccion,0);
+    actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,cuentaSpotI);
+    //if (gananciaXFraccion == 0) {
+    //  profit.style.color= colorLetra.getPropertyValue("color");//Obtener el color de un texto en una casilla 
+    //} 
+    //else if (gananciaXFraccion > 0) {
+    //  profit.style.color=v;
+    //}
+    //else {
+    //  profit.style.color=r;
+    //}
+    //
+    //if (cuentaFinal == cuentaSpotI) {
+    //  cuentaSpotF.style.color= colorLetra.getPropertyValue("color");//Obtener el color de un texto en una casilla 
+    //} 
+    //else if (cuentaFinal > cuentaSpotI) {
+    //  cuentaSpotF.style.color=v;
+    //}
+    //else {
+    //  cuentaSpotF.style.color=r;
+    //}
+  } 
+
+  else {profit.value= ""; cuentaSpotF.value= ""; IMPRIMIRTEXTO=0;}
+  actualizaDiferenciaPrecio();
+}); 
+
+}//FIN DE for (let i = 5; i < boxes.length - 2; i++) 
+///------------------------------------------------------------------------------------------------------------------------
+
+function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 // 0,0 // 0,0  
+  actualizaPreciosCard();actualizaPreciosTablaDinamica(contD,'');;
+ } 
+ 
+ var timerID; 
+ function startTimer() {timerID=window.setInterval(newYear,1000);} 
+ function stopTimer() {clearInterval(timerID);} 
+
+//==============================================================================================
+// Obtenga los tamaños de pantalla, ventana y página web en JavaScript: https://www.delftstack.com/es/howto/javascript/javascript-get-screen-size/ 
+// Get the size of the device screen
+var screenWidth = screen.width;
+var screenHeight = screen.height;
+
+// Get the browser window size
+var windowWidth = window.innerWidth;
+var windowHeight = window.innerHeight;
+
+// Get the size of the entire webpage
+const pageWidth  = document.documentElement.scrollWidth;
+const pageHeight = document.documentElement.scrollHeight;
+
+// Showing the sizes on the webpage
+var x = document.getElementById("screen");
+x.innerHTML = "Device Screen: width: " + screenWidth + ", height: " + screenHeight + ".";
+
+var y = document.getElementById("window");
+y.innerHTML = "Browser Window: width: " + windowWidth + ", height: " + windowHeight + ".";
+
+var z = document.getElementById("page");
+z.innerHTML = "Webpage: width:" + pageWidth + ", height: " + pageHeight + ".";
+/*
+Device Screen: Pantalla del dispositivo (representada con color azul)
+La pantalla de un dispositivo puede ser una pantalla de computadora, tableta o computadora portátil que nuestro cliente usará. Dependiendo de la resolución del dispositivo que esté usando un cliente, su tamaño, es decir, ancho y alto, también cambiaría.
+
+Browser Window: Ventana del navegador (representada en color verde azulado)
+Es el navegador en el que se representará su sitio web. El navegador puede ser Google Chrome, Microsoft Edge, Mozilla Firefox, etc. Como todos sabemos, podemos cambiar el tamaño de la ventana del navegador de la forma que queramos, lo que eventualmente cambiará su ancho y alto.
+
+Webpage: width: Página web (representada en color naranja)
+Su sitio web consta de muchas páginas diferentes. Cada página web consta de varios tamaños. Puede obtener el tamaño de toda la página web. En un momento específico, solo una parte de la página web se puede mostrar en la ventana del navegador. A veces, es imposible mostrar toda la página web en la ventana del navegador porque la pantalla de nuestro dispositivo tiene una altura menor.
+*/
+//==============================================================================================
+
+
+
 </script>
 </body>
 </html>
+  
+  
