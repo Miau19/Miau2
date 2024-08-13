@@ -32,6 +32,7 @@
    --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
    --font-weight2: 700;  /*GROSOR TEXTO NORMAL*/
    --box-shadow1: 0 0 2px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
+   --paddingC1:0.250rem 0; /* padding pata celdas de cTable1 */
 }
 
 html{background-color: var(--bg-card-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
@@ -499,7 +500,7 @@ z-index: 10;
 
 .main_grid_2{
     display: flex;justify-content: center;flex-direction: column;
-    margin: 0 10px;
+    margin: 0 0.5rem;
     background-color: var(--bg-color);
     overflow: auto;
 }
@@ -684,6 +685,144 @@ z-index: 10;
 
 .svgInstagram:hover, .svgFacebook:hover, .svgYoutube:hover, .svgTwitter:hover, .svgWhatsapp:hover, .svgLinkedin:hover{cursor: pointer;}
 
+/* ######################################################################################## */
+
+/* ############################################## TABLE ########################################################  */
+
+/* COLOR IDEAL PARA DISEÑO SIN DARK: background-color: rgb(74, 80, 83); Ó background-color: rgb(92, 100, 104); */
+
+/* CENTRAR HORIZONTALMENTE VARIOS DIV, SEGUNDA FORMA: */
+/* CENTRA #h1DEh2 Y #h2DEh2 DENTRO DE #h2 ===================*/
+#h2{  /* COLOR IDEAL PARA DISEÑO SIN DARK: background-color: rgb(74, 80, 83); Ó background-color: rgb(92, 100, 104); */
+    width: 100%;
+    text-align: center;
+}
+
+/* font: 12px fantasy; font-family: 'Arial Narrow'  Consolas, 'Courier New', monospace  */ /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+.cTable1{
+ color: var(--text-color); 
+ font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);; 
+ border-collapse: collapse;
+ border-spacing: 0;
+ margin: auto;
+}
+@media screen and  (max-width: 500px) {.cTable1 {font-size: 0.68em;}} 
+
+/**/
+.cTody1{/* ############################## ELIMINAR, SOLO PARA VER tbody1 ############################ */ 
+    border: 2px solid  rgb(79, 1, 35);
+}
+
+#celdaHead1{border: 1px solid var(--border-color); background-color: var(--bg-card-color); padding: 0px;}
+
+#tdiv0{
+    background-color: var(--bg-card-color);
+    display: flex;
+    justify-content: space-between;align-items: center;
+    width: 100%; 
+    margin: 0;  padding: var(--paddingC1);  
+}
+#tdiv1{
+    display: flex;
+    justify-content:left;align-items: center;
+    margin: 0;;padding:0rem; 
+}
+
+#pHead{
+    margin: 0 0.25rem;  
+}
+
+#tdiv2{
+    display: flex;
+    justify-content: center;align-items: center;
+}
+.btnArrowUp, .btnArrowDown, .cBtnS, .btnClose{
+    display: flex;
+    justify-content: center;align-items: center;
+    margin: 0 0.25rem ; padding: 0.25rem 1rem ;
+}
+
+.csvg, .csvgB{
+    display: flex;
+    justify-content: center;align-items: center;
+}  
+.cpath{fill: var(--text-color);stroke-width: 4px;stroke: var(--text-color)}
+.cpathB{fill: var(--text-color);}
+
+.btnArrowUp:hover{background-color:  rgb(1, 61, 225);}
+.btnArrowDown:hover{background-color:  rgb(1, 61, 225);}
+.btnClose:hover{background-color: rgb(200,0,0);}
+
+#div_p1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;padding: var(--paddingC1);
+}
+#div_p2, #div_p3, #div_p4, #div_p5, #div_p6, #div_p7, #div_p8{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right; padding: var(--paddingC1);
+}
+#div_p_hilera1_1, #div_p_hilera1_2, #div_p_hilera1_3, #div_p_hilera1_4, #div_p_hilera1_5, #div_p_hilera1_6, #div_p_hilera1_7, #div_p_hilera1_8{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#div_p_hilera1a_1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#div_p_hilera1a_2, #div_p_hilera1a_3, #div_p_hilera1a_4, #div_p_hilera1a_5, #div_p_hilera1a_6, #div_p_hilera1a_7, #div_p_hilera1a_8{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+#div_p_hileraF_1{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#div_p_hileraF_2, #div_p_hileraF_3{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content:right;padding: var(--paddingC1);
+}
+#pTex_hilera1_1, #pTex_hilera1_2, #pTex_hilera1_3, #pTex_hilera1_4, #pTex_hilera1_5 {
+    margin: 0;padding: 0 0.25rem;
+}
+
+#pTex_hilera1a_1, #pTex_hilera1a_2, #pTex_hilera1a_3, #pTex_hilera1a_4, #pTex_hilera1a_5, #pTex_hilera1a_6, #pTex_hilera1a_7, #pTex_hilera1a_8 {
+    margin: 0;padding: 0 0.25rem; white-space: nowrap;
+}
+
+#pTex1, #pTex2, #pTex3, #pTex4 , #pTex5, #pTex6, #pTex7, #pTex8{
+    margin: 0;padding: 0 0.25rem;  white-space: nowrap;
+}
+
+#pNum_hileraF_1, #pNum_hileraF_2, #pNum_hileraF_3{ 
+    text-align: center; 
+    margin: 0;padding: 0 0.25rem; white-space: nowrap;
+}
+
+#celda_c1,#celda_c2,#celda_c3,#celda_c4,#celda_c5,#celda_c6,#celda_c7{ 
+    text-align: center;margin: 0;padding: var(--paddingC1);; white-space: nowrap;
+    border: 1px solid var(--border-color); background-color: var(--bg-card-color);
+}
+
+#idCelda1_1{border: 1px solid var(--border-color);margin: 0;padding: var(--paddingC1); background-color: var(--bg-card-color);  text-align:center; white-space: nowrap; } 
+#idCelda1_2 , #idCelda1_3, #idCelda1_4, #idCelda1_5, #idCelda1_6, #idCelda1_7, #idCelda1_8 {border: 1px solid var(--border-color);padding: 0rem;margin: 0; background-color: var(--bg-card-color);  text-align:right; white-space: nowrap;} 
+
+#idCelda2_1{border: 1px solid var(--border-color); background-color: var(--bg-card-color); text-align:center; white-space: nowrap;} 
+#idCelda2_2 , #idCelda2_3 , #idCelda2_4, #idCelda2_5 , #idCelda2_6 , #idCelda2_7, #idCelda2_8{text-align:right;
+    border: 1px solid var(--border-color);padding: 0rem;margin: 0; background-color: var(--bg-card-color);} 
+
+#celdaF_1 {border: 1px solid var(--border-color);padding: 0rem;margin: 0;background-color: var(--bg-card-color);white-space: nowrap;}
+#celdaF_2, #celdaF_3 , #celdaF_4, #celdaF_5, #celdaF_6, #celdaF_7, #celdaF_8{border: 1px solid var(--border-color); background-color: var(--bg-card-color); white-space: nowrap; }
+#celdaF{background-color: rgba(0, 0, 53, 0);height: 25px;} 
+
+/* ############################################ FIN DE: TABLE ###################################################  */
+
     </style>
 
   </head>
@@ -699,7 +838,7 @@ z-index: 10;
                <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
              </svg>
             </div>
-           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[[[[[[  ]]]]]]</p></div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[github.com]</p></div>
         </div>
         <div id="toggle-colors" class="colors">
           <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(150, 150, 152)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
@@ -724,7 +863,7 @@ z-index: 10;
       </header>
       <nav class="navbar1" id="navbar1">
             <div class="card__options">
-              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[[  ]]</p>
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[github.com]</p>
                 <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                 <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
               </div>
@@ -749,13 +888,13 @@ z-index: 10;
       
     </div><!-- FIN DE: div class="container_flex_1" -->
     <div class="container_flex_2">
-      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[ ]</p></div></div> 
+      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[github.com]</p></div></div> 
     
       <article class="main_grid_1">
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
-               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS</p>
+               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[github.com]</p>
                  <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                  <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
                </div>
@@ -881,10 +1020,9 @@ z-index: 10;
                <div class="buttons" >
                 <div type="button" class="button button--primary" onclick="iniciar()">Genera una tabla</div>
                 <div type="button" class="button button--primary" id="btnR" onclick="resetar()">Resetar</div> 
-               </div>
-      
+               </div> 
               </article>
-      
+
               <article class="card_center" id="article_center2">
                 <div class="card_subtitle">
                   <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS</p><p class="card_subtitle_tex2" id="simbolo">BTC/USDT:</p></div>
@@ -952,8 +1090,8 @@ z-index: 10;
                   </div>
               </article>
           </div><!-- FIN DE div class="column columnCenter_articles" -->
-  
         </div> <!--   FIN DE div id="columnCenter" -->
+
         <div class="columnRight" id="columnRight" >
 
             <div id="card_2a">
@@ -1272,7 +1410,9 @@ z-index: 10;
           </tfoot>
          </table> <br>
         </div><!--  FIN DE <div class="tablas"></div> -->
-       
+        <div class="tablas1" id="tablas1" style="display: none;">
+          <br>
+        </div>
       </article><!--   FIN DE article class="main_grid_2" -->
       <div class="main_grid_3">
         <div id="card_2b">
@@ -1455,7 +1595,7 @@ z-index: 10;
            </p>
           </div>
       </div><!--   FIN DE article class="main_grid_3" -->
-
+      
       <footer class="footer">
           <div class="socialmedia_1">
           <div class="socialmedia">
@@ -1600,6 +1740,395 @@ z-index: 10;
    <script src="js/decimal.min.js"></script>
    -->
 <script> 
+
+//############################################################################################################
+var N= "", cont=0, cont2=0, COLOR=0, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8="", 
+booleanGT="", IMPRIMIRTEXTO=1, arrayBox=[0,0,0,0,0,0,0,0], precioBTC0="", precioBTC="0", PRECIOBTC=1, incremento=1000, priceArray=[], totalPriceArray0=[], totalPriceArray01=[], 
+totalPriceArray=[],totalPriceArray02=[],  totalTimeArray0=[], totalTimeArray01=[], totalTimeArray02=[], totalTimeArray=[], totalPriceArray2=[], totalTimeArray2=[], totalPriceArray3=[], totalTimeArray3=[], 
+maxLength=200, X, Y, ARROW=0, ACTUALIZAPRECIO=0, AUTO=0, simboloPar='' ,r="rgb(150,0,0)", v='rgb(0,200,0)';
+
+//GENERAR TIEMPO 1:
+Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
+var mydate0=new Date(); 
+var dia0 = new String(mydate0.getDate()); 
+var m0 = Number(mydate0.getMonth()+1);; 
+var mes0 = new String(m0);
+if (dia0.length<2) {dia0="0"+dia0;}else{dia0=dia0;} if (mes0.length<2) {mes0="0"+mes0;}else{mes0=mes0;}
+var anio0 = Number( mydate0.getYear())+1900;//CORRECCION AL SISTEMA: +1900 
+Copyright.innerText= anio0;
+
+function genera_tabla() {
+  cont= cont+1; /*var n= cont;*/ ///document.getElementById("tex1").value=cont;
+  // Crea un elemento <table> y un elemento <tbody> + thead
+  var table1 = document.createElement("table"); table1.setAttribute("id", "table"+cont);table1.setAttribute("class", "cTable1");
+  //table1.setAttribute("onclick","xxx("+cont+")"); 
+  var thead1 = document.createElement("thead"); thead1.setAttribute("id", "thead1");//Encabezado de la tabla
+  var tbody1 = document.createElement("tbody"); tbody1.setAttribute("id", "tbody"+cont);tbody1.setAttribute("class", "cTody1");
+  var tbodyF = document.createElement("tbody"); tbodyF.setAttribute("id", "tbodyF"+cont);
+  //*************************************************(1) 
+  // Crea las celdas para thead1
+  var hileraHead = document.createElement("tr"); 
+  var celdaHead = document.createElement("td");
+  celdaHead.setAttribute("id", "celdaHead1");celdaHead.setAttribute("colspan", "7");celdaHead.setAttribute("rowspan", "1");
+  // Crea 3 div para thead1:
+  var tdiv1 = document.createElement("div"); tdiv1.setAttribute("id", "tdiv1");//nowrap
+  var tdiv2 = document.createElement("div"); tdiv2.setAttribute("id", "tdiv2"); 
+  //var tdiv3 = document.createElement("div"); tdiv3.setAttribute("id", "tdiv3");
+  var pHead1= document.createElement("p"); pHead1.setAttribute("id", "pHead");   
+  // Crea texto para tdiv1
+  var textoHead0 = document.createTextNode(" TABLA "+cont+" ");////var textoHead00 = document.createTextNode("T");onmouseover="" onmouseout=""
+  pHead1.appendChild(textoHead0);
+  tdiv1.appendChild(pHead1); 
+  // Crea input para tdiv3:   para tdiv2
+  var btnC = document.createElement("div");
+  btnC.setAttribute("id", "bC"+cont);btnC.setAttribute("class", "btnArrowUp");
+  btnC.setAttribute("onclick","collapseTr("+cont+")"); 
+  var btnV = document.createElement("div");
+  btnV.setAttribute("id", "bV"+cont);btnV.setAttribute("class", "btnArrowDown"); 
+  btnV.setAttribute("onclick","visibleTr("+cont+")");  
+  var btnB = document.createElement("div");
+  btnB.setAttribute("id", "bB"+cont);btnB.setAttribute("class", "btnClose");
+  btnB.setAttribute("onclick","borrarT("+cont+")"); 
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  let svg1 = document.createElementNS(SVG_NS, 'svg'); let path1 = document.createElementNS(SVG_NS, 'path');
+  svg1.setAttributeNS(null, "width", "16"); svg1.setAttributeNS(null, "height", "16");svg1.setAttributeNS(null, "viewBox", "-11 -20 86 86");
+  path1.setAttributeNS(null, "d", "M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z");
+  path1.setAttributeNS(null, "class", "cpath");svg1.setAttributeNS(null, "class", "csvg");
+  svg1.appendChild(path1); btnC.appendChild(svg1); 
+  let svg2 = document.createElementNS(SVG_NS, 'svg'); let path2 = document.createElementNS(SVG_NS, 'path');
+  svg2.setAttributeNS(null, "width", "16"); svg2.setAttributeNS(null, "height", "16");svg2.setAttributeNS(null, "viewBox", "-11 -20 86 86");
+  path2.setAttributeNS(null, "d", "M60,37.21a2,2,0,0,1-1.28-.46L32,14.6,5.28,36.75a2,2,0,0,1-2.55-3.08l28-23.21a2,2,0,0,1,2.55,0l28,23.21A2,2,0,0,1,60,37.21Z");
+  path2.setAttributeNS(null, "class", "cpath");svg2.setAttributeNS(null, "class", "csvg");
+  svg2.appendChild(path2);btnV.appendChild(svg2);
+
+  let svg3 = document.createElementNS(SVG_NS, 'svg'); let path3 = document.createElementNS(SVG_NS, 'path');
+  svg3.setAttributeNS(null, "width", "16"); svg3.setAttributeNS(null, "height", "16");svg3.setAttributeNS(null, "viewBox", "-23 -24 100 100");
+  path3.setAttributeNS(null, "d", "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z");
+  path3.setAttributeNS(null, "class", "cpathB");svg3.setAttributeNS(null, "class", "csvgB");
+  svg3.appendChild(path3);btnB.appendChild(svg3);
+  tdiv2.appendChild(btnC);tdiv2.appendChild(btnV);tdiv2.appendChild(btnB);
+  
+  // Crea un div para tdiv1 tdiv2 tdiv3:
+  var tdiv0 = document.createElement("div");
+  tdiv0.setAttribute("id", "tdiv0");
+  // Agrega las tdiv1 tdiv2 tdiv3 a tdiv0:
+  tdiv0.appendChild(tdiv1);tdiv0.appendChild(tdiv2);//tdiv0.appendChild(tdiv3);
+  // Agrega las tdiv0 a celdaHead:
+  celdaHead.appendChild(tdiv0); hileraHead.appendChild(celdaHead);
+  thead1.appendChild(hileraHead);
+  //*************************************************(1)
+  
+  //*************************************************************************(2)
+  BOX0= cuotaI.value; BOX1=cuota.value; BOX2=document.getElementById("N").value; BOX3=tea1.value; BOX4=tea1.value; BOX5=tea1.value; BOX6=tea1.value; BOX7=tea1.value; BOX8=tea1.value;
+  if (document.getElementById("N").value < 0) {document.getElementById("N").value = 0 }
+  N= Math.trunc(Number(cleanBoxes(document.getElementById("N").value.replace(/[-,]/g,"")))); //Math.trunc(N); // TOMAR SOLO PARTE ENTERA DE N
+  var SC= ["(máximo=6,000)","(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"]
+  if (rb0.selected==true) { if (N> 500*(360/30 ) ) {document.getElementById("N").value="6,000"; N= 6000 } span1.innerHTML=SC[0]}
+  if (rb1.selected==true) { if (N> 500*(360/30 ) ) {document.getElementById("N").value="6,000"; N= 6000 } span1.innerHTML=SC[1]}
+  if (rb2.selected==true) { if (N> 1000*(360/60) ) {document.getElementById("N").value="6,000"; N= 6000 } span1.innerHTML=SC[2]}
+  if (rb3.selected==true) { if (N> 1000*(360/90) ) {document.getElementById("N").value="4,000"; N= 4000 } span1.innerHTML=SC[3]}
+  if (rb4.selected==true) { if (N> 1000*(360/180)) {document.getElementById("N").value="2,000"; N= 2000 } span1.innerHTML=SC[4]}
+  if (rb5.selected==true) { if (N> 1000*(360/270)) {document.getElementById("N").value="1,333"; N= 1333 } span1.innerHTML=SC[5]}
+  if (rb6.selected==true) { if (N> 1000*(360/360)) {document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[6]}
+  var N0= new String (formato(N)).split(".")[0]; // SEPARA LA PARTE ENTERA DE 1,000.00 , N0= 1,000
+  document.getElementById("N").value= N0;
+  var i30= Number(cleanBoxes(tea1.value.replace(/[-,]/g,"")));  tea1.value=formato1(i30);
+  var boxTED0= Number(cleanBoxes(boxTED.value.replace(/[-,]/g,"")));  boxTED.value=formato1(boxTED0);
+  var taza1=tea1.value.replace(/[-,]/g,""); //console.log("Taza1: ",taza1);
+  var dias1=Selector2.value;
+  var Ted="";//TAZA EFECTIVA DIARIA
+  switch (dias1) {//SELECCIONAR PERIODO DE AHORRO
+   case "1"  : Ted = TED(taza1, dias1);break; //TED 1 DIA
+   case "30" : Ted = TED(taza1, dias1);break; //TED 30 DIAS                  
+   case "60" : Ted = TED(taza1, dias1);break; //TED 60 DIAS              
+   case "90" : Ted = TED(taza1, dias1);break; //TED 90 DIAS  
+   case "180": Ted = TED(taza1, dias1);break; //TED 180 DIAS                
+   case "270": Ted = TED(taza1, dias1);break; //TED 270 DIAS                
+   case "360": Ted = taza1;break; //TED 360 DIAS                
+  } 
+  
+  var moneda=document.getElementById("Selector1").value; ///"Soles";
+  var RCI= Number(cleanBoxes(cuotaI.value.replace(/[-,]/g,""))); cuotaI.value=formato(RCI);
+  var C= Number(cleanBoxes(cuota.value.replace(/[-,]/g,""))); cuota.value=formato(C);
+  var CI= Number(RCI);
+  var MA2= Number(RCI);
+  var M2= Number(RCI);
+  var CIF30= Number(RCI);
+  var ci=""; var MA1= "";  var cis=Number(RCI); var M1="";  
+
+  var p ="";
+  for (var r0 = 0; r0 <= 6; r0++) {
+    if(document.getElementById("rb"+r0).selected==true){if (r0==0) p=1; if (r0>=1 && r0<4) p=r0*30; if (r0>=4) p=(r0-2)*90;}// p= 30, 60, 90, 180, 270, 360
+  }
+  var mydate01 = mydate0.addMillisecs((Number(N)*p)*24*60*60*1000);
+  //console.log(mydate01);
+  var anioF1 = (Number( mydate01.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+  //datos para las celda celda1:
+  var tx0=""; if (N0==1) tx0="Período";else tx0="Períodos";
+  var cadena00=[""], cadena01=[""], cadena02=[""], cadena03=[""], cadena04=[""], n0="", n="", tx="";
+  for (var r1 = 0; r1 <= 6; r1++) {
+   if (r1==0) {n0=1; tx="día";} if (r1>=1 && r1<4) {n0=r1*30; tx="días";} if (r1>=4) {n0=(r1-2)*90; tx="días";}// n0= 30, 60, 90, 180, 270, 360
+   if(ck1.checked==true && ck2.checked==false){n=2; if(document.getElementById("rb"+r1).selected==true){
+
+    cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+n0+" "+tx+", con aportes, TEA: "+tea1.value+" %"]}}
+    if(ck1.checked==false && ck2.checked==true){n=2; if(document.getElementById("rb"+r1).selected==true){
+
+    cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+n0+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}}
+   if(ck1.checked==true && ck2.checked==true) {n=3; if(document.getElementById("rb"+r1).selected==true){
+
+     cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+n0+" "+tx+", con aportes, TEA: "+tea1.value+" %" , "Período de "+n0+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}}
+  }
+  // Crea las celdas de la 1ra. hilera de thead1     
+  for (var c1 = 0; c1 < 1; c1++) {
+   var hilera1 = document.createElement("tr");
+   for (var h1 = 0; h1 < n; h1++) {
+    // Crea celdas
+    var celda1 = document.createElement("td"); celda1.setAttribute("id", "celda_c"+(h1+1));
+    var d00 = document.createElement("div"); d00.setAttribute("id", "div_p_hilera1_"+(h1+1));// p00: DIV P' PARRAFOS
+    var pn04 = document.createElement("p"); pn04.setAttribute("id", "pTex_hilera1_"+(h1+1));
+    var textoCelda04 = document.createTextNode(""+cadena04[h1]);
+    pn04.appendChild(textoCelda04); 
+    d00.appendChild(pn04); 
+
+    celda1.appendChild(d00); 
+    hilera1.appendChild(celda1);
+   }
+   // agrega la hilera al final de la tabla (al final del elemento tbody1)
+   thead1.appendChild(hilera1); 
+  } 
+  //*************************************************(2)
+
+  //*************************************************(2a)
+  // Crea las celdas de la 2da. hilera de thead1  
+  var cadena05 =[ " Aporte inicial "+" ("+dia0+"/"+ mes0+"/"+anio0+")" , formato(CI)+" "+moneda, formato(CI)+" "+moneda];  
+  for (var c1 = 0; c1 < 1; c1++) {
+   var hilera1a = document.createElement("tr");
+   for (var h1 = 0; h1 < n; h1++) {
+    var celda1a = document.createElement("td"); celda1a.setAttribute("id", "idCelda1_"+(h1+1));
+    var d01 = document.createElement("div");d01.setAttribute("id","div_p_hilera1a_"+(h1+1));// p00: DIV P' PARRAFOS
+    var pn05 =document.createElement("p"); pn05.setAttribute("id", "pTex_hilera1a_"+(h1+1));// PARRAFO NUMEROS
+    var textoCelda05 = document.createTextNode(""+cadena05[h1]);
+    pn05.appendChild(textoCelda05);
+    d01.appendChild(pn05); 
+    celda1a.appendChild(d01);
+    hilera1a.appendChild(celda1a);
+   }
+   thead1.appendChild(hilera1a); // agrega la hilera al final de la tabla (al final del elemento tbody1)
+   table1.appendChild(thead1);//Agrega thead1 a table1
+  } 
+  //*************************************************(2a)
+
+  //*************************************************(3)
+  // Crea las celdas para tbody1 
+  for (var i= 1; i<=N-1; i++) {//for (var i= 1; i<=N-1+(nN); i++) 
+    
+   //CALCULOS INTERES COMPUESTO CON APORTES: I=(1+i)ᵗ -1       // ()³⁶⁰  ¹⁸⁰/³⁶⁰
+   MA1 = MA2; //MONTO PERÍODO ANTERIOR 
+   ci = ( (Math.pow((1+Ted/100 ),(1))-1)*MA2 ); //INTERES PERÍODO ANTERIOR 
+   MA2 = (( (Math.pow((1+Ted/100 ),(1))-1)*MA2 + MA2 ) +C); // MONTO PERÍODO ACTUAL
+   var F=2; 
+   //var MAF = "( "+formato(MA1)+" + "+formato(ci)+" + "+formato(C)+" ) = "+formato(MA2)+" "+moneda; 
+   var MAF01 ="("+formato(MA1.toFixed(F))+" + "+formato(( MA2.toFixed(F) - MA1.toFixed(F) - C.toFixed(F) ).toFixed(F))+" + "+formato(C)+") = ";// ← PARA SUMAS EXACTA, SOLUCION: APLICAR '.toFixed(F)'
+   var MAF02 = formato(MA2.toFixed(F))+" "+moneda;// ← PARA SUMAS EXACTA, SOLUCION: APLICAR '.toFixed(F)'
+   //var MAF = MAF01 + MAF01; console.log("MAF "+ MAF);
+   //console.log( "( i="+i+" "+formato(MA1.toFixed(F))+" + "+formato(( MA2.toFixed(F) - MA1.toFixed(F) - C.toFixed(F) ).toFixed(F))+" + "+formato(C)+" ) = "+formato(MA2.toFixed(F))+" "+moneda );
+   
+   //CALCULOS INTERES COMPUESTO SIN APORTES 
+   M1 = M2; //MONTO PERÍODO ANTERIOR  
+   cis = (((Math.pow((1+Ted/100 ),(i))-1)*CI+CI) - M1); //INTERES PERÍODO ANTERIOR (SIN USO)
+   M2 = ((Math.pow((1+Ted/100 ),(i))-1)*CI+CI);  // MONTO PERÍODO ACTUAL (METODO 1) 
+   //M2 = ((Math.pow((1+Ted/100 ),(1))-1)*M2+M2);// MONTO PERÍODO ACTUAL (METODO 2) 
+   var MF01 ="("+formato(M1.toFixed(F))+" + "+formato((M2.toFixed(F) - M1.toFixed(F)).toFixed(F))+") = ";
+   var MF02 = formato(M2.toFixed(F))+" "+moneda;
+   //var MF = MF01 + MF01;
+   //console.log("( i="+i+" "+formato(M1.toFixed(F))+" + "+formato((M2.toFixed(F) - M1.toFixed(F)).toFixed(F))+" ) = "+M2.toFixed(F)+" "+moneda );
+   //           (  10        355339.98    +                     112313.73                ) = 467653.72 USD ← SUMA INEXACTA, SOLUCION: APLICAR '.toFixed(F)'
+   /*PARA: Aporte inicial=10000, Aportes periódicos=1000, interes=10% :
+   // i=1    0.1*10000+10000     1000+10000    M2 = 11000
+   // i=2    0.1*11000+11000     1100+11000    M2 = 12100
+   // i=3    0.1*12100+12100     1210+12100    M2 = 13310 ...
+   */
+   //Crea las hileras de tbody1
+   var hilera2 = document.createElement("tr"); hilera2.setAttribute("id", "tr_"+cont+"_"+i);
+   for (var j = 0; j < n; j++) {
+     // Crea celdas
+     var celda2 = document.createElement("td"); celda2.setAttribute("id", "idCelda2_"+(j+1));
+     //GENERAR TIEMPO 2:
+     var mydate=new Date(); var mydate1 = mydate.addMillisecs((i*p)*24*60*60*1000);var diaF = new String(mydate1.getDate()); var mF = Number(mydate1.getMonth()+1);; mesF = new String(mF);
+     if (diaF.length<2) {diaF="0"+diaF;}else{diaF=diaF;} if (mesF.length<2) {mesF="0"+mesF;}else{mesF=mesF;}
+     var anioF2 = (Number( mydate1.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+   
+     //datos para la celda2:
+     var Ni= new String (formato(i)).split(".")[0]; // SEPARA LA PARTE ENTERA DE 1,000.00 , Ni= 1,000
+     var cadena07 =[""], cadena08 =[""], cadena08_ =[""];
+     for (var r2 = 0; r2 <= 6; r2++) {
+       if(ck1.checked==true &&ck2.checked==false) {if(document.getElementById("rb"+r2).selected==true){
+        cadena07 =["Fin período" +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 ]}}
+       if(ck1.checked==false&& ck2.checked==true) {if(document.getElementById("rb"+r2).selected==true){
+        cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MF01+MF02 ]}}
+       if(ck1.checked==true && ck2.checked==true) {if(document.getElementById("rb"+r2).selected==true){
+        cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 , MF01+MF02 ]}}
+      }
+      var d02 = document.createElement("div");d02.setAttribute("id", "div_p"+(j+1));// p00: DIV P' PARRAFOS
+      var pn07 = document.createElement("p"); pn07.setAttribute("id", "pTex"+(j+1));// PARRAFO LETRAS
+      var textoCelda07 = document.createTextNode(""+cadena07[j]);
+      pn07.appendChild(textoCelda07);
+      d02.appendChild(pn07); 
+      celda2.appendChild(d02);
+      hilera2.appendChild(celda2);
+    }
+   tbody1.appendChild(hilera2);// agrega la hilera2 a tbody1  
+  } // FIN DE for (var i= 1; i<=N-1; i++) 
+  //******************************************************************************(3)
+  //******************************************************************************(3a)
+  //DATOS PARA PERIODO FINAL:tbodyF
+  for (var f= 1; f<=N; f++) {
+    //CALCULOS INTERES COMPUESTO CON APORTES 
+    CIF30 = ( (Math.pow((1+Ted/100 ),(1))-1)*CIF30+CIF30 )  +C; var RCA = formato(CIF30-C) +" "+moneda;
+    //CALCULOS INTERES COMPUESTO SIN APORTES  
+    var M2 = ((Math.pow((1+Ted/100 ),(f))-1)*CI+CI); var RSA = formato(M2) +" "+moneda;
+  } // FIN DE for (var f= 1; f<=N; f++)
+  //Crea las hileras de tbodyF
+  for (var hF = 0; hF < 1; hF++) {
+    var hileraF = document.createElement("tr");  
+    for (var cF = 0; cF < n; cF++) {
+     // Crea las celdas para tbodyF
+     var celdaF = document.createElement("td");
+     celdaF.setAttribute("id", "celdaF_"+(cF+1));
+     //GENERAR TIEMPO 3:
+     var mydate=new Date(); 
+     var mydate1 = mydate.addMillisecs(((f-1)*p)*24*60*60*1000);
+     var diaF = new String(mydate1.getDate()); 
+     var mF = Number(mydate1.getMonth()+1);; 
+     mesF = new String(mF);
+     if (diaF.length<2) {diaF="0"+diaF;}else{diaF=diaF;} if (mesF.length<2) {mesF="0"+mesF;}else{mesF=mesF;}
+     var anioF3 = (Number( mydate1.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+     //datos para la celdaF:
+     var R0F = " Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" ;       
+     var cadenaF =[""];
+     for (var rF = 0; rF <= 6; rF++) {
+     if(ck1.checked==true &&ck2.checked==false) {if(document.getElementById("rb"+rF).selected==true){
+      cadena09 =["Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" , RCA]}}     
+      if(ck1.checked==false&& ck2.checked==true) {if(document.getElementById("rb"+rF).selected==true){
+      cadena09 =["Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" ,RSA];}}
+     if(ck1.checked==true && ck2.checked==true) {if(document.getElementById("rb"+rF).selected==true){
+      cadena09 =["Fin período " +N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")", RCA, RSA]}}// R0F, RCA, RSA          .
+     }
+     var d03 = document.createElement("div"); d03.setAttribute("id","div_p_hileraF_"+(cF+1));// p00: DIV P' PARRAFOS
+     var pn09 = document.createElement("p"); pn09.setAttribute("id", "pNum_hileraF_"+(cF+1));// PARRAFO NUMEROS
+     var textoCelda09 = document.createTextNode(""+cadena09[cF]);
+     pn09.appendChild(textoCelda09); 
+     d03.appendChild(pn09); 
+
+     celdaF.appendChild(d03); 
+     hileraF.appendChild(celdaF);
+    }
+    tbodyF.appendChild(hileraF);// agrega la hileraF a tbody1
+  } // FIN DE for (var hF = 0; hF < 1; hF++)
+  //******************************************************************************(3a)
+  //if (N==0) {}
+  if (N==1) {table1.appendChild(tbodyF);}
+  if (N>1) {table1.appendChild(tbody1);table1.appendChild(tbodyF);};// agrega la tbody1 y tbodyF a table1
+
+  //******************************************************************************(4)
+  // Crea un elemento <tfoot> (pie de la tabla):
+  var tfoot1 = document.createElement("tfoot");
+  thead1.setAttribute("id", "tfoot1");
+  // Crea las celdas para tfoot1
+  var hilerafoot = document.createElement("tr");
+  var celdafoot = document.createElement("td"); celdafoot.setAttribute("id", "celdaF"); celdafoot.setAttribute("colspan", "4");celdafoot.setAttribute("rowspan", "1");
+  var textoTfoot = document.createTextNode(" ");
+  celdafoot.appendChild(textoTfoot);hilerafoot.appendChild(celdafoot);tfoot1.appendChild(hilerafoot);
+  table1.appendChild(tfoot1);//Agrega tfoot1 a table1
+  //******************************************************************************(4)
+  document.getElementById("tablas1").appendChild(table1);// Agrega table1 a div GENERATABLA1
+  //PARA table1:
+  document.getElementById("bC"+cont).style.display ="none";document.getElementById("bV"+cont).style.display ="none";
+  if (N>1) {document.getElementById("bC"+cont).style.display ="inline-block";document.getElementById("bV"+cont).style.display ="inline-block";}
+  document.getElementById("bC"+cont).click();//COLLAPSE tbodyF
+} // FIN DE function genera_tabla()
+
+// CONTROL DEL SELECTORES: 
+var selector1 = document.getElementById("Selector1");
+var s1= ["(USD)", "(Dolares)","(PEN)","(Soles)","(EUR)","(Euros)","(€)","($)"] 
+selector1.addEventListener("click", () => {
+  selector1.addEventListener("change", () => {
+   switch (selector1.value) {
+    case "USD":    money1.innerHTML = s1[0]; money2.innerHTML = s1[0]; break; 
+    case "Dolares":money1.innerHTML = s1[1]; money2.innerHTML = s1[1]; break; 
+    case "PEN":    money1.innerHTML = s1[2]; money2.innerHTML = s1[2]; break; 
+    case "Soles":  money1.innerHTML = s1[3]; money2.innerHTML = s1[3]; break; 
+    case "EUR":    money1.innerHTML = s1[4]; money2.innerHTML = s1[4]; break; 
+    case "Euros":  money1.innerHTML = s1[5]; money2.innerHTML = s1[5]; break; 
+    case "€":      money1.innerHTML = s1[6]; money2.innerHTML = s1[6]; break; 
+    case "$":      money1.innerHTML = s1[7]; money2.innerHTML = s1[7]; break; 
+   }
+  });
+});
+var s2= ["(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"];
+var s3= ["1","30", "60","90","180","270","360"]
+Selector2.addEventListener("click", () => {
+  Selector2.addEventListener("change", () => {
+   var iT00= Number(cleanBoxes(document.getElementById("tea1").value.replace(/[-,]/g,"")));  document.getElementById("tea1").value=formato1(iT00); 
+   var iT0=document.getElementById("tea1");
+   var taza=iT0.value.replace(/[-,]/g,""); var dias=Selector2.value;
+   //boleano=3;
+   switch (dias) {
+    case "1" : span1.innerHTML=s2[0]; span3.innerHTML = s3[0]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
+    case "30": span1.innerHTML=s2[0]; span3.innerHTML = s3[1]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
+    case "60": span1.innerHTML=s2[1]; span3.innerHTML = s3[2]; boxTED.value= formato1(TAZA(taza, dias, 3)); break;
+    case "90": span1.innerHTML=s2[2]; span3.innerHTML = s3[3]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
+    case "180":span1.innerHTML=s2[3]; span3.innerHTML = s3[4]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
+    case "270":span1.innerHTML=s2[4]; span3.innerHTML = s3[5]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
+    case "360":span1.innerHTML=s2[5]; span3.innerHTML = s3[6]; boxTED.value= formato1(taza); break      
+   }
+  });
+});
+var boleano=""; 
+function TAZA(taza, dias, boleano){//PARA INTRODUCIR TEXTO EN VIVO A CASILLAS, Y DE SELECTOR 'Selector2' A CASILLA 'boxTED'
+  var exponente = "";
+  if (boleano==2) exponente = Number(1/(dias/360));// Para Taza Efectiva Anual
+  else exponente = Number(dias/360);// Para Taza Efectiva Diaria
+  return operacion(taza,exponente);
+}
+
+function TED(tazaED, dia){//TED: Taza Efectiva Diaria , PARA GENERAR TABLAS
+  var potencia =  new String(((Math.pow((1+(tazaED/100) ),(dia/360))-1))*100);
+  return potencia;
+} 
+ 
+function operacion(taza,exponente) {//CALCULO DE tea: A 180 DIAS → ted= 4 //RESPUESTA: 1.0816000000000001 , OBJETIVO: 1.0816
+  //TED a TEA: exponente = new String(1/(dias/360)); ......❰1❱
+  //TEA a TED: exponente = new String(dias/360); ..........❰2❱
+  var teda = (Math.pow( (1+(taza/100)),exponente )-1)*100 ;// teda:  Taza Efectiva Diaria ó Anual
+  //console.log("teda: "+teda);     
+  var t = new Decimal(taza);                     //console.log("t : "+t );
+  var d = t.div(100).toNumber();                 //console.log("d : "+d );
+  var d0 = new Decimal(d);                       //console.log("d0: "+d0);  
+  var s = d0.plus(1).toNumber();                 //console.log("s : "+s );
+  var s0 = new Decimal(s);                       //console.log("s0: "+s0);
+  var p = s0.toPower(exponente).toNumber();      //console.log("p : "+p ,"exponente: "+exponente);
+  var p0 = new Decimal(p);                       //console.log("p0: "+p0);
+  var r = p0.minus(1).toNumber();                //console.log("r : "+r );
+  var r0 = new Decimal(r);                       //console.log("r0: "+r0);
+  var m_F = r0.mul(100).toNumber().toFixed(100); //console.log("m_toFixed(100) : "+m_F );///SOLO PARA OBSERVAR DECIMALES
+  var m = r0.mul(100).toNumber();                //console.log("m : "+m ); console.log("→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→");
+  return m;//return Number(m);
+} 
+
+function iniciar(){genera_tabla()}
+
+function borrarT(cont){document.getElementById("table"+cont).remove();}
+function borrarT2(cont2){document.getElementById("table2_"+cont2).remove();}
+
+function collapseTr(cont){document.getElementById("tbody"+cont).style.visibility ="collapse"; document.getElementById("bC"+cont).style.display ="none"; document.getElementById("bV"+cont).style.display ="inline-block";} 
+function collapseTr2(cont2){document.getElementById("tbody2_"+cont2).style.visibility ="collapse"; document.getElementById("btnUp2_"+cont2).style.display ="none"; document.getElementById("btnDown2_"+cont2).style.display ="inline-block";}  
+ 
+function visibleTr(cont){document.getElementById("tbody"+cont).style.visibility="visible"; document.getElementById("bV"+cont).style.display ="none"; document.getElementById("bC"+cont).style.display ="inline-block";}
+function visibleTr2(cont2){document.getElementById("tbody2_"+cont2).style.visibility="visible"; document.getElementById("btnDown2_"+cont2).style.display ="none"; document.getElementById("btnUp2_"+cont2).style.display ="inline-block";}
+
+ //#####################################################################################################################
+
 
 var ws='', r="rgb(200,0,0)", v='rgb(0,200,0)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1
 , simboloPar='',cuentaInicial='', gananciaXBTC='', comision='',gananciaXBTC='', gananciaXFraccion='', cuentaFinal='',pCompra='', pVenta=''
@@ -1765,7 +2294,7 @@ function agregarAtabla(){
   var TR= "<tr id='tr_"+est+contC+"'"+" ><td class='td_cf' id='td_sp"+est+contC+"'>"+simbolo.textContent.replace(':','')+"</td><td class='td_cf' id='td_ci"+est+contC+"'>"+formato(cuentaInicial)+"</td><td class='td_cf' id='td_pc"+est+contC+"'>"+
   formato(pCompra)+"</td><td class='td_cf' id='td_pv"+est+contC+"'>"+formato(pVenta)+"</td><td class='td_cf' id='td_dp"+est+contC+"'>"+formato(gananciaXBTC)+"</td><td class='td_cf' id='td_c"+est+contC+"'>"+formato(comision)+"</td><td class='td_cf' id='td_p"+est+contC+"'>"+
   formato(gananciaXFraccion)+"</td><td class='td_cf' id='td_cf"+est+contC+"'>"+formato(cuentaFinal)+"</td><td onclick='eliminarTr"+est+"("+contC+")'"+" class='td_x' id='td_x"+est+contC+"'"+
-  ">"+"<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,10.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
+  ">"+"<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
  
   (TABLADINAMICA==1)? (document.getElementById('tabla_1a').style.display='block', document.getElementById('dataD').innerHTML += TR) : (document.getElementById('tabla_2a').style.display='block', document.getElementById('dataE').innerHTML += TR);
   
@@ -1813,7 +2342,6 @@ function actualizaPreciosTablaDinamica(n,s){
  suma(contD,'');suma(contE,'E');
 }
 
-
 var cuentainicial=0, cuentaFinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 function suma(n,s){//console.log("n, s:", n,s);
   array_cf=[];array_ci=[];
@@ -1859,21 +2387,31 @@ function actualizaColor(casilla,pv,pc) {
      casilla.style.color=r;
    }
  }
-function onload() {
-  cotizaciónBtc_WebSocket();startTimer();
+
+ function nivelarColumnas() {
+  console.log('columnCenterOffset ::::::: ',columnCenter.offsetHeight+"px");
+  var columnCenterOffset=columnCenter.offsetHeight+"px";columnRight.style.height=  columnCenterOffset;
   //offsetHeight CALCULA LA ALTURA DE columnCenter_articles
-  document.getElementById("columnRight").style.height=  document.getElementById('columnCenter_articles').offsetHeight+"px";
-  console.log("document.getElementById('article_center').offsetHeight:", document.getElementById('columnCenter_articles').offsetHeight);
 }
 
-function navToggle(){
-  console.log('window.innerWidth', window.innerWidth);
-  if (window.innerWidth<900) {
+function onload() {
+  nivelarColumnas();
+  cotizaciónBtc_WebSocket();startTimer();
+}
+
+function navToggle(){//ESTA FUNCION TRABAJA JUNTO A resetarMascara() 
+  if (window.innerWidth<900) {// window.innerWidth : Ancho de Ventana del navegador
     if (TOGGLE==1)  {document.getElementById("navbar1").style.left= 0+"%";TOGGLE=0; document.getElementById("body").style.overflow= "hidden";document.getElementById('mascara').style.backgroundColor='rgba(10,10,10, 0.52)'; document.getElementById("mascara").style.zIndex='11'}// document.getElementById("body").style.overflow= "hidden";
     else {document.getElementById("navbar1").style.left= -100+"%";TOGGLE=1; document.getElementById("body").style.overflow= "auto";document.getElementById('mascara').style.backgroundColor='rgba(10,10,10, 0.0)';  document.getElementById("mascara").style.zIndex='0'}// document.getElementById("body").style.overflow= "auto";
   }
-   
 }
+//RESETAR MASCARA: =============================================================================================
+function resetarMascara() {// console.log('window.innerWidth ::::::::: ',window.innerWidth);console.log('body.clientWidth : ',body.clientWidth); 
+  window.addEventListener('resize', function(){if (window.innerWidth>900) {{document.getElementById("navbar1").style.left= -100+"%"; document.getElementById("body").style.overflow= "auto";   TOGGLE=1; document.getElementById('mascara').style.backgroundColor='rgba(0,0,0, 0.0)';document.getElementById("mascara").style.zIndex='0'; console.log('window.innerWidth ::: ',window.innerWidth);} }}); 
+}
+resetarMascara();
+//FIN DE: RESETAR MASCARA ======================================================================================
+
 function editar(){
   if (EDITAR==1)  {
     stopTimer();editando.innerText='Terminar edición';EDITAR=0;  ;agregarATabla.innerText='Insertar en tabla estática';TABLADINAMICA=0;
@@ -1899,13 +2437,10 @@ function article1(){
   document.getElementById("card_3a").style.display="none";
   document.getElementById("tablas").style.display="none";
 
-  document.getElementById("GENERATABLA1").style.display="inline";
-  document.getElementById("GENERATABLA2").style.display="none";
-  document.getElementById("cuentaRegresiva").style.display="inline";
-  document.getElementById("almacenamientoLocal").style.display="none";
-
-  
-
+  document.getElementById("tablas").style.display="none";
+  document.getElementById("tablas1").style.display="inline";
+  //document.getElementById("cuentaRegresiva").style.display="inline";
+  //document.getElementById("almacenamientoLocal").style.display="none";
 }
 function article2(){
   document.getElementById("article_center").style.display="none";
@@ -1917,29 +2452,27 @@ function article2(){
   document.getElementById("card_3a").style.display="block";
   document.getElementById("tablas").style.display="block";
 
-  document.getElementById("GENERATABLA1").style.display="none";
-  document.getElementById("GENERATABLA2").style.display="inline";
-  document.getElementById("cuentaRegresiva").style.display="none";
-  document.getElementById("almacenamientoLocal").style.display="inline";
-//
-  
-
+ document.getElementById("tablas").style.display="inline";
+ document.getElementById("tablas1").style.display="none";
+ // document.getElementById("cuentaRegresiva").style.display="none";
+ // document.getElementById("almacenamientoLocal").style.display="inline";
 }
+
 function article1_navbar1(){
   booleanGT=0; navToggle(); article1();
-  //document.getElementById("card_2a").style.display="none";
-  //document.getElementById("card_3a").style.display="none";
+  nivelarColumnas();
 }
 function article2_navbar1(){
-  booleanGT=1; navToggle(); article2();
-  //document.getElementById("card_2a").style.display="none";
-  //document.getElementById("card_3a").style.display="inline";
+   booleanGT=1; navToggle(); article2();
+   nivelarColumnas();
 }
 function article1_columnLeft(){
-  booleanGT=0; article1();
+  booleanGT=0; article1();  //console.log('columnCenterOffset ::::::: ',columnCenter.offsetHeight+"px");
+  nivelarColumnas();  
 } 
 function article2_columnLeft(){
-  booleanGT=1; article2();
+  nivelarColumnas(); booleanGT=1; article2();
+  nivelarColumnas();
 }
 
 function eliminarTablaD(){
@@ -2120,57 +2653,932 @@ boxes[i].addEventListener("input", (e) => {
 }//FIN DE for (let i = 5; i < boxes.length - 2; i++) 
 ///------------------------------------------------------------------------------------------------------------------------
 
-
-
 function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 // 0,0 // 0,0  
   actualizaPreciosCard();actualizaPreciosTablaDinamica(contD,'');;
   cotizaciónBtc_binance_price24hr();  
-  if (window.innerWidth>900) {
-    {document.getElementById("navbar1").style.left= -100+"%"; document.getElementById("body").style.overflow= "auto";   TOGGLE=1; document.getElementById('mascara').style.backgroundColor='rgba(0,0,0, 0.0)';}// document.getElementById("body").style.overflow= "auto";
-  }
+  //if (window.innerWidth>900) {{document.getElementById("navbar1").style.left= -100+"%"; document.getElementById("body").style.overflow= "auto";   TOGGLE=1; document.getElementById('mascara').style.backgroundColor='rgba(0,0,0, 0.0)';} }// document.getElementById("body").style.overflow= "auto";
  } 
  
  var timerID; 
  function startTimer() {timerID=window.setInterval(newYear,1000);} 
  function stopTimer() {clearInterval(timerID);} 
 
-//==============================================================================================
-// Obtenga los tamaños de pantalla, ventana y página web en JavaScript: https://www.delftstack.com/es/howto/javascript/javascript-get-screen-size/ 
-// Get the size of the device screen
-var screenWidth = screen.width;
-var screenHeight = screen.height;
 
-// Get the browser window size
-var windowWidth = window.innerWidth;
-var windowHeight = window.innerHeight;
+////################ decimal.js #########################
+////################ decimal.js #########################
+////################ decimal.js #########################
+////################ decimal.js #########################
 
-// Get the size of the entire webpage
-const pageWidth  = document.documentElement.scrollWidth;
-const pageHeight = document.documentElement.scrollHeight;
+/* decimal.js-light v2.5.1 https://github.com/MikeMcl/decimal.js-light/LICENCE */
+!function (r) {
+  'use strict';
+  function e(r, e) {
+    var t,
+    n,
+    i,
+    o,
+    s,
+    u,
+    f,
+    c,
+    l = r.constructor,
+    d = l.precision;
+    if (!r.s || !e.s) return e.s ||
+    (e = new l(r)),
+    E ? h(e, d) : e;
+    if (f = r.d, c = e.d, s = r.e, i = e.e, f = f.slice(), o = s - i) {
+      for (
+        0 > o ? (n = f, o = - o, u = c.length) : (n = c, i = s, u = f.length),
+        s = Math.ceil(d / y),
+        u = s > u ? s + 1 : u + 1,
+        o > u &&
+        (o = u, n.length = 1),
+        n.reverse();
+        o--;
+      ) n.push(0);
+      n.reverse()
+    }
+    for (u = f.length, o = c.length, 0 > u - o && (o = u, n = c, c = f, f = n), t = 0; o; ) t = (f[--o] = f[o] + c[o] + t) / q | 0,
+    f[o] %= q;
+    for (t && (f.unshift(t), ++i), u = f.length; 0 == f[--u]; ) f.pop();
+    return e.d = f,
+    e.e = i,
+    E ? h(e, d) : e
+  }
+  function t(r, e, t) {
+    if (r !== ~~r || e > r || r > t) throw Error(x + r)
+  }
+  function n(r) {
+    var e,
+    t,
+    n,
+    i = r.length - 1,
+    o = '',
+    s = r[0];
+    if (i > 0) {
+      for (o += s, e = 1; i > e; e++) n = r[e] + '',
+      t = y - n.length,
+      t &&
+      (o += u(t)),
+      o += n;
+      s = r[e],
+      n = s + '',
+      t = y - n.length,
+      t &&
+      (o += u(t))
+    } else if (0 === s) return '0';
+    for (; s % 10 === 0; ) s /= 10;
+    return o + s
+  }
+  function i(r, e) {
+    var t,
+    i,
+    s,
+    u,
+    f,
+    c,
+    l = 0,
+    d = 0,
+    a = r.constructor,
+    g = a.precision;
+    if (o(r) > 16) throw Error(O + o(r));
+    if (!r.s) return new a(v);
+    for (null == e ? (E = !1, c = g) : c = e, f = new a(0.03125); r.abs().gte(0.1); ) r = r.times(f),
+    d += 5;
+    for (
+      i = Math.log(L(2, d)) / Math.LN10 * 2 + 5 | 0,
+      c += i,
+      t = s = u = new a(v),
+      a.precision = c;
+      ;
+    ) {
+      if (
+        s = h(s.times(r), c),
+        t = t.times(++l),
+        f = u.plus(P(s, t, c)),
+        n(f.d).slice(0, c) === n(u.d).slice(0, c)
+      ) {
+        for (; d--; ) u = h(u.times(u), c);
+        return a.precision = g,
+        null == e ? (E = !0, h(u, g)) : u
+      }
+      u = f
+    }
+  }
+  function o(r) {
+    for (var e = r.e * y, t = r.d[0]; t >= 10; t /= 10) e++;
+    return e
+  }
+  function s(r, e, t) {
+    if (e > r.LN10.sd()) throw E = !0,
+    t &&
+    (r.precision = t),
+    Error(N + 'LN10 precision limit exceeded');
+    return h(new r(r.LN10), e)
+  }
+  function u(r) {
+    for (var e = ''; r--; ) e += '0';
+    return e
+  }
+  function f(r, e) {
+    var t,
+    i,
+    u,
+    c,
+    l,
+    d,
+    a,
+    g,
+    p,
+    w = 1,
+    m = 10,
+    x = r,
+    O = x.d,
+    b = x.constructor,
+    L = b.precision;
+    if (x.s < 1) throw Error(N + (x.s ? 'NaN' : '-Infinity'));
+    if (x.eq(v)) return new b(0);
+    if (null == e ? (E = !1, g = L) : g = e, x.eq(10)) return null == e &&
+    (E = !0),
+    s(b, g);
+    if (
+      g += m,
+      b.precision = g,
+      t = n(O),
+      i = t.charAt(0),
+      c = o(x),
+      !(Math.abs(c) < 1500000000000000)
+    ) return a = s(b, g + 2, L).times(c + ''),
+    x = f(new b(i + '.' + t.slice(1)), g - m).plus(a),
+    b.precision = L,
+    null == e ? (E = !0, h(x, L)) : x;
+    for (; 7 > i && 1 != i || 1 == i && t.charAt(1) > 3; ) x = x.times(r),
+    t = n(x.d),
+    i = t.charAt(0),
+    w++;
+    for (
+      c = o(x),
+      i > 1 ? (x = new b('0.' + t), c++) : x = new b(i + '.' + t.slice(1)),
+      d = l = x = P(x.minus(v), x.plus(v), g),
+      p = h(x.times(x), g),
+      u = 3;
+      ;
+    ) {
+      if (
+        l = h(l.times(p), g),
+        a = d.plus(P(l, new b(u), g)),
+        n(a.d).slice(0, g) === n(d.d).slice(0, g)
+      ) return d = d.times(2),
+      0 !== c &&
+      (d = d.plus(s(b, g + 2, L).times(c + ''))),
+      d = P(d, new b(w), g),
+      b.precision = L,
+      null == e ? (E = !0, h(d, L)) : d;
+      d = a,
+      u += 2
+    }
+  }
+  function c(r, e) {
+    var t,
+    n,
+    i;
+    for (
+      (t = e.indexOf('.')) > - 1 &&
+      (e = e.replace('.', '')),
+      (n = e.search(/e/i)) > 0 ? (0 > t && (t = n), t += + e.slice(n + 1), e = e.substring(0, n)) : 0 > t &&
+      (t = e.length),
+      n = 0;
+      48 === e.charCodeAt(n);
+    ) ++n;
+    for (i = e.length; 48 === e.charCodeAt(i - 1); ) --i;
+    if (e = e.slice(n, i)) {
+      if (i -= n, t = t - n - 1, r.e = b(t / y), r.d = [], n = (t + 1) % y, 0 > t && (n += y), i > n) {
+        for (n && r.d.push( + e.slice(0, n)), i -= y; i > n; ) r.d.push( + e.slice(n, n += y));
+        e = e.slice(n),
+        n = y - e.length
+      } else n -= i;
+      for (; n--; ) e += '0';
+      if (r.d.push( + e), E && (r.e > _ || r.e < - _)) throw Error(O + t)
+    } else r.s = 0,
+    r.e = 0,
+    r.d = [
+      0
+    ];
+    return r
+  }
+  function h(r, e, t) {
+    var n,
+    i,
+    s,
+    u,
+    f,
+    c,
+    h,
+    l,
+    d = r.d;
+    for (u = 1, s = d[0]; s >= 10; s /= 10) u++;
+    if (n = e - u, 0 > n) n += y,
+    i = e,
+    h = d[l = 0];
+     else {
+      if (l = Math.ceil((n + 1) / y), s = d.length, l >= s) return r;
+      for (h = s = d[l], u = 1; s >= 10; s /= 10) u++;
+      n %= y,
+      i = n - y + u
+    }
+    if (
+      void 0 !== t &&
+      (
+        s = L(10, u - i - 1),
+        f = h / s % 10 | 0,
+        c = 0 > e ||
+        void 0 !== d[l + 1] ||
+        h % s,
+        c = 4 > t ? (f || c) &&
+        (0 == t || t == (r.s < 0 ? 3 : 2)) : f > 5 ||
+        5 == f &&
+        (
+          4 == t ||
+          c ||
+          6 == t &&
+          (n > 0 ? i > 0 ? h / L(10, u - i) : 0 : d[l - 1]) % 10 & 1 ||
+          t == (r.s < 0 ? 8 : 7)
+        )
+      ),
+      1 > e ||
+      !d[0]
+    ) return c ? (
+      s = o(r),
+      d.length = 1,
+      e = e - s - 1,
+      d[0] = L(10, (y - e % y) % y),
+      r.e = b( - e / y) ||
+      0
+    ) : (d.length = 1, d[0] = r.e = r.s = 0),
+    r;
+    if (
+      0 == n ? (d.length = l, s = 1, l--) : (
+        d.length = l + 1,
+        s = L(10, y - n),
+        d[l] = i > 0 ? (h / L(10, u - i) % L(10, i) | 0) * s : 0
+      ),
+      c
+    ) for (; ; ) {
+      if (0 == l) {
+        (d[0] += s) == q &&
+        (d[0] = 1, ++r.e);
+        break
+      }
+      if (d[l] += s, d[l] != q) break;
+      d[l--] = 0,
+      s = 1
+    }
+    for (n = d.length; 0 === d[--n]; ) d.pop();
+    if (E && (r.e > _ || r.e < - _)) throw Error(O + o(r));
+    return r
+  }
+  function l(r, e) {
+    var t,
+    n,
+    i,
+    o,
+    s,
+    u,
+    f,
+    c,
+    l,
+    d,
+    a = r.constructor,
+    g = a.precision;
+    if (!r.s || !e.s) return e.s ? e.s = - e.s : e = new a(r),
+    E ? h(e, g) : e;
+    if (f = r.d, d = e.d, n = e.e, c = r.e, f = f.slice(), s = c - n) {
+      for (
+        l = 0 > s,
+        l ? (t = f, s = - s, u = d.length) : (t = d, n = c, u = f.length),
+        i = Math.max(Math.ceil(g / y), u) + 2,
+        s > i &&
+        (s = i, t.length = 1),
+        t.reverse(),
+        i = s;
+        i--;
+      ) t.push(0);
+      t.reverse()
+    } else {
+      for (i = f.length, u = d.length, l = u > i, l && (u = i), i = 0; u > i; i++) if (f[i] != d[i]) {
+        l = f[i] < d[i];
+        break
+      }
+      s = 0
+    }
+    for (l && (t = f, f = d, d = t, e.s = - e.s), u = f.length, i = d.length - u; i > 0; --i) f[u++] = 0;
+    for (i = d.length; i > s; ) {
+      if (f[--i] < d[i]) {
+        for (o = i; o && 0 === f[--o]; ) f[o] = q - 1;
+        --f[o],
+        f[i] += q
+      }
+      f[i] -= d[i]
+    }
+    for (; 0 === f[--u]; ) f.pop();
+    for (; 0 === f[0]; f.shift()) --n;
+    return f[0] ? (e.d = f, e.e = n, E ? h(e, g) : e) : new a(0)
+  }
+  function d(r, e, t) {
+    var i,
+    s = o(r),
+    f = n(r.d),
+    c = f.length;
+    return e ? (
+      t &&
+      (i = t - c) > 0 ? f = f.charAt(0) + '.' + f.slice(1) + u(i) : c > 1 &&
+      (f = f.charAt(0) + '.' + f.slice(1)),
+      f = f + (0 > s ? 'e' : 'e+') + s
+    ) : 0 > s ? (f = '0.' + u( - s - 1) + f, t && (i = t - c) > 0 && (f += u(i))) : s >= c ? (f += u(s + 1 - c), t && (i = t - s - 1) > 0 && (f = f + '.' + u(i))) : (
+      (i = s + 1) < c &&
+      (f = f.slice(0, i) + '.' + f.slice(i)),
+      t &&
+      (i = t - c) > 0 &&
+      (s + 1 === c && (f += '.'), f += u(i))
+    ),
+    r.s < 0 ? '-' + f : f
+  }
+  function a(r, e) {
+    return r.length > e ? (r.length = e, !0) : void 0
+  }
+  function g(r) {
+    function e(r) {
+      var t = this;
+      if (!(t instanceof e)) return new e(r);
+      if (t.constructor = e, r instanceof e) return t.s = r.s,
+      t.e = r.e,
+      void (t.d = (r = r.d) ? r.slice() : r);
+      if ('number' == typeof r) {
+        if (0 * r !== 0) throw Error(x + r);
+        if (r > 0) t.s = 1;
+         else {
+          if (!(0 > r)) return t.s = 0,
+          t.e = 0,
+          void (t.d = [
+            0
+          ]);
+          r = - r,
+          t.s = - 1
+        }
+        return r === ~~r &&
+        10000000 > r ? (t.e = 0, void (t.d = [
+          r
+        ])) : c(t, r.toString())
+      }
+      if ('string' != typeof r) throw Error(x + r);
+      if (45 === r.charCodeAt(0) ? (r = r.slice(1), t.s = - 1) : t.s = 1, !D.test(r)) throw Error(x + r);
+      c(t, r)
+    }
+    var t,
+    n,
+    i;
+    if (
+      e.prototype = A,
+      e.ROUND_UP = 0,
+      e.ROUND_DOWN = 1,
+      e.ROUND_CEIL = 2,
+      e.ROUND_FLOOR = 3,
+      e.ROUND_HALF_UP = 4,
+      e.ROUND_HALF_DOWN = 5,
+      e.ROUND_HALF_EVEN = 6,
+      e.ROUND_HALF_CEIL = 7,
+      e.ROUND_HALF_FLOOR = 8,
+      e.clone = g,
+      e.config = e.set = p,
+      void 0 === r &&
+      (r = {}),
+      r
+    ) for (
+      i = [
+        'precision',
+        'rounding',
+        'toExpNeg',
+        'toExpPos',
+        'LN10'
+      ],
+      t = 0;
+      t < i.length;
+    ) r.hasOwnProperty(n = i[t++]) ||
+    (r[n] = this[n]);
+    return e.config(r),
+    e
+  }
+  function p(r) {
+    if (!r || 'object' != typeof r) throw Error(N + 'Object expected');
+    var e,
+    t,
+    n,
+    i = [
+      'precision',
+      1,
+      w,
+      'rounding',
+      0,
+      8,
+      'toExpNeg',
+      - 1 / 0,
+      0,
+      'toExpPos',
+      0,
+      1 / 0
+    ];
+    for (e = 0; e < i.length; e += 3) if (void 0 !== (n = r[t = i[e]])) {
+      if (!(b(n) === n && n >= i[e + 1] && n <= i[e + 2])) throw Error(x + t + ': ' + n);
+      this[t] = n
+    }
+    if (void 0 !== (n = r[t = 'LN10'])) {
+      if (n != Math.LN10) throw Error(x + t + ': ' + n);
+      this[t] = new this(n)
+    }
+    return this
+  }
+  var v,
+  w = 1000000000,
+  m = {
+    precision: 20,
+    rounding: 4,
+    toExpNeg: - 7,
+    toExpPos: 21,
+    LN10: '2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286'
+  },
+  E = !0,
+  N = '[DecimalError] ',
+  x = N + 'Invalid argument: ',
+  O = N + 'Exponent out of range: ',
+  b = Math.floor,
+  L = Math.pow,
+  D = /^(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,
+  q = 10000000,
+  y = 7,
+  M = 9007199254740991,
+  _ = b(M / y),
+  A = {};
+  A.absoluteValue = A.abs = function () {
+    var r = new this.constructor(this);
+    return r.s &&
+    (r.s = 1),
+    r
+  },
+  A.comparedTo = A.cmp = function (r) {
+    var e,
+    t,
+    n,
+    i,
+    o = this;
+    if (r = new o.constructor(r), o.s !== r.s) return o.s ||
+    - r.s;
+    if (o.e !== r.e) return o.e > r.e ^ o.s < 0 ? 1 : - 1;
+    for (n = o.d.length, i = r.d.length, e = 0, t = i > n ? n : i; t > e; ++e) if (o.d[e] !== r.d[e]) return o.d[e] > r.d[e] ^ o.s < 0 ? 1 : - 1;
+    return n === i ? 0 : n > i ^ o.s < 0 ? 1 : - 1
+  },
+  A.decimalPlaces = A.dp = function () {
+    var r = this,
+    e = r.d.length - 1,
+    t = (e - r.e) * y;
+    if (e = r.d[e]) for (; e % 10 == 0; e /= 10) t--;
+    return 0 > t ? 0 : t
+  },
+  A.dividedBy = A.div = function (r) {
+    return P(this, new this.constructor(r))
+  },
+  A.dividedToIntegerBy = A.idiv = function (r) {
+    var e = this,
+    t = e.constructor;
+    return h(P(e, new t(r), 0, 1), t.precision)
+  },
+  A.equals = A.eq = function (r) {
+    return !this.cmp(r)
+  },
+  A.exponent = function () {
+    return o(this)
+  },
+  A.greaterThan = A.gt = function (r) {
+    return this.cmp(r) > 0
+  },
+  A.greaterThanOrEqualTo = A.gte = function (r) {
+    return this.cmp(r) >= 0
+  },
+  A.isInteger = A.isint = function () {
+    return this.e > this.d.length - 2
+  },
+  A.isNegative = A.isneg = function () {
+    return this.s < 0
+  },
+  A.isPositive = A.ispos = function () {
+    return this.s > 0
+  },
+  A.isZero = function () {
+    return 0 === this.s
+  },
+  A.lessThan = A.lt = function (r) {
+    return this.cmp(r) < 0
+  },
+  A.lessThanOrEqualTo = A.lte = function (r) {
+    return this.cmp(r) < 1
+  },
+  A.logarithm = A.log = function (r) {
+    var e,
+    t = this,
+    n = t.constructor,
+    i = n.precision,
+    o = i + 5;
+    if (void 0 === r) r = new n(10);
+     else if (r = new n(r), r.s < 1 || r.eq(v)) throw Error(N + 'NaN');
+    if (t.s < 1) throw Error(N + (t.s ? 'NaN' : '-Infinity'));
+    return t.eq(v) ? new n(0) : (E = !1, e = P(f(t, o), f(r, o), o), E = !0, h(e, i))
+  },
+  A.minus = A.sub = function (r) {
+    var t = this;
+    return r = new t.constructor(r),
+    t.s == r.s ? l(t, r) : e(t, (r.s = - r.s, r))
+  },
+  A.modulo = A.mod = function (r) {
+    var e,
+    t = this,
+    n = t.constructor,
+    i = n.precision;
+    if (r = new n(r), !r.s) throw Error(N + 'NaN');
+    return t.s ? (E = !1, e = P(t, r, 0, 1).times(r), E = !0, t.minus(e)) : h(new n(t), i)
+  },
+  A.naturalExponential = A.exp = function () {
+    return i(this)
+  },
+  A.naturalLogarithm = A.ln = function () {
+    return f(this)
+  },
+  A.negated = A.neg = function () {
+    var r = new this.constructor(this);
+    return r.s = - r.s ||
+    0,
+    r
+  },
+  A.plus = A.add = function (r) {
+    var t = this;
+    return r = new t.constructor(r),
+    t.s == r.s ? e(t, r) : l(t, (r.s = - r.s, r))
+  },
+  A.precision = A.sd = function (r) {
+    var e,
+    t,
+    n,
+    i = this;
+    if (void 0 !== r && r !== !!r && 1 !== r && 0 !== r) throw Error(x + r);
+    if (e = o(i) + 1, n = i.d.length - 1, t = n * y + 1, n = i.d[n]) {
+      for (; n % 10 == 0; n /= 10) t--;
+      for (n = i.d[0]; n >= 10; n /= 10) t++
+    }
+    return r &&
+    e > t ? e : t
+  },
+  A.squareRoot = A.sqrt = function () {
+    var r,
+    e,
+    t,
+    i,
+    s,
+    u,
+    f,
+    c = this,
+    l = c.constructor;
+    if (c.s < 1) {
+      if (!c.s) return new l(0);
+      throw Error(N + 'NaN')
+    }
+    for (
+      r = o(c),
+      E = !1,
+      s = Math.sqrt( + c),
+      0 == s ||
+      s == 1 / 0 ? (
+        e = n(c.d),
+        (e.length + r) % 2 == 0 &&
+        (e += '0'),
+        s = Math.sqrt(e),
+        r = b((r + 1) / 2) - (0 > r || r % 2),
+        s == 1 / 0 ? e = '5e' + r : (e = s.toExponential(), e = e.slice(0, e.indexOf('e') + 1) + r),
+        i = new l(e)
+      ) : i = new l(s.toString()),
+      t = l.precision,
+      s = f = t + 3;
+      ;
+    ) if (
+      u = i,
+      i = u.plus(P(c, u, f + 2)).times(0.5),
+      n(u.d).slice(0, f) === (e = n(i.d)).slice(0, f)
+    ) {
+      if (e = e.slice(f - 3, f + 1), s == f && '4999' == e) {
+        if (h(u, t + 1, 0), u.times(u).eq(c)) {
+          i = u;
+          break
+        }
+      } else if ('9999' != e) break;
+      f += 4
+    }
+    return E = !0,
+    h(i, t)
+  },
+  A.times = A.mul = function (r) {
+    var e,
+    t,
+    n,
+    i,
+    o,
+    s,
+    u,
+    f,
+    c,
+    l = this,
+    d = l.constructor,
+    a = l.d,
+    g = (r = new d(r)).d;
+    if (!l.s || !r.s) return new d(0);
+    for (
+      r.s *= l.s,
+      t = l.e + r.e,
+      f = a.length,
+      c = g.length,
+      c > f &&
+      (o = a, a = g, g = o, s = f, f = c, c = s),
+      o = [],
+      s = f + c,
+      n = s;
+      n--;
+    ) o.push(0);
+    for (n = c; --n >= 0; ) {
+      for (e = 0, i = f + n; i > n; ) u = o[i] + g[n] * a[i - n - 1] + e,
+      o[i--] = u % q | 0,
+      e = u / q | 0;
+      o[i] = (o[i] + e) % q | 0
+    }
+    for (; !o[--s]; ) o.pop();
+    return e ? ++t : o.shift(),
+    r.d = o,
+    r.e = t,
+    E ? h(r, d.precision) : r
+  },
+  A.toDecimalPlaces = A.todp = function (r, e) {
+    var n = this,
+    i = n.constructor;
+    return n = new i(n),
+    void 0 === r ? n : (t(r, 0, w), void 0 === e ? e = i.rounding : t(e, 0, 8), h(n, r + o(n) + 1, e))
+  },
+  A.toExponential = function (r, e) {
+    var n,
+    i = this,
+    o = i.constructor;
+    return void 0 === r ? n = d(i, !0) : (
+      t(r, 0, w),
+      void 0 === e ? e = o.rounding : t(e, 0, 8),
+      i = h(new o(i), r + 1, e),
+      n = d(i, !0, r + 1)
+    ),
+    n
+  },
+  A.toFixed = function (r, e) {
+    var n,
+    i,
+    s = this,
+    u = s.constructor;
+    return void 0 === r ? d(s) : (
+      t(r, 0, w),
+      void 0 === e ? e = u.rounding : t(e, 0, 8),
+      i = h(new u(s), r + o(s) + 1, e),
+      n = d(i.abs(), !1, r + o(i) + 1),
+      s.isneg() &&
+      !s.isZero() ? '-' + n : n
+    )
+  },
+  A.toInteger = A.toint = function () {
+    var r = this,
+    e = r.constructor;
+    return h(new e(r), o(r) + 1, e.rounding)
+  },
+  A.toNumber = function () {
+    return + this
+  },
+  A.toPower = A.pow = function (r) {
+    var e,
+    t,
+    n,
+    o,
+    s,
+    u,
+    c = this,
+    l = c.constructor,
+    d = 12,
+    g = + (r = new l(r));
+    if (!r.s) return new l(v);
+    if (c = new l(c), !c.s) {
+      if (r.s < 1) throw Error(N + 'Infinity');
+      return c
+    }
+    if (c.eq(v)) return c;
+    if (n = l.precision, r.eq(v)) return h(c, n);
+    if (e = r.e, t = r.d.length - 1, u = e >= t, s = c.s, u) {
+      if ((t = 0 > g ? - g : g) <= M) {
+        for (
+          o = new l(v),
+          e = Math.ceil(n / y + 4),
+          E = !1;
+          t % 2 &&
+          (o = o.times(c), a(o.d, e)),
+          t = b(t / 2),
+          0 !== t;
+        ) c = c.times(c),
+        a(c.d, e);
+        return E = !0,
+        r.s < 0 ? new l(v).div(o) : h(o, n)
+      }
+    } else if (0 > s) throw Error(N + 'NaN');
+    return s = 0 > s &&
+    1 & r.d[Math.max(e, t)] ? - 1 : 1,
+    c.s = 1,
+    E = !1,
+    o = r.times(f(c, n + d)),
+    E = !0,
+    o = i(o),
+    o.s = s,
+    o
+  },
+  A.toPrecision = function (r, e) {
+    var n,
+    i,
+    s = this,
+    u = s.constructor;
+    return void 0 === r ? (n = o(s), i = d(s, n <= u.toExpNeg || n >= u.toExpPos)) : (
+      t(r, 1, w),
+      void 0 === e ? e = u.rounding : t(e, 0, 8),
+      s = h(new u(s), r, e),
+      n = o(s),
+      i = d(s, n >= r || n <= u.toExpNeg, r)
+    ),
+    i
+  },
+  A.toSignificantDigits = A.tosd = function (r, e) {
+    var n = this,
+    i = n.constructor;
+    return void 0 === r ? (r = i.precision, e = i.rounding) : (t(r, 1, w), void 0 === e ? e = i.rounding : t(e, 0, 8)),
+    h(new i(n), r, e)
+  },
+  A.toString = A.valueOf = A.val = A.toJSON = function () {
+    var r = this,
+    e = o(r),
+    t = r.constructor;
+    return d(r, e <= t.toExpNeg || e >= t.toExpPos)
+  };
+  var P = function () {
+    function r(r, e) {
+      var t,
+      n = 0,
+      i = r.length;
+      for (r = r.slice(); i--; ) t = r[i] * e + n,
+      r[i] = t % q | 0,
+      n = t / q | 0;
+      return n &&
+      r.unshift(n),
+      r
+    }
+    function e(r, e, t, n) {
+      var i,
+      o;
+      if (t != n) o = t > n ? 1 : - 1;
+       else for (i = o = 0; t > i; i++) if (r[i] != e[i]) {
+        o = r[i] > e[i] ? 1 : - 1;
+        break
+      }
+      return o
+    }
+    function t(r, e, t) {
+      for (var n = 0; t--; ) r[t] -= n,
+      n = r[t] < e[t] ? 1 : 0,
+      r[t] = n * q + r[t] - e[t];
+      for (; !r[0] && r.length > 1; ) r.shift()
+    }
+    return function (n, i, s, u) {
+      var f,
+      c,
+      l,
+      d,
+      a,
+      g,
+      p,
+      v,
+      w,
+      m,
+      E,
+      x,
+      O,
+      b,
+      L,
+      D,
+      M,
+      _,
+      A = n.constructor,
+      P = n.s == i.s ? 1 : - 1,
+      R = n.d,
+      U = i.d;
+      if (!n.s) return new A(n);
+      if (!i.s) throw Error(N + 'Division by zero');
+      for (
+        c = n.e - i.e,
+        M = U.length,
+        L = R.length,
+        p = new A(P),
+        v = p.d = [],
+        l = 0;
+        U[l] == (R[l] || 0);
+      ) ++l;
+      if (
+        U[l] > (R[l] || 0) &&
+        --c,
+        x = null == s ? s = A.precision : u ? s + (o(n) - o(i)) + 1 : s,
+        0 > x
+      ) return new A(0);
+      if (x = x / y + 2 | 0, l = 0, 1 == M) for (d = 0, U = U[0], x++; (L > l || d) && x--; l++) O = d * q + (R[l] || 0),
+      v[l] = O / U | 0,
+      d = O % U | 0;
+       else {
+        for (
+          d = q / (U[0] + 1) | 0,
+          d > 1 &&
+          (U = r(U, d), R = r(R, d), M = U.length, L = R.length),
+          b = M,
+          w = R.slice(0, M),
+          m = w.length;
+          M > m;
+        ) w[m++] = 0;
+        _ = U.slice(),
+        _.unshift(0),
+        D = U[0],
+        U[1] >= q / 2 &&
+        ++D;
+        do d = 0,
+        f = e(U, w, M, m),
+        0 > f ? (
+          E = w[0],
+          M != m &&
+          (E = E * q + (w[1] || 0)),
+          d = E / D | 0,
+          d > 1 ? (
+            d >= q &&
+            (d = q - 1),
+            a = r(U, d),
+            g = a.length,
+            m = w.length,
+            f = e(a, w, g, m),
+            1 == f &&
+            (d--, t(a, g > M ? _ : U, g))
+          ) : (0 == d && (f = d = 1), a = U.slice()),
+          g = a.length,
+          m > g &&
+          a.unshift(0),
+          t(w, a, m),
+          - 1 == f &&
+          (m = w.length, f = e(U, w, M, m), 1 > f && (d++, t(w, m > M ? _ : U, m))),
+          m = w.length
+        ) : 0 === f &&
+        (d++, w = [
+          0
+        ]),
+        v[l++] = d,
+        f &&
+        w[0] ? w[m++] = R[b] ||
+        0 : (w = [
+          R[b]
+        ], m = 1);
+        while ((b++ < L || void 0 !== w[0]) && x--)
+      }
+      return v[0] ||
+      v.shift(),
+      p.e = c,
+      h(p, u ? s + o(p) + 1 : s)
+    }
+  }();
+  m = g(m),
+  m['default'] = m.Decimal = m,
+  v = new m(1),
+  'function' == typeof define &&
+  define.amd ? define(function () {
+    return m
+  }) : 'undefined' != typeof module &&
+  module.exports ? module.exports = m : (
+    r ||
+    (
+      r = 'undefined' != typeof self &&
+      self &&
+      self.self == self ? self : Function('return this') ()
+    ),
+    r.Decimal = m
+  )
+}(this);
+//# sourceMappingURL=doc/decimal.js.map  
 
-// Showing the sizes on the webpage
-var x = document.getElementById("screen");
-x.innerHTML = "Device Screen: width: " + screenWidth + ", height: " + screenHeight + ".";
-
-var y = document.getElementById("window");
-y.innerHTML = "Browser Window: width: " + windowWidth + ", height: " + windowHeight + ".";
-
-var z = document.getElementById("page");
-z.innerHTML = "Webpage: width:" + pageWidth + ", height: " + pageHeight + ".";
-/*
-Device Screen: Pantalla del dispositivo (representada con color azul)
-La pantalla de un dispositivo puede ser una pantalla de computadora, tableta o computadora portátil que nuestro cliente usará. Dependiendo de la resolución del dispositivo que esté usando un cliente, su tamaño, es decir, ancho y alto, también cambiaría.
-
-Browser Window: Ventana del navegador (representada en color verde azulado)
-Es el navegador en el que se representará su sitio web. El navegador puede ser Google Chrome, Microsoft Edge, Mozilla Firefox, etc. Como todos sabemos, podemos cambiar el tamaño de la ventana del navegador de la forma que queramos, lo que eventualmente cambiará su ancho y alto.
-
-Webpage: width: Página web (representada en color naranja)
-Su sitio web consta de muchas páginas diferentes. Cada página web consta de varios tamaños. Puede obtener el tamaño de toda la página web. En un momento específico, solo una parte de la página web se puede mostrar en la ventana del navegador. A veces, es imposible mostrar toda la página web en la ventana del navegador porque la pantalla de nuestro dispositivo tiene una altura menor.
-*/
-//==============================================================================================
-
-
-
+////################ FIN DE  decimal.js ###################
 
 
 </script> 
