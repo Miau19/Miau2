@@ -7,8 +7,7 @@
     <title>CF[2024]-2b-paratelef</title>
 
     <style type="text/css">
-  
-@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 /* 
 @font-face {font-family: "Saira Expanded";src: url("Saira_Expanded-Bold.ttf");}
 @font-face {font-family: "Saira Expanded SemiBold";src: url("Saira_Expanded-SemiBold.ttf");}
@@ -32,7 +31,8 @@
    --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
    --font-weight2: 700;  /*GROSOR TEXTO NORMAL*/
    --box-shadow1: 0 0 2px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
-   --paddingC1:0.250rem 0; /* padding pata celdas de cTable1 */
+   --paddingC1: 0.250rem 0; /* padding pata celdas de cTable1 */
+   --paddingC2: 0.55rem 1rem;
 }
 
 html{background-color: var(--bg-card-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
@@ -265,15 +265,16 @@ z-index: 10;
     border-collapse: collapse;
     color: var(--text-color);
 }
-.tablaP24h .tdP24h{
-    text-align: left;padding: 0.25rem 0rem;
-}
 .tablaP24h .tdP24h_2{
-    display: flex;justify-content: end;
-    text-align: right;padding: 0.25rem 0rem; 
+    margin: 0;padding: 0;
 }
-.tablaP24h .tdP24h_2 div{
-    text-align: right;
+.tablaP24h .tdP24h{background: #000000;
+    text-align: left;margin: 0;padding: 0;
+}
+
+.tablaP24h .tdP24h_2 div{background: #1d1d1d;
+    display: block;justify-content: end;
+    text-align: right; padding: 0.25rem 0.25rem;
 }
   .nav-menu_visible {
     left: 0;
@@ -452,10 +453,10 @@ z-index: 10;
 .checkboxs div p {margin: 0; font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);}
 @media screen and  (max-width: 460px) { .checkboxs div p {font-size: var(--font-size4)}}
 
-.checkboxs div .checkbox{ 
-    accent-color: rgb(1, 61, 225); box-shadow: 0 0 0 1px var(--text-color);border: 0; width: 1em;height: 1em; cursor:pointer;
+.checkboxs .checkbox{ 
+    accent-color: rgb(1, 61, 225); box-shadow: 0 0 0 1px var(--text-color);border: 0; width: 1rem;height: 1rem; cursor:pointer;
 } 
- @media screen and  (max-width: 1230px) { .checkboxs div .checkbox{width: 0.8em;height: 0.8em;} } 
+ @media screen and  (max-width: 1230px) { .checkboxs div .checkbox{width: 0.8rem;height: 0.8rem;} } 
 
 .buttons {
     width: 100%;
@@ -510,7 +511,7 @@ z-index: 10;
 .main_grid_2::-webkit-scrollbar-thumb:hover{background: #292844;}
 
 .main_grid_2 .tabla-css{
-    background-color: var(--bg-card-color);background-color: rgba(5, 0, 14, 0.75);
+    background-color: var(--bg-card-color);background-color: rgba(5, 0, 14, 1);opacity: 0.75;
     border-collapse: collapse;
     color: var(--text-color);
     
@@ -689,137 +690,125 @@ z-index: 10;
 
 /* ############################################## TABLE ########################################################  */
 
-/* COLOR IDEAL PARA DISEÑO SIN DARK: background-color: rgb(74, 80, 83); Ó background-color: rgb(92, 100, 104); */
-
-/* CENTRAR HORIZONTALMENTE VARIOS DIV, SEGUNDA FORMA: */
-/* CENTRA #h1DEh2 Y #h2DEh2 DENTRO DE #h2 ===================*/
 #h2{  /* COLOR IDEAL PARA DISEÑO SIN DARK: background-color: rgb(74, 80, 83); Ó background-color: rgb(92, 100, 104); */
     width: 100%;
     text-align: center;
 }
 
-/* font: 12px fantasy; font-family: 'Arial Narrow'  Consolas, 'Courier New', monospace  */ /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-.cTable1{
+.cTable1{background-color: rgba(13, 0, 30, 1);opacity: 0.75;
  color: var(--text-color); 
  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);; 
  border-collapse: collapse;
  border-spacing: 0;
- margin: auto;
+ border: none;
+ margin: auto;padding: 5px;
 }
 @media screen and  (max-width: 500px) {.cTable1 {font-size: 0.68em;}} 
 
 /**/
 .cTody1{/* ############################## ELIMINAR, SOLO PARA VER tbody1 ############################ */ 
-    border: 2px solid  rgb(79, 1, 35);
+    border: 3px solid  rgb(125, 1, 55);
 }
 
-#celdaHead1{border: 1px solid var(--border-color); background-color: var(--bg-card-color); padding: 0px;}
+#celdaHead1{width: 100%;
+    border: 1px solid var(--border-color);  padding: 0px;}
 
-#tdiv0{
-    background-color: var(--bg-card-color);
-    display: flex;
-    justify-content: space-between;align-items: center;
-    width: 100%; 
-    margin: 0;  padding: var(--paddingC1);  
+#tdiv0{width: 100%;
+    
+    display: flex;justify-content: space-between;align-items: center;
+    margin: 0; padding: 0px;
 }
 #tdiv1{
-    display: flex;
-    justify-content:left;align-items: center;
-    margin: 0;;padding:0rem; 
-}
+    display: block;justify-content:start;align-items: center;margin: 0;;padding:0rem;}
 
-#pHead{
-    margin: 0 0.25rem;  
-}
+#pHead{margin: 0 0.25rem;}
 
-#tdiv2{
-    display: flex;
-    justify-content: center;align-items: center;
-}
+#tdiv2{display: flex;justify-content: center;align-items: center;padding: 0px; }
+
 .btnArrowUp, .btnArrowDown, .cBtnS, .btnClose{
-    display: flex;
-    justify-content: center;align-items: center;
-    margin: 0 0.25rem ; padding: 0.25rem 1rem ;
-}
+    display: block;justify-content: center;align-items: center;
+    margin: 0 0rem ; padding: var(--paddingC2) ;}
+@media screen and  (max-width: 500px) {.btnArrowUp, .btnArrowDown, .cBtnS, .btnClose {padding: 0.45rem 1rem ;}} 
 
-.csvg, .csvgB{
-    display: flex;
-    justify-content: center;align-items: center;
-}  
+.csvg, .csvgB{display: block;justify-content: center;align-items: center;}  
 .cpath{fill: var(--text-color);stroke-width: 4px;stroke: var(--text-color)}
 .cpathB{fill: var(--text-color);}
 
 .btnArrowUp:hover{background-color:  rgb(1, 61, 225);}
 .btnArrowDown:hover{background-color:  rgb(1, 61, 225);}
-.btnClose:hover{background-color: rgb(200,0,0);}
+.btnClose:hover{background-color: rgb(139, 0, 0);} 
+
+/* [1] Celda + div + parrafo */
+#celda_c1,#celda_c2,#celda_c3,#celda_c4,#celda_c5,#celda_c6,#celda_c7{ 
+    margin: 0;padding: var(--paddingC1);
+    border: 1px solid var(--border-color); 
+}
+
+#div_p_hilera1_1, #div_p_hilera1_2, #div_p_hilera1_3, #div_p_hilera1_4 {
+    display: block;justify-content: center;align-items: center;
+}
+
+#pTex_hilera1_1, #pTex_hilera1_2, #pTex_hilera1_3 {
+    text-align: center; white-space: nowrap;margin: 0;padding: 0 0.25rem;
+}
+/* FIN DE  [1] Celda + div + parrafo */    
+
+/* [2] Celda + div + parrafo */
+#idCelda1_1{border: 1px solid var(--border-color);margin: 0;padding: var(--paddingC1); 
+      text-align:center; white-space: nowrap; } 
+#idCelda1_2 , #idCelda1_3, #idCelda1_4 {border: 1px solid var(--border-color); white-space: nowrap; 
+    padding: 0rem;margin: 0;  } 
+
+#div_p_hilera1a_1{display: block;justify-content: center;align-items: center; }
+#div_p_hilera1a_2, #div_p_hilera1a_3 {display: block;justify-content: end;align-items: center;}
+#pTex_hilera1a_1{
+    margin: 0;padding: 0 0.25rem;text-align: center; white-space: nowrap;
+}
+#pTex_hilera1a_2, #pTex_hilera1a_3{
+    margin: 0;padding: 0 0.25rem;text-align: right; white-space: nowrap;
+}
+/* FIN DE  [2] Celda + div + parrafo */    
+
+/*  [3] Celda + div + parrafo */
+#idCelda2_1{
+    border: 1px solid var(--border-color);  } 
+#idCelda2_2 , #idCelda2_3 , #idCelda2_4 {
+    border: 1px solid var(--border-color);
+   padding: 0rem;margin: 0rem; } 
 
 #div_p1{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;padding: var(--paddingC1);
+    display: block;justify-content: center;align-items: center;
+    padding: var(--paddingC1); 
 }
-#div_p2, #div_p3, #div_p4, #div_p5, #div_p6, #div_p7, #div_p8{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right; padding: var(--paddingC1);
+#div_p2, #div_p3, #div_p4 {
+    display: block;justify-content: end;align-items: center;
+    padding: var(--paddingC1);  
 }
-#div_p_hilera1_1, #div_p_hilera1_2, #div_p_hilera1_3, #div_p_hilera1_4, #div_p_hilera1_5, #div_p_hilera1_6, #div_p_hilera1_7, #div_p_hilera1_8{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#div_p_hilera1a_1{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#div_p_hilera1a_2, #div_p_hilera1a_3, #div_p_hilera1a_4, #div_p_hilera1a_5, #div_p_hilera1a_6, #div_p_hilera1a_7, #div_p_hilera1a_8{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-}
-#div_p_hileraF_1{
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#div_p_hileraF_2, #div_p_hileraF_3{
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content:right;padding: var(--paddingC1);
-}
-#pTex_hilera1_1, #pTex_hilera1_2, #pTex_hilera1_3, #pTex_hilera1_4, #pTex_hilera1_5 {
-    margin: 0;padding: 0 0.25rem;
-}
-
-#pTex_hilera1a_1, #pTex_hilera1a_2, #pTex_hilera1a_3, #pTex_hilera1a_4, #pTex_hilera1a_5, #pTex_hilera1a_6, #pTex_hilera1a_7, #pTex_hilera1a_8 {
-    margin: 0;padding: 0 0.25rem; white-space: nowrap;
-}
-
-#pTex1, #pTex2, #pTex3, #pTex4 , #pTex5, #pTex6, #pTex7, #pTex8{
+#pTex1{text-align: center;
     margin: 0;padding: 0 0.25rem;  white-space: nowrap;
 }
-
-#pNum_hileraF_1, #pNum_hileraF_2, #pNum_hileraF_3{ 
-    text-align: center; 
-    margin: 0;padding: 0 0.25rem; white-space: nowrap;
+#pTex2, #pTex3, #pTex4{text-align: right;
+    margin: 0;padding: 0 0.25rem;  white-space: nowrap;
 }
+/* FIN DE  [3] Celda + div + parrafo */   
 
-#celda_c1,#celda_c2,#celda_c3,#celda_c4,#celda_c5,#celda_c6,#celda_c7{ 
-    text-align: center;margin: 0;padding: var(--paddingC1);; white-space: nowrap;
-    border: 1px solid var(--border-color); background-color: var(--bg-card-color);
+#celdaF_1 {border: 1px solid var(--border-color);padding: 0rem;margin: 0;}
+#celdaF_2, #celdaF_3 {border: 1px solid var(--border-color); padding: 0rem;margin: 0;  }
+
+#div_p_hileraF_1{
+    display: block; justify-content: center; align-items: center;
+    padding: var(--paddingC1); margin: 0;
 }
-
-#idCelda1_1{border: 1px solid var(--border-color);margin: 0;padding: var(--paddingC1); background-color: var(--bg-card-color);  text-align:center; white-space: nowrap; } 
-#idCelda1_2 , #idCelda1_3, #idCelda1_4, #idCelda1_5, #idCelda1_6, #idCelda1_7, #idCelda1_8 {border: 1px solid var(--border-color);padding: 0rem;margin: 0; background-color: var(--bg-card-color);  text-align:right; white-space: nowrap;} 
-
-#idCelda2_1{border: 1px solid var(--border-color); background-color: var(--bg-card-color); text-align:center; white-space: nowrap;} 
-#idCelda2_2 , #idCelda2_3 , #idCelda2_4, #idCelda2_5 , #idCelda2_6 , #idCelda2_7, #idCelda2_8{text-align:right;
-    border: 1px solid var(--border-color);padding: 0rem;margin: 0; background-color: var(--bg-card-color);} 
-
-#celdaF_1 {border: 1px solid var(--border-color);padding: 0rem;margin: 0;background-color: var(--bg-card-color);white-space: nowrap;}
-#celdaF_2, #celdaF_3 , #celdaF_4, #celdaF_5, #celdaF_6, #celdaF_7, #celdaF_8{border: 1px solid var(--border-color); background-color: var(--bg-card-color); white-space: nowrap; }
-#celdaF{background-color: rgba(0, 0, 53, 0);height: 25px;} 
+#div_p_hileraF_2, #div_p_hileraF_3{display: block;justify-content:end; align-items: center;
+    padding: var(--paddingC1); 
+}
+#pNum_hileraF_1{ 
+    text-align: center; white-space: nowrap;margin: 0;padding: 0 0.25rem; 
+}
+#pNum_hileraF_2, #pNum_hileraF_3{ 
+    text-align: right; white-space: nowrap;margin: 0;padding: 0 0.25rem; 
+} 
+/* #celdaF{background-color: var(--bg-color);;height: 125px;} */
 
 /* ############################################ FIN DE: TABLE ###################################################  */
 
@@ -838,7 +827,7 @@ z-index: 10;
                <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
              </svg>
             </div>
-           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[github.com]</p></div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[github.com/Miau19/Miau2]</p></div>
         </div>
         <div id="toggle-colors" class="colors">
           <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(150, 150, 152)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
@@ -863,7 +852,7 @@ z-index: 10;
       </header>
       <nav class="navbar1" id="navbar1">
             <div class="card__options">
-              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[github.com]</p>
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[Miau19/Miau2]</p>
                 <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                 <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
               </div>
@@ -888,13 +877,13 @@ z-index: 10;
       
     </div><!-- FIN DE: div class="container_flex_1" -->
     <div class="container_flex_2">
-      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[github.com]</p></div></div> 
+      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[Miau19/Miau2]</p></div></div> 
     
       <article class="main_grid_1">
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
-               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[github.com]</p>
+               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[Miau19/Miau2]</p>
                  <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                  <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
                </div>
@@ -1007,7 +996,7 @@ z-index: 10;
                <div class="div_padding">
                  <div class="checkboxs">
                   <div>
-                    <input id="ck1" class="checkbox" type="checkbox"  checked="checked"  value="">&nbsp;
+                    <input id="ck1" class="checkbox" type="checkbox"  value="">&nbsp;
                     <p>Con aportes periódicos</p>
                  </div>
                   <div>
@@ -1232,46 +1221,47 @@ z-index: 10;
                 
             </div>
             <div id="card_3a">
-              <h3 >
-                CRIPTOMONEDAS: BITCOIN
-              </h3>
-              <table class="tablaP24h">
-               <tr>
-                 <td class="tdP24h">Precio Máximo en 24 h</td>
-                 <td class="tdP24h_2" id="tdPMax24h">0</td>
-               </tr>
-               <tr>
-                 <td class="tdP24h">Precio Mínimo en 24 h </td>
-                 <td class="tdP24h_2" id="tdPMin24h">0</td>
-               </tr>
-               <tr>
-                 <td class="tdP24h">Cambio en 24 h</td>
-                 <td class="tdP24h_2" id="tdC24h">0</td>         
-               </tr>
-               <tr>
-                 <td class="tdP24h">Cambio(%) en 24 h</td>
-                 <td class="tdP24h_2" id="tdCp24h">0</td>         
-               </tr>
-               <tr>
-                 <td class="tdP24h">Volumen(BTC) en 24 h</td>         
-                 <td class="tdP24h_2" id="tdV24hBTC">0</td>
-               </tr>
-               <tr>    
-                 <td class="tdP24h">Volumen(USDT) en 24h&nbsp;</td>
-                 <td class="tdP24h_2"> <div id="tdV24hUSDT">0</div></td>
-               </tr>
-              </table><br>
-              <h3>¿Qué es el trading?</h3>
-              <p>
-               &nbsp;&nbsp;El trading es un concepto económico fundamental que conlleva la compra y venta de activos. Éstos pueden ser bienes y servicios, en los que el comprador remunera al vendedor. Mientras que en otro casos, la transacción puede consistir en un intercambio de bienes y servicios entre las partes que intervienen en el trade.
-              </p>
-              <p>
-               &nbsp;&nbsp;En el contexto de los mercados financieros, los activos tradeados son denominados instrumentos financieros. Éstos pueden ser valores, bonos, pares de divisas del mercado Forex, opciones, futuros, productos con margen, criptomonedas y muchos otros.
-              </p>
-              <p>
-               &nbsp;&nbsp;El término "trading" habitualmente se utiliza para referirse al trading a corto plazo -en el que los traders, de forma activa, entran y salen de sus posiciones en intervalos de tiempo relativamente cortos. Sin embargo, esta es una premisa un poco engañosa. De hecho, el trading puede aludir a un amplio rango de estrategias diferentes, como por ejemplo el "day trading", "swing trading", trading de tendencia y muchos otros.
-              </p>
-             </div>
+
+           <h3 >
+             CRIPTOMONEDAS: BITCOIN
+           </h3>
+           <table class="tablaP24h">
+            <tr>
+              <td class="tdP24h">Precio Máximo en 24 h</td>
+              <td class="tdP24h_2"> <div id="tdPMax24h_a">0</div></td>
+            </tr>
+            <tr>
+              <td class="tdP24h">Precio Mínimo en 24 h </td>
+              <td class="tdP24h_2"> <div id="tdPMin24h_a">0</div></td>
+            </tr>
+            <tr>
+              <td class="tdP24h">Cambio en 24 h</td>
+              <td class="tdP24h_2"> <div id="tdC24h_a">0</div></td>
+            </tr>
+            <tr>
+              <td class="tdP24h">Cambio(%) en 24 h</td>
+              <td class="tdP24h_2"> <div id="tdCp24h_a">0</div></td>
+            </tr>
+            <tr>
+              <td class="tdP24h">Volumen(BTC) en 24 h</td>         
+              <td class="tdP24h_2"> <div id="tdV24hBTC_a">0</div></td>
+            </tr>
+            <tr>    
+              <td class="tdP24h">Volumen(USDT) en 24h&nbsp;</td>
+              <td class="tdP24h_2"> <div id="tdV24hUSDT_a">0</div></td>
+            </tr>
+           </table><br>
+           <h3>¿Qué es el trading?</h3>
+           <p>
+            &nbsp;&nbsp;El trading es un concepto económico fundamental que conlleva la compra y venta de activos. Éstos pueden ser bienes y servicios, en los que el comprador remunera al vendedor. Mientras que en otro casos, la transacción puede consistir en un intercambio de bienes y servicios entre las partes que intervienen en el trade.
+           </p>
+           <p>
+            &nbsp;&nbsp;En el contexto de los mercados financieros, los activos tradeados son denominados instrumentos financieros. Éstos pueden ser valores, bonos, pares de divisas del mercado Forex, opciones, futuros, productos con margen, criptomonedas y muchos otros.
+           </p>
+           <p>
+            &nbsp;&nbsp;El término "trading" habitualmente se utiliza para referirse al trading a corto plazo -en el que los traders, de forma activa, entran y salen de sus posiciones en intervalos de tiempo relativamente cortos. Sin embargo, esta es una premisa un poco engañosa. De hecho, el trading puede aludir a un amplio rango de estrategias diferentes, como por ejemplo el "day trading", "swing trading", trading de tendencia y muchos otros.
+           </p>
+          </div>
 
         </div>
       </article>
@@ -1560,23 +1550,23 @@ z-index: 10;
            <table class="tablaP24h">
             <tr>
               <td class="tdP24h">Precio Máximo en 24 h</td>
-              <td class="tdP24h_2" id="tdPMax24h_b">0</td>
+              <td class="tdP24h_2"> <div id="tdPMax24h_b">0</div></td>
             </tr>
             <tr>
               <td class="tdP24h">Precio Mínimo en 24 h </td>
-              <td class="tdP24h_2" id="tdPMin24h_b">0</td>
+              <td class="tdP24h_2"> <div id="tdPMin24h_b">0</div></td>
             </tr>
             <tr>
               <td class="tdP24h">Cambio en 24 h</td>
-              <td class="tdP24h_2" id="tdC24h_b">0</td>         
+              <td class="tdP24h_2"> <div id="tdC24h_b">0</div></td>
             </tr>
             <tr>
               <td class="tdP24h">Cambio(%) en 24 h</td>
-              <td class="tdP24h_2" id="tdCp24h_b">0</td>         
+              <td class="tdP24h_2"> <div id="tdCp24h_b">0</div></td>
             </tr>
             <tr>
               <td class="tdP24h">Volumen(BTC) en 24 h</td>         
-              <td class="tdP24h_2" id="tdV24hBTC_b">0</td>
+              <td class="tdP24h_2"> <div id="tdV24hBTC_b">0</div></td>
             </tr>
             <tr>    
               <td class="tdP24h">Volumen(USDT) en 24h&nbsp;</td>
@@ -1740,7 +1730,6 @@ z-index: 10;
    <script src="js/decimal.min.js"></script>
    -->
 <script> 
-
 //############################################################################################################
 var N= "", cont=0, cont2=0, COLOR=0, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8="", 
 booleanGT="", IMPRIMIRTEXTO=1, arrayBox=[0,0,0,0,0,0,0,0], precioBTC0="", precioBTC="0", PRECIOBTC=1, incremento=1000, priceArray=[], totalPriceArray0=[], totalPriceArray01=[], 
@@ -1769,7 +1758,7 @@ function genera_tabla() {
   // Crea las celdas para thead1
   var hileraHead = document.createElement("tr"); 
   var celdaHead = document.createElement("td");
-  celdaHead.setAttribute("id", "celdaHead1");celdaHead.setAttribute("colspan", "7");celdaHead.setAttribute("rowspan", "1");
+  celdaHead.setAttribute("id", "celdaHead1");celdaHead.setAttribute("colspan", "3");celdaHead.setAttribute("rowspan", "1");
   // Crea 3 div para thead1:
   var tdiv1 = document.createElement("div"); tdiv1.setAttribute("id", "tdiv1");//nowrap
   var tdiv2 = document.createElement("div"); tdiv2.setAttribute("id", "tdiv2"); 
@@ -1791,18 +1780,18 @@ function genera_tabla() {
   btnB.setAttribute("onclick","borrarT("+cont+")"); 
   const SVG_NS = 'http://www.w3.org/2000/svg';
   let svg1 = document.createElementNS(SVG_NS, 'svg'); let path1 = document.createElementNS(SVG_NS, 'path');
-  svg1.setAttributeNS(null, "width", "16"); svg1.setAttributeNS(null, "height", "16");svg1.setAttributeNS(null, "viewBox", "-11 -20 86 86");
+  svg1.setAttributeNS(null, "width", "12"); svg1.setAttributeNS(null, "height", "12");svg1.setAttributeNS(null, "viewBox", "-11 -18 86 86");
   path1.setAttributeNS(null, "d", "M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z");
   path1.setAttributeNS(null, "class", "cpath");svg1.setAttributeNS(null, "class", "csvg");
   svg1.appendChild(path1); btnC.appendChild(svg1); 
   let svg2 = document.createElementNS(SVG_NS, 'svg'); let path2 = document.createElementNS(SVG_NS, 'path');
-  svg2.setAttributeNS(null, "width", "16"); svg2.setAttributeNS(null, "height", "16");svg2.setAttributeNS(null, "viewBox", "-11 -20 86 86");
+  svg2.setAttributeNS(null, "width", "12"); svg2.setAttributeNS(null, "height", "12");svg2.setAttributeNS(null, "viewBox", "-11 -18 86 86");
   path2.setAttributeNS(null, "d", "M60,37.21a2,2,0,0,1-1.28-.46L32,14.6,5.28,36.75a2,2,0,0,1-2.55-3.08l28-23.21a2,2,0,0,1,2.55,0l28,23.21A2,2,0,0,1,60,37.21Z");
   path2.setAttributeNS(null, "class", "cpath");svg2.setAttributeNS(null, "class", "csvg");
   svg2.appendChild(path2);btnV.appendChild(svg2);
 
   let svg3 = document.createElementNS(SVG_NS, 'svg'); let path3 = document.createElementNS(SVG_NS, 'path');
-  svg3.setAttributeNS(null, "width", "16"); svg3.setAttributeNS(null, "height", "16");svg3.setAttributeNS(null, "viewBox", "-23 -24 100 100");
+  svg3.setAttributeNS(null, "width", "12"); svg3.setAttributeNS(null, "height", "12");svg3.setAttributeNS(null, "viewBox", "-23 -24 100 100");
   path3.setAttributeNS(null, "d", "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z");
   path3.setAttributeNS(null, "class", "cpathB");svg3.setAttributeNS(null, "class", "csvgB");
   svg3.appendChild(path3);btnB.appendChild(svg3);
@@ -2036,17 +2025,21 @@ function genera_tabla() {
   thead1.setAttribute("id", "tfoot1");
   // Crea las celdas para tfoot1
   var hilerafoot = document.createElement("tr");
-  var celdafoot = document.createElement("td"); celdafoot.setAttribute("id", "celdaF"); celdafoot.setAttribute("colspan", "4");celdafoot.setAttribute("rowspan", "1");
+  var celdafoot = document.createElement("td"); celdafoot.setAttribute("id", "celdaF"); celdafoot.setAttribute("colspan", "3");celdafoot.setAttribute("rowspan", "1");
   var textoTfoot = document.createTextNode(" ");
   celdafoot.appendChild(textoTfoot);hilerafoot.appendChild(celdafoot);tfoot1.appendChild(hilerafoot);
-  table1.appendChild(tfoot1);//Agrega tfoot1 a table1
+  //table1.appendChild(tfoot1);//Agrega tfoot1 a table1
+
+  var br = document.createElement("br");
   //******************************************************************************(4)
   document.getElementById("tablas1").appendChild(table1);// Agrega table1 a div GENERATABLA1
+  document.getElementById("tablas1").appendChild(br);
   //PARA table1:
   document.getElementById("bC"+cont).style.display ="none";document.getElementById("bV"+cont).style.display ="none";
   if (N>1) {document.getElementById("bC"+cont).style.display ="inline-block";document.getElementById("bV"+cont).style.display ="inline-block";}
   document.getElementById("bC"+cont).click();//COLLAPSE tbodyF
 } // FIN DE function genera_tabla()
+
 
 // CONTROL DEL SELECTORES: 
 var selector1 = document.getElementById("Selector1");
@@ -2200,20 +2193,20 @@ function cotizaciónBtc_binance_price24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO /
   // //24h Volumen(BTC),  24h Volumen(USDT) :
   // console.log('data[0].volume',data[0].volume); console.log('data[0].quoteVolume',data[0].quoteVolume);
   //24h Máximo, 24h Mínimo :
-  tdPMax24h.innerText=formato(data[0].highPrice)+' USDT'; tdPMin24h.innerText=formato(data[0].lowPrice)+' USDT';
+  tdPMax24h_a.innerText=formato(data[0].highPrice)+' USDT'; tdPMin24h_a.innerText=formato(data[0].lowPrice)+' USDT';
   tdPMax24h_b.innerText=formato(data[0].highPrice)+' USDT'; tdPMin24h_b.innerText=formato(data[0].lowPrice)+' USDT';
 
   //Cambio en 24 h :
-  tdC24h.innerText=formato(data[0].priceChange)+' USDT'; tdCp24h.innerText=formato(data[0].priceChangePercent)+' %';
+  tdC24h_a.innerText=formato(data[0].priceChange)+' USDT'; tdCp24h_a.innerText=formato(data[0].priceChangePercent)+' %';
   tdC24h_b.innerText=formato(data[0].priceChange)+' USDT'; tdCp24h_b.innerText=formato(data[0].priceChangePercent)+' %';
 
     //24h Volumen(BTC),  24h Volumen(USDT) :
-  tdV24hBTC.innerText=formato(data[0].volume)+' BTC'; tdV24hUSDT.innerText=formato(data[0].quoteVolume/1000000000)+'T USDT';
+  tdV24hBTC_a.innerText=formato(data[0].volume)+' BTC'; tdV24hUSDT_a.innerText=formato(data[0].quoteVolume/1000000000)+'T USDT';
   tdV24hBTC_b.innerText=formato(data[0].volume)+' BTC'; tdV24hUSDT_b.innerText=formato(data[0].quoteVolume/1000000000)+'T USDT';
 
 
-  actualizaColor(document.getElementById('tdC24h'),data[0].priceChange,0);
-  actualizaColor(document.getElementById('tdCp24h'),data[0].priceChange,0);
+  actualizaColor(document.getElementById('tdC24h_a'),data[0].priceChange,0);
+  actualizaColor(document.getElementById('tdCp24h_a'),data[0].priceChange,0);
   actualizaColor(document.getElementById('tdC24h_b'),data[0].priceChange,0);
   actualizaColor(document.getElementById('tdCp24h_b'),data[0].priceChange,0);
 }
