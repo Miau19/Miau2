@@ -7,7 +7,7 @@
     <title>CF[2024]-2b-paratelef</title>
 
     <style type="text/css">
- @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 /* 
 @font-face {font-family: "Saira Expanded";src: url("Saira_Expanded-Bold.ttf");}
 @font-face {font-family: "Saira Expanded SemiBold";src: url("Saira_Expanded-SemiBold.ttf");}
@@ -394,11 +394,16 @@ z-index: 10;
     margin: 0.75rem 0.25rem ; padding: 0.25rem;
 }
 .div_padding_TED{ padding: 0px;margin-bottom: 5px; }
-
 .datos{
-    display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap; /* flex-wrap: wrap; EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA*/
+    display: flex;justify-content:space-between;align-items: center;flex-wrap: wrap;  flex-wrap: wrap;
+}/*
+
+.datos .contenedor {width: 15rem;height: 3rem;  flex-wrap: wrap; EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA
 }
+*/
 .datos div{ display: flex;justify-content: start;flex-wrap: nowrap;margin: 0;padding: 0; } 
+
+
 .datos #precioVenta {display: none;}
 
 .datos p , .datos span{ 
@@ -814,6 +819,144 @@ z-index: 10;
 
 /* ############################################ FIN DE: TABLE ###################################################  */
 
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%E LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.contenedor {
+    display: flex;justify-content: center;align-items: center;
+    background-color: rgb(98, 0, 202);
+width: 10rem;
+max-width: 1000px;
+margin: auto;
+margin: 0 0.25rem ; 
+
+position: relative;top: -0.9rem;
+}
+
+.selectbox {width: 100%;
+position: absolute;	left: 0;
+
+}
+
+.select {
+background: var(--bg-card-color);
+width: 100%;height: 1.8rem;
+box-shadow: 0px 0px 0px rgba(143, 204, 252, 0.16);
+border-radius: var(--border-radius_tex);
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: .2s ease all;
+margin-bottom: 0px;
+padding: 0 5px;
+position: relative;
+z-index: 200;
+border: 2px solid transparent;
+}
+
+.select.active,
+.select:hover {
+box-shadow: 0px 5px 10px rgba(69, 30, 30, 0.16);
+border: 3px solid #0055ff;
+}
+
+.select.active:before {
+content: "";
+display: block;
+height: 0;
+width: 0;
+border-top: 10px solid #00a2ff;
+border-right: 10px solid transparent;
+border-bottom: 10px solid transparent;
+border-left: 10px solid transparent;
+position: absolute;
+bottom: -20px;
+left: calc(50% - 10px);
+}
+
+.select svg {
+font-size: var(--font-size1);
+margin-left: 30px;
+stroke-width: 4px;stroke: var(--text-color);
+}
+
+.titulo {
+    padding: 0 0.5rem;
+color:  var(--text-color);
+font-weight: var(--font-weight1);
+font-size: var(--font-size1);
+}
+.titulo:hover {
+    cursor: pointer;
+}
+.descripcion {
+font-size: 18px;
+color: #06d410;
+}
+
+.opciones {
+background:var(--bg-card-color);
+/*border-radius: 10px;*/
+box-shadow: 0px 5px 10px rgba(0,0,0,.16);
+max-height: 150px;
+overflow: auto;
+z-index: 100;
+width: 100%;
+display: none; 
+}
+
+.opciones.active {
+display: block;
+animation: fadeIn .3s forwards;
+}
+
+@keyframes fadeIn {
+from {
+transform: translateY(-50px) scale(.5);
+}
+to {
+transform: translateY(0) scale(1);
+}
+}
+
+.contenido-opcion {
+width: 100%;
+display: flex;
+text-align: left; /* align-items: center; */
+transition: .5s ease all;
+} 
+
+.opciones .contenido-opcion {
+padding: 5px;
+}
+
+.contenido-opcion img {
+width: 20px;
+height: 20px;
+margin-right: 10px;
+}
+
+.opciones .contenido-opcion:hover {
+background: #3f3f3f;
+}
+
+.opciones .contenido-opcion:hover .titulo,
+.opciones .contenido-opcion:hover .descripcion {
+color: #fff;
+}
+
+@media screen and (max-width: 800px){
+.selectbox {
+width: 100%;
+}
+} 
+
+ 
+/* %%%%%%%%%%%%%%%%%%%%%%%%  FIN DE LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* ############################################ FIN DE: TABLE ###################################################  */
+
     </style>
 
   </head>
@@ -829,7 +972,7 @@ z-index: 10;
                <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
              </svg>
             </div>
-           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS{{github.com}}</p></div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[[[[[[[[[github]]]]]]]]</p></div>
         </div>
         <div id="toggle-colors" class="colors">
           <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(150, 150, 152)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
@@ -854,7 +997,7 @@ z-index: 10;
       </header>
       <nav class="navbar1" id="navbar1">
             <div class="card__options">
-              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS{{github.com}}</p>
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[[[[[github]]]]]</p>
                 <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                 <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
               </div>
@@ -879,13 +1022,13 @@ z-index: 10;
       
     </div><!-- FIN DE: div class="container_flex_1" -->
     <div class="container_flex_2">
-      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS{{github.com}}</p></div></div> 
+      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[[[[[github]]]]]</p></div></div> 
     
       <article class="main_grid_1">
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
-               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS{{github.com}}</p>
+               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[[[[[github]]]]]</p>
                  <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                  <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
                </div>
@@ -906,10 +1049,55 @@ z-index: 10;
           <div class="columnCenter_articles" id="columnCenter_articles">
               <article class=" card_center" id="article_center" >
                <div class="card_trade_subtitle"><p >DEP&Oacute;SITOS A PLAZO FIJO</p></div>
+
+               <div style=" background: #556601;display: flex;justify-content: space-between;align-items: center;height: 2.4rem;border-radius: 0.75rem;">
+                <div style="padding: 0 0.525rem ;">xxx</div>
+                <div style="background: #45018a;">
+                <div class="contenedor">
+                  <form action="">
+                    <div class="selectbox">
+                      <div class="select" id="select">
+                        <div class="contenido-select" style="display: flex;justify-content: center;align-items: center;padding: 0;margin: 0;">
+                          <label class="titulo">360 días</label>
+                        </div>
+                        <svg  class="st1"  width="21" height="16"  viewBox="0 -9 64 64" >
+                          <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
+                        </svg>
+                      </div>
+                
+                      <div class="opciones" id="opciones">
+                        <a href="#" class="opcion">
+                          <div class="contenido-opcion">
+                            <div class="textos">
+                              <label class="titulo">30 días</label>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#" class="opcion">
+                          <div class="contenido-opcion">
+                            <div class="textos">
+                              <label class="titulo">60 días</label>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#" class="opcion">
+                          <div class="contenido-opcion">
+                            <div class="textos">
+                              <label class="titulo">360 días</label>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </div>
+
                <div class="div_padding">
                <div class="datos" >
-                 <p>Moneda:</p>
-                  <select id="Selector1" name="Selector"><!-- class="text" -->
+                 <div ><p>Moneda:</p></div>
+                  <select id="Selector1" name="Selector">
                     <option id="option1" value="USD" selected>USD</option>
                     <option id="option2" value="Dolares">Dolares</option>
                     <option id="option3" value="PEN">PEN </Option>
@@ -919,6 +1107,7 @@ z-index: 10;
                     <option id="option7" value="€">€</option>
                     <option id="option8" value="$">$</option>
                   </select>
+
                </div>    
                </div>
                <div class="div_padding">
@@ -1024,7 +1213,53 @@ z-index: 10;
                   </div>
                   </div>
                 </div>
-      
+                <!-- 
+                <div style=" background: #556601;display: flex;justify-content: space-between;align-items: center;height: 2.4rem;border-radius: 0.75rem;">
+                  <div style="padding: 0 0.525rem ;">xxx</div>
+                  <div style="background: #45018a;">
+                  <div class="contenedor">
+                    <form action="">
+                      <div class="selectbox">
+                        <div class="select" id="select">
+                          <div class="contenido-select" style="display: flex;justify-content: center;align-items: center;padding: 0;margin: 0;">
+                            <label class="titulo">360 días</label>
+                          </div>
+                          <svg  class="st1"  width="21" height="16"  viewBox="0 -9 64 64" >
+                            <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
+                          </svg>
+                        </div>
+                  
+                        <div class="opciones" id="opciones">
+                          <a href="#" class="opcion">
+                            <div class="contenido-opcion">
+                              <div class="textos">
+                                <label class="titulo">30 días</label>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="#" class="opcion">
+                            <div class="contenido-opcion">
+                              <div class="textos">
+                                <label class="titulo">60 días</label>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="#" class="opcion">
+                            <div class="contenido-opcion">
+                              <div class="textos">
+                                <label class="titulo">360 días</label>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  </div>
+                </div>
+              -->                        
+                
+
                 <div class="div_padding" id="dp5">
                   <div class="datos" >
                   <div><p>Cuenta Spot Inicial</p><span id="moneda1">(USDT)</span><p>:</p></div>
@@ -1078,7 +1313,8 @@ z-index: 10;
                 <div class="buttons" >
                   <div type="button" class="button button--primary" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
                    <div type="button" class="button button--primary" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
-                  </div>
+                </div>
+
               </article>
           </div><!-- FIN DE div class="column columnCenter_articles" -->
         </div> <!--   FIN DE div id="columnCenter" -->
@@ -1269,6 +1505,7 @@ z-index: 10;
       </article>
   
       <article class="main_grid_2" id="main_grid_2">
+        
         <div class="tablas" id="tablas"><br>
           <table class="tabla-css" id="tabla_1a">
             <thead>
@@ -1732,7 +1969,7 @@ z-index: 10;
    <script src="js/decimal.min.js"></script>
    -->
 <script> 
-//############################################################################################################
+//########################################################################### ↓↑ ⟵ ⟶  ⭠ ⭢  ← →     ⬆ ⬇ ➡ ⬅  ⇧ ⇩ ⇦ ⇨  ⬌ ⬍ [Solo funcionan en 'Gimp': ↓↑  ← → ⇧ ⇩ ⇦ ⇨ ]  //https://textkool.com/es/symbols/arrows-symbols  
 var N= "", cont=0, cont2=0, COLOR=0, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8="", 
 booleanGT="", IMPRIMIRTEXTO=1, arrayBox=[0,0,0,0,0,0,0,0], precioBTC0="", precioBTC="0", PRECIOBTC=1, incremento=1000, priceArray=[], totalPriceArray0=[], totalPriceArray01=[], 
 totalPriceArray=[],totalPriceArray02=[],  totalTimeArray0=[], totalTimeArray01=[], totalTimeArray02=[], totalTimeArray=[], totalPriceArray2=[], totalTimeArray2=[], totalPriceArray3=[], totalTimeArray3=[], 
@@ -2658,6 +2895,29 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
  function startTimer() {timerID=window.setInterval(newYear,1000);} 
  function stopTimer() {clearInterval(timerID);} 
 
+ ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ const select = document.querySelector('#select');
+ const opciones = document.querySelector('#opciones');
+ const contenidoSelect = document.querySelector('#select .contenido-select');
+ const hiddenInput = document.querySelector('#inputSelect');
+ 
+ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
+   opcion.addEventListener('click', (e) => {
+     e.preventDefault();
+     contenidoSelect.innerHTML = e.currentTarget.innerHTML;
+     select.classList.toggle('active');
+     opciones.classList.toggle('active');
+     hiddenInput.value = e.currentTarget.querySelector('.titulo').innerText;
+   });
+ });
+ 
+ select.addEventListener('click', () => {
+   select.classList.toggle('active');
+   opciones.classList.toggle('active');
+ }); 
+///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 ////################ decimal.js #########################
 ////################ decimal.js #########################
@@ -3574,7 +3834,6 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
 //# sourceMappingURL=doc/decimal.js.map  
 
 ////################ FIN DE  decimal.js ###################
-
 
 
 </script> 
