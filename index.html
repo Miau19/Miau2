@@ -2863,14 +2863,14 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
  function startTimer() {timerID=window.setInterval(newYear,1000);} 
  function stopTimer() {clearInterval(timerID);} 
 
- ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  const select = document.querySelector('#select');
  const opciones = document.querySelector('#opciones');
  const opciones0 = document.querySelector('#opciones0');
 
  const contenidoSelect = document.querySelector('#select .contenido-select');
  const hiddenInput = document.querySelector('#inputSelect');
- 
+ /*
  document.querySelectorAll('#opciones0 > .contenido-opcion').forEach(function (opcion) {
    opcion.addEventListener('click',x);
  });
@@ -2886,6 +2886,23 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
    select.classList.toggle('active');
    opciones.classList.toggle('active');
  }); 
+*/
+
+ var contenidoOpcion = document.getElementsByName("contenido_opcion");
+ for (let y = 0; y < contenidoOpcion.length; y++) { // RECORRE CADA CASILLA
+  contenidoOpcion[y].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
+    e.preventDefault();
+  contenidoSelect.innerHTML = ((e.currentTarget.innerHTML).split('('))[0];
+  select.classList.toggle('active');
+  opciones.classList.toggle('active');
+  ///document.querySelector('#titulo').style.fontSize='0.75'+'rem';
+  });
+
+ }
+ select.addEventListener('click', function () {
+  select.classList.toggle('active');
+  opciones.classList.toggle('active');
+}); 
 ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
