@@ -2838,13 +2838,13 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
  function startTimer() {timerID=window.setInterval(newYear,1000);} 
  function stopTimer() {clearInterval(timerID);} 
 
- ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- const select = document.getElementById('select') , select2 = document.getElementById('select2') ;
- const opciones = document.getElementById('opciones') , opciones2 = document.getElementById('opciones2');
- const opciones0 = document.getElementById('opciones0') , opciones02 = document.getElementById('opciones02');
+  ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  var select = document.getElementById('select') , select2 = document.getElementById('select2') ;
+ var opciones = document.getElementById('opciones') , opciones2 = document.getElementById('opciones2');
+ var opciones0 = document.getElementById('opciones0') , opciones02 = document.getElementById('opciones02');
 
- const contenidoSelect = document.getElementById('contenido_select');
- const contenidoSelect2 = document.getElementById('contenido_select2');
+ var contenidoSelect = document.getElementById('contenido_select');
+ var contenidoSelect2 = document.getElementById('contenido_select2');
  //const hiddenInput = document.querySelector('#inputSelect');
  /*
  document.querySelectorAll('#opciones0 > .contenido-opcion').forEach(function (opcion) {
@@ -2883,7 +2883,7 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
   opciones.classList.toggle('active');
 });
 
-  var contenidoOpcion2 = document.getElementsByName("contenido_opcion2");
+  var contenidoOpcion2 = document.getElementsByName("contenido_opcion2") , To=1, Ts=1;
 
  for (let y = 0; y < contenidoOpcion2.length; y++) { // RECORRE CADA CASILLA
   contenidoOpcion2[y].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
@@ -2898,18 +2898,29 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
   span1.innerHTML = s2[y]; 
   boxTED.value= formato1(TAZA(taza, dias, 3));
 
-  select2.classList.toggle('active');
-  opciones2.classList.toggle('active');
+  ///select2.classList.toggle('active');
+  //opciones2.classList.toggle('active');
   ///document.querySelector('#titulo').style.fontSize='0.75'+'rem';
+  if (To==1) {
+    opciones2.style.display='block';opciones2.style.height='6.65'+'rem';opciones2.style.padding='0.25rem';opciones2.style.animation='fadeIn .3s forwards';To=0;
+  }else{
+    opciones2.style.display='none';opciones2.style.height='0'+'rem';To=1;
+  }
+  
   });
 
  }
  select2.addEventListener('click', function () {
-  select2.classList.toggle('active');
-  opciones2.classList.toggle('active');
+  //select2.classList.toggle('active');
+  ///opciones2.classList.toggle('active');  // padding: 0.25rem;
+  if (To==1) {
+    opciones2.style.display='block';opciones2.style.height='6.65'+'rem';opciones2.style.padding='0.25rem';opciones2.style.animation='fadeIn .3s forwards';To=0;
+  }else{
+    opciones2.style.display='none';opciones2.style.height='0'+'rem';To=1;
+  }
 }); 
-///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 ////################ decimal.js #########################
