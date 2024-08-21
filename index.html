@@ -38,6 +38,7 @@
    --width_LO1: 12rem;--width_LO2: 10rem;--width_LO3: 5.7rem;
    --n: 0.6rem;
    /*FIN DE: VALORES PARA CONTROL DE LISTA DE OPCIONES */
+   --widhtSvg: 12px; --heightSvg: 12px; /* VALORES PARA LOS svg DE TABLAS*/
 }
 
 html{background-color: var(--bg-card-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
@@ -560,7 +561,7 @@ z-index: 10;
     cursor: pointer; background-color: #680101;
 }
 .main_grid_2 .tabla-css .td_x svg{/* viewBox='-30 -36 100 100' width='21px' height='16px' */
-    fill: var(--text-color); width: 16px;height: 16px;
+    fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);
 }
 .main_grid_2 .tabla-css .tdFinalT1, .main_grid_2 .tabla-css .tdFinalT2{
     border: 1px solid var(--text-color);
@@ -570,11 +571,11 @@ z-index: 10;
 .main_grid_2 .tabla-css .tdFinalT2{text-align: right;border-left: none;}
 .main_grid_2 .tabla-css .td_separador{height: 1.525rem; border: 1px solid var(--text-color);}
 
-.td_Dtitulo{border: 1px solid var(--text-color); padding: 0;margin: 0;}
+.td_Dtitulo{border: 1px solid var(--text-color); margin: 0;padding: 0; }
 .div_Dtitulo{width: 100%; display: flex;justify-content: space-between; align-items: center; padding-left: 0.525rem;}
-#div_Dsvg{display: flex;justify-content: center; align-items: center; padding: 0.25rem  0.525rem;margin: 0;}
+#div_Dsvg{display: flex;justify-content: center; align-items: center; padding: 0.5rem  0.525rem;margin: 0;}
 #div_Dsvg:hover{cursor: pointer; background-color: #680101;}
-#div_Dsvg svg{fill: var(--text-color); width: 16px;height: 16px;}
+#div_Dsvg svg{fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);}
 #tabla_2a{display: none;}
 
 .main_grid_3{background-color: var(--bg-card-color);
@@ -748,7 +749,7 @@ z-index: 10;
     margin: 0 0rem ; padding: var(--paddingC2) ;}
 @media screen and  (max-width: 500px) {.btnArrowUp, .btnArrowDown, .cBtnS, .btnClose {padding: 0.45rem 1rem ;}} 
 
-.csvg, .csvgB{display: block;justify-content: center;align-items: center;}  
+.csvg, .csvgB{display: block;justify-content: center;align-items: center;  width: var(--widhtSvg);height: var(--heightSvg);}  
 .cpath{fill: var(--text-color);stroke-width: 4px;stroke: var(--text-color)}
 .cpathB{fill: var(--text-color);}
 
@@ -832,18 +833,15 @@ z-index: 10;
 
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%E LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-.div0{
-    width: var(--width_LO1);height: var(--height_LO1);}
+.div0{width: var(--width_LO1);height: var(--height_LO1);}
 @media screen and  (max-width: 900px) {
     .div0{ width:var(--width_LO2);}
   } 
   @media screen and  (max-width: 460px) {
     .div0{width: var(--width_LO3);height: var(--height_LO3);}
   }
-.contenedor {
-    position: relative;
-    width: 100%;height: 100%;
-}
+.contenedor {position: relative;width: 100%;height: 100%;  z-index: 501;}
+.contenedor2 {position: relative;width: 100%;height: 100%; z-index: 500;}
 
 .selectbox { position: absolute;width: 100%;top: 0.9rem;	left: 0;
     display: flex;justify-content: center;flex-direction: column;}
@@ -865,8 +863,8 @@ transition: .2s ease all;
 .select.active, .select:hover {box-shadow: var(--box-shadow1) ;}
 
 .select svg {
-    width: 0.75rem;height: 0.75rem;
-stroke-width: 3px;stroke: var(--text-color);
+  width: var(--widhtSvg);height: var(--heightSvg);
+  stroke-width: 3px;stroke: var(--text-color);
 }
 
 .contenido-select{padding: 0 0.0rem;width: 100% ;
@@ -882,7 +880,7 @@ font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(-
 background:var(--bg-card-color);
 position: relative; z-index: 100;
 height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
-max-height: 6.65rem;
+max-height: 9rem;
 display: none;
 border-radius: var(--border-radius_tex);
 box-shadow: var(--box-shadow1) ;
@@ -896,7 +894,7 @@ box-shadow: var(--box-shadow1) ;
   /*
 
 */
-.opciones.active {display: block;height: 6.65rem;padding: 0.25rem; animation: fadeIn .3s forwards;}
+.opciones.active {display: block;height: 99rem;padding: 0.25rem; animation: fadeIn .3s forwards;}
 
 .opciones0{
     display: flex;justify-content: center;align-items: center;flex-direction: column;
@@ -936,6 +934,8 @@ transition: .5s ease all;
 /* %%%%%%%%%%%%%%%%%%%%%%%%  FIN DE LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */ 
 
 
+
+
     </style>
 
   </head>
@@ -951,7 +951,7 @@ transition: .5s ease all;
                <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
              </svg>
             </div>
-           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[.......]</p></div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[+++]</p></div>
         </div>
         <div id="toggle-colors" class="colors">
           <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(150, 150, 152)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
@@ -976,7 +976,7 @@ transition: .5s ease all;
       </header>
       <nav class="navbar1" id="navbar1">
             <div class="card__options">
-              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[.......]</p>
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[+++]</p>
                 <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                 <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
               </div>
@@ -1001,13 +1001,13 @@ transition: .5s ease all;
       
     </div><!-- FIN DE: div class="container_flex_1" -->
     <div class="container_flex_2">
-      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[.......]</p></div></div> 
+      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[+++]</p></div></div> 
     
       <article class="main_grid_1">
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
-               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[.......]</p>
+               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[+++]</p>
                  <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                  <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
                </div>
@@ -1027,7 +1027,7 @@ transition: .5s ease all;
         <div class="columnCenter" id="columnCenter">
           <div class="columnCenter_articles" id="columnCenter_articles">
               <article class=" card_center" id="article_center" >
-               <div class="card_trade_subtitle"><p >DEP&Oacute;SITOS A PLAZO FIJOooo</p></div>
+               <div class="card_trade_subtitle"><p >DEP&Oacute;SITOS A PLAZO FIJO</p></div>
                <!--div PARA LISTA DE OPCIONES -->
                <div  class="div_padding">
                 <div class="datos">
@@ -1036,9 +1036,7 @@ transition: .5s ease all;
                   <div class="contenedor">
                       <div class="selectbox">
                         <div class="select" id="select">
-                          <div class="contenido-select" id="contenido_select">
-                            USD
-                          </div>
+                          <div class="contenido-select" id="contenido_select">USD</div>
                           <div>
                           <svg  class="svg1"  viewBox="0 -9 64 64" >
                             <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
@@ -1048,7 +1046,7 @@ transition: .5s ease all;
                   
                         <div class="opciones" id="opciones">
                         <div class="opciones0" id="opciones0">
-                          <div class="contenido-opcion" name="contenido_opcion" >CNY(China)</div>
+                          <div class="contenido-opcion" name="contenido_opcion">CNY(China)</div>
                           <div class="contenido-opcion" name="contenido_opcion">EUR(Unión Europea)</div>
                           <div class="contenido-opcion" name="contenido_opcion">JPY(Japón)</div>
                           <div class="contenido-opcion" name="contenido_opcion">MXN(México)</div>
@@ -1063,21 +1061,6 @@ transition: .5s ease all;
                 </div>
                </div>
                <!-- FIN DE: div PARA LISTA DE OPCIONES --> 
-               <!-- <div class="div_padding">
-               <div class="datos" >
-                 <div ><p>Moneda:</p></div>
-                  <select id="Selector1" name="Selector">
-                    <option id="option1" value="USD" selected>USD</option>
-                    <option id="option2" value="Dolares">Dolares</option>
-                    <option id="option3" value="PEN">PEN </Option>
-                    <option id="option4" value="Soles">Soles</option>
-                    <option id="option5" value="EUR">EUR</option>
-                    <option id="option6" value="Euros">Euros</option>
-                    <option id="option7" value="€">€</option>
-                    <option id="option8" value="$">$</option>
-                  </select>
-               </div>    
-               </div> --> 
                <div class="div_padding">
                <div class="datos" >
                <div>
@@ -1099,12 +1082,10 @@ transition: .5s ease all;
                 <div class="datos">
                   <div ><p>Período(días):</p></div>
                   <div class="div0">
-                  <div class="contenedor">
+                  <div class="contenedor2">
                       <div class="selectbox">
                         <div class="select" id="select2">
-                          <div class="contenido-select" id="contenido_select2">
-                            360
-                          </div>
+                          <div class="contenido-select" id="contenido_select2">360</div>
                           <div>
                           <svg  class="svg1"  viewBox="0 -9 64 64" >
                             <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
@@ -1129,21 +1110,7 @@ transition: .5s ease all;
                 </div>
                </div>
                <!-- FIN DE: div PARA LISTA DE OPCIONES --> 
-               <!-- <div class="div_padding">
-               <div class="datos">
-                <p>Período(días):<span id="span2"></span></p>
-                <select id="Selector2" > 
-                  <option id="rb0" value="1" > 1  </option>
-                  <option id="rb1" value="30"> 30 </option>
-                  <option id="rb2" value="60"> 60 </option>
-                  <option id="rb3" value="90"> 90 </Option>
-                  <option id="rb4" value="180">180</option>
-                  <option id="rb5" value="270">270</option>
-                  <option id="rb6" value="360" selected>360 </Option>
-                </select>       
-               </div>
-               </div>  -->
-      
+
                <div class="div_padding"> <!-- 1 -->
                  <div class="div_padding_TED">
                    <div class="datos" >
@@ -1449,7 +1416,7 @@ transition: .5s ease all;
           <table class="tabla-css" id="tabla_1a">
             <thead>
               <tr>
-                <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+                <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
               </tr>
               <tr >
                 <td class="tdHead">S&iacute;mbolo</td>
@@ -1472,7 +1439,7 @@ transition: .5s ease all;
                 <td id="td_p1"  class="td_cf">224.42   </td>
                 <td id="td_cf1" class="td_cf">1,774.88 </td>
                 <td class="td_x" onclick="eliminarTr(1)">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
               </tr>
               <tr id="tr_2">
@@ -1485,7 +1452,7 @@ transition: .5s ease all;
                 <td id="td_p2"  class="td_cf">168.86   </td>
                 <td id="td_cf2" class="td_cf">786.09   </td>
                 <td class="td_x" onclick="eliminarTr(2)">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
               </tr>
             </thead> 
@@ -1515,7 +1482,7 @@ transition: .5s ease all;
          <table class="tabla-css" id="tabla_2a">
           <thead>
             <tr>
-              <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+              <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
             </tr>
             <tr >
               <td class="tdHead">S&iacute;mbolo</td>
@@ -1538,7 +1505,7 @@ transition: .5s ease all;
               <td id= "td_pE1" class="td_cf">0.00     </td>
               <td id="td_cfE1" class="td_cf">0.00     </td>
               <td class="td_x" onclick="eliminarTrE(1)">
-                <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
             <tr id="tr_E2" style="display: none;">  
@@ -1551,7 +1518,7 @@ transition: .5s ease all;
               <td id= "td_pE2" class="td_cf">0.00     </td>
               <td id="td_cfE2" class="td_cf">0.00     </td>
               <td class="td_x" onclick="eliminarTrE(2)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -20 100 100' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
           </thead> 
@@ -1958,18 +1925,18 @@ function genera_tabla() {
   btnB.setAttribute("onclick","borrarT("+cont+")"); 
   const SVG_NS = 'http://www.w3.org/2000/svg';
   let svg1 = document.createElementNS(SVG_NS, 'svg'); let path1 = document.createElementNS(SVG_NS, 'path');
-  svg1.setAttributeNS(null, "width", "12"); svg1.setAttributeNS(null, "height", "12");svg1.setAttributeNS(null, "viewBox", "-11 -18 86 86");
-  path1.setAttributeNS(null, "d", "M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z");
+  svg1.setAttributeNS(null, "viewBox", "0 -9 64 64");// "-11 -18 86 86"
+  path1.setAttributeNS(null, "d", "M60,37.21a2,2,0,0,1-1.28-.46L32,14.6,5.28,36.75a2,2,0,0,1-2.55-3.08l28-23.21a2,2,0,0,1,2.55,0l28,23.21A2,2,0,0,1,60,37.21Z");
   path1.setAttributeNS(null, "class", "cpath");svg1.setAttributeNS(null, "class", "csvg");
   svg1.appendChild(path1); btnC.appendChild(svg1); 
   let svg2 = document.createElementNS(SVG_NS, 'svg'); let path2 = document.createElementNS(SVG_NS, 'path');
-  svg2.setAttributeNS(null, "width", "12"); svg2.setAttributeNS(null, "height", "12");svg2.setAttributeNS(null, "viewBox", "-11 -18 86 86");
-  path2.setAttributeNS(null, "d", "M60,37.21a2,2,0,0,1-1.28-.46L32,14.6,5.28,36.75a2,2,0,0,1-2.55-3.08l28-23.21a2,2,0,0,1,2.55,0l28,23.21A2,2,0,0,1,60,37.21Z");
+  svg2.setAttributeNS(null, "viewBox", "0 -9 64 64"); // "-11 -18 86 86"
+  path2.setAttributeNS(null, "d", "M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z");
   path2.setAttributeNS(null, "class", "cpath");svg2.setAttributeNS(null, "class", "csvg");
   svg2.appendChild(path2);btnV.appendChild(svg2);
 
   let svg3 = document.createElementNS(SVG_NS, 'svg'); let path3 = document.createElementNS(SVG_NS, 'path');
-  svg3.setAttributeNS(null, "width", "12"); svg3.setAttributeNS(null, "height", "12");svg3.setAttributeNS(null, "viewBox", "-23 -24 100 100");
+  svg3.setAttributeNS(null, "viewBox", "-20 -10 80 80");//-20 -10 80 80 // "-20 -10 80 80" // "-23 -24 100 100"
   path3.setAttributeNS(null, "d", "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z");
   path3.setAttributeNS(null, "class", "cpathB");svg3.setAttributeNS(null, "class", "csvgB");
   svg3.appendChild(path3);btnB.appendChild(svg3);
@@ -2229,51 +2196,11 @@ function genera_tabla() {
   document.getElementById("bC"+cont).click();//COLLAPSE tbodyF
 } // FIN DE function genera_tabla()
 
-
-// CONTROL DEL SELECTORES: 
-/*
-var selector1 = document.getElementById("Selector1");
-var s1= ["(USD)", "(Dolares)","(PEN)","(Soles)","(EUR)","(Euros)","(€)","($)"] 
-selector1.addEventListener("click", () => {
-  selector1.addEventListener("change", () => {
-   switch (selector1.value) {
-    case "USD":    money1.innerHTML = s1[0]; money2.innerHTML = s1[0]; break; 
-    case "Dolares":money1.innerHTML = s1[1]; money2.innerHTML = s1[1]; break; 
-    case "PEN":    money1.innerHTML = s1[2]; money2.innerHTML = s1[2]; break; 
-    case "Soles":  money1.innerHTML = s1[3]; money2.innerHTML = s1[3]; break; 
-    case "EUR":    money1.innerHTML = s1[4]; money2.innerHTML = s1[4]; break; 
-    case "Euros":  money1.innerHTML = s1[5]; money2.innerHTML = s1[5]; break; 
-    case "€":      money1.innerHTML = s1[6]; money2.innerHTML = s1[6]; break; 
-    case "$":      money1.innerHTML = s1[7]; money2.innerHTML = s1[7]; break; 
-   }
-  });
-});
-var s2= ["(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"];
-var s3= ["1","30", "60","90","180","270","360"]
-Selector2.addEventListener("click", () => {
-  Selector2.addEventListener("change", () => {
-   var iT00= Number(cleanBoxes(document.getElementById("tea1").value.replace(/[-,]/g,"")));  document.getElementById("tea1").value=formato1(iT00); 
-   var iT0=document.getElementById("tea1");
-   var taza=iT0.value.replace(/[-,]/g,""); var dias=Selector2.value;
-   //boleano=3;
-   switch (dias) {
-    case "1" : span1.innerHTML=s2[0]; span3.innerHTML = s3[0]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
-    case "30": span1.innerHTML=s2[0]; span3.innerHTML = s3[1]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
-    case "60": span1.innerHTML=s2[1]; span3.innerHTML = s3[2]; boxTED.value= formato1(TAZA(taza, dias, 3)); break;
-    case "90": span1.innerHTML=s2[2]; span3.innerHTML = s3[3]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
-    case "180":span1.innerHTML=s2[3]; span3.innerHTML = s3[4]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
-    case "270":span1.innerHTML=s2[4]; span3.innerHTML = s3[5]; boxTED.value= formato1(TAZA(taza, dias, 3)); break; 
-    case "360":span1.innerHTML=s2[5]; span3.innerHTML = s3[6]; boxTED.value= formato1(taza); break      
-   }
-  });
-});
-*/
-
 var boleano=""; 
 function TAZA(taza, dias, boleano){//PARA INTRODUCIR TEXTO EN VIVO A CASILLAS, Y DE SELECTOR 'Selector2' A CASILLA 'boxTED'
   var exponente = "";
   if (boleano==2) exponente = Number(1/(dias/360));// Para Taza Efectiva Anual
-  else exponente = Number(dias/360);// Para Taza Efectiva Diaria
+  else exponente = Number(dias/360);console.log("exponente: "+exponente);// Para Taza Efectiva Diaria
   return operacion(taza,exponente);
 }
 
@@ -2286,7 +2213,7 @@ function operacion(taza,exponente) {//CALCULO DE tea: A 180 DIAS → ted= 4 //RE
   //TED a TEA: exponente = new String(1/(dias/360)); ......❰1❱
   //TEA a TED: exponente = new String(dias/360); ..........❰2❱
   var teda = (Math.pow( (1+(taza/100)),exponente )-1)*100 ;// teda:  Taza Efectiva Diaria ó Anual
-  //console.log("teda: "+teda);  
+   //CODIGO PARA USAR CON: decimal.js 2
   var t = new Decimal(taza);                     //console.log("t : "+t );
   var d = t.div(100).toNumber();                 //console.log("d : "+d );
   var d0 = new Decimal(d);                       //console.log("d0: "+d0);  
@@ -2296,9 +2223,9 @@ function operacion(taza,exponente) {//CALCULO DE tea: A 180 DIAS → ted= 4 //RE
   var p0 = new Decimal(p);                       //console.log("p0: "+p0);
   var r = p0.minus(1).toNumber();                //console.log("r : "+r );
   var r0 = new Decimal(r);                       //console.log("r0: "+r0);
-  var m_F = r0.mul(100).toNumber().toFixed(100); //console.log("m_toFixed(100) : "+m_F );///SOLO PARA OBSERVAR DECIMALES
+  //var m_F = r0.mul(100).toNumber().toFixed(100); console.log("m_toFixed(100) : "+m_F );///SOLO PARA OBSERVAR DECIMALES // EN: toFixed(100) 100 NO TRABAJA CON NAVEGADORES ANTIGUOS, COMO EDGE(CELULAR)
   var m = r0.mul(100).toNumber();                //console.log("m : "+m ); console.log("→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→");
-  return m;//return Number(m);
+  return m;
 } 
 
 function iniciar(){genera_tabla()}
@@ -2477,7 +2404,7 @@ function agregarAtabla(){
   var TR= "<tr id='tr_"+est+contC+"'"+" ><td class='td_cf' id='td_sp"+est+contC+"'>"+simbolo.textContent.replace(':','')+"</td><td class='td_cf' id='td_ci"+est+contC+"'>"+formato(cuentaInicial)+"</td><td class='td_cf' id='td_pc"+est+contC+"'>"+
   formato(pCompra)+"</td><td class='td_cf' id='td_pv"+est+contC+"'>"+formato(pVenta)+"</td><td class='td_cf' id='td_dp"+est+contC+"'>"+formato(gananciaXBTC)+"</td><td class='td_cf' id='td_c"+est+contC+"'>"+formato(comision)+"</td><td class='td_cf' id='td_p"+est+contC+"'>"+
   formato(gananciaXFraccion)+"</td><td class='td_cf' id='td_cf"+est+contC+"'>"+formato(cuentaFinal)+"</td><td onclick='eliminarTr"+est+"("+contC+")'"+" class='td_x' id='td_x"+est+contC+"'"+
-  ">"+"<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 100 100'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
+  ">"+"<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
  
   (TABLADINAMICA==1)? (document.getElementById('tabla_1a').style.display='block', document.getElementById('dataD').innerHTML += TR) : (document.getElementById('tabla_2a').style.display='block', document.getElementById('dataE').innerHTML += TR);
 
@@ -2838,35 +2765,72 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
  function startTimer() {timerID=window.setInterval(newYear,1000);} 
  function stopTimer() {clearInterval(timerID);} 
 
-  ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  var select = document.getElementById('select') , select2 = document.getElementById('select2') ;
- var opciones = document.getElementById('opciones') , opciones2 = document.getElementById('opciones2');
- var opciones0 = document.getElementById('opciones0') , opciones02 = document.getElementById('opciones02');
 
- var contenidoSelect = document.getElementById('contenido_select');
- var contenidoSelect2 = document.getElementById('contenido_select2');
+ ///%%%%%%%%%%%%  LISTA DE OPCIONES 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ const select = document.querySelector('#select');
+ const opciones = document.querySelector('#opciones');
+ const contenidoSelect = document.querySelector('#select .contenido-select');
  //const hiddenInput = document.querySelector('#inputSelect');
- /*
- document.querySelectorAll('#opciones0 > .contenido-opcion').forEach(function (opcion) {
-   opcion.addEventListener('click',x);
- });
- function x(e) {
-  e.preventDefault();
-  contenidoSelect.innerHTML = ((e.currentTarget.innerHTML).split('('))[0];
-  select.classList.toggle('active');
-  opciones.classList.toggle('active');
-  ///document.querySelector('#titulo').style.fontSize='0.75'+'rem';
- /// hiddenInput.value = e.currentTarget.querySelector('.titulo').innerText;
-}
+ for (let y = 0; y < document.getElementsByName('contenido_opcion').length; y++) { // RECORRE CADA CASILLA
+     document.getElementsByName('contenido_opcion')[y].addEventListener('click', function (e) {
+     e.preventDefault();
+     contenidoSelect.innerHTML = ((e.currentTarget.innerHTML).split('('))[0];
+     money1.innerText=((e.currentTarget.innerHTML).split('('))[0];
+     money2.innerText=((e.currentTarget.innerHTML).split('('))[0];
+
+     select.classList.toggle('active');
+     opciones.classList.toggle('active');
+     })
+ }
+ 
  select.addEventListener('click', function () {
    select.classList.toggle('active');
    opciones.classList.toggle('active');
  }); 
-*/
 
- var contenidoOpcion = document.getElementsByName("contenido_opcion");
- for (let y = 0; y < contenidoOpcion.length; y++) { // RECORRE CADA CASILLA
-  contenidoOpcion[y].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
+ ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ ///%%%%%%%%%%%%  LISTA DE OPCIONES 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ const select2 = document.querySelector('#select2');
+ const opciones2 = document.querySelector('#opciones2');
+ const contenidoSelect2 = document.querySelector('#select2 #contenido_select2');
+ //const hiddenInput = document.querySelector('#inputSelect');
+ for (let y = 0; y < document.getElementsByName('contenido_opcion2').length; y++) { // RECORRE CADA CASILLA
+     document.getElementsByName('contenido_opcion2')[y].addEventListener('click', function (e) {
+     e.preventDefault();
+
+     var s2= ["(máximo=6,000)","(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"];
+     var iT00= Number(cleanBoxes(document.getElementById("tea1").value.replace(/[-,]/g,"")));  document.getElementById("tea1").value=formato1(iT00); 
+     var iT0=document.getElementById("tea1");
+     var taza=iT0.value.replace(/[-,]/g,""); var dias=e.currentTarget.innerHTML;
+     span3.innerHTML=e.currentTarget.innerHTML; 
+     span1.innerHTML = s2[y]; 
+     boxTED.value= formato1(TAZA(taza, dias, 3));//boxTED.value= formato1(TAZA(taza, dias, 3));
+
+     contenidoSelect2.innerHTML = e.currentTarget.innerHTML;
+     select2.classList.toggle('active');
+     opciones2.classList.toggle('active');
+    })
+ }
+ 
+ select2.addEventListener('click', function () {
+   select2.classList.toggle('active');
+   opciones2.classList.toggle('active');
+ }); 
+ ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+ ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ const select = document.getElementById('select') ;const select2 = document.getElementById('select2') ;
+ const opciones = document.getElementById('opciones') ;const opciones2 = document.getElementById('opciones2');
+ const opciones0 = document.getElementById('opciones0') ;const opciones02 = document.getElementById('opciones02');
+
+ const contenidoSelect = document.getElementById('contenido_select');
+ const contenidoSelect2 = document.getElementById('contenido_select2');
+ //const hiddenInput = document.querySelector('#inputSelect');
+
+const contenidoOpcion = document.getElementsByName("contenido_opcion");
+ for (let x = 0; x < contenidoOpcion.length; x++) { // RECORRE CADA CASILLA
+  contenidoOpcion[x].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
     e.preventDefault();
   contenidoSelect.innerHTML = ((e.currentTarget.innerHTML).split('('))[0];
   money1.innerText=((e.currentTarget.innerHTML).split('('))[0];
@@ -2883,7 +2847,7 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
   opciones.classList.toggle('active');
 });
 
-  var contenidoOpcion2 = document.getElementsByName("contenido_opcion2") , To=1, Ts=1;
+const  contenidoOpcion2 = document.getElementsByName("contenido_opcion2") , To=1, Ts=1;
 
  for (let y = 0; y < contenidoOpcion2.length; y++) { // RECORRE CADA CASILLA
   contenidoOpcion2[y].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
@@ -2893,34 +2857,26 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
   var iT0=document.getElementById("tea1");
   var taza=iT0.value.replace(/[-,]/g,""); var dias=e.currentTarget.innerHTML;
 
-  contenidoSelect2.innerHTML = e.currentTarget.innerHTML;
   span3.innerHTML=e.currentTarget.innerHTML; 
   span1.innerHTML = s2[y]; 
   boxTED.value= formato1(TAZA(taza, dias, 3));
-
-  ///select2.classList.toggle('active');
-  //opciones2.classList.toggle('active');
-  ///document.querySelector('#titulo').style.fontSize='0.75'+'rem';
-  if (To==1) {
-    opciones2.style.display='block';opciones2.style.height='6.65'+'rem';opciones2.style.padding='0.25rem';opciones2.style.animation='fadeIn .3s forwards';To=0;
-  }else{
-    opciones2.style.display='none';opciones2.style.height='0'+'rem';To=1;
-  }
+  //document.getElementById('opciones2').style.background='rgb(0, 255, 255)';
+  //document.getElementById('opciones2').style.color='rgb(255, 0, 0)';
+  //document.getElementById('opciones2').style.height='3rem';Ts=1;
+  contenidoSelect2.innerHTML = e.currentTarget.innerHTML;
+  select2.classList.toggle('active');
+  opciones2.classList.toggle('active');
   
-  });
-
+  })
  }
+
  select2.addEventListener('click', function () {
-  //select2.classList.toggle('active');
-  ///opciones2.classList.toggle('active');  // padding: 0.25rem;
-  if (To==1) {
-    opciones2.style.display='block';opciones2.style.height='6.65'+'rem';opciones2.style.padding='0.25rem';opciones2.style.animation='fadeIn .3s forwards';To=0;
-  }else{
-    opciones2.style.display='none';opciones2.style.height='0'+'rem';To=1;
-  }
+  select2.classList.toggle('active');
+  opciones2.classList.toggle('active');
 }); 
 
 ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
 
 
 ////################ decimal.js #########################
@@ -3838,7 +3794,6 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
 //# sourceMappingURL=doc/decimal.js.map  
 
 ////################ FIN DE  decimal.js ###################
-
 
 </script> 
 </body>
