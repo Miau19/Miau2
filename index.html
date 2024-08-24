@@ -38,10 +38,11 @@
    --width_LO1: 12rem;--width_LO2: 10rem;--width_LO3: 5.7rem;
    --n: 0.6rem;
    /*FIN DE: VALORES PARA CONTROL DE LISTA DE OPCIONES */
-   --widhtSvg: 12px; --heightSvg: 12px; /* VALORES PARA LOS svg DE TABLAS*/
+   --widhtSvg: 0.75rem; --heightSvg: 0.75rem; /* VALORES PARA LOS svg DE TABLAS*/
+   --button-color: rgb(1, 61, 225);/* --button-color: rgb(1, 61, 225); */
 }
 
-html{background-color: var(--bg-card-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
+html{background-color: var(--bg-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
 
 *{box-sizing: border-box;}
 
@@ -51,15 +52,15 @@ img{
   }
 
 body{
-    background-color: var(--bg-card-color);
+    background-color: var(--bg-color);
     margin: 0px;
     color: var(--text-color);font-family: var(--font-family1);font-weight: var(--font-weight1);/* "Roboto",'Poppins', 'Oswald', sans-serif; sans-serif, 'Times New Roman', 'Arial Narrow', fantasy, Impact */
     overflow:auto;
 }
   body::-webkit-scrollbar{width: 10px;height: 10px;}
-  body::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-  body::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-  body::-webkit-scrollbar-thumb:hover{background: #292844;}
+  body::-webkit-scrollbar-track{      background: rgb(   78, 78, 78) ;border-radius: 5px;}
+  body::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+  body::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 
 
 .container{
@@ -76,7 +77,7 @@ body{
     background-color: var(--bg-color);
     z-index: 20;
 }
-@media screen and  (max-width: 900px) {.container_flex_1{position: fixed;top: 0; height: 40px; }} 
+@media screen and  (max-width: 960px) {.container_flex_1{position: fixed;top: 0; height: 40px; }} 
 
 .container_flex_2{
     position: relative;
@@ -85,7 +86,7 @@ body{
     padding: 0px; 
     background-color: var(--bg-color);
 }
-@media screen and  (max-width: 900px) {.container_flex_2{top: 40px; z-index: 10;}} 
+@media screen and  (max-width: 960px) {.container_flex_2{top: 40px; z-index: 10;}} 
 
 .header1{
     position: relative;
@@ -109,7 +110,7 @@ body{
     fill: var(--text-color);
     cursor: pointer;
 }
-@media screen and  (max-width: 900px) {.nav-toggle svg{display: inline;}}
+@media screen and  (max-width: 960px) {.nav-toggle svg{display: inline;}}
 
 .nav-toggle svg:hover {
   transition: 0.2s; /*2 ANIMAR p */
@@ -121,7 +122,7 @@ body{
     font-size: var(--font-size2); color: var(--text-color);;font-family: var(--font-family2);
     padding: 0;margin-left: 10px;
 } 
-@media screen and  (max-width: 900px) {.title {margin-left: 10px;display: none;}}
+@media screen and  (max-width: 960px) {.title {margin-left: 10px;display: none;}}
 @media screen and  (max-width: 460px) {.title{font-size: var(--font-size1);}}
 
 .title p{padding: 0;margin: 0; }
@@ -145,13 +146,6 @@ body{
   transform: scaleX(1.15) scaleY(1.15) translateX(0px) translateY(0px); /*1 ANIMAR p */
 }
 
-.colors__item--blue  {--pr1mary-color: rgb(2, 0, 16);}
-.colors__item--b  {--pr1mary-color: rgb(14, 35, 57);}
-.colors__item--green {--pr1mary-color: rgb(55, 55, 56);}
-.colors__item--purple{--pr1mary-color: rgb(90, 104, 128);}
-.colors__item--orange{--pr1mary-color: rgb(208, 208, 208) ;}
-#palette{--pr1mary-color: rgb(109, 109, 109) ;}
-
 #palette {height: 30px; width: 30px;border: none;}
 #palette_svg {position: relative;z-index: 6;height: 30px; width: 30px;left: -2px;top: 0px;border: 1px solid var(--border-color);}
 #palette #color{position: relative;z-index: 5; top: -24px;left: -1px; height: 20px; width: 20px; opacity: 0.0;}
@@ -172,12 +166,12 @@ background-color: rgba(10, 0, 22, 0.5);
 overflow-y:auto;
 z-index: 10;
 }
-@media screen and  (max-width: 900px) { .navbar1 {display: block;} }
+@media screen and  (max-width: 960px) { .navbar1 {display: block;} }
 
 .navbar1::-webkit-scrollbar{width: 10px;height: 10px;}
-.navbar1::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-.navbar1::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-.navbar1::-webkit-scrollbar-thumb:hover{background: #292844;}
+.navbar1::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.navbar1::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.navbar1::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 
 .mascara{
     position: fixed;
@@ -194,7 +188,7 @@ z-index: 10;
     border-radius: var(--border-radius); 
     box-shadow: var(--box-shadow1);
     transition: var(--transition);
-    background: var(--bg-card-color);
+    background: var(--bg-card-color); margin: 0.125rem;
 }    
 
 .card__options .card__option , .card__options .card__option1{
@@ -256,14 +250,14 @@ z-index: 10;
 @media screen and  (max-width: 460px) {.main_grid_3 #card_3b {font-size: var(--font-size4);}}
 
 .columnRight #card_3a::-webkit-scrollbar{width: 10px;height: 10px;}
-.columnRight #card_3a::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-.columnRight #card_3a::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-.columnRight #card_3a::-webkit-scrollbar-thumb:hover{background: #292844;}
+.columnRight #card_3a::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.columnRight #card_3a::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.columnRight #card_3a::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 
 .main_grid_3 #card_3b::-webkit-scrollbar{width: 10px;height: 10px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-thumb:hover{background: #292844;} 
+.main_grid_3 #card_3b::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_3 #card_3b::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.main_grid_3 #card_3b::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);} 
 
 #card_3a h1,#card_3a  p {padding: 0rem;}
 
@@ -293,7 +287,7 @@ z-index: 10;
     justify-content: center;
     align-items: center;
 }
-@media screen and  (max-width: 900px) {/* max-width: 800px ❰❰❰ 3 ❱❱❱ */
+@media screen and  (max-width: 960px) {/* max-width: 800px ❰❰❰ 3 ❱❱❱ */
     .header2  {display: flex;}
   }
 .header2 p{
@@ -306,30 +300,29 @@ z-index: 10;
 .main_grid_1 {
    display: grid;
    grid-template-columns: 360px 1fr 360px;
-   background-color: var(--card-color);
+   background-color: var(--bg-color);
    padding: 0.5rem  0.5rem 0  0.5rem;
 }
-@media screen and  (max-width: 1230px){ .main_grid_1{grid-template-columns: 360px 1fr ; } }
-@media screen and  (max-width: 900px) { .main_grid_1{grid-template-columns:  1fr ;} }
+@media screen and  (max-width: 1260px){ .main_grid_1{grid-template-columns: 360px 1fr ; } }
+@media screen and  (max-width: 960px) { .main_grid_1{grid-template-columns:  1fr ;} }
 
 .columnLeft{
     display: flex;
     color: var(--text-color);
     background-color: var(--bg-color);
 }
-@media screen and (max-width: 900px) { .columnLeft{display: none;} }
+@media screen and (max-width: 960px) { .columnLeft{display: none;} }
 
-.columnCenter{
+.columnCenter{background-color: var(--bg-color);;
     display: flex; justify-content: center;
 }
 
-.columnCenter_articles{
+.columnCenter_articles{  
     min-width: 100%;
     display: flex;justify-content: center;
-    background: var(--bg-color);
     padding: 0 0.50rem;
 } 
-@media screen and (max-width: 1230px) {.columnCenter_articles {min-width: 100%;}}
+@media screen and (max-width: 1260px) {.columnCenter_articles {min-width: 100%;}}
 
 @media screen and (max-width: 550px) {.columnCenter_articles {min-width: 100%;}}
 @media screen and (max-width: 320px) {.columnCenter_articles {padding: 0 0.0rem;}}
@@ -337,19 +330,19 @@ z-index: 10;
 
 .card_center{
     width: 100%;
-    display: none;flex-direction: column;align-items: flex-start;  
+    display: none;/* display: none; */flex-direction: column;align-items: flex-start;  
     border:none; border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
     padding: 0.5rem 1.5rem 0.25rem 1.5rem ;
-    background-color: var(--bg-card-color);
+    background-color: var(--bg-card-color);margin: 0.125rem;
 }
-@media screen and (max-width: 1230px){.card_center {padding: 0.5rem 2.5rem 0.25rem 2.5rem; margin: 0 4rem; }}
-@media screen and (max-width: 1130px){.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0 2rem; }}
-@media screen and (max-width: 930px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0 0rem; }}
-@media screen and (max-width: 900px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0 6rem; }}
-@media screen and (max-width: 600px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0 0rem;  }}
-@media screen and (max-width: 670px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0 0rem;  }}
-@media screen and (max-width: 460px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0 0rem;}}
-@media screen and (max-width: 320px) {.card_center {padding: 0.5rem 0.25rem .25rem .25rem ; margin: 0rem 0rem;}}
+@media screen and (max-width: 1260px){.card_center {padding: 0.5rem 2.5rem 0.25rem 2.5rem; margin: 0.125rem 4rem; }}
+@media screen and (max-width: 1130px){.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0.125rem 2rem; }}
+@media screen and (max-width: 930px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0.125rem 0rem; }}
+@media screen and (max-width: 960px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0.125rem 6rem; }}
+@media screen and (max-width: 600px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0.125rem 0rem;  }}
+@media screen and (max-width: 670px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0.125rem 0rem;  }}
+@media screen and (max-width: 460px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0.125rem 0rem;}}
+@media screen and (max-width: 320px) {.card_center {padding: 0.5rem 0.25rem .25rem .25rem ; margin: 0.125rem 0rem;}}
 
 .card_center .card_trade_subtitle {
     display: flex;justify-content: start;align-items: center;
@@ -360,7 +353,7 @@ z-index: 10;
 }
 @media screen and (max-width: 460px) {.card_center .card_trade_subtitle p{font-size: var(--font-size4)}}
 
-#article_center2{ display: inline; }
+#article_center2{ display: inline;/* display: inline; */ }
 
 .card_subtitle {
     display: flex;justify-content: space-between;flex-wrap: wrap; /* flex-wrap: wrap; EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA*/
@@ -385,14 +378,14 @@ z-index: 10;
     margin: 0 0 0 5px;padding: 0;
     font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
 }
-@media screen and (max-width: 1230px){.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size1)}}
+@media screen and (max-width: 1260px){.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size1)}}
 @media screen and (max-width: 460px) {.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size4)}}
 
 .card_arrows1 #cotizacionBTC{font-size: var(--font-size2);}
 @media screen and (max-width: 460px) {.card_arrows1 #cotizacionBTC{font-size: var(--font-size3)}}
 
 .card_subtitle .TC2{ display: inline; } 
-@media screen and (max-width: 900px){ .card_subtitle .TC2{display: inline;} }
+@media screen and (max-width: 960px){ .card_subtitle .TC2{display: inline;} }
 
 .div_listaOpciones{
     display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap; box-shadow: var(--box-shadow1); ; 
@@ -422,14 +415,14 @@ z-index: 10;
     margin: 0;padding: 0;
     font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
 } 
-@media screen and  (max-width: 900px) { .datos p , .datos span{font-size: var(--font-size1)}}
+@media screen and  (max-width: 960px) { .datos p , .datos span{font-size: var(--font-size1)}}
 @media screen and  (max-width: 460px) { .datos p , .datos span{font-size: var(--font-size4)}}
 
 .datos .spanD2{display: none;}
-@media screen and  (max-width: 900px) { .datos .spanD2{display: inline;}}
+@media screen and  (max-width: 960px) { .datos .spanD2{display: inline;}}
 
 .datos .spanD0, .datos .spanD1{display: inline;}  
-@media screen and  (max-width: 900px){.datos .spanD0, .datos .spanD1{display: none;}}
+@media screen and  (max-width: 960px){.datos .spanD0, .datos .spanD1{display: none;}}
 
 .datos .text{ 
   width: var(--width_LO1);height: var(--height_LO1);
@@ -445,7 +438,7 @@ z-index: 10;
     border: none; border-radius: var(--border-radius_tex); box-shadow: var(--box-shadow1);
     background-color: var(--bg-card-color);
 }
-@media screen and  (max-width: 900px) {
+@media screen and  (max-width: 960px) {
     .datos .text{ width: var(--width_LO2);font-size: var(--font-size1)}
     .datos select{width: var(--width_LO2);font-size: var(--font-size1)}
   } 
@@ -456,26 +449,45 @@ z-index: 10;
    .datos select option{/*NOTAS: Cualquier cambio en los estilos del select y option puede no verse igual en todos los navegadores. En Firefox no carga fuente 'Saira' para option; pero si: Verdana, sans-serif,'Tahoma'*/ 
     font-size: var(--font-size1);font-family: var(--font-family2); font-weight: 400;
 }
-@media screen and  (max-width: 900px) { .datos select option{font-size: var(--font-size1);} } 
+@media screen and  (max-width: 960px) { .datos select option{font-size: var(--font-size1);} } 
 
 #arrow{ width: 15px;height: 15px; }
 /*////////////////////////////////////////////////////////////////////////////////*/
 .colorCasillas{color: var(--text-color); border: 1px solid var(--border-color);}
 /*//////////////////////////////////////////////////////////////////////////////////*/
-.checkboxs{ width: 100%; display: flex;flex-wrap: wrap;justify-content: left; }
+/*
+.datos{ display: flex;justify-content:space-between;align-items: center;flex-wrap: wrap; }
+*/
+.checkboxs{ width: 100%; display: flex;justify-content: start;flex-wrap: wrap; }
 
-.checkboxs div {
-    display: flex;flex-wrap: wrap; justify-content: left; align-items: center;
-    margin-top: 0.3em; margin-bottom: 0.3em; margin-left: 0;margin-right: 1em;
+.checkboxs div {  
+    display: flex;flex-wrap: wrap; justify-content: start; align-items: center;margin-right: var(--widhtSvg);
 }
 
-.checkboxs div p {margin: 0; font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);}
+.checkboxs div:hover{cursor: pointer;}
+
+.checkboxs div p {margin: 0;padding: 0; font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);}
 @media screen and  (max-width: 460px) { .checkboxs div p {font-size: var(--font-size4)}}
 
-.checkboxs .checkbox{ 
-    accent-color: rgb(1, 61, 225); box-shadow: 0 0 0 1px var(--text-color);border: 0; width: 1rem;height: 1rem; cursor:pointer;
-} 
- @media screen and  (max-width: 1230px) { .checkboxs div .checkbox{width: 0.8rem;height: 0.8rem;} } 
+ @media screen and  (max-width: 1260px) { .checkboxs div .checkbox{width: 0.8rem;height: 0.8rem;} } 
+
+.checkboxs #CK1{
+   background: var(--button-color); width: 1.0rem;height: 1.0rem;border-radius: 0.125rem;box-shadow: 0 0 2px  var(--text-color);/* border: 0px solid var(--text-color); */
+   display: flex;justify-content: center;align-items: center;margin: 0.4rem 0.25rem;padding: 0 ;
+}
+.checkboxs #CK2{
+   background: var(--button-color); width: 1.0rem;height: 1.0rem;border-radius: 0.125rem;box-shadow: 0 0 2px  var(--text-color);/* border: 1px solid var(--text-color);*/
+   display: flex;justify-content: center;align-items: center;margin: 0.4rem 0.25rem;padding: 0 ;
+}
+#CK1.activeCK{box-shadow: 0 0 2px var(--text-color);/*border: 1px solid var(--text-color);*/}
+#CK2.activeCK{box-shadow: 0 0 2px var(--text-color);/*border: 0px solid var(--text-color);*/}
+
+#svgCK1{display: none;}
+#svgCK2{display: block;}
+#svgCK1.activeCK{display: block;} 
+#svgCK2.activeCK{display: none;}
+
+.svgCK{fill: var(--text-color); width:calc(var(--widhtSvg) - 0.125rem); height:calc(var(--heightSvg) - 0.125rem);}
 
 .buttons {
     width: 100%;
@@ -488,17 +500,17 @@ z-index: 10;
     margin-top: 0;margin-bottom: 0.5rem;margin-left: 0.5rem;margin-right: 0.5rem;
     padding: 0.5rem 1rem;
     color: var(--text-color); font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);
-    background-color: rgb(1, 61, 225);
+    background-color:  var(--button-color);
     border-radius: var(--border-radius); 
     transition: var(--transition); transition: 0.2s; 
 }
-@media screen and  (max-width: 1230px){.buttons div{font-size: var(--font-size1);}}
+@media screen and  (max-width: 1260px){.buttons div{font-size: var(--font-size1);}}
 @media screen and  (max-width: 460px) {.buttons div{font-size: var(--font-size4);}}
 
 .buttons div:hover {
     background-color:rgb(29, 82, 225);
     cursor: pointer;
-    transform: scaleX(1.05) scaleY(1.25) translateX(0px) translateY(0px); /*1 ANIMAR p */
+    transform: scaleX(1.125) scaleY(1.125) translateX(0px) translateY(0px); /*1 ANIMAR p */
 } 
 
 #btnAuto{ background-color: rgb(0,80,0) ; } 
@@ -513,10 +525,12 @@ z-index: 10;
     color: var(--text-color);font: 1em sans-serif;
     height: 445px;  ;padding: 0.5rem;
     border-radius: var(--border-radius);box-shadow: var(--box-shadow1);
-    background-color: var(--bg-card-color);
+    background-color: var(--bg-card-color); margin: 0.125rem;
 }
 
-@media screen and  (max-width: 1230px) { .columnRight{display: none;} }
+@media screen and  (max-width: 1260px) { .columnRight{display: none;} }
+
+.columnRight0{background-color: var(--bg-color)}
 
 .main_grid_2{
     display: flex;justify-content: center;flex-direction: column;
@@ -525,12 +539,12 @@ z-index: 10;
     overflow: auto;
 }
 .main_grid_2::-webkit-scrollbar{width: 10px;height: 10px;}
-.main_grid_2::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-.main_grid_2::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-.main_grid_2::-webkit-scrollbar-thumb:hover{background: #292844;}
+.main_grid_2::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 
 .main_grid_2 .tabla-css{
-    background-color: var(--bg-card-color);background-color: rgba(5, 0, 14, 1);opacity: 0.75;
+    background-color: var(--bg-card-color);opacity: 1;
     border-collapse: collapse;
     color: var(--text-color);
     
@@ -558,7 +572,7 @@ z-index: 10;
     display: flex;justify-content: center;
 }
 .main_grid_2 .tabla-css .td_x:hover{
-    cursor: pointer; background-color: #680101;
+    cursor: pointer; background-color: rgb(176, 0, 0);
 }
 .main_grid_2 .tabla-css .td_x svg{/* viewBox='-30 -36 100 100' width='21px' height='16px' */
     fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);
@@ -574,7 +588,7 @@ z-index: 10;
 .td_Dtitulo{border: 1px solid var(--text-color); margin: 0;padding: 0; }
 .div_Dtitulo{width: 100%; display: flex;justify-content: space-between; align-items: center; padding-left: 0.525rem;}
 #div_Dsvg{display: flex;justify-content: center; align-items: center; padding: 0.5rem  0.525rem;margin: 0;}
-#div_Dsvg:hover{cursor: pointer; background-color: #680101;}
+#div_Dsvg:hover{cursor: pointer; background-color: rgb(176, 0, 0);}
 #div_Dsvg svg{fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);}
 #tabla_2a{display: none;}
 
@@ -584,7 +598,7 @@ z-index: 10;
     border-radius: var(--border-radius);box-shadow: var(--box-shadow1);
     
 }
-@media screen and  (max-width: 1230px) {
+@media screen and  (max-width: 1260px) {
     .main_grid_3{display: flex;}
 }
 
@@ -605,15 +619,15 @@ z-index: 10;
 /*@media screen and  (max-width: 1100px) {#card_2a{width: auto;}}****** ALTURA DE #card_2a ********
 */
 .columnRight #card_2a::-webkit-scrollbar{width: 10px;height: 10px;}
-.columnRight #card_2a::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-.columnRight #card_2a::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-.columnRight #card_2a::-webkit-scrollbar-thumb:hover{background: #292844;}
+.columnRight #card_2a::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.columnRight #card_2a::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.columnRight #card_2a::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 @media screen and  (max-width: 460px) {.columnRight #card_2a {font-size: var(--font-size4);}}
 
 .main_grid_3 #card_2b::-webkit-scrollbar{width: 10px;height: 10px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 5px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 5px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-thumb:hover{background: #292844;}
+.main_grid_3 #card_2b::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_3 #card_2b::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.main_grid_3 #card_2b::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 @media screen and  (max-width: 460px) {.main_grid_3 #card_2b {font-size: var(--font-size4);}}
 
 #card_2b p, #card_2b p{padding: 0em;}
@@ -667,7 +681,7 @@ z-index: 10;
     flex-direction: row;
     padding-left: auto;padding-right: auto;
 }
-@media screen and  (max-width: 900px) {.footer .socialmedia_1 .socialmedia {width: 80%}}
+@media screen and  (max-width: 960px) {.footer .socialmedia_1 .socialmedia {width: 80%}}
 
 .footer .copyright_1{
     display: flex;
@@ -714,7 +728,7 @@ z-index: 10;
     text-align: center;
 }
 
-.cTable1{background-color: rgba(5, 0, 14, 1);opacity: 0.75;
+.cTable1{background-color: var(--bg-card-color);opacity: 1;
  color: var(--text-color); 
  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);; 
  border-collapse: collapse;
@@ -753,9 +767,9 @@ z-index: 10;
 .cpath{fill: var(--text-color);stroke-width: 4px;stroke: var(--text-color)}
 .cpathB{fill: var(--text-color);}
 
-.btnArrowUp:hover{background-color:  rgb(1, 61, 225);}
-.btnArrowDown:hover{background-color:  rgb(1, 61, 225);}
-.btnClose:hover{background-color: rgb(139, 0, 0);} 
+.btnArrowUp:hover{background-color: rgb(20, 118, 255);cursor:pointer;}
+.btnArrowDown:hover{background-color: rgb(20, 118, 255);cursor:pointer;}
+.btnClose:hover{background-color: rgb(176, 0, 0);cursor:pointer;} 
 
 /* [1] Celda + div + parrafo */
 #celda_c1,#celda_c2,#celda_c3,#celda_c4,#celda_c5,#celda_c6,#celda_c7{ 
@@ -834,7 +848,7 @@ z-index: 10;
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%E LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 .div0{width: var(--width_LO1);height: var(--height_LO1);}
-@media screen and  (max-width: 900px) {
+@media screen and  (max-width: 960px) {
     .div0{ width:var(--width_LO2);}
   } 
   @media screen and  (max-width: 460px) {
@@ -885,7 +899,7 @@ display: none;
 border-radius: var(--border-radius_tex);
 box-shadow: var(--box-shadow1) ;
 }
-@media screen and  (max-width: 900px) {
+@media screen and  (max-width: 960px) {
     .opciones{width: calc(var(--width_LO2) + var(--n));left: calc((-1) * (var(--n) / 2));}
   } 
   @media screen and  (max-width: 460px) {
@@ -903,9 +917,9 @@ box-shadow: var(--box-shadow1) ;
     overflow: auto;
 }
 .opciones0::-webkit-scrollbar{width: 0.5rem;height: 0.5rem;}
-.opciones0::-webkit-scrollbar-track{background: rgb(56, 56, 56);border-radius: 0.25rem;}
-.opciones0::-webkit-scrollbar-thumb{background: rgb(32, 32, 32);border-radius: 0.25rem;}
-.opciones0::-webkit-scrollbar-thumb:hover{background: #292844;}
+.opciones0::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 0.25rem;}
+.opciones0::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 0.25rem;}
+.opciones0::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 
 @keyframes fadeIn {
 from {
@@ -925,14 +939,21 @@ transition: .5s ease all;
 @media screen and  (max-width: 460px) {
     .contenido-opcion{font-size: var(--font-size4)}
   } 
-.opciones .contenido-opcion:hover {background: rgb(1, 61, 225);}
+.opciones .contenido-opcion:hover {background:  var(--button-color);}
 
 .opciones .contenido-opcion:hover{
     font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
-    color: #ffffff;} 
+    color: rgb(49, 135, 255);} 
     
 /* %%%%%%%%%%%%%%%%%%%%%%%%  FIN DE LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */ 
 
+/* CAMBIAR COLOR DE LA PAGINA */
+.colors__item--blue  {--pr1mary-color: rgb(0, 1, 16);}
+.colors__item--b  {--pr1mary-color: rgb(14, 35, 57);}
+.colors__item--green {--pr1mary-color: rgb(33, 33, 33);}
+.colors__item--purple{--pr1mary-color: rgb(90, 104, 128);}
+.colors__item--orange{--pr1mary-color: rgb(203, 203, 203) ;}
+#palette{--pr1mary-color: rgb(109, 109, 109) ;}
 
 
 
@@ -951,14 +972,14 @@ transition: .5s ease all;
                <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
              </svg>
             </div>
-           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[+++]</p></div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[.]</p></div>
         </div>
         <div id="toggle-colors" class="colors">
-          <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(150, 150, 152)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
+          <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
           <div data-bg="rgb(14, 35, 57)"    data-card="rgb(16, 26, 41)"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 23, 56)" class="colors__item colors__item--b" ></div>
-          <div data-bg="rgb(20, 20, 20)"    data-card="rgb(27, 27, 28)"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(41, 42, 44)" class="colors__item colors__item--green" ></div>
-          <div data-bg="rgb(74, 89, 113)"   data-card="rgb(90, 104, 128)"  data-text="rgb(10, 10, 10)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(78, 96, 124)" class="colors__item colors__item--purple"></div>
-          <div data-bg="rgb(218, 230, 237)" data-card="rgb(233, 247, 255)" data-text="rgb(10, 10, 10)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
+          <div data-bg="rgb(27, 27, 28)"    data-card="rgb(20, 20, 20 )"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(41, 42, 44)" class="colors__item colors__item--green" ></div>
+          <div data-bg="rgb(90, 104, 128)"   data-card="rgb(74, 89, 113)"  data-text="rgb(30, 30, 30)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(78, 96, 124)" class="colors__item colors__item--purple"></div>
+          <div data-bg="rgb(230, 230, 230)" data-card="rgb(210, 210, 210)" data-text="rgb(67, 67, 67)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
           
           <div id="palette" >
             <svg id="palette_svg" viewBox="20 20 475 475" >
@@ -976,7 +997,7 @@ transition: .5s ease all;
       </header>
       <nav class="navbar1" id="navbar1">
             <div class="card__options">
-              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[+++]</p>
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[.]</p>
                 <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                 <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
               </div>
@@ -1001,13 +1022,13 @@ transition: .5s ease all;
       
     </div><!-- FIN DE: div class="container_flex_1" -->
     <div class="container_flex_2">
-      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[+++]</p></div></div> 
+      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[.]</p></div></div> 
     
       <article class="main_grid_1">
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
-               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[+++]</p>
+               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[.]</p>
                  <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                  <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
                </div>
@@ -1138,20 +1159,28 @@ transition: .5s ease all;
       
                <div class="div_padding">
                  <div class="checkboxs">
-                  <div>
-                    <input id="ck1" class="checkbox" type="checkbox"  value="">&nbsp;
+                  <div name="checkbox" >
+                    <div class="CK" id="CK1" name="CK">
+                      <svg class="svgCK" id="svgCK1" fill="" height="10px" width="10px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128.411 128.411" xml:space="preserve">
+                        <g><polygon points="127.526,15.294 45.665,78.216 0.863,42.861 0,59.255 44.479,113.117 128.411,31.666 		"/>  </g>
+                      </svg>
+                    </div>
                     <p>Con aportes periódicos</p>
                  </div>
-                  <div>
-                    <input id="ck2" class="checkbox" type="checkbox" checked="checked" value="">&nbsp;
+                  <div name="checkbox">
+                    <div class="CK" id="CK2" name="CK">
+                      <svg class="svgCK" id="svgCK2" name="svgCK" fill="" height="10px" width="10px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128.411 128.411" xml:space="preserve">
+                        <g><polygon points="127.526,15.294 45.665,78.216 0.863,42.861 0,59.255 44.479,113.117 128.411,31.666 		"/>  </g>
+                      </svg>
+                    </div>
                     <p>Sin aportes periódicos</p>
                  </div>
                  </div>
                </div>
                
                <div class="buttons" >
-                <div type="button" class="button button--primary" onclick="iniciar()">Genera una tabla</div>
-                <div type="button" class="button button--primary" id="btnR" onclick="resetar()">Resetar</div> 
+                <div type="button" class="button_CF" id="iniciar" onclick="iniciar()">Genera una tabla</div>
+                <div type="button" class="button_CF" id="btnR" onclick="resetar()">Resetar</div> 
                </div> 
               </article>
 
@@ -1217,14 +1246,15 @@ transition: .5s ease all;
                 </div>
       
                 <div class="buttons" >
-                  <div type="button" class="button button--primary" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
-                   <div type="button" class="button button--primary" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
+                  <div type="button"  class="button_CF" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
+                   <div type="button" class="button_CF" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
                 </div>
 
               </article>
           </div><!-- FIN DE div class="column columnCenter_articles" -->
         </div> <!--   FIN DE div id="columnCenter" -->
 
+        <div class="columnRight0">
         <div class="columnRight" id="columnRight" >
 
             <div id="card_2a">
@@ -1408,6 +1438,7 @@ transition: .5s ease all;
           </div>
 
         </div>
+        </div>
       </article>
   
       <article class="main_grid_2" id="main_grid_2">
@@ -1416,7 +1447,7 @@ transition: .5s ease all;
           <table class="tabla-css" id="tabla_1a">
             <thead>
               <tr>
-                <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+                <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
               </tr>
               <tr >
                 <td class="tdHead">S&iacute;mbolo</td>
@@ -1439,7 +1470,7 @@ transition: .5s ease all;
                 <td id="td_p1"  class="td_cf">224.42   </td>
                 <td id="td_cf1" class="td_cf">1,774.88 </td>
                 <td class="td_x" onclick="eliminarTr(1)">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
               </tr>
               <tr id="tr_2">
@@ -1452,7 +1483,7 @@ transition: .5s ease all;
                 <td id="td_p2"  class="td_cf">168.86   </td>
                 <td id="td_cf2" class="td_cf">786.09   </td>
                 <td class="td_x" onclick="eliminarTr(2)">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
               </tr>
             </thead> 
@@ -1482,7 +1513,7 @@ transition: .5s ease all;
          <table class="tabla-css" id="tabla_2a">
           <thead>
             <tr>
-              <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+              <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
             </tr>
             <tr >
               <td class="tdHead">S&iacute;mbolo</td>
@@ -1505,7 +1536,7 @@ transition: .5s ease all;
               <td id= "td_pE1" class="td_cf">0.00     </td>
               <td id="td_cfE1" class="td_cf">0.00     </td>
               <td class="td_x" onclick="eliminarTrE(1)">
-                <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
             <tr id="tr_E2" style="display: none;">  
@@ -1518,7 +1549,7 @@ transition: .5s ease all;
               <td id= "td_pE2" class="td_cf">0.00     </td>
               <td id="td_cfE2" class="td_cf">0.00     </td>
               <td class="td_x" onclick="eliminarTrE(2)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-20 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
           </thead> 
@@ -1879,7 +1910,8 @@ transition: .5s ease all;
 var N= "", cont=0, cont2=0, COLOR=0, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8="", 
 booleanGT="", IMPRIMIRTEXTO=1, arrayBox=[0,0,0,0,0,0,0,0], precioBTC0="", precioBTC="0", PRECIOBTC=1, incremento=1000, priceArray=[], totalPriceArray0=[], totalPriceArray01=[], 
 totalPriceArray=[],totalPriceArray02=[],  totalTimeArray0=[], totalTimeArray01=[], totalTimeArray02=[], totalTimeArray=[], totalPriceArray2=[], totalTimeArray2=[], totalPriceArray3=[], totalTimeArray3=[], 
-maxLength=200, X, Y, ARROW=0, ACTUALIZAPRECIO=0, AUTO=0, simboloPar='' ,r="rgb(150,0,0)", v='rgb(0,200,0)';
+maxLength=200, X, Y, ARROW=0, ACTUALIZAPRECIO=0, AUTO=0, simboloPar='' ,
+CHECKBOX1=0,CHECKBOX2=1;
 
 //GENERAR TIEMPO 1:
 Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
@@ -2013,13 +2045,13 @@ function genera_tabla() {
   var cadena00=[""], cadena01=[""], cadena02=[""], cadena03=[""], cadena04=[""], n0="", n="", tx="";
   for (var r1 = 0; r1 <= 6; r1++) {
    if (contenido_select2.textContent==1) {tx="día";} else  {tx="días"}// n0= 30, 60, 90, 180, 270, 360
-   if(ck1.checked==true && ck2.checked==false){n=2; 
+   if(CHECKBOX1==1 && CHECKBOX2==0){n=2; 
 
     cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+contenido_select2.textContent+" "+tx+", con aportes, TEA: "+tea1.value+" %"]}
-    if(ck1.checked==false && ck2.checked==true){n=2; 
+    if(CHECKBOX1==0 && CHECKBOX2==1){n=2; 
 
     cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+contenido_select2.textContent+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}
-   if(ck1.checked==true && ck2.checked==true) {n=3; 
+   if(CHECKBOX1==1 && CHECKBOX2==1) {n=3; 
 
      cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+contenido_select2.textContent+" "+tx+", con aportes, TEA: "+tea1.value+" %" , "Período de "+contenido_select2.textContent+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}
   }
@@ -2107,11 +2139,11 @@ function genera_tabla() {
      var Ni= new String (formato(i)).split(".")[0]; // SEPARA LA PARTE ENTERA DE 1,000.00 , Ni= 1,000
      var cadena07 =[""], cadena08 =[""], cadena08_ =[""];
      for (var r2 = 0; r2 <= 6; r2++) {
-       if(ck1.checked==true &&ck2.checked==false) {
+       if(CHECKBOX1==1 && CHECKBOX2==0) {
         cadena07 =["Fin período" +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 ]}
-       if(ck1.checked==false&& ck2.checked==true) {
+       if(CHECKBOX1==0 && CHECKBOX2==1) {
         cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MF01+MF02 ]}
-       if(ck1.checked==true && ck2.checked==true) {
+       if(CHECKBOX1==1 && CHECKBOX2==1) {
         cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 , MF01+MF02 ]}
       }
       var d02 = document.createElement("div");d02.setAttribute("id", "div_p"+(j+1));// p00: DIV P' PARRAFOS
@@ -2152,11 +2184,11 @@ function genera_tabla() {
      var R0F = " Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" ;       
      var cadenaF =[""];
      for (var rF = 0; rF <= 6; rF++) {
-     if(ck1.checked==true &&ck2.checked==false) {
+     if(CHECKBOX1==1 && CHECKBOX2==0) {
       cadena09 =["Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" , RCA]}     
-      if(ck1.checked==false&& ck2.checked==true) {
+      if(CHECKBOX1==0 && CHECKBOX2==1) {
       cadena09 =["Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" ,RSA];}
-     if(ck1.checked==true && ck2.checked==true) {
+     if(CHECKBOX1==1 && CHECKBOX2==1) {
       cadena09 =["Fin período " +N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")", RCA, RSA]}// R0F, RCA, RSA          .
      }
      var d03 = document.createElement("div"); d03.setAttribute("id","div_p_hileraF_"+(cF+1));// p00: DIV P' PARRAFOS
@@ -2213,7 +2245,7 @@ function operacion(taza,exponente) {//CALCULO DE tea: A 180 DIAS → ted= 4 //RE
   //TED a TEA: exponente = new String(1/(dias/360)); ......❰1❱
   //TEA a TED: exponente = new String(dias/360); ..........❰2❱
   var teda = (Math.pow( (1+(taza/100)),exponente )-1)*100 ;// teda:  Taza Efectiva Diaria ó Anual
-   //CODIGO PARA USAR CON: decimal.js 2
+   //CODIGO PARA USAR CON: decimal.js 
   var t = new Decimal(taza);                     //console.log("t : "+t );
   var d = t.div(100).toNumber();                 //console.log("d : "+d );
   var d0 = new Decimal(d);                       //console.log("d0: "+d0);  
@@ -2788,7 +2820,7 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
    opciones.classList.toggle('active');
  }); 
 
- ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  ///%%%%%%%%%%%%  LISTA DE OPCIONES 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  const select2 = document.querySelector('#select2');
@@ -2818,65 +2850,51 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
    opciones2.classList.toggle('active');
  }); 
  ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-/*
- ///%%%%%%%%%%%%  LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- const select = document.getElementById('select') ;const select2 = document.getElementById('select2') ;
- const opciones = document.getElementById('opciones') ;const opciones2 = document.getElementById('opciones2');
- const opciones0 = document.getElementById('opciones0') ;const opciones02 = document.getElementById('opciones02');
 
- const contenidoSelect = document.getElementById('contenido_select');
- const contenidoSelect2 = document.getElementById('contenido_select2');
- //const hiddenInput = document.querySelector('#inputSelect');
+ //############## CHECKBOXS ###################################################
+ document.getElementsByName('checkbox')[0].addEventListener('click', function (e) {
+    //e.preventDefault();
+    (CHECKBOX1==1)? (svgCK1.classList.toggle('activeCK'),CK1.classList.toggle('activeCK'),CHECKBOX1=0):(svgCK1.classList.toggle('activeCK'),CK1.classList.toggle('activeCK'),CHECKBOX1=1);//console.log('CHECKBOX1',CHECKBOX1);
+ })
 
-const contenidoOpcion = document.getElementsByName("contenido_opcion");
- for (let x = 0; x < contenidoOpcion.length; x++) { // RECORRE CADA CASILLA
-  contenidoOpcion[x].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
-    e.preventDefault();
-  contenidoSelect.innerHTML = ((e.currentTarget.innerHTML).split('('))[0];
-  money1.innerText=((e.currentTarget.innerHTML).split('('))[0];
-  money2.innerText=((e.currentTarget.innerHTML).split('('))[0];
+ document.getElementsByName('checkbox')[1].addEventListener('click', function (e) {
+  //e.preventDefault();
+  (CHECKBOX2==1)? (svgCK2.classList.toggle('activeCK'),CK2.classList.toggle('activeCK'),CHECKBOX2=0):(svgCK2.classList.toggle('activeCK'),CK2.classList.toggle('activeCK'),CHECKBOX2=1);//console.log('CHECKBOX2',CHECKBOX2);
+ })
+//############## FIN DE CHECKBOXS ############################################
 
-  select.classList.toggle('active');
-  opciones.classList.toggle('active');
-  ///document.querySelector('#titulo').style.fontSize='0.75'+'rem';
-  });
+// CAMBIAR COLOR DE LA PAGINA AL HACER CLICK SOBRE LOS DIVS "colors__item":
+const toggleColors= document.getElementsByClassName("colors__item");
+const rootStyles= document.documentElement.style;
+for (let i = 0; i < toggleColors.length; i++) {
+    toggleColors[i].addEventListener("click", (e) => {
+      COLOR= i; //document.getElementById("texto3").value= COLOR;//console.log(COLOR);
+      rootStyles.setProperty("--html-color", e.target.dataset.bg);
+      rootStyles.setProperty("--bg-color", e.target.dataset.bg);
+      rootStyles.setProperty("--bg-card-color", e.target.dataset.card);
+      rootStyles.setProperty("--text-color", e.target.dataset.text);
+      rootStyles.setProperty("--border-color", e.target.dataset.border);
+      rootStyles.setProperty("--bg-table-color", e.target.dataset.menu);
 
- }
- select.addEventListener('click', function () {
-  select.classList.toggle('active');
-  opciones.classList.toggle('active');
-});
+      if (i==toggleColors.length-1 || i==toggleColors.length-2) {
+        document.getElementById("editando").style.background=   'rgb(49, 135, 255)'; //console.log("i "+i);
+      document.getElementById("agregarATabla").style.background='rgb(49, 135, 255)';
+      document.getElementById("iniciar").style.background=      'rgb(49, 135, 255)';
+      document.getElementById("btnR").style.background=         'rgb(49, 135, 255)';
+      document.getElementById("CK1").style.background=          'rgb(49, 135, 255)';
+      document.getElementById("CK2").style.background=          'rgb(49, 135, 255)';
+      } else {
+        document.getElementById("editando").style.background=   'rgb(1, 61, 225)'; //console.log("i "+i);
+      document.getElementById("agregarATabla").style.background='rgb(1, 61, 225)';// editando agregarATabla
+      document.getElementById("iniciar").style.background=      'rgb(1, 61, 225)';
+      document.getElementById("btnR").style.background=         'rgb(1, 61, 225)';
+      document.getElementById("CK1").style.background=     'rgb(1, 61, 225)';
+      document.getElementById("CK2").style.background='rgb(1, 61, 225)';
 
-const  contenidoOpcion2 = document.getElementsByName("contenido_opcion2") , To=1, Ts=1;
+      } 
+    });
+}
 
- for (let y = 0; y < contenidoOpcion2.length; y++) { // RECORRE CADA CASILLA
-  contenidoOpcion2[y].addEventListener("click", (e) => { // "click" , "mousedown" , "mouseup"
-    e.preventDefault();
-    var s2= ["(máximo=6,000)","(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"];
-    var iT00= Number(cleanBoxes(document.getElementById("tea1").value.replace(/[-,]/g,"")));  document.getElementById("tea1").value=formato1(iT00); 
-  var iT0=document.getElementById("tea1");
-  var taza=iT0.value.replace(/[-,]/g,""); var dias=e.currentTarget.innerHTML;
-
-  span3.innerHTML=e.currentTarget.innerHTML; 
-  span1.innerHTML = s2[y]; 
-  boxTED.value= formato1(TAZA(taza, dias, 3));
-  //document.getElementById('opciones2').style.background='rgb(0, 255, 255)';
-  //document.getElementById('opciones2').style.color='rgb(255, 0, 0)';
-  //document.getElementById('opciones2').style.height='3rem';Ts=1;
-  contenidoSelect2.innerHTML = e.currentTarget.innerHTML;
-  select2.classList.toggle('active');
-  opciones2.classList.toggle('active');
-  
-  })
- }
-
- select2.addEventListener('click', function () {
-  select2.classList.toggle('active');
-  opciones2.classList.toggle('active');
-}); 
-
-///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-*/
 
 
 ////################ decimal.js #########################
