@@ -188,8 +188,15 @@ z-index: 10;
     border-radius: var(--border-radius); 
     box-shadow: var(--box-shadow1);
     transition: var(--transition);
-    background: var(--bg-card-color); margin: 0.125rem;
+    background: var(--bg-card-color); 
+    padding: 0.5rem 0.5rem 0.5rem 0.0rem; margin: 0.125rem;
 }    
+
+.card__options{height: 100%; overflow: auto; }
+.card__options::-webkit-scrollbar{width: 10px;height: 10px;}
+.card__options::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.card__options::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
+.card__options::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
 
 .card__options .card__option , .card__options .card__option1{
     border-radius: var(--border-radius); 
@@ -308,13 +315,14 @@ z-index: 10;
 
 .columnLeft{
     display: flex;
+    height: 445px;  
     color: var(--text-color);
     background-color: var(--bg-color);
 }
 @media screen and (max-width: 960px) { .columnLeft{display: none;} }
 
-.columnCenter{background-color: var(--bg-color);;
-    display: flex; justify-content: center;
+.columnCenter{background-color: var(--bg-color);
+    display: flex; justify-content: center;padding: 0.125rem;
 }
 
 .columnCenter_articles{  
@@ -333,16 +341,16 @@ z-index: 10;
     display: none;/* display: none; */flex-direction: column;align-items: flex-start;  
     border:none; border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
     padding: 0.5rem 1.5rem 0.25rem 1.5rem ;
-    background-color: var(--bg-card-color);margin: 0.125rem;
+    background-color: var(--bg-card-color);
 }
-@media screen and (max-width: 1260px){.card_center {padding: 0.5rem 2.5rem 0.25rem 2.5rem; margin: 0.125rem 4rem; }}
-@media screen and (max-width: 1130px){.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0.125rem 2rem; }}
-@media screen and (max-width: 930px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0.125rem 0rem; }}
-@media screen and (max-width: 960px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0.125rem 6rem; }}
-@media screen and (max-width: 600px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0.125rem 0rem;  }}
-@media screen and (max-width: 670px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0.125rem 0rem;  }}
-@media screen and (max-width: 460px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0.125rem 0rem;}}
-@media screen and (max-width: 320px) {.card_center {padding: 0.5rem 0.25rem .25rem .25rem ; margin: 0.125rem 0rem;}}
+@media screen and (max-width: 1260px){.card_center {padding: 0.5rem 2.5rem 0.25rem 2.5rem; margin: 0rem 4rem; }}
+@media screen and (max-width: 1130px){.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0rem 2rem; }}
+@media screen and (max-width: 930px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0rem 0rem; }}
+@media screen and (max-width: 960px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0rem 6rem; }}
+@media screen and (max-width: 600px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
+@media screen and (max-width: 670px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
+@media screen and (max-width: 460px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;}}
+@media screen and (max-width: 320px) {.card_center {padding: 0.5rem 0.25rem .25rem .25rem ; margin:0rem 0rem;}}
 
 .card_center .card_trade_subtitle {
     display: flex;justify-content: start;align-items: center;
@@ -522,15 +530,16 @@ z-index: 10;
 }
 .columnRight{    
     display: flex;
+    height: 100%;
     color: var(--text-color);font: 1em sans-serif;
-    height: 445px;  ;padding: 0.5rem;
+    padding: 0.5rem;
     border-radius: var(--border-radius);box-shadow: var(--box-shadow1);
-    background-color: var(--bg-card-color); margin: 0.125rem;
+    background-color: var(--bg-card-color); 
 }
 
-@media screen and  (max-width: 1260px) { .columnRight{display: none;} }
+@media screen and  (max-width: 1260px) { .columnRight0{display: none;} }
 
-.columnRight0{background-color: var(--bg-color)}
+.columnRight0{background-color: var(--bg-color);height: 445px; padding: 0.125rem; }
 
 .main_grid_2{
     display: flex;justify-content: center;flex-direction: column;
@@ -956,7 +965,6 @@ transition: .5s ease all;
 #palette{--pr1mary-color: rgb(109, 109, 109) ;}
 
 
-
     </style>
 
   </head>
@@ -972,14 +980,14 @@ transition: .5s ease all;
                <path fill="" d="M6 22H62V26H6zM6 10H62V14H6zM6 34H62V38H6z"/>
              </svg>
             </div>
-           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS[.]</p></div>
+           <div class="title"><p>C&Aacute;LCULOS FINANCIEROS</p></div>
         </div>
         <div id="toggle-colors" class="colors">
           <div data-bg="rgb(0, 0, 30)"      data-card="rgb(0, 0, 0)"       data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 4, 21)" class="colors__item colors__item--blue" ></div>
           <div data-bg="rgb(14, 35, 57)"    data-card="rgb(16, 26, 41)"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 23, 56)" class="colors__item colors__item--b" ></div>
           <div data-bg="rgb(27, 27, 28)"    data-card="rgb(20, 20, 20 )"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(41, 42, 44)" class="colors__item colors__item--green" ></div>
           <div data-bg="rgb(90, 104, 128)"   data-card="rgb(74, 89, 113)"  data-text="rgb(30, 30, 30)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(78, 96, 124)" class="colors__item colors__item--purple"></div>
-          <div data-bg="rgb(230, 230, 230)" data-card="rgb(210, 210, 210)" data-text="rgb(67, 67, 67)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
+          <div data-bg="rgb(180, 180, 180)" data-card="rgb(230, 230, 230)" data-text="rgb(67, 67, 67)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
           
           <div id="palette" >
             <svg id="palette_svg" viewBox="20 20 475 475" >
@@ -997,7 +1005,7 @@ transition: .5s ease all;
       </header>
       <nav class="navbar1" id="navbar1">
             <div class="card__options">
-              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[.]</p>
+              <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS</p>
                 <a class="a1" href="#"><div id="article1" class="div1" onclick="article1_navbar1()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                 <a class="a1" href="#"><div id="article2" class="div1" onclick="article2_navbar1()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
               </div>
@@ -1011,6 +1019,9 @@ transition: .5s ease all;
                 <div class="card__option"  onclick="navToggle()"><p class="s">Criptomonedas</p></div></a>
               <a class="a2" href="#">
                 <div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
+                <a class="a2" href="https://www.tradingview.com/chart/syNGdsL8/"><div class="card__option"  onclick="navToggle()"><p class="s">Tradingview</p></div></a>
+                <a class="a2" href="https://www.binance.com/es/trade/BTC_USDT?theme=dark&type=spot"><div class="card__option"  onclick="navToggle()"><p class="s">Binance</p></div></a>
+                <a class="a2" href="https://derivatives.bitmart.com/es-ES?symbol=BTCUSDT&theme=dark"><div class="card__option"  onclick="navToggle()"><p class="s">Bitmart</p></div></a>     
               <br><br><br><br>
 
             </div><!-- 
@@ -1022,13 +1033,13 @@ transition: .5s ease all;
       
     </div><!-- FIN DE: div class="container_flex_1" -->
     <div class="container_flex_2">
-      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS[.]</p></div></div> 
+      <div class="header2"><div  class="title2"><p>C&Aacute;LCULOS FINANCIEROS</p></div></div> 
     
       <article class="main_grid_1">
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
-               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS[.]</p>
+               <div class="card__option1"><p class="s2">C&Aacute;LCULOS FINANCIEROS</p>
                  <a class="a1" href="#"><div id="article1ColumnLeft" class="div1" onclick="article1_columnLeft()"><p class="s1">➤&nbsp;DEP&Oacute;SITOS A PLAZO FIJO</p></div></a>
                  <a class="a1" href="#"><div id="article2ColumnLeft" class="div1" onclick="article2_columnLeft()"><p class="s1">➤&nbsp;TRADE CRIPTOMONEDAS</p></div></a>
                </div>
@@ -1040,8 +1051,11 @@ transition: .5s ease all;
                  <div class="card__option"  onclick="navToggle()"><p class="s">Evolución del dólar</p></div></a>
                <a class="a2" href="https://miau19.github.io/Miau1/">
                  <div class="card__option"  onclick="navToggle()"><p class="s">Criptomonedas</p></div></a>
-               <a class="a2" href="#">
-                 <div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
+               <a class="a2" href="#"><div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
+               <a class="a2" href="https://www.tradingview.com/chart/syNGdsL8/"><div class="card__option"  onclick="navToggle()"><p class="s">Tradingview</p></div></a>
+               <a class="a2" href="https://www.binance.com/es/trade/BTC_USDT?theme=dark&type=spot"><div class="card__option"  onclick="navToggle()"><p class="s">Binance</p></div></a>
+               <a class="a2" href="https://derivatives.bitmart.com/es-ES?symbol=BTCUSDT&theme=dark"><div class="card__option"  onclick="navToggle()"><p class="s">Bitmart</p></div></a>
+               <br><br><br><br>
               </div>
             </div>
         </div>
@@ -1254,7 +1268,7 @@ transition: .5s ease all;
           </div><!-- FIN DE div class="column columnCenter_articles" -->
         </div> <!--   FIN DE div id="columnCenter" -->
 
-        <div class="columnRight0">
+        <div class="columnRight0" id="columnRight0">
         <div class="columnRight" id="columnRight" >
 
             <div id="card_2a">
@@ -2522,9 +2536,9 @@ function actualizaColor(casilla,pv,pc) {
    }
  }
 
- function nivelarColumnas() {
-  console.log('columnCenterOffset ::::::: ',columnCenter.offsetHeight+"px");
-  var columnCenterOffset=columnCenter.offsetHeight+"px";columnRight.style.height=  columnCenterOffset;
+ function nivelarColumnas() {/// console.log('columnCenterOffset ::::::: ',columnCenter.offsetHeight+"px");
+  var columnCenterOffset=columnCenter.offsetHeight+"px";
+  columnRight0.style.height=  columnCenterOffset; columnLeft.style.height=  columnCenterOffset;
   //offsetHeight CALCULA LA ALTURA DE columnCenter_articles
 }
 
