@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>CF[2024]-2b-paratelef</title>
+    <title>CF[2024]-2b-p'telefono</title>
 
     <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
@@ -17,7 +17,7 @@
    --bg-color:rgb(28, 28, 28);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
    --bg-card-color: rgb(17, 17, 17);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
    --pr1mary-color: rgb(227, 238, 255);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
-   --text-color:rgb(166, 166, 166);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
+   --text-color:rgb(186, 186, 186);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
    --border-color: rgb(106, 106, 106);
    --border-radius_tex: 0.5rem;  /* PARA ARCO INTERNO */
    --border-radius: 0.75rem;  /* PARA ARCO EXTERNO (ARCO INTERNO + PADDING)*/
@@ -57,10 +57,10 @@ body{
     color: var(--text-color);font-family: var(--font-family1);font-weight: var(--font-weight1);/* "Roboto",'Poppins', 'Oswald', sans-serif; sans-serif, 'Times New Roman', 'Arial Narrow', fantasy, Impact */
     overflow:auto;
 }
-  body::-webkit-scrollbar{width: 10px;height: 10px;}
-  body::-webkit-scrollbar-track{      background: rgb(   78, 78, 78) ;border-radius: 5px;}
-  body::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-  body::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+  body::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+  body::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
+  body::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+  body::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
 
 .container{
@@ -154,11 +154,11 @@ body{
 /* ########################################## MENU BAR TOGGLE ##############################################  */
 .navbar1{
 position: fixed;
-height: 100vh;
+height: 100vh;width: 280px;
 left: -100%;
 top: 41px;
 display: none;flex-direction: column;align-items:flex-start;
-padding: 10px;
+padding: 0px;
 backdrop-filter: blur(2px);
 transition: var(--transition);
 transition: left 0.3s;
@@ -168,10 +168,10 @@ z-index: 10;
 }
 @media screen and  (max-width: 960px) { .navbar1 {display: block;} }
 
-.navbar1::-webkit-scrollbar{width: 10px;height: 10px;}
-.navbar1::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.navbar1::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.navbar1::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.navbar1::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+.navbar1::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.navbar1::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.navbar1::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
 .mascara{
     position: fixed;
@@ -192,11 +192,12 @@ z-index: 10;
     padding: 0.5rem 0.5rem 0.5rem 0.0rem; margin: 0.125rem;
 }    
 
-.card__options{height: 100%; overflow: auto; }
-.card__options::-webkit-scrollbar{width: 10px;height: 10px;}
-.card__options::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.card__options::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.card__options::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.card__options{height: 100%; overflow: auto;}
+.card__options::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+.card__options::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.card__options::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.card__options::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
+
 
 .card__options .card__option , .card__options .card__option1{
     border-radius: var(--border-radius); 
@@ -218,12 +219,12 @@ z-index: 10;
 }
 .card__options .card__option1 .div1 {
     display: flex;align-items: center;
-    padding: 0.5em 0.5em 0.5em 0.5em; margin: 0.75em;;
+    padding: 0.5em 0.5em 0.5em 0.5em; margin: 0.75em 0.275em;;
     border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
 }
 .card__options .card__option1 .s1  {
     margin: 0;
-    font-size: var(--font-size1); font-family: var(--font-family2);font-weight: var(--font-weight2);
+    font-size: var(--font-size4); font-family: var(--font-family2);font-weight: var(--font-weight2);
     color: var(--text-color);
     text-transform: uppercase;
     transform: scaleX(1.02) scaleY(1.05) translateX(0px) translateY(0px);
@@ -256,15 +257,15 @@ z-index: 10;
 @media screen and  (max-width: 460px) {.columnRight #card_3a {font-size: var(--font-size4);}}
 @media screen and  (max-width: 460px) {.main_grid_3 #card_3b {font-size: var(--font-size4);}}
 
-.columnRight #card_3a::-webkit-scrollbar{width: 10px;height: 10px;}
-.columnRight #card_3a::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.columnRight #card_3a::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.columnRight #card_3a::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.columnRight #card_3a::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+.columnRight #card_3a::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.columnRight #card_3a::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.columnRight #card_3a::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
-.main_grid_3 #card_3b::-webkit-scrollbar{width: 10px;height: 10px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);} 
+.main_grid_3 #card_3b::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+.main_grid_3 #card_3b::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.main_grid_3 #card_3b::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_3 #card_3b::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);} 
 
 #card_3a h1,#card_3a  p {padding: 0rem;}
 
@@ -484,10 +485,10 @@ z-index: 10;
    display: flex;justify-content: center;align-items: center;margin: 0.4rem 0.25rem;padding: 0 ;
 }
 .checkboxs #CK2{
-   background: var(--button-color); width: 1.0rem;height: 1.0rem;border-radius: 0.125rem;box-shadow: 0 0 2px  var(--text-color);/* border: 1px solid var(--text-color);*/
+   background: var(--button-color); width: 1.0rem;height: 1.0rem;border-radius: 0.125rem;box-shadow: 0 0 2px  var(--text-color);/* */
    display: flex;justify-content: center;align-items: center;margin: 0.4rem 0.25rem;padding: 0 ;
 }
-#CK1.activeCK{box-shadow: 0 0 2px var(--text-color);/*border: 1px solid var(--text-color);*/}
+#CK1.activeCK{box-shadow: 0 0 2px var(--text-color);/**/}
 #CK2.activeCK{box-shadow: 0 0 2px var(--text-color);/*border: 0px solid var(--text-color);*/}
 
 #svgCK1{display: none;}
@@ -528,7 +529,7 @@ z-index: 10;
     color: var(--text-color); font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);
     margin: 10px;    
 }
-.columnRight{    
+.columnRight{ 
     display: flex;
     height: 100%;
     color: var(--text-color);font: 1em sans-serif;
@@ -547,35 +548,53 @@ z-index: 10;
     background-color: var(--bg-color);
     overflow: auto;
 }
-.main_grid_2::-webkit-scrollbar{width: 10px;height: 10px;}
-.main_grid_2::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.main_grid_2::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.main_grid_2::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.main_grid_2::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-color);}
+.main_grid_2::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
-.main_grid_2 .tabla-css{
-    background-color: var(--bg-card-color);opacity: 1;
-    border-collapse: collapse;
-    color: var(--text-color);
+.tablas{
+    display: flex; justify-content: center; flex-direction: column; margin:auto;
+    background: rgba(66, 66, 66, 0);
     
 }
-.main_grid_2 .tabla-css .tdHead{
-    border: 1px solid var(--text-color);
-    padding: 0.25rem  0.525rem ;
+
+.tablas .marcoTabla1{               padding: 1px;margin-top: 1rem; border: 1px solid var(--text-color); }
+.tablas .marcoTabla2{display: none; padding: 1px;margin-top: 1rem; border: 1px solid var(--text-color); }
+
+.main_grid_2 .tablas .tabla-css {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
 }
-.main_grid_2 .tabla-css td{
+
+.main_grid_2 .tablas .tabla-css td{
     color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
-    text-align: center;
+}
+.main_grid_2 .tablas .tabla-css .tdHead{
+    padding: 0.25rem  0.525rem ;
+}
+.main_grid_2 .tablas .tabla-css .tdHead div{
+    display: flex;justify-content: center;align-items: center;
     white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
-.main_grid_2 .tabla-css .td_cf{
+
+.main_grid_2 .tabla-css .td_cf{ 
     color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
-    border: 1px solid var(--text-color);
-    text-align: right;
+    
     padding: 0.25rem  0.525rem ;
     white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
-.main_grid_2 .tabla-css .td_x{
-    border: 1px solid var(--text-color);
+.main_grid_2 .tabla-css .td_cf div{
+    display: flex;justify-content: end;align-items: center;
+    white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
+}
+.main_grid_2 .tabla-css .td_cf div p{
+    padding: 0;margin: 0;text-align: center;
+    white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
+}
+.main_grid_2 .tablas .tabla-css .td_x{
+    border: none;
 }
 .main_grid_2 .tabla-css .td_x div{
     display: flex;justify-content: center;
@@ -587,14 +606,14 @@ z-index: 10;
     fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);
 }
 .main_grid_2 .tabla-css .tdFinalT1, .main_grid_2 .tabla-css .tdFinalT2{
-    border: 1px solid var(--text-color);
+    
     padding: 0.25rem  0.525rem ;
 }
 .main_grid_2 .tabla-css .tdFinalT1{text-align: left;border-right: none;}
 .main_grid_2 .tabla-css .tdFinalT2{text-align: right;border-left: none;}
-.main_grid_2 .tabla-css .td_separador{height: 1.525rem; border: 1px solid var(--text-color);}
+.main_grid_2 .tabla-css .td_separador{height: 1.525rem; }
 
-.td_Dtitulo{border: 1px solid var(--text-color); margin: 0;padding: 0; }
+.td_Dtitulo{ margin: 0;padding: 0; }
 .div_Dtitulo{width: 100%; display: flex;justify-content: space-between; align-items: center; padding-left: 0.525rem;}
 #div_Dsvg{display: flex;justify-content: center; align-items: center; padding: 0.5rem  0.525rem;margin: 0;}
 #div_Dsvg:hover{cursor: pointer; background-color: rgb(176, 0, 0);}
@@ -603,16 +622,12 @@ z-index: 10;
 
 .main_grid_3{background-color: var(--bg-card-color);
     display: none;
-    height: 530px; padding: 1rem 0.5rem;margin: 0.5rem;
+    height: 530px; padding: 1rem 0.5rem;margin: 1.5rem 0.5rem 0.5rem 0.5rem ;
     border-radius: var(--border-radius);box-shadow: var(--box-shadow1);
     
 }
 @media screen and  (max-width: 1260px) {
     .main_grid_3{display: flex;}
-}
-
-.tablas{
-    display: flex; justify-content: center; flex-direction: column; margin:auto;
 }
 
 .columnRight #card_2a{
@@ -627,16 +642,16 @@ z-index: 10;
 }    
 /*@media screen and  (max-width: 1100px) {#card_2a{width: auto;}}****** ALTURA DE #card_2a ********
 */
-.columnRight #card_2a::-webkit-scrollbar{width: 10px;height: 10px;}
-.columnRight #card_2a::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.columnRight #card_2a::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.columnRight #card_2a::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.columnRight #card_2a::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+.columnRight #card_2a::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.columnRight #card_2a::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.columnRight #card_2a::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 @media screen and  (max-width: 460px) {.columnRight #card_2a {font-size: var(--font-size4);}}
 
-.main_grid_3 #card_2b::-webkit-scrollbar{width: 10px;height: 10px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 5px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.main_grid_3 #card_2b::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+.main_grid_3 #card_2b::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.main_grid_3 #card_2b::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_3 #card_2b::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 @media screen and  (max-width: 460px) {.main_grid_3 #card_2b {font-size: var(--font-size4);}}
 
 #card_2b p, #card_2b p{padding: 0em;}
@@ -676,6 +691,7 @@ z-index: 10;
     justify-content:center;
     background-color: var(--bg-card-color);
     color: var(--text-color);
+    margin-top: 1rem;
 } 
 .footer .socialmedia_1{
     display: flex;
@@ -903,7 +919,7 @@ font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(-
 background:var(--bg-card-color);
 position: relative; z-index: 100;
 height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
-max-height: 9rem;
+max-height: 6.5rem;
 display: none;
 border-radius: var(--border-radius_tex);
 box-shadow: var(--box-shadow1) ;
@@ -917,18 +933,20 @@ box-shadow: var(--box-shadow1) ;
   /*
 
 */
-.opciones.active {display: block;height: 99rem;padding: 0.25rem; animation: fadeIn .3s forwards;}
+.opciones.active {display: block;height: 6.5rem;padding: 0.25rem; animation: fadeIn .3s forwards;}
 
 .opciones0{
     display: flex;justify-content: center;align-items: center;flex-direction: column;
     position: relative;
     width: 100% ;height: 100%; 
     overflow: auto;
+ /* scrollbar-width: thin;   ancho de la barra de desplazamiento */
 }
-.opciones0::-webkit-scrollbar{width: 0.5rem;height: 0.5rem;}
-.opciones0::-webkit-scrollbar-track{      background: rgb(   78, 78, 78);border-radius: 0.25rem;}
-.opciones0::-webkit-scrollbar-thumb{      background: rgb(123, 123, 123);border-radius: 0.25rem;}
-.opciones0::-webkit-scrollbar-thumb:hover{background: rgb(   33, 33, 33);}
+.opciones0::-webkit-scrollbar{width: 8px;height: 8px;background: var(--bg-card-color);}
+.opciones0::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 0.25rem;}
+.opciones0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 0.25rem;}
+.opciones0::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
+.opciones0::-webkit-scrollbar-corner{background: var(--bg-card-color);}/* la esquina inferior de la barra de desplazamiento, donde se unen las barras de desplazamiento horizontal y vertical. */ 
 
 @keyframes fadeIn {
 from {
@@ -954,7 +972,7 @@ transition: .5s ease all;
     font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
     color: rgb(49, 135, 255);} 
     
-/* %%%%%%%%%%%%%%%%%%%%%%%%  FIN DE LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */ 
+/* %%%%%%%%%%%%%%%%%%%%%%%% FIN DE LISTA DE OPCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */ 
 
 /* CAMBIAR COLOR DE LA PAGINA */
 .colors__item--blue  {--pr1mary-color: rgb(0, 1, 16);}
@@ -1457,45 +1475,46 @@ transition: .5s ease all;
   
       <article class="main_grid_2" id="main_grid_2">
         
-        <div class="tablas" id="tablas"><br>
+        <div class="tablas" id="tablas">
+          <div class="marcoTabla1"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
           <table class="tabla-css" id="tabla_1a">
             <thead>
-              <tr>
+              <tr style="background: rgb(77, 77, 77);">
                 <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
               </tr>
               <tr >
-                <td class="tdHead">S&iacute;mbolo</td>
-                <td class="tdHead">Capital inicial	</td>
-                <td class="tdHead">Compra</td>
-                <td class="tdHead">Venta</td>
-                <td class="tdHead">Diferencia</td>
-                <td class="tdHead">Comisi&oacute;n</td>
-                <td class="tdHead">Ganancia</td>
-                <td class="tdHead">Capital final</td>
-                <td class="tdHead">Eliminar</td>
+                <td class="tdHead"><div>S&iacute;mbolo </div></td>
+                <td class="tdHead"><div>Capital inicial</div></td>
+                <td class="tdHead"><div>Compra         </div></td>
+                <td class="tdHead"><div>Venta          </div></td>
+                <td class="tdHead"><div>Diferencia     </div></td>
+                <td class="tdHead"><div>Comisi&oacute;n</div></td>
+                <td class="tdHead"><div>Ganancia       </div></td>
+                <td class="tdHead"><div>Capital final  </div></td>
+                <td class="tdHead"><div>Eliminar       </div></td>
               </tr>
-              <tr id="tr_1">
+              <tr id="tr_1" style="background: rgb(45, 45, 45);">
                 <td id="td_sp1" class="td_cf">BTC/USDT </td>
-                <td id="td_ci1" class="td_cf">1,550.46 </td>
-                <td id="td_pc1" class="td_cf">64,522.00</td>
-                <td id="td_pv1" class="td_cf">74,000.00</td>
-                <td id="td_dp1" class="td_cf">9,478.00</td>
-                <td id="td_c1"  class="td_cf">0.10     </td>
-                <td id="td_p1"  class="td_cf">224.42   </td>
-                <td id="td_cf1" class="td_cf">1,774.88 </td>
+                <td id="td_ci1" class="td_cf"><div id="p_ci1">1,550.46 </div></td>
+                <td id="td_pc1" class="td_cf"><div id="p_pc1">64,522.00</div></td>
+                <td id="td_pv1" class="td_cf"><div id="p_pv1">74,000.00</div></td>
+                <td id="td_dp1" class="td_cf"><div id="p_dp1">9,478.00 </div></td>
+                <td id="td_c1"  class="td_cf"><div id="p_c1">0.10     </div> </td>
+                <td id="td_p1"  class="td_cf"><div id="p_p1" >224.42   </div> </td>
+                <td id="td_cf1" class="td_cf"><div id="p_cf1">1,774.88 </div> </td>
                 <td class="td_x" onclick="eliminarTr(1)">
                   <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
               </tr>
-              <tr id="tr_2">
+              <tr id="tr_2" style="background: rgb(53, 53, 53);">
                 <td id="td_sp2" class="td_cf">BTC/USDT </td>
-                <td id="td_ci2" class="td_cf">617.23   </td>
-                <td id="td_pc2" class="td_cf">58,000.00</td>
-                <td id="td_pv2" class="td_cf">74,000.00</td>
-                <td id="td_dp2" class="td_cf">16,000.00</td>
-                <td id="td_c2"  class="td_cf">0.10     </td>
-                <td id="td_p2"  class="td_cf">168.86   </td>
-                <td id="td_cf2" class="td_cf">786.09   </td>
+                <td id="td_ci2" class="td_cf"><div id="p_ci2">617.23   </div></td>
+                <td id="td_pc2" class="td_cf"><div id="p_pc2">58,000.00</div></td>
+                <td id="td_pv2" class="td_cf"><div id="p_pv2">74,000.00</div></td>
+                <td id="td_dp2" class="td_cf"><div id="p_dp2">16,000.00</div></td>
+                <td id="td_c2"  class="td_cf"><div id="p_c2">0.10     </div></td>
+                <td id="td_p2"  class="td_cf"><div id="p_p2" >168.86   </div></td>
+                <td id="td_cf2" class="td_cf"><div id="p_cf2">786.09   </div></td>
                 <td class="td_x" onclick="eliminarTr(2)">
                   <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
@@ -1522,46 +1541,48 @@ transition: .5s ease all;
                 <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotal">0</td>
               </tr>
             </tfoot>
-          </table> <br id="br" style="display: none;">
+          </table> 
+          </div>
          
+          <div class="marcoTabla2"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
          <table class="tabla-css" id="tabla_2a">
           <thead>
             <tr>
               <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
             </tr>
             <tr >
-              <td class="tdHead">S&iacute;mbolo</td>
-              <td class="tdHead">Capital inicial	</td>
-              <td class="tdHead">Compra</td>
-              <td class="tdHead">Venta</td>
-              <td class="tdHead">Diferencia</td>
-              <td class="tdHead">Comisi&oacute;n</td>
-              <td class="tdHead">Ganancia</td>
-              <td class="tdHead">Capital final</td>
-              <td class="tdHead">Eliminar</td>
+              <td class="tdHead"><div>S&iacute;mbolo </div></td>
+              <td class="tdHead"><div>Capital inicial</div></td>
+              <td class="tdHead"><div>Compra         </div></td>
+              <td class="tdHead"><div>Venta          </div></td>
+              <td class="tdHead"><div>Diferencia     </div></td>
+              <td class="tdHead"><div>Comisi&oacute;n</div></td>
+              <td class="tdHead"><div>Ganancia       </div></td>
+              <td class="tdHead"><div>Capital final  </div></td>
+              <td class="tdHead"><div>Eliminar       </div></td>
             </tr>
             <tr id="tr_E1" style="display: none;">
               <td id="td_spE1" class="td_cf">BTC/USDT </td>
-              <td id="td_ciE1" class="td_cf">0.00 </td>
-              <td id="td_pcE1" class="td_cf">66,600.00</td>
-              <td id="td_pvE1" class="td_cf">67,600.00</td>
-              <td id="td_dpE1" class="td_cf">1,000.00</td>
-              <td id= "td_cE1" class="td_cf">0.10     </td>
-              <td id= "td_pE1" class="td_cf">0.00     </td>
-              <td id="td_cfE1" class="td_cf">0.00     </td>
+              <td id="td_ciE1" class="td_cf"><div id="p_ciE1">0.00     </div></td>
+              <td id="td_pcE1" class="td_cf"><div id="p_pcE1">66,600.00</div></td>
+              <td id="td_pvE1" class="td_cf"><div id="p_pvE1">67,600.00</div></td>
+              <td id="td_dpE1" class="td_cf"><div id="p_dpE1">1,000.00 </div></td>
+              <td id= "td_cE1" class="td_cf"><div id="p_cE1">0.10      </div> </td>
+              <td id= "td_pE1" class="td_cf"><div id="p_pE1">0.00      </div> </td>
+              <td id="td_cfE1" class="td_cf"><div id="p_cfE1">0.00     </div> </td>
               <td class="td_x" onclick="eliminarTrE(1)">
                 <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
             <tr id="tr_E2" style="display: none;">  
               <td id="td_spE2" class="td_cf">BTC/USDT </td>
-              <td id="td_ciE2" class="td_cf">0.00 </td>
-              <td id="td_pcE2" class="td_cf">66,600.00</td>
-              <td id="td_pvE2" class="td_cf">67,600.00</td>
-              <td id="td_dpE2" class="td_cf">1,000.00 </td>
-              <td id= "td_cE2" class="td_cf">0.10     </td>
-              <td id= "td_pE2" class="td_cf">0.00     </td>
-              <td id="td_cfE2" class="td_cf">0.00     </td>
+              <td id="td_ciE2" class="td_cf"><div id="p_ciE2">0.00     </div></td>
+              <td id="td_pcE2" class="td_cf"><div id="p_pcE2">66,600.00</div></td>
+              <td id="td_pvE2" class="td_cf"><div id="p_pvE2">67,600.00</div></td>
+              <td id="td_dpE2" class="td_cf"><div id="p_dpE2">1,000.00 </div></td>
+              <td id= "td_cE2" class="td_cf"><div id="p_cE2">0.10      </div> </td>
+              <td id= "td_pE2" class="td_cf"><div id="p_pE2">0.00      </div> </td>
+              <td id="td_cfE2" class="td_cf"><div id="p_cfE2">0.00     </div> </td>
               <td class="td_x" onclick="eliminarTrE(2)">
                 <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
@@ -1588,9 +1609,11 @@ transition: .5s ease all;
               <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotalE">0</td>
             </tr>
           </tfoot>
-         </table> <br>
+         </table>
+         </div>
+
         </div><!--  FIN DE <div class="tablas"></div> -->
-        <div class="tablas1" id="tablas1" style="display: none;">
+        <div class="tablas1" id="tablas1" style="display: flex;justify-content: center;flex-direction: column;">
           <br>
         </div>
       </article><!--   FIN DE article class="main_grid_2" -->
@@ -1921,12 +1944,13 @@ transition: .5s ease all;
    -->
 <script> 
 //########################################################################### ↓↑ ⟵ ⟶  ⭠ ⭢  ← →     ⬆ ⬇ ➡ ⬅  ⇧ ⇩ ⇦ ⇨  ⬌ ⬍ [Solo funcionan en 'Gimp': ↓↑  ← → ⇧ ⇩ ⇦ ⇨ ]  //https://textkool.com/es/symbols/arrows-symbols  
+//rgb(124, 124, 124) rgb(   78, 78, 78)
 var N= "", cont=0, cont2=0, COLOR=0, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8="", 
 booleanGT="", IMPRIMIRTEXTO=1, arrayBox=[0,0,0,0,0,0,0,0], precioBTC0="", precioBTC="0", PRECIOBTC=1, incremento=1000, priceArray=[], totalPriceArray0=[], totalPriceArray01=[], 
 totalPriceArray=[],totalPriceArray02=[],  totalTimeArray0=[], totalTimeArray01=[], totalTimeArray02=[], totalTimeArray=[], totalPriceArray2=[], totalTimeArray2=[], totalPriceArray3=[], totalTimeArray3=[], 
 maxLength=200, X, Y, ARROW=0, ACTUALIZAPRECIO=0, AUTO=0, simboloPar='' ,
 CHECKBOX1=0,CHECKBOX2=1;
-
+ 
 //GENERAR TIEMPO 1:
 Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
 var mydate0=new Date(); 
@@ -2002,14 +2026,14 @@ function genera_tabla() {
   BOX0= cuotaI.value; BOX1=cuota.value; BOX2=document.getElementById("N").value; BOX3=tea1.value; BOX4=tea1.value; BOX5=tea1.value; BOX6=tea1.value; BOX7=tea1.value; BOX8=tea1.value;
   if (document.getElementById("N").value < 0) {document.getElementById("N").value = 0 }
   N= Math.trunc(Number(cleanBoxes(document.getElementById("N").value.replace(/[-,]/g,"")))); //Math.trunc(N); // TOMAR SOLO PARTE ENTERA DE N
-  var SC= ["(máximo=6,000)","(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"]
-  if (document.getElementsByName("contenido_opcion2")[0].textContent==1) { if (N> 500*(360/30 ) ) {document.getElementById("N").value="6,000"; N= 6000 } span1.innerHTML=SC[0]}
-  if (document.getElementsByName("contenido_opcion2")[1].textContent==30) { if (N> 500*(360/30 ) ) {document.getElementById("N").value="6,000"; N= 6000 } span1.innerHTML=SC[1]}
-  if (document.getElementsByName("contenido_opcion2")[2].textContent==60) { if (N> 1000*(360/60) ) {document.getElementById("N").value="6,000"; N= 6000 } span1.innerHTML=SC[2]}
-  if (document.getElementsByName("contenido_opcion2")[3].textContent==90) { if (N> 1000*(360/90) ) {document.getElementById("N").value="4,000"; N= 4000 } span1.innerHTML=SC[3]}
-  if (document.getElementsByName("contenido_opcion2")[4].textContent==180) { if (N> 1000*(360/180)) {document.getElementById("N").value="2,000"; N= 2000 } span1.innerHTML=SC[4]}
-  if (document.getElementsByName("contenido_opcion2")[5].textContent==270) { if (N> 1000*(360/270)) {document.getElementById("N").value="1,333"; N= 1333 } span1.innerHTML=SC[5]}
-  if (document.getElementsByName("contenido_opcion2")[6].textContent==360) { if (N> 1000*(360/360)) {document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[6]}
+  var SC= ["(máximo=1,000)","(máximo=1,000)", "(máximo=1,000)","(máximo=1,000)","(máximo=1,000)","(máximo=1,000)","(máximo=1,000)"]
+  if (document.getElementsByName("contenido_opcion2")[0].textContent==1)  { if (N> 500*(360/30 ) ){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[0]}
+  if (document.getElementsByName("contenido_opcion2")[1].textContent==30) { if (N> 500*(360/30 ) ){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[1]}
+  if (document.getElementsByName("contenido_opcion2")[2].textContent==60) { if (N> 1000*(360/60) ){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[2]}
+  if (document.getElementsByName("contenido_opcion2")[3].textContent==90) { if (N> 1000*(360/90) ){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[3]}
+  if (document.getElementsByName("contenido_opcion2")[4].textContent==180){ if (N> 1000*(360/180)){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[4]}
+  if (document.getElementsByName("contenido_opcion2")[5].textContent==270){ if (N> 1000*(360/270)){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[5]}
+  if (document.getElementsByName("contenido_opcion2")[6].textContent==360){ if (N> 1000*(360/360)){document.getElementById("N").value="1,000"; N= 1000 } span1.innerHTML=SC[6]}
   var N0= new String (formato(N)).split(".")[0]; // SEPARA LA PARTE ENTERA DE 1,000.00 , N0= 1,000
   document.getElementById("N").value= N0;
   var i30= Number(cleanBoxes(tea1.value.replace(/[-,]/g,"")));  tea1.value=formato1(i30);
@@ -2017,17 +2041,7 @@ function genera_tabla() {
   var taza1=tea1.value.replace(/[-,]/g,""); console.log("Taza1: ",taza1);
   var dias1=document.getElementById("contenido_select2").textContent;console.log("dias1: ",dias1);
   var Ted="";//TAZA EFECTIVA DIARIA 
-  /*
-  switch (dias1) {//SELECCIONAR PERIODO DE AHORRO
-   case "1"  : Ted = TED(taza1, 1);break; //TED 1 DIA
-   case "30" : Ted = TED(taza1, 30);break; //TED 30 DIAS                  
-   case "60" : Ted = TED(taza1, dias1);break; //TED 60 DIAS              
-   case "90" : Ted = TED(taza1, dias1);break; //TED 90 DIAS  
-   case "180": Ted = TED(taza1, dias1);break; //TED 180 DIAS                
-   case "270": Ted = TED(taza1, dias1);break; //TED 270 DIAS                
-   case "360": Ted = taza1;break; //TED 360 DIAS
-  }; 
-  */
+
   if (dias1== 1  )Ted = Number(TED(taza1, 1  ) );
   if (dias1== 30 )Ted = Number(TED(taza1, 30 ) );
   if (dias1== 60 )Ted = Number(TED(taza1, 60 ) );
@@ -2035,7 +2049,6 @@ function genera_tabla() {
   if (dias1== 180)Ted = Number(TED(taza1, 180));
   if (dias1== 270)Ted = Number(TED(taza1, 270));
   if (dias1== 360)Ted = Number(TED(taza1, 360));
-  console.log("Ted: ",Ted);
 
   var moneda=document.getElementById("money1").textContent; ///"Soles";
   var RCI= Number(cleanBoxes(cuotaI.value.replace(/[-,]/g,""))); cuotaI.value=formato(RCI);
@@ -2046,30 +2059,22 @@ function genera_tabla() {
   var CIF30= Number(RCI);
   var ci=""; var MA1= "";  var cis=Number(RCI); var M1="";  
 
-  var p ="";
-  for (var r0 = 0; r0 <= 6; r0++) {
-    //if(document.getElementById("rb"+r0).selected==true){if (r0==0) p=1; if (r0>=1 && r0<4) p=r0*30; if (r0>=4) p=(r0-2)*90;}// p= 30, 60, 90, 180, 270, 360
-    if(document.getElementsByName("contenido_opcion2")[r0].textContent){if (r0==0) p=1; if (r0>=1 && r0<4) p=r0*30; if (r0>=4) p=(r0-2)*90;}// p= 30, 60, 90, 180, 270, 360
-  }
-  var mydate01 = mydate0.addMillisecs((Number(N)*p)*24*60*60*1000);
-  //console.log(mydate01);
-  var anioF1 = (Number( mydate01.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+  var p=Number(document.getElementById("contenido_select2").textContent);;
+
+  let anioF1='';
+  for (let ii= 1; ii<=N; ii++) {
+    //GENERAR TIEMPO 1a:
+    var mydate01=new Date(); var mydate1 = mydate01.addMillisecs(((ii)*p)*24*60*60*1000); anioF1 = (Number( mydate1.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+  } // FIN DE for (var ii= 1; ii<=N; ii++)
+
   //datos para las celda celda1:
-  var tx0=""; if (N0==1) tx0="Período";else tx0="Períodos";
-  var cadena00=[""], cadena01=[""], cadena02=[""], cadena03=[""], cadena04=[""], n0="", n="", tx="";
-  for (var r1 = 0; r1 <= 6; r1++) {
-   if (contenido_select2.textContent==1) {tx="día";} else  {tx="días"}// n0= 30, 60, 90, 180, 270, 360
-   if(CHECKBOX1==1 && CHECKBOX2==0){n=2; 
+  var tx0=""; if (N0==1) tx0="Período";else tx0="Períodos", cadena04=[''], n="", tx="", cs2=contenido_select2.textContent;
+   if(cs2==1) {tx="día";} else  {tx="días"}// n0= 30, 60, 90, 180, 270, 360
+   if(CHECKBOX1==1 && CHECKBOX2==0){n=2; cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+cs2+" "+tx+", con aportes, TEA: "+tea1.value+" %"]}
+   if(CHECKBOX1==0 && CHECKBOX2==1){n=2; cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+cs2+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}
+   if(CHECKBOX1==1 && CHECKBOX2==1){n=3; cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+cs2+" "+tx+", con aportes, TEA: "+tea1.value+" %" , "Período de "+cs2+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}
 
-    cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+contenido_select2.textContent+" "+tx+", con aportes, TEA: "+tea1.value+" %"]}
-    if(CHECKBOX1==0 && CHECKBOX2==1){n=2; 
-
-    cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+contenido_select2.textContent+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}
-   if(CHECKBOX1==1 && CHECKBOX2==1) {n=3; 
-
-     cadena04 =[N0+" "+tx0+", del "+anio0+" al "+anioF1 , "Período de "+contenido_select2.textContent+" "+tx+", con aportes, TEA: "+tea1.value+" %" , "Período de "+contenido_select2.textContent+" "+tx+", sin aportes, TEA: "+tea1.value+" %"]}
-  }
-  // Crea las celdas de la 1ra. hilera de thead1     
+   // Crea las celdas de la 1ra. hilera de thead1     
   for (var c1 = 0; c1 < 1; c1++) {
    var hilera1 = document.createElement("tr");
    for (var h1 = 0; h1 < n; h1++) {
@@ -2145,20 +2150,17 @@ function genera_tabla() {
      // Crea celdas
      var celda2 = document.createElement("td"); celda2.setAttribute("id", "idCelda2_"+(j+1));
      //GENERAR TIEMPO 2:
-     var mydate=new Date(); var mydate1 = mydate.addMillisecs((i*p)*24*60*60*1000);var diaF = new String(mydate1.getDate()); var mF = Number(mydate1.getMonth()+1);; mesF = new String(mF);
+     var mydate02=new Date(); var mydate2 = mydate02.addMillisecs((i*p)*24*60*60*1000);var diaF = new String(mydate2.getDate()); var mF = Number(mydate2.getMonth()+1);;var mesF = new String(mF);
      if (diaF.length<2) {diaF="0"+diaF;}else{diaF=diaF;} if (mesF.length<2) {mesF="0"+mesF;}else{mesF=mesF;}
-     var anioF2 = (Number( mydate1.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+     var anioF2 = (Number( mydate2.getYear())+1900);//CORRECCION AL SISTEMA: +1900
    
      //datos para la celda2:
      var Ni= new String (formato(i)).split(".")[0]; // SEPARA LA PARTE ENTERA DE 1,000.00 , Ni= 1,000
-     var cadena07 =[""], cadena08 =[""], cadena08_ =[""];
+     var cadena07 =[""];
      for (var r2 = 0; r2 <= 6; r2++) {
-       if(CHECKBOX1==1 && CHECKBOX2==0) {
-        cadena07 =["Fin período" +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 ]}
-       if(CHECKBOX1==0 && CHECKBOX2==1) {
-        cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MF01+MF02 ]}
-       if(CHECKBOX1==1 && CHECKBOX2==1) {
-        cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 , MF01+MF02 ]}
+       if(CHECKBOX1==1 && CHECKBOX2==0) {cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 ]}
+       if(CHECKBOX1==0 && CHECKBOX2==1) {cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MF01+MF02 ]}
+       if(CHECKBOX1==1 && CHECKBOX2==1) {cadena07 =["Fin período " +Ni+" ("+diaF+"/"+ mesF+"/"+anioF2+")" , MAF01+MAF02 , MF01+MF02 ]}
       }
       var d02 = document.createElement("div");d02.setAttribute("id", "div_p"+(j+1));// p00: DIV P' PARRAFOS
       var pn07 = document.createElement("p"); pn07.setAttribute("id", "pTex"+(j+1));// PARRAFO LETRAS
@@ -2173,12 +2175,22 @@ function genera_tabla() {
   //******************************************************************************(3)
   //******************************************************************************(3a)
   //DATOS PARA PERIODO FINAL:tbodyF
-  for (var f= 1; f<=N; f++) {
+  let diaF3='', mesF3='', anioF3='';
+  for (let ff= 1; ff<=N; ff++) {console.log('ff',(ff));
     //CALCULOS INTERES COMPUESTO CON APORTES 
     CIF30 = ( (Math.pow((1+Ted/100 ),(1))-1)*CIF30+CIF30 )  +C; var RCA = formato(CIF30-C) +" "+moneda;
     //CALCULOS INTERES COMPUESTO SIN APORTES  
-    var M2 = ((Math.pow((1+Ted/100 ),(f))-1)*CI+CI); var RSA = formato(M2) +" "+moneda;
-  } // FIN DE for (var f= 1; f<=N; f++)
+    var M2 = ((Math.pow((1+Ted/100 ),(ff))-1)*CI+CI); var RSA = formato(M2) +" "+moneda;
+    //GENERAR TIEMPO 3:
+    var mydate03=new Date(); 
+    var mydate3 = mydate03.addMillisecs(((ff)*p)*24*60*60*1000);console.log('ff-1',(ff-1));
+    diaF3 = new String(mydate3.getDate()); 
+    var mF = Number(mydate3.getMonth()+1);; 
+    mesF3 = new String(mF);
+    if (diaF3.length<2) {diaF3="0"+diaF3;}else{diaF3=diaF3;} if (mesF3.length<2) {mesF3="0"+mesF3;}else{mesF3=mesF3;}
+    anioF3 = (Number( mydate3.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+  } // FIN DE for (var ff= 1; ff<=N; ff++)
+
   //Crea las hileras de tbodyF
   for (var hF = 0; hF < 1; hF++) {
     var hileraF = document.createElement("tr");  
@@ -2186,25 +2198,13 @@ function genera_tabla() {
      // Crea las celdas para tbodyF
      var celdaF = document.createElement("td");
      celdaF.setAttribute("id", "celdaF_"+(cF+1));
-     //GENERAR TIEMPO 3:
-     var mydate=new Date(); 
-     var mydate1 = mydate.addMillisecs(((f-1)*p)*24*60*60*1000);
-     var diaF = new String(mydate1.getDate()); 
-     var mF = Number(mydate1.getMonth()+1);; 
-     mesF = new String(mF);
-     if (diaF.length<2) {diaF="0"+diaF;}else{diaF=diaF;} if (mesF.length<2) {mesF="0"+mesF;}else{mesF=mesF;}
-     var anioF3 = (Number( mydate1.getYear())+1900);//CORRECCION AL SISTEMA: +1900
+     
      //datos para la celdaF:
-     var R0F = " Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" ;       
-     var cadenaF =[""];
      for (var rF = 0; rF <= 6; rF++) {
-     if(CHECKBOX1==1 && CHECKBOX2==0) {
-      cadena09 =["Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" , RCA]}     
-      if(CHECKBOX1==0 && CHECKBOX2==1) {
-      cadena09 =["Fin período "+N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")" ,RSA];}
-     if(CHECKBOX1==1 && CHECKBOX2==1) {
-      cadena09 =["Fin período " +N0+" ("+diaF+"/"+ mesF+"/"+anioF3+")", RCA, RSA]}// R0F, RCA, RSA          .
-     }
+       if(CHECKBOX1==1 && CHECKBOX2==0) {cadena09 =["Fin período "+N0+" ("+diaF3+"/"+ mesF3+"/"+anioF3+")" , RCA]}     
+       if(CHECKBOX1==0 && CHECKBOX2==1) {cadena09 =["Fin período "+N0+" ("+diaF3+"/"+ mesF3+"/"+anioF3+")" ,RSA];}
+       if(CHECKBOX1==1 && CHECKBOX2==1) {cadena09 =["Fin período "+N0+" ("+diaF3+"/"+ mesF3+"/"+anioF3+")", RCA, RSA]}// R0F, RCA, RSA          .
+      }
      var d03 = document.createElement("div"); d03.setAttribute("id","div_p_hileraF_"+(cF+1));// p00: DIV P' PARRAFOS
      var pn09 = document.createElement("p"); pn09.setAttribute("id", "pNum_hileraF_"+(cF+1));// PARRAFO NUMEROS
      var textoCelda09 = document.createTextNode(""+cadena09[cF]);
@@ -2216,6 +2216,7 @@ function genera_tabla() {
     }
     tbodyF.appendChild(hileraF);// agrega la hileraF a tbody1
   } // FIN DE for (var hF = 0; hF < 1; hF++)
+
   //******************************************************************************(3a)
   //if (N==0) {}
   if (N==1) {table1.appendChild(tbodyF);}
@@ -2243,7 +2244,7 @@ function genera_tabla() {
 } // FIN DE function genera_tabla()
 
 var boleano=""; 
-function TAZA(taza, dias, boleano){//PARA INTRODUCIR TEXTO EN VIVO A CASILLAS, Y DE SELECTOR 'Selector2' A CASILLA 'boxTED'
+function TAZA(taza, dias, boleano){//PARA INTRODUCIR TEXTO EN VIVO A CASILLAS, Y DE SELECTOR 'Selector2' A CASILLA 'boxTED' 
   var exponente = "";
   if (boleano==2) exponente = Number(1/(dias/360));// Para Taza Efectiva Anual
   else exponente = Number(dias/360);console.log("exponente: "+exponente);// Para Taza Efectiva Diaria
@@ -2271,7 +2272,7 @@ function operacion(taza,exponente) {//CALCULO DE tea: A 180 DIAS → ted= 4 //RE
   var r0 = new Decimal(r);                       //console.log("r0: "+r0);
   //var m_F = r0.mul(100).toNumber().toFixed(100); console.log("m_toFixed(100) : "+m_F );///SOLO PARA OBSERVAR DECIMALES // EN: toFixed(100) 100 NO TRABAJA CON NAVEGADORES ANTIGUOS, COMO EDGE(CELULAR)
   var m = r0.mul(100).toNumber();                //console.log("m : "+m ); console.log("→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→");
-  return m;
+  return m;// return teda;//RETORNA 'teda' SIN USAR ARCHIVO: decimal.js 
 } 
 
 function iniciar(){genera_tabla()}
@@ -2290,7 +2291,7 @@ function visibleTr2(cont2){document.getElementById("tbody2_"+cont2).style.visibi
 
 var ws='', r="rgb(200,0,0)", v='rgb(0,200,0)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1
 , simboloPar='',cuentaInicial='', gananciaXBTC='', comision='',gananciaXBTC='', gananciaXFraccion='', cuentaFinal='',pCompra='', pVenta=''
-, n=2, contD=0+n , contE=0+n , contTD=2 , contTE=0;
+, n=2, contD=0+n , contE=0+n , contTD=2 , contTE=2;
 var cuentaInicialT='', gananciaXBTCT='', comisionT='',gananciaXBTCT='', gananciaXFraccionT='', cuentaFinalT='',pCompraT='', pVentaT='';
 var  arrayBox=[0,0,0,0,0,0,0,0];
 
@@ -2442,17 +2443,16 @@ function actualizaPreciosCard() { ///ACTUALIZA LAS RESPUESTAS CON EL PRECIO DEL 
 } 
 
 function agregarAtabla(){ 
-  document.getElementById('br').style.display='inline';
   actualizaPreciosCard();//FUNCION NESESARIA PARA INSERTAR VALORES EN TABLA  class='td_cf'
   var contC=0 , est='';
   (TABLADINAMICA==1)? (est='', contD=contD+1 ,contC=contD, contTD=contTD+1):(est='E', contE=contE+1 ,contC=contE, contTE=contTE+1);
 
-  var TR= "<tr id='tr_"+est+contC+"'"+" ><td class='td_cf' id='td_sp"+est+contC+"'>"+simbolo.textContent.replace(':','')+"</td><td class='td_cf' id='td_ci"+est+contC+"'>"+formato(cuentaInicial)+"</td><td class='td_cf' id='td_pc"+est+contC+"'>"+
-  formato(pCompra)+"</td><td class='td_cf' id='td_pv"+est+contC+"'>"+formato(pVenta)+"</td><td class='td_cf' id='td_dp"+est+contC+"'>"+formato(gananciaXBTC)+"</td><td class='td_cf' id='td_c"+est+contC+"'>"+formato(comision)+"</td><td class='td_cf' id='td_p"+est+contC+"'>"+
-  formato(gananciaXFraccion)+"</td><td class='td_cf' id='td_cf"+est+contC+"'>"+formato(cuentaFinal)+"</td><td onclick='eliminarTr"+est+"("+contC+")'"+" class='td_x' id='td_x"+est+contC+"'"+
+  var TR= "<tr id='tr_"+est+contC+"'"+" ><td class='td_cf' id='td_sp"+est+contC+"'>"+simbolo.textContent.replace(':','')+"</td><td class='td_cf' id='td_ci"+est+contC+"'><div id='p_ci"+est+contC+"'>"+formato(cuentaInicial)+"</div></td><td class='td_cf' id='td_pc"+est+contC+"'><div id='p_pc"+est+contC+"'>"+
+  formato(pCompra)+"</div></td><td class='td_cf' id='td_pv"+est+contC+"'><div id='p_pv"+est+contC+"'>"+formato(pVenta)+"</div></td><td class='td_cf' id='td_dp"+est+contC+"'><div id='p_dp"+est+contC+"'>"+formato(gananciaXBTC)+"</div></td><td class='td_cf' id='td_c"+est+contC+"'><div id='p_c"+est+contC+"'>"+formato(comision)+"</div></td><td class='td_cf' id='td_p"+est+contC+"'><div id='p_p"+est+contC+"'>"+
+  formato(gananciaXFraccion)+"</div></td><td class='td_cf' id='td_cf"+est+contC+"'><div id='p_cf"+est+contC+"'>"+formato(cuentaFinal)+"</div></td><td onclick='eliminarTr"+est+"("+contC+")'"+" class='td_x' id='td_x"+est+contC+"'"+
   ">"+"<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td></tr>";
  
-  (TABLADINAMICA==1)? (document.getElementById('tabla_1a').style.display='block', document.getElementById('dataD').innerHTML += TR) : (document.getElementById('tabla_2a').style.display='block', document.getElementById('dataE').innerHTML += TR);
+  (TABLADINAMICA==1)? (document.getElementById('tabla_1a').style.display='block', document.getElementById('dataD').innerHTML += TR, document.querySelector('.marcoTabla1').style.display='inline') : (document.getElementById('tabla_2a').style.display='block', document.getElementById('dataE').innerHTML += TR, document.querySelector('.marcoTabla2').style.display='inline');
 
   for (let i = 1; i <= contC; i++) { 
   actualizaColor(document.getElementById('td_dp'+est+contC), pVenta, pCompra);
@@ -2466,28 +2466,28 @@ function actualizaPreciosTablaDinamica(n,s){
   var pVentaT= '';//pVentaT= Number(cleanBoxes(cotizacionBTC.textContent.replace(/[,]/g,"")));
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= n; j++) {
-      pVentaT= Number(cleanBoxes(document.getElementById("td_pv"+s+j).textContent.replace(/[,]/g,"")));
-      cuentaInicialT= Number(cleanBoxes(document.getElementById("td_ci"+s+j).textContent.replace(/[,]/g,"")));
-      pCompraT= Number(cleanBoxes(document.getElementById("td_pc"+s+j).textContent.replace(/[,]/g,"")));
+      pVentaT= Number(cleanBoxes(document.getElementById("p_pv"+s+j).textContent.replace(/[,]/g,"")));
+      cuentaInicialT= Number(cleanBoxes(document.getElementById("p_ci"+s+j).textContent.replace(/[,]/g,"")));
+      pCompraT= Number(cleanBoxes(document.getElementById("p_pc"+s+j).textContent.replace(/[,]/g,"")));
     
-      comisionT= Number(cleanBoxes(document.getElementById("td_c"+s+j).textContent.replace(/[,]/g,"")));
+      comisionT= Number(cleanBoxes(document.getElementById("p_c"+s+j).textContent.replace(/[,]/g,"")));
       gananciaXBTCT= pVentaT - pCompraT;
       var gananciaXFraccion0= (gananciaXBTCT - (((pCompraT/100)*comisionT) +(((pCompraT + gananciaXBTCT)/100)*comisionT)))*(cuentaInicialT/pCompraT) ;
       cuentaFinalT= cuentaInicialT+gananciaXFraccion0;
       gananciaXFraccionT= gananciaXFraccion0;
 
       document.getElementById('td_sp'+s+j).innerText = simbolo.textContent.replace(':','');
-      document.getElementById('td_ci'+s+j).innerText = formato(cuentaInicialT);
-      document.getElementById('td_pc'+s+j).innerText = formato(pCompraT);
-      var PV=''; (s=='')? PV= cotizacionBTC.textContent : PV= formato(pVentaT); document.getElementById('td_pv'+s+j).innerText = formato(PV);
-      document.getElementById('td_dp'+s+j).innerText = formato(gananciaXBTCT);
-      document.getElementById('td_c' +s+j).innerText = formato(comisionT); 
-      document.getElementById('td_p'+s+j).innerText= formato(gananciaXFraccionT); 
-      document.getElementById('td_cf'+s+j).innerText= formato(cuentaFinalT); 
+      document.getElementById('p_ci'+s+j).innerText = formato(cuentaInicialT);
+      document.getElementById('p_pc'+s+j).innerText = formato(pCompraT);
+      var PV=''; (s=='')? PV= cotizacionBTC.textContent : PV= formato(pVentaT); document.getElementById('p_pv'+s+j).innerText = formato(PV);
+      document.getElementById('p_dp'+s+j).innerText = formato(gananciaXBTCT);
+      document.getElementById('p_c' +s+j).innerText = formato(comisionT); 
+      document.getElementById('p_p'+s+j).innerText= formato(gananciaXFraccionT); 
+      document.getElementById('p_cf'+s+j).innerText= formato(cuentaFinalT); 
       
-      actualizaColor(document.getElementById('td_p'+s+j),gananciaXFraccionT,0);
-      actualizaColor(document.getElementById('td_dp'+s+j),cuentaFinalT,cuentaInicialT);
-      actualizaColor(document.getElementById('td_cf'+s+j),cuentaFinalT,cuentaInicialT); 
+      actualizaColor(document.getElementById('p_p'+s+j),gananciaXFraccionT,0);
+      actualizaColor(document.getElementById('p_dp'+s+j),cuentaFinalT,cuentaInicialT);
+      actualizaColor(document.getElementById('p_cf'+s+j),cuentaFinalT,cuentaInicialT); 
     }
   }
  suma(contD,'');suma(contE,'E');
@@ -2543,10 +2543,14 @@ function actualizaColor(casilla,pv,pc) {
 }
 
 function onload() {
-  nivelarColumnas();
+  resetar();nivelarColumnas();
   cotizaciónBtc_WebSocket();startTimer();
+  ///document.getElementById('agregarATabla').click(); document.getElementById('td_x'+contTD).click();
 }
-
+function resetar() {
+  cuotaI.value=formato(30000); cuota.value=formato(1000);boxTED.value=formato(3);tea1.value=formato(3); document.getElementById("N").value=(10);
+  cuentaSpotI.value=formato(2309.10); precioCompra.value=formato(66600); Difprecio.value=formato(7400); precioVentaVivo.value=formato(74000); commission.value=formato(0.10);
+}
 function navToggle(){//ESTA FUNCION TRABAJA JUNTO A resetarMascara() 
   if (window.innerWidth<900) {// window.innerWidth : Ancho de Ventana del navegador
     if (TOGGLE==1)  {document.getElementById("navbar1").style.left= 0+"%";TOGGLE=0; document.getElementById("body").style.overflow= "hidden";document.getElementById('mascara').style.backgroundColor='rgba(10,10,10, 0.52)'; document.getElementById("mascara").style.zIndex='11'}// document.getElementById("body").style.overflow= "hidden";
@@ -2625,7 +2629,7 @@ function article2_columnLeft(){
 
 function eliminarTablaD(){
   contTD=0;
-  document.getElementById('tabla_1a').style.display='none';//document.getElementById('tr_'+c).remove(); 
+  document.getElementById('tabla_1a').style.display='none';document.querySelector('.marcoTabla1').style.display='none';//document.getElementById('tr_'+c).remove(); 
   for (let i = 1; i <= contD; i++) {
     document.getElementById('tr_'+i).style.display='none';document.getElementById("td_ci"+i).innerText=0;
   }
@@ -2634,7 +2638,7 @@ function eliminarTablaD(){
 }
 function eliminarTablaE(){
   contTE=0;
-  document.getElementById('tabla_2a').style.display='none';//document.getElementById('tr_'+c).remove(); 
+  document.getElementById('tabla_2a').style.display='none';document.querySelector('.marcoTabla2').style.display='none';//document.getElementById('tr_'+c).remove(); 
   for (let i = 1; i <= contE; i++) {
     document.getElementById('tr_E'+i).style.display='none';document.getElementById("td_ciE"+i).innerText=0;
   }
@@ -2644,16 +2648,17 @@ function eliminarTablaE(){
 function eliminarTr(c){
   contTD=contTD-1; console.log("contTD:", contTD);
   document.getElementById('tr_'+c).style.display='none';//document.getElementById('tr_'+c).remove();
-  document.getElementById("td_ci"+c).innerText=0;
+  document.getElementById("p_ci"+c).innerText=0;
   actualizaPreciosTablaDinamica(contD,'');
-  if (contTD==0) {document.getElementById('tabla_1a').style.display='none';}
+  if (contTD==0) {document.getElementById('tabla_1a').style.display='none';document.querySelector('.marcoTabla1').style.display='none';}
 }
 function eliminarTrE(c){
   contTE=contTE-1; console.log("contTE:", contTE);
   document.getElementById('tr_E'+c).style.display='none';//document.getElementById('tr_'+c).remove();
-  document.getElementById("td_ciE"+c).innerText=0;
+  document.getElementById("p_ciE"+c).innerText=0;
   actualizaPreciosTablaDinamica(contE,'E');
-  if (contTE==0) {document.getElementById('tabla_2a').style.display='none';}
+  if (contTE==2) {document.getElementById('tabla_2a').style.display='none';document.querySelector('.marcoTabla2').style.display='none';}
+  
 }
 
 ///------------------------------------------------------------------------------------------------------------------------
@@ -2845,7 +2850,7 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
      document.getElementsByName('contenido_opcion2')[y].addEventListener('click', function (e) {
      e.preventDefault();
 
-     var s2= ["(máximo=6,000)","(máximo=6,000)", "(máximo=6,000)","(máximo=4,000)","(máximo=2,000)","(máximo=1,333)","(máximo=1,000)"];
+     var s2= ["(máximo=1,000)","(máximo=1,000)", "(máximo=1,000)","(máximo=1,000)","(máximo=1,000)","(máximo=1,000)","(máximo=1,000)"];
      var iT00= Number(cleanBoxes(document.getElementById("tea1").value.replace(/[-,]/g,"")));  document.getElementById("tea1").value=formato1(iT00); 
      var iT0=document.getElementById("tea1");
      var taza=iT0.value.replace(/[-,]/g,""); var dias=e.currentTarget.innerHTML;
@@ -3826,7 +3831,6 @@ for (let i = 0; i < toggleColors.length; i++) {
 //# sourceMappingURL=doc/decimal.js.map  
 
 ////################ FIN DE  decimal.js ###################
-
 </script> 
 </body>
 </html>
