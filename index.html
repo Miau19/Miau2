@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>CF[2024]-2b-p'telefono</title>
+    <title>CF[2024]-2b-paratelef</title>
 
     <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
@@ -555,14 +555,14 @@ z-index: 10;
 
 .tablas{
     display: flex; justify-content: center; flex-direction: column; margin:auto;
-    background: rgba(66, 66, 66, 0);
+    background: rgba(80, 12, 0, 0.0);     width: 100%;
     
 }
 
-.tablas .marcoTabla1{               padding: 1px;margin-top: 1rem; border: 1px solid var(--text-color); }
-.tablas .marcoTabla2{display: none; padding: 1px;margin-top: 1rem; border: 1px solid var(--text-color); }
+.tablas .marcoTabla1{               padding: 1px;margin-left:auto;margin-right:auto;margin-top: 1rem; border: 1px solid var(--text-color); }
+.tablas .marcoTabla2{display: none; padding: 1px;margin-left:auto;margin-right:auto;margin-top: 1rem; border: 1px solid var(--text-color); }
 
-.main_grid_2 .tablas .tabla-css {
+.main_grid_2 .tablas .tabla-css {background: #17002c;
     border-collapse: collapse;
     border-spacing: 0;
     border: none;
@@ -579,13 +579,12 @@ z-index: 10;
     white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
 
-.main_grid_2 .tabla-css .td_cf{ 
-    color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
-    
-    padding: 0.25rem  0.525rem ;
+.main_grid_2 .tabla-css .td_cf{ background: #003e13;
+    color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2); 
+    padding: 0.25rem  0.5rem ;
     white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
-.main_grid_2 .tabla-css .td_cf div{
+.main_grid_2 .tabla-css .td_cf div{background: #03004e;
     display: flex;justify-content: end;align-items: center;
     white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
@@ -1479,7 +1478,7 @@ transition: .5s ease all;
           <div class="marcoTabla1"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
           <table class="tabla-css" id="tabla_1a">
             <thead>
-              <tr style="background: rgb(77, 77, 77);">
+              <tr style="background: rgb(13, 13, 13);">
                 <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
               </tr>
               <tr >
@@ -1495,26 +1494,26 @@ transition: .5s ease all;
               </tr>
               <tr id="tr_1" style="background: rgb(45, 45, 45);">
                 <td id="td_sp1" class="td_cf">BTC/USDT </td>
-                <td id="td_ci1" class="td_cf"><div id="p_ci1">1,550.46 </div></td>
-                <td id="td_pc1" class="td_cf"><div id="p_pc1">64,522.00</div></td>
-                <td id="td_pv1" class="td_cf"><div id="p_pv1">74,000.00</div></td>
-                <td id="td_dp1" class="td_cf"><div id="p_dp1">9,478.00 </div></td>
-                <td id="td_c1"  class="td_cf"><div id="p_c1">0.10     </div> </td>
-                <td id="td_p1"  class="td_cf"><div id="p_p1" >224.42   </div> </td>
-                <td id="td_cf1" class="td_cf"><div id="p_cf1">1,774.88 </div> </td>
+                <td id="td_ci1" class="td_cf"><div name="p_ci" id="p_ci1">1,550.46 </div></td>
+                <td id="td_pc1" class="td_cf"><div name="p_pc" id="p_pc1">64,522.00</div></td>
+                <td id="td_pv1" class="td_cf"><div name="p_pv" id="p_pv1">74,000.00</div></td>
+                <td id="td_dp1" class="td_cf"><div name="p_dp" id="p_dp1">9,478.00 </div></td>
+                <td id="td_c1"  class="td_cf"><div name="p_c"  id="p_c1">0.10     </div> </td>
+                <td id="td_p1"  class="td_cf"><div name="p_p"  id="p_p1" >224.42   </div> </td>
+                <td id="td_cf1" class="td_cf"><div name="p_cf" id="p_cf1">1,774.88 </div> </td>
                 <td class="td_x" onclick="eliminarTr(1)">
                   <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
               </tr>
               <tr id="tr_2" style="background: rgb(53, 53, 53);">
                 <td id="td_sp2" class="td_cf">BTC/USDT </td>
-                <td id="td_ci2" class="td_cf"><div id="p_ci2">617.23   </div></td>
-                <td id="td_pc2" class="td_cf"><div id="p_pc2">58,000.00</div></td>
-                <td id="td_pv2" class="td_cf"><div id="p_pv2">74,000.00</div></td>
-                <td id="td_dp2" class="td_cf"><div id="p_dp2">16,000.00</div></td>
-                <td id="td_c2"  class="td_cf"><div id="p_c2">0.10     </div></td>
-                <td id="td_p2"  class="td_cf"><div id="p_p2" >168.86   </div></td>
-                <td id="td_cf2" class="td_cf"><div id="p_cf2">786.09   </div></td>
+                <td id="td_ci2" class="td_cf"><div name="p_ci" id="p_ci2">617.23   </div></td>
+                <td id="td_pc2" class="td_cf"><div name="p_pc" id="p_pc2">58,000.00</div></td>
+                <td id="td_pv2" class="td_cf"><div name="p_pv" id="p_pv2">74,000.00</div></td>
+                <td id="td_dp2" class="td_cf"><div name="p_dp" id="p_dp2">16,000.00</div></td>
+                <td id="td_c2"  class="td_cf"><div name="p_c"  id="p_c2">0.10     </div></td>
+                <td id="td_p2"  class="td_cf"><div name="p_p"  id="p_p2" >168.86   </div></td>
+                <td id="td_cf2" class="td_cf"><div name="p_cf" id="p_cf2">786.09   </div></td>
                 <td class="td_x" onclick="eliminarTr(2)">
                   <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
                 </td>
@@ -1547,7 +1546,7 @@ transition: .5s ease all;
           <div class="marcoTabla2"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
          <table class="tabla-css" id="tabla_2a">
           <thead>
-            <tr>
+            <tr style="background: rgb(13, 13, 13);">
               <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_Dsvg" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
             </tr>
             <tr >
@@ -2460,6 +2459,7 @@ function agregarAtabla(){
   actualizaColor( document.getElementById('td_cf'+est+contC), cuentaFinal, cuentaInicial);
   }
   suma(contD,'');suma(contE,'E');
+  ///anchoDivs();
 }
 
 function actualizaPreciosTablaDinamica(n,s){
@@ -2545,6 +2545,7 @@ function actualizaColor(casilla,pv,pc) {
 function onload() {
   resetar();nivelarColumnas();
   cotizaciónBtc_WebSocket();startTimer();
+  anchoDivs();
   ///document.getElementById('agregarATabla').click(); document.getElementById('td_x'+contTD).click();
 }
 function resetar() {
@@ -2628,22 +2629,22 @@ function article2_columnLeft(){
 }
 
 function eliminarTablaD(){
-  contTD=0;
+  ///contTD=0;
   document.getElementById('tabla_1a').style.display='none';document.querySelector('.marcoTabla1').style.display='none';//document.getElementById('tr_'+c).remove(); 
   for (let i = 1; i <= contD; i++) {
-    document.getElementById('tr_'+i).style.display='none';document.getElementById("td_ci"+i).innerText=0;
+    document.getElementById('tr_'+i).style.display='none';document.getElementById("p_ci"+i).innerText=0;
   }
   actualizaPreciosTablaDinamica(contD,'');
-
+  contTD=0;
 }
 function eliminarTablaE(){
-  contTE=0;
+  ///contTE=0;
   document.getElementById('tabla_2a').style.display='none';document.querySelector('.marcoTabla2').style.display='none';//document.getElementById('tr_'+c).remove(); 
   for (let i = 1; i <= contE; i++) {
-    document.getElementById('tr_E'+i).style.display='none';document.getElementById("td_ciE"+i).innerText=0;
+    document.getElementById('tr_E'+i).style.display='none';document.getElementById("p_ciE"+i).innerText=0;
   }
   actualizaPreciosTablaDinamica(contE,'E');
-
+  contTE=0;
 }
 function eliminarTr(c){
   contTD=contTD-1; console.log("contTD:", contTD);
@@ -2809,6 +2810,7 @@ boxes[i].addEventListener("input", (e) => {
 function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 // 0,0 // 0,0  
   actualizaPreciosCard();actualizaPreciosTablaDinamica(contD,'');;
   cotizaciónBtc_binance_price24hr();  
+  anchoDivs();
   //if (window.innerWidth>900) {{document.getElementById("navbar1").style.left= -100+"%"; document.getElementById("body").style.overflow= "auto";   TOGGLE=1; document.getElementById('mascara').style.backgroundColor='rgba(0,0,0, 0.0)';} }// document.getElementById("body").style.overflow= "auto";
  } 
  
@@ -2914,7 +2916,75 @@ for (let i = 0; i < toggleColors.length; i++) {
     });
 }
 
+function anchoDivs() { // https://es.stackoverflow.com/questions/579867/como-obtener-el-tama%C3%B1o-del-texto-de-la-fuente-me-refiero 
+  /*
+  for (let index = 0; index < document.getElementsByName('p_pv').length; index++) {
+    console.log("document.getElementsByName('p_pv').length", document.getElementsByName('p_pv').length);
+  }
+  */
+  ///let divdp=document.getElementById("p_dp1").offsetWidth; console.log('divdp',divdp);
+  ///document.getElementById("p_dp1").style.width=divdp + 16 + 'px';
+  ///
+  ///let divpv=document.getElementById("p_pv1").offsetWidth; console.log('divpv',divpv);
+  ///document.getElementById("p_pv1").style.width=divpv + 16 + 'px';
+///
+  ///document.getElementById("p_p1").style.width=document.getElementById("p_p1").offsetWidth + 16 + 'px';
+  ///document.getElementById("p_cf1").style.width=document.getElementById("p_cf1").offsetWidth + 16 + 'px';
+/*
+const p = document.getElementById("p_pv1");
+const range = document.createRange();
+range.selectNodeContents(p.firstChild);
+const rects = range.getClientRects();
+console.log('Tamaño del nodo de texto', rects[0].width);
+document.getElementById("p_pv1").style.width=rects[0].width + 16 + 'px';
 
+const p_dp1 = document.getElementById("p_dp1");
+const range_p_dp1 = document.createRange();
+range_p_dp1.selectNodeContents(p_dp1.firstChild);
+const rects_p_dp1 = range_p_dp1.getClientRects();
+document.getElementById("p_dp1").style.width=rects_p_dp1[0].width + 16 + 'px';
+
+const p_p1 = document.getElementById("p_p1");
+const range_p_p1 = document.createRange();
+range_p_p1.selectNodeContents(p_p1.firstChild);
+const rects_p_p1 = range_p_p1.getClientRects();
+document.getElementById("p_p1").style.width=rects_p_p1[0].width + 16 + 'px';
+
+const p_cf1 = document.getElementById("p_cf1");
+const range_p_cf1 = document.createRange();
+range_p_cf1.selectNodeContents(p_cf1.firstChild);
+const rects_p_cf1 = range_p_cf1.getClientRects();
+document.getElementById("p_cf1").style.width=rects_p_cf1[0].width + 16 + 'px'; 
+
+
+
+const p_pv3 = document.getElementById("p_pv3");
+const range_p_pv3 = document.createRange();
+range.selectNodeContents(p_pv3.firstChild);
+const rects_p_pv3 = range_p_pv3.getClientRects();
+console.log('Tamaño del nodo de texto', rects_p_pv3[0].width);
+document.getElementById("p_pv3").style.width=rects_p_pv3[0].width + 16 + 'px';
+
+const p_dp3 = document.getElementById("p_dp3");
+const range_p_dp3 = document.createRange();
+range_p_dp3.selectNodeContents(p_dp3.firstChild);
+const rects_p_dp3 = range_p_dp3.getClientRects();
+document.getElementById("p_dp3").style.width=rects_p_dp3[0].width + 16 + 'px';
+
+const p_p3 = document.getElementById("p_p3");
+const range_p_p3 = document.createRange();
+range_p_p3.selectNodeContents(p_p3.firstChild);
+const rects_p_p3 = range_p_p3.getClientRects();
+document.getElementById("p_p3").style.width=rects_p_p3[0].width + 16 + 'px';
+
+const p_cf3 = document.getElementById("p_cf3");
+const range_p_cf3 = document.createRange();
+range_p_cf3.selectNodeContents(p_cf3.firstChild);
+const rects_p_cf3 = range_p_cf3.getClientRects();
+document.getElementById("p_cf3").style.width=rects_p_cf3[0].width + 16 + 'px'; 
+*/
+
+}
 
 ////################ decimal.js #########################
 ////################ decimal.js #########################
