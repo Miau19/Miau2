@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>*CF[2024]-2d-paratelefono</title>
+    <title>CF[2024]-2d-paratelefono</title>
 
     <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
@@ -581,11 +581,11 @@ z-index: 10;
 .main_grid_2 .tablas .tabla-css td{
     color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
 }
-.main_grid_2 .tablas .tabla-css .tdHead{ border: 1px solid rgb(135, 164, 1);
+.main_grid_2 .tablas .tabla-css .tdHead{ 
     padding: 0.0rem  0.0rem ;
 }
 
-.main_grid_2 .tabla-css .tdHead .d_s {background: #4c3000;
+.main_grid_2 .tabla-css .tdHead .d_s {
     display: block;justify-content: start;align-items: center;
     text-align: left;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
     padding: 0.0rem  0.250rem ;
@@ -598,16 +598,16 @@ z-index: 10;
 .main_grid_2 .tabla-css .tdHead .d_cf p{padding: 0px;margin: 0; background: #000754;
     text-align: right; margin: 0.25rem  0.250rem ;
 }
-.main_grid_2 .tabla-css .td_cf{ border: 1px solid rgb(32, 123, 4);
+.main_grid_2 .tabla-css .td_cf{ 
     color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2); 
     padding: 0.0rem  0.0rem ;
 }
-.main_grid_2 .tabla-css .td_cf .d_s {background: #002109;
+.main_grid_2 .tabla-css .td_cf .d_s {
     display: block;justify-content: start;align-items: center;
     text-align: left;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
     padding: 0.0rem  0.250rem ;
 }
-.main_grid_2 .tabla-css .td_cf .d_cf{width: 100%;background: #740286;
+.main_grid_2 .tabla-css .td_cf .d_cf{width: 100%;background: #530060;
     display: block;justify-content: end;align-items: center;
 }
 .main_grid_2 .tabla-css .td_cf .d_cf p{padding: 0px;margin: 0; background: #000754;
@@ -3210,7 +3210,7 @@ function cotizaciónBtc_binance_price24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO /
    volumen1.textContent=S.replace('USDT','');volumen2.textContent=S.replace('USDT','');volumen1a.textContent=S.replace('USDT','');volumen2a.textContent=S.replace('USDT','');
    monedas1.textContent=S.replace('USDT','');monedas2.textContent=S.replace('USDT','');
 
-   for (let k = 0; k < data.length; k++) {///console.log('data[k].symbol',k,data[k].symbol,S);
+   for (let k = 0; k < data.length; k++) {
      if (data[k].symbol==S){
        tdPMax24h_a.innerText=F3(data[k].highPrice, d(S))+' USDT'; tdPMin24h_a.innerText=F3(data[k].lowPrice, d(S))+' USDT';
        tdPMax24h_b.innerText=F3(data[k].highPrice, d(S))+' USDT'; tdPMin24h_b.innerText=F3(data[k].lowPrice, d(S))+' USDT';
@@ -3308,8 +3308,8 @@ function wsXRP() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
 }
 */
 
-let AVAX='30.07',BNB='609.90', BTC='70000.00',DOGE='0.12', ETH='2690.33',SOL='158.55', XRP='0.5855', NEAR='4.50', ICP='8.20', TAO='560.50', FET='1.39'
-, RENDER='5.39', GRT='0.1539', TIA='5.39', MANTA='5.19', PYTH='0.390', PEPE='0.000009492'; 
+let AVAX='30.07',BNB='609.90', BTC='70000.00',DOGE='0.12', ETH='2690.33',SOL='158.55', XRP='0.5855', NEAR='5.55', ICP='8.50', TAO='570.50', FET='1.50'
+, RENDER='7.77', GRT='0.1655', TIA='6.66', MANTA='5.19', PYTH='0.390', PEPE='0.00000999'; 
 let avax='0', bnb='0', btc='0', doge='0', eth='0', sol='0', xrp='0', near='0', ipc='0', tao='0', fet='0', render='0', grt='0', tia='0', manta='0', pyth='0', pepe='0';
 function data() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER. //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
   let ws1= new WebSocket('wss://stream.binance.com:9443/ws/avaxusdt@trade')  ; ws1.onmessage= (event)=>{let data1= JSON.parse(event.data); AVAX=  data1.p ; avax  =data1.p ;}
@@ -3330,9 +3330,20 @@ function data() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER. //Cotiza
   let ws16=new WebSocket('wss://stream.binance.com:9443/ws/pythusdt@trade')  ; ws16.onmessage=(event)=>{let data16=JSON.parse(event.data); PYTH=  data16.p; pyth  =data16.p;}
   let ws17=new WebSocket('wss://stream.binance.com:9443/ws/pepeusdt@trade')  ; ws17.onmessage=(event)=>{let data17=JSON.parse(event.data); PEPE=  data17.p; pepe  =data17.p;}
 }
-function O(o,v) {//MANTENER OPACIDAD EN PRECIO DE VENTA MIENTRAS NO CAMBIE DE '0'
-  (o=='0')? v.style.opacity='0.75' : v.style.opacity='1'; 
+function O(o,v) {//SIN USO //MANTENER OPACIDAD EN PRECIO DE VENTA MIENTRAS NO CAMBIE DE '0' 
+  (o=='0')? v.style.opacity='0.5' : v.style.opacity='1';
 }
+function AC(o,a,S) {//AC(o,P,D,CF,p,n,f,i) //MANTENER OPACIDAD EN PRECIO DE VENTA MIENTRAS NO CAMBIE DE '0'
+  //(o=='0')? S.style.opacity='0.5' : S.style.opacity='1';
+  if(o=='0') S.style.opacity='0.5'
+  else {
+    S.style.opacity='1';
+    actualizaColor(a[0],a[3],a[4]);
+    actualizaColor(a[1],a[6],Number(a[5]));
+    actualizaColor(a[2],a[6],Number(a[5]));
+  }  
+}
+
 function cotizaciónBtc_WebSocket() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
   //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
   ws=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); 
@@ -3472,79 +3483,75 @@ function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS.
 } 
 
 function actualizaPreciosTablaDinamica(n,s){ 
-  //data();//wsAVAX();wsBNB();;wsDOGE();wsBTC();wsETH();wsSOL();wsXRP();console.log("BTC", BTC);
-  for (let j = 1; j <= n; j++) { //console.log("n ======", n);
+  for (let j = 1; j <= n; j++) { // RECORRE 'n' FILAS DE TABLA: 
       let S=document.getElementById('p_s'+s+j), V=document.getElementById('p_pv'+s+j), C=document.getElementById('p_pc'+s+j), D=document.getElementById('p_dp'+s+j), P=document.getElementById('p_p'+s+j), CF=document.getElementById('p_cf'+s+j) ;
       let cuentaI= (cleanBox(document.getElementById("p_ci"+s+j).textContent)), compra= (cleanBox(document.getElementById("p_pc"+s+j).textContent)), comision= (cleanBox(document.getElementById("p_c"+s+j).textContent));
-      if(S.textContent=='AVAXUSDT'  ) {O(avax  ,V); V.innerText=F(AVAX  ,n1)}
-      if(S.textContent=='BNBUSDT'   ) {O(bnb   ,V); V.innerText=F(BNB   ,n1)}
-      if(S.textContent=='BTCUSDT'   ) {O(btc   ,V); V.innerText=F(BTC   ,n1)}
-      if(S.textContent=='DOGEUSDT'  ) {O(doge  ,V); V.innerText=F(DOGE  ,n2)}
-      if(S.textContent=='ETHUSDT'   ) {O(eth   ,V); V.innerText=F(ETH   ,n1)}
-      if(S.textContent=='SOLUSDT'   ) {O(sol   ,V); V.innerText=F(SOL   ,n1)}
-      if(S.textContent=='XRPUSDT'   ) {O(xrp   ,V); V.innerText=F(XRP   ,n2)} 
-      if(S.textContent=='NEARUSDT'  ) {O(near  ,V); V.innerText=F(NEAR  ,n2)}
-      if(S.textContent=='ICPUSDT'   ) {O(ipc   ,V); V.innerText=F(ICP   ,n2)}
-      if(S.textContent=='TAOUSDT'   ) {O(tao   ,V); V.innerText=F(TAO   ,n2)}
-      if(S.textContent=='FETUSDT'   ) {O(fet   ,V); V.innerText=F(FET   ,n2)}
-      if(S.textContent=='RENDERUSDT') {O(render,V); V.innerText=F(RENDER,n2)}
-      if(S.textContent=='GRTUSDT'   ) {O(grt   ,V); V.innerText=F(GRT   ,n2)}
-      if(S.textContent=='TIAUSDT'   ) {O(tia   ,V); V.innerText=F(TIA   ,n2)}
-      if(S.textContent=='MANTAUSDT' ) {O(manta ,V); V.innerText=F(MANTA ,n2)}
-      if(S.textContent=='PYTHUSDT'  ) {O(pyth  ,V); V.innerText=F(PYTH  ,n2)}
-      if(S.textContent=='PEPEUSDT'  ) {O(pepe  ,V); V.innerText=F(PEPE  ,n3)}
-      /*      
-      switch (S.textContent) 
-        case 'AVAXUSDT': V.innerText = F2(F1(AVAX, n1)); break;
-        case 'BNBUSDT' : V.innerText = F2(F1(BNB , n1)); break;
-        case 'BTCUSDT' : V.innerText = F2(F1(BTC , n1)); break;
-        case 'DOGEUSDT': V.innerText = F2(F1(DOGE, n2)); break;
-        case 'ETHUSDT' : V.innerText = F2(F1(ETH , n1)); break;
-        case 'SOLUSDT' : V.innerText = F2(F1(SOL , n1)); break;
-        case 'XRPUSDT' : V.innerText = F2(F1(XRP , n2)); break;
-      }
-      */      let venta= (cleanBox(document.getElementById("p_pv"+s+j).textContent));
 
-      //let diferencia= Number(pVentaT) - Number(compra);
-      var d = new Decimal(Number(venta));                     
-      var diferencia = d.minus(Number(compra)).toNumber();  
+      switch (S.textContent) {///IMPRIME PRECIO ACTUAL DE CADA MONEDA:
+        case 'AVAXUSDT'  : V.innerText=F(AVAX  ,n1); break;
+        case 'BNBUSDT'   : V.innerText=F(BNB   ,n1); break;
+        case 'BTCUSDT'   : V.innerText=F(BTC   ,n1); break;
+        case 'DOGEUSDT'  : V.innerText=F(DOGE  ,n2); break;
+        case 'ETHUSDT'   : V.innerText=F(ETH   ,n1); break;
+        case 'SOLUSDT'   : V.innerText=F(SOL   ,n1); break;
+        case 'XRPUSDT'   : V.innerText=F(XRP   ,n2); break;
+        case 'NEARUSDT'  : V.innerText=F(NEAR  ,n2); break;
+        case 'ICPUSDT'   : V.innerText=F(ICP   ,n2); break;
+        case 'TAOUSDT'   : V.innerText=F(TAO   ,n2); break;
+        case 'FETUSDT'   : V.innerText=F(FET   ,n2); break;
+        case 'RENDERUSDT': V.innerText=F(RENDER,n2); break;
+        case 'GRTUSDT'   : V.innerText=F(GRT   ,n2); break;
+        case 'TIAUSDT'   : V.innerText=F(TIA   ,n2); break;
+        case 'MANTAUSDT' : V.innerText=F(MANTA ,n2); break;
+        case 'PYTHUSDT'  : V.innerText=F(PYTH  ,n2); break;
+        case 'PEPEUSDT'  : V.innerText=F(PEPE  ,n3); break; 
+      }
+     let venta= (cleanBox(document.getElementById("p_pv"+s+j).textContent));
+
+      var v = new Decimal(Number(venta));                     
+      var diferencia = v.minus(Number(compra)).toNumber();  
       let profit= (diferencia - (((Number(compra)/100)*Number(comision)) +(((Number(compra) + diferencia)/100)*Number(comision))))*(Number(cuentaI)/Number(compra)) ;
       let cuentaF= Number(cuentaI)+profit;
-      /*
-      if(S.textContent=='AVAXUSDT') {C.innerText= F2(F1(compra, n1)); D.innerText= F2(F1(diferencia, n1)); P.innerText = F2(F1(profit, n1)); CF.innerText= F2(F1(cuentaF, n1));}
-      if(S.textContent=='BNBUSDT' ) {C.innerText= F2(F1(compra, n1)); D.innerText= F2(F1(diferencia, n1)); P.innerText = F2(F1(profit, n1)); CF.innerText= F2(F1(cuentaF, n1));}
-      if(S.textContent=='BTCUSDT' ) {C.innerText= F2(F1(compra, n1)); D.innerText= F2(F1(diferencia, n1)); P.innerText = F2(F1(profit, n1)); CF.innerText= F2(F1(cuentaF, n1));}
-      if(S.textContent=='DOGEUSDT') {C.innerText= F2(F1(compra, n2)); D.innerText= F2(F1(diferencia, n2)); P.innerText = F2(F1(profit, n2)); CF.innerText= F2(F1(cuentaF, n2));}
-      if(S.textContent=='ETHUSDT' ) {C.innerText= F2(F1(compra, n1)); D.innerText= F2(F1(diferencia, n1)); P.innerText = F2(F1(profit, n1)); CF.innerText= F2(F1(cuentaF, n1));}
-      if(S.textContent=='SOLUSDT' ) {C.innerText= F2(F1(compra, n1)); D.innerText= F2(F1(diferencia, n1)); P.innerText = F2(F1(profit, n1)); CF.innerText= F2(F1(cuentaF, n1));}
-      if(S.textContent=='XRPUSDT' ) {C.innerText= F2(F1(compra, n2)); D.innerText= F2(F1(diferencia, n2)); P.innerText = F2(F1(profit, n2)); CF.innerText= F2(F1(cuentaF, n2));}
-      */
-      switch (S.textContent) {
-        case 'AVAXUSDT'  : C.innerText= F(compra, n1); D.innerText= F(diferencia, n1); P.innerText = F(profit, n1); CF.innerText= F(cuentaF, n1); break;
-        case 'BNBUSDT'   : C.innerText= F(compra, n1); D.innerText= F(diferencia, n1); P.innerText = F(profit, n1); CF.innerText= F(cuentaF, n1); break;
-        case 'BTCUSDT'   : C.innerText= F(compra, n1); D.innerText= F(diferencia, n1); P.innerText = F(profit, n1); CF.innerText= F(cuentaF, n1); break;
-        case 'DOGEUSDT'  : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'ETHUSDT'   : C.innerText= F(compra, n1); D.innerText= F(diferencia, n1); P.innerText = F(profit, n1); CF.innerText= F(cuentaF, n1); break;
-        case 'SOLUSDT'   : C.innerText= F(compra, n1); D.innerText= F(diferencia, n1); P.innerText = F(profit, n1); CF.innerText= F(cuentaF, n1); break;
-        case 'XRPUSDT'   : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'NEARUSDT'  : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'ICPUSDT'   : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'TAOUSDT'   : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'FETUSDT'   : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'RENDERUSDT': C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'GRTUSDT'   : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'TIAUSDT'   : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'MANTAUSDT' : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'PYTHUSDT'  : C.innerText= F(compra, n2); D.innerText= F(diferencia, n2); P.innerText = F(profit, n2); CF.innerText= F(cuentaF, n2); break;
-        case 'PEPEUSDT'  : C.innerText= F(compra, n3); D.innerText= F(diferencia, n3); P.innerText = F(profit, n3); CF.innerText= F(cuentaF, n3); break;
-
+      let c=compra, d=diferencia, p=profit, ci=cuentaI, cf=cuentaF, a=[P,D,CF,p,0,ci,cf];
+      //NUMERO DE DECIMALES PARA CADA MONEDA:
+      let a1=['AVAXUSDT','BNBUSDT','BTCUSDT','ETHUSDT','SOLUSDT'], a2=[,'XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT'], a3=['PEPEUSDT']
+      for (let i = 0; i < a1.length; i++) { if (S.textContent==a1[i]){C.innerText= F(c, n1); D.innerText= F(d, n1); P.innerText = F(p, n1); CF.innerText= F(cf, n1);} }
+      for (let i = 0; i < a2.length; i++) { if (S.textContent==a2[i]){C.innerText= F(c, n2); D.innerText= F(d, n2); P.innerText = F(p, n2); CF.innerText= F(cf, n2);} }
+      for (let i = 0; i < a3.length; i++) { if (S.textContent==a3[i]){C.innerText= F(c, n3); D.innerText= F(d, n3); P.innerText = F(p, n3); CF.innerText= F(cf, n3);} }
+      
+      /* 
+      let a=['AVAXUSDT','BNBUSDT','BTCUSDT','DOGEUSDT','ETHUSDT','SOLUSDT','XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT']; 
+      for (let i = 0; i < a.length; i++) {
+        if (S.textContent==a[0] || S.textContent==a[1] || S.textContent==a[2] || S.textContent==a[4] || S.textContent==a[5]) {C.innerText= F(c, n1); D.innerText= F(d, n1); P.innerText = F(p, n1); CF.innerText= F(cf, n1);};
+        if (S.textContent==a[3] || S.textContent==a[6] || S.textContent==a[7] || S.textContent==a[8] || S.textContent==a[9] || S.textContent==a[10] || S.textContent==a[11] || S.textContent==a[12] || S.textContent==a[13] || S.textContent==a[14] || S.textContent==a[15]) {C.innerText= F(c, n2); D.innerText= F(d, n2); P.innerText = F(p, n2); CF.innerText= F(cf, n2);};
+        if (S.textContent==a[16]) {} 
       }
-
+      */ 
+      switch (S.textContent) {//Actualizar Color en D,p,cf + Opacidad en simbolo:
+        case 'AVAXUSDT'  : AC(avax  ,a,S); break;
+        case 'BNBUSDT'   : AC(bnb   ,a,S); break;
+        case 'BTCUSDT'   : AC(btc   ,a,S); break;
+        case 'DOGEUSDT'  : AC(doge  ,a,S); break;
+        case 'ETHUSDT'   : AC(eth   ,a,S); break;
+        case 'SOLUSDT'   : AC(sol   ,a,S); break;
+        case 'XRPUSDT'   : AC(xrp   ,a,S); break;
+        case 'NEARUSDT'  : AC(near  ,a,S); break;
+        case 'ICPUSDT'   : AC(ipc   ,a,S); break;
+        case 'TAOUSDT'   : AC(tao   ,a,S); break;
+        case 'FETUSDT'   : AC(fet   ,a,S); break;
+        case 'RENDERUSDT': AC(render,a,S); break;
+        case 'GRTUSDT'   : AC(grt   ,a,S); break;
+        case 'TIAUSDT'   : AC(tia   ,a,S); break;
+        case 'MANTAUSDT' : AC(manta ,a,S); break;
+        case 'PYTHUSDT'  : AC(pyth  ,a,S); break;
+        case 'PEPEUSDT'  : AC(pepe  ,a,S); break; 
+      }  
+       /* 
       actualizaColor(document.getElementById('p_p'+s+j),profit,0);
       actualizaColor(document.getElementById('p_dp'+s+j),cuentaF,Number(cuentaI));
-      actualizaColor(document.getElementById('p_cf'+s+j),cuentaF,Number(cuentaI)); 
+      actualizaColor(document.getElementById('p_cf'+s+j),cuentaF,Number(cuentaI));
+      */
   } 
-  //if (j==n) {document.getElementById('x').click;} 
   suma(contD,'');suma(contE,'E');
 }
 console.log(" 0.00000946 - 0.00000993 = -0.00000047", 0.00000946 - 0.00000993);
@@ -3636,7 +3643,7 @@ function onload() {
 }
 function resetar() {
   for (let j = 1; j <= contD; j++) {//INICIAR CON OPACIDAD '0.25' EN PRECIO DE VENTA MIENTRAS NO CAMBIE DE '0'
-    document.getElementById('p_pv'+''+j).style.opacity='0.25'; 
+    document.getElementById('p_s'+''+j).style.opacity='0.125'; 
   }
   cuotaI.value=formato(30000); cuota.value=formato(1000);boxTED.value=formato(3);tea1.value=formato(3); document.getElementById("N").value=(10);
   cuentaSpotI.value=formato(2309.10); precioCompra.value=formato(66600); Difprecio.value=formato(7400); precioVentaVivo.value=formato(74000); commission.value=formato(0.10);
