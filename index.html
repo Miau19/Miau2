@@ -25,7 +25,7 @@
     --font-family1: 'Saira', 'Saira Expanded SemiBold', sans-serif;/*font-family: "Roboto", sans-serif;*/ /*font-family: Impact, sans-serif;'Times New Roman'; 'Consolas'; 'Oswald'*/
     --font-family2: 'Saira', 'Saira Expanded SemiBold', sans-serif; /*PARA NUMEROS*/ 
     --font-size1: 0.9rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
-    --font-size2: 1.25rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
+    --font-size2: 1.35rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
     --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
     --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
     --font-size5: 0.70rem;/* PARA @media screen and  (max-width: 320px) */
@@ -45,6 +45,7 @@
     /*FIN DE: VALORES PARA CONTROL DE LISTA DE OPCIONES */
     --widhtSvg: 0.5rem; --heightSvg: 0.5rem; /* VALORES PARA LOS svg DE TABLAS*/
     --button-color: rgb(1, 61, 225);/* --button-color: rgb(1, 61, 225); */
+    --n2:30px; --n3:25px;
 }
 
 html{background-color: var(--bg-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
@@ -351,17 +352,17 @@ z-index: 10;
     width: 100%;
     display: none;/* display: none; */flex-direction: column;align-items: flex-start;  
     border:none; border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
-    padding: 0.5rem 1.5rem 0.25rem 1.5rem ;
+    padding: 0.70rem 1.5rem 0.25rem 1.5rem ;
     background-color: var(--bg-card-color);
 }
-@media screen and (max-width: 1260px){.card_center {padding: 0.5rem 2.5rem 0.25rem 2.5rem; margin: 0rem 4rem; }}
-@media screen and (max-width: 1130px){.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0rem 2rem; }}
-@media screen and (max-width: 930px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0rem 0rem; }}
-@media screen and (max-width: 960px) {.card_center {padding: 0.5rem 1.5rem 0.25rem 1.5rem; margin: 0rem 6rem; }}
-@media screen and (max-width: 600px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
-@media screen and (max-width: 670px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
-@media screen and (max-width: 460px) {.card_center {padding: 0.5rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;}}
-@media screen and (max-width: 320px) {.card_center {padding: 0.5rem 0.25rem .25rem .25rem ; margin:0rem 0rem;}}
+@media screen and (max-width: 1260px){.card_center {padding: 0.70rem 2.5rem 0.25rem 2.5rem; margin: 0rem 4rem; }}
+@media screen and (max-width: 1130px){.card_center {padding: 0.70rem 1.5rem 0.25rem 1.5rem; margin: 0rem 2rem; }}
+@media screen and (max-width: 930px) {.card_center {padding: 0.70rem 1.5rem 0.25rem 1.5rem; margin: 0rem 0rem; }}
+@media screen and (max-width: 960px) {.card_center {padding: 0.70rem 1.5rem 0.25rem 1.5rem; margin: 0rem 6rem; }}
+@media screen and (max-width: 600px) {.card_center {padding: 0.70rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
+@media screen and (max-width: 670px) {.card_center {padding: 0.70rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
+@media screen and (max-width: 460px) {.card_center {padding: 0.70rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;}}
+@media screen and (max-width: 320px) {.card_center {padding: 0.70rem 0.25rem .25rem .25rem ; margin:0rem 0rem;}}
 
 .card_center .card_trade_subtitle {
     display: flex;justify-content: start;align-items: center;
@@ -387,8 +388,16 @@ z-index: 10;
     padding: 0;margin: 0;
 }
 #arrows{display: flex;}
-#load{display: none;}
-.card_arrows1{ display: flex;justify-content: end;align-items: center;}
+#load{display: none; height: calc(var(--n2)); width: calc(var(--n2) * 1);}
+@media screen and  (max-width: 460px) {#load{height: calc(var(--n3)); width: calc(var(--n3) * 1);}}
+
+/* #load{display: none;justify-content: end;align-items: center;  height: calc(var(--n2)); width: calc(var(--n2) * 4);}
+@media screen and  (max-width: 460px) {#load{height: calc(var(--n3)); width: calc(var(--n3) * 4);}} */  /* ⬅ PARA: spinner Loader con Cargando... con cajitas*/ 
+
+.card_arrows1{ display: flex;justify-content: end;align-items: center;margin: 0 0.25rem ;}
+@media screen and  (max-width: 460px) {
+    .card_arrows1{margin: 0 0.25rem ;}
+    }
 .card_arrows1 #svgUP1, .card_arrows1 #svgDOWN1{ width: 1.2rem;height: 1.2rem; }
 @media screen and (max-width: 460px) {.card_arrows1 #svgUP1, .card_arrows1 #svgDOWN1{width: 1.0rem;height: 1.0rem;}}
 
@@ -404,11 +413,11 @@ z-index: 10;
 @media screen and (max-width: 1260px){.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size1)}}
 @media screen and (max-width: 460px) {.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size4)}}
 
-.card_arrows1 #cotizacionBTC{font-size: var(--font-size2); }
+.card_arrows1 #cotizacionBTC{font-size: var(--font-size2); opacity: 0;}
 @media screen and (max-width: 460px) {.card_arrows1 #cotizacionBTC{font-size: var(--font-size3)}}
 
-.card_subtitle .TC2{ display: flex; background: #1a001e; } 
-@media screen and (max-width: 960px){ .card_subtitle .TC2{display: flex;} }
+.card_subtitle .TC2{ display: flex;padding: 0.5rem 0rem; } 
+@media screen and (max-width: 960px){ .card_subtitle .TC2{display: flex;padding: 0.25rem 0rem;} }
 
 .div_listaOpciones{
     display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap; box-shadow: var(--box-shadow1); ; 
@@ -418,7 +427,7 @@ z-index: 10;
 }
 
 .div_padding{
-    background-color: var(--bg-color);
+    background-color: var(--bg-color);;
     border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
     margin: 0.75rem 0.25rem ; padding: 0.25rem;
 }
@@ -610,7 +619,7 @@ z-index: 10;
     display: block;justify-content: end;align-items: center;
     text-align: right;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
-.main_grid_2 .tabla-css .tdHead .d_cf p{padding: 0px;margin: 0; background: #000754;
+.main_grid_2 .tabla-css .tdHead .d_cf p{padding: 0px;margin: 0; background: rgba(0, 7, 84, 0);
     text-align: right; margin: 0.25rem  0.250rem ;
 }
 .main_grid_2 .tabla-css .td_cf{ 
@@ -622,12 +631,12 @@ z-index: 10;
     text-align: left;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
     padding: 0.0rem  0.250rem ;
 }
-.main_grid_2 .tabla-css .td_cf .d_cf{width: 100%;background: #6d7000;
+.main_grid_2 .tabla-css .td_cf .d_cf{width: 100%;background: rgba(70, 0, 103, 0);
     display: block;justify-content: end;align-items: center;
 }
-.main_grid_2 .tabla-css .td_cf .d_s{ background: #000754; }
+.main_grid_2 .tabla-css .td_cf .d_s{ background: rgba(0, 7, 84, 0); }
 
-.main_grid_2 .tabla-css .td_cf .d_cf p{padding: 0px;margin: 0; background: #000754;
+.main_grid_2 .tabla-css .td_cf .d_cf p{padding: 0px;margin: 0; background: rgb(0, 1, 17);
 text-align: right; margin: 0.25rem  0.250rem ; 
 }
 
@@ -711,7 +720,7 @@ text-align: right; margin: 0.25rem  0.250rem ;
 .tituloCard p {padding: 0;margin: 0;}
 .tituloCard .pT {font-size: var(--font-size3);font-family: var(--font-family1);
     font-weight: var(--font-weight1);margin:0.5rem 0.0rem;padding: 0 ;}
-.tituloCard0 .pT1, .tituloCard .pT2 {font-size: var(--font-size6);font-family: var(--font-family1);
+.tituloCard0 .pT1, .tituloCard0 .pT2 {font-size: var(--font-size6);font-family: var(--font-family1);
     font-weight: var(--font-weight1);margin:0.5rem 0.0rem;padding: 0 ; opacity: 0.5; }
 
 #card_2b p, #card_2b p{padding: 0em;}
@@ -1094,6 +1103,86 @@ transition: .5s ease all;
 .colors__item--orange{--pr1mary-color: rgb(203, 203, 203) ;}
 #palette{--pr1mary-color: rgb(109, 109, 109) ;}
 
+/*################################## spinner 'load' #######################################*/
+#spinner1{position: relative; top:   0px; left: 0px;}
+#spinner2{position: relative; left: 0px;top: calc((-1) * var(--n2) *1);}@media screen and  (max-width: 460px) {#spinner2{left: 0px;top: calc((-1) * var(--n3) *1)}} 
+#spinner3{position: relative; left: 0px;top: calc((-1) * var(--n2) *2);}@media screen and  (max-width: 460px) {#spinner3{left: 0px;top: calc((-1) * var(--n3) *2)}} 
+#spinner4{position: relative; left: 0px;top: calc((-1) * var(--n2) *3);}@media screen and  (max-width: 460px) {#spinner4{left: 0px;top: calc((-1) * var(--n3) *3)}} 
+#spinner5{position: relative; left: 0px;top: calc((-1) * var(--n2) *4);}@media screen and  (max-width: 460px) {#spinner5{left: 0px;top: calc((-1) * var(--n3) *4)}} 
+#spinner6{position: relative; left: 0px;top: calc((-1) * var(--n2) *5);}@media screen and  (max-width: 460px) {#spinner6{left: 0px;top: calc((-1) * var(--n3) *5)}} 
+#spinner7{position: relative; left: 0px;top: calc((-1) * var(--n2) *6);}@media screen and  (max-width: 460px) {#spinner7{left: 0px;top: calc((-1) * var(--n3) *6)}} 
+#spinner8{position: relative; left: 0px;top: calc((-1) * var(--n2) *7);}@media screen and  (max-width: 460px) {#spinner8{left: 0px;top: calc((-1) * var(--n3) *7)}} 
+#spinner9{position: relative; left: 0px;top: calc((-1) * var(--n2) *8);}@media screen and  (max-width: 460px) {#spinner9{left: 0px;top: calc((-1) * var(--n3) *8)}} 
+#spinner10{position: relative;left: 0px;top: calc((-1) * var(--n2) *9);}@media screen and  (max-width: 460px) {#spinner10{left:0px;top: calc((-1) * var(--n3) *9)}} 
+
+.lds-spinner2{
+    background: rgba(0, 85, 26, 0);
+  }
+.lds-spinner2 div {
+  animation: lds-spinner2 2.0s linear infinite; filter: brightness(4);;/* filter: drop-shadow(0px 0px 1px #ffffff) brightness(4); */ 
+}
+.lds-spinner2 div svg{display: block;height: calc(var(--n2)); width: calc(var(--n2));}
+@media screen and  (max-width: 460px) {.lds-spinner2 div svg{height: calc(var(--n3)); width: calc(var(--n3)); }} 
+
+.lds-spinner2 div svg rect{fill: var(--text-color);}
+
+.lds-spinner2 div:nth-child(1) {animation-delay: -1.8s;}
+.lds-spinner2 div:nth-child(2) {animation-delay: -1.6s;}
+.lds-spinner2 div:nth-child(3) {animation-delay: -1.4s;}
+.lds-spinner2 div:nth-child(4) {animation-delay: -1.2s;}
+.lds-spinner2 div:nth-child(5) {animation-delay: -1.0s;}
+.lds-spinner2 div:nth-child(6) {animation-delay: -0.8s;}
+.lds-spinner2 div:nth-child(7) {animation-delay: -0.6s;}
+.lds-spinner2 div:nth-child(8) {animation-delay: -0.4s;}
+.lds-spinner2 div:nth-child(9) {animation-delay: -0.2s;}
+.lds-spinner2 div:nth-child(10){animation-delay:  0.0s;}
+
+@keyframes lds-spinner2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*################################## FIN DE: spinner 'load' #######################################*/
+
+/*################################## spinner Loader con Cargando... con cajitas #######################################*/
+  .contenedor-loader{  background-color: rgba(0, 0, 0, 0); 
+       width: calc(var(--n2) * 4); height: calc(var(--n2));
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+  }
+  @media screen and  (max-width: 460px) {.contenedor-loader{width: calc(var(--n3) * 4); height: calc(var(--n3)); }} 
+
+  .contenedor-loader div{ 
+    height: calc(var(--n2)); width: calc(var(--n2));
+    background-color: var(--text-color);
+    animation: salto 1s alternate infinite;
+    filter: brightness(4);
+  }
+  @media screen and  (max-width: 460px) { .contenedor-loader div{height: calc(var(--n3)); width: calc(var(--n3));}} 
+
+  .contenedor-loader div:nth-child(2){ 
+    animation-delay: 0.20s; 
+  }
+  .contenedor-loader div:nth-child(3){ 
+    animation-delay: 0.40s; 
+  }
+  .contenedor-loader div:nth-child(4){ 
+    animation-delay: 0.60s; 
+  }
+  @keyframes salto {
+      from {
+          opacity: 1;
+      }
+      to{
+           opacity: 0;
+      }
+  }
+/*################################## FIN DE: Loader con Cargando... con cajitas #######################################*/
 
     </style>
 
@@ -1324,101 +1413,91 @@ transition: .5s ease all;
               </article>
 
               <article class="card_center" id="article_center2">
+
                 <div class="card_subtitle">
                   <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS&nbsp;</p> 
                   </div>  
                   <div class="card_arrows1" >
-                    <div class="load" id="load" >
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="30" height="30" style="shape-rendering: auto; display: block; background: rgba(255, 255, 255, 0); --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor: rgba(25, 26, 27, 0);" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="rotate(0 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.9s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(36 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.8s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(72 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.7s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(108 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.6s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(144 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.5s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(180 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.4s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(216 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.3s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(252 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.2s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(288 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="-0.1s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(324 50 50)">
-                        <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                          <animate repeatCount="indefinite" begin="0s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g></g></g></svg>
-                      <!--
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="30" height="30" style="shape-rendering: auto; display: block; background: rgba(255, 255, 255, 0); --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor: rgba(25, 26, 27, 0);" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="rotate(0 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-1.2676056338028168s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(36 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-1.1267605633802815s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(72 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.9859154929577464s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(108 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.8450704225352113s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(144 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.704225352112676s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(180 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.5633802816901408s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(216 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.4225352112676056s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(252 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.2816901408450704s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(288 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="-0.1408450704225352s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g transform="rotate(324 50 50)">
-                        <rect fill="#ffd900" height="28" width="7" ry="4.2" rx="3.5" y="13" x="46.5">
-                          <animate repeatCount="indefinite" begin="0s" dur="1.408450704225352s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                        </rect>
-                      </g><g></g></g>  </svg>
-                      -->
-                    </div>
-                    <div class="arrows" id="arrows"><p id="cotizacionBTC"></p>
-                    <svg id="svgUP1"    style="display: none;fill: rgba(0,200,0,1); " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
+                    
+
+                    <div id="arrows" class="arrows" ><p id="cotizacionBTC">00000000</p>
+                    <svg id="svgUP1"   style="display: none;fill: rgba(0,200,0,1);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
                     <svg id="svgDOWN1" style="display: none;fill: rgba(200,0,0,1);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
-                   </div>
+                    </div>
+                   <div id="sinConexion" style="display: none;padding: 0;margin: 0;background: rgba(0, 7, 65, 0);"></div>
+                  
+                   <div class="load0" id="load0" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="30" height="30" style="shape-rendering: auto; display: block; background: rgba(255, 255, 255, 0); --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor: rgba(25, 26, 27, 0);" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="rotate(0 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.9s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(36 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.8s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(72 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.7s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(108 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.6s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(144 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.5s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(180 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.4s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(216 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.3s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(252 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.2s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(288 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="-0.1s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g transform="rotate(324 50 50)">
+                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
+                        <animate repeatCount="indefinite" begin="0s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
+                      </rect>
+                    </g><g></g></g>
+                    </svg> 
+                    <!--  
+                    -->
                   </div>
+
+                  <div class="load" id="load" style="background: rgba(95, 2, 54, 0); display: none;"> 
+                    <div class="lds-spinner2" >
+                      <div id="spinner1" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(0 50 50)"  ><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner2" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(36 50 50)" ><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner3" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(72 50 50)" ><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner4" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(108 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner5" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(144 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner6" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(180 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner7" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(216 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner8" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(252 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner9" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(288 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
+                      <div id="spinner10"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(324 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div> 
+                    </div>
+                  </div> 
+                  <!-- spinner Loader con Cargando... con cajitas -->
+                  <div class="load1" id="load1" style="display: none;">
+                    <div class="contenedor-loader">
+                      <div class="loader1"></div>
+                      <div class="loader2"></div>
+                      <div class="loader3"></div>
+                      <div class="loader4"></div>
+                    </div>
+                  </div>                  
+                  </div>
+                  
                 </div>
                 
                 <div class="div_padding">
@@ -1490,8 +1569,8 @@ transition: .5s ease all;
                    <div><p>Diferencia de precios</p><span id="moneda2">(USDT)</span><p>:&nbsp;</p></div>
                    <div style="background: rgba(15, 15, 15, 0); display: flex; align-items: center; justify-content: flex-end;">
                     <div id="arrow" >
-                      <svg id="svgUP"  style="display: inline;fill: rgb(0,200,0);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
-                      <svg id="svgDOWN" style="display: none; fill: rgb(200,0,0);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
+                      <svg id="svgUP"  style="display: none;fill: rgb(186, 186, 186);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
+                      <svg id="svgDOWN" style="display: none; fill: rgb(187, 187, 187);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
                    </div>
                     <input id="Difprecio" name="box" class="text" type="text" value="7,400.00" disabled><!-- box[7] --> 
                    </div>
@@ -1916,7 +1995,7 @@ transition: .5s ease all;
                 <td id="td_sp6" class="td_cf" name="d_sp" ><div class="d_s"  id="p_s6">TAOUSDT</div></td>
                 <td id="td_ci6" class="td_cf"><div class="d_cf"><p           id="p_ci6" >4.98257244</p></div></td>
                 <td id="td_pc6" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc6" >560.40   </p></div></td>
-                <td id="td_pv6" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv6" >8.26    </p></div></td>
+                <td id="td_pv6" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv6" >570.50    </p></div></td>
                 <td id="td_dp6" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp6" >6.726   </p></div></td>
                 <td id="td_c6"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c6"  >0.10     </p> </div></td>
                 <td id="td_p6"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p6"  >66.9666129</p></div></td>
@@ -3260,7 +3339,7 @@ function data() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER. //Cotiza
   // 1– “OPEN”: comunicando,
   // 2– “CLOSING”: la conexión se está cerrando,
   // 3– “CLOSED”: la conexión está cerrada.
-  console.log('Estado de la conexión ................' ,ws17.readyState);
+  // console.log('Estado de la conexión ................' ,ws17.readyState);
 
   /*
   let simbolos=['avaxusdt','bnbusdt','btcusdt','dogeusdt','ethusdt','solusdt','xrpusdt','nearusdt','icpusdt','taousdt','fetusdt','renderusdt','grtusdt','tiausdt','mantausdt','pythusdt','pepeusdt']
@@ -3333,83 +3412,40 @@ function c(pVenta,pCompra,comision,cuentaInicial) {
 
 function inicializarCard() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bitcoin en tiempo real Binance: (1): https://www.youtube.com/watch?v=IAOHydmDrmQ  (2): https://github.com/infodp/crypto_cotizacion_vanilla_js  
   let cuentaInicial= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)), comision= (cleanBox(commission.value)), pVenta=''  
-  , P=[avax,bnb,btc,doge,eth,sol,xrp,near,ipc,tao,fet,render,grt,tia,manta,pyth,pepe,sui], p=[AVAX,BNB,BTC,DOGE,ETH,SOL,XRP,NEAR,ICP,TAO,FET,RENDER,GRT,TIA,MANTA,PYTH,PEPE,SUI];
-  let S=document.getElementById('simbolo');
+  , P=[avax,bnb,btc,doge,eth,sol,xrp,near,ipc,tao,fet,render,grt,tia,manta,pyth,pepe,sui], p=[AVAX,BNB,BTC,DOGE,ETH,SOL,XRP,NEAR,ICP,TAO,FET,RENDER,GRT,TIA,MANTA,PYTH,PEPE,SUI] 
+  , S=document.getElementById('simbolo');
 
   for (let i = 0; i < ARRAY.length; i++) {
     if (simbolo.textContent==ARRAY[i]) {
-      //pVenta=p[i];
-      (P[i] != '0' )? (pVenta=p[i] , load.style.display='none', arrows.style.display='flex', cotizacionBTC.innerText=F(pVenta, n3)) 
-      : (pVenta=cleanBox(precioVenta.value) , load.style.display='flex', arrows.style.display='none'); 
-      //(P[i] != '0' )? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');
-      document.getElementById('cotizacionBTC').innerText=F(p[i], n3);
-      //if (P[i] != '0' ) {
-      //  if (tdPMax24h_a.textContent=='') {
-      //     load.style.display='flex'; arrows.style.display='none'
-      //  }
-      //  else{
-      //    load.style.display='none',arrows.style.display='flex'; cotizacionBTC.innerText=F(pVenta, n3)
-      //  }
-      //}
-      //else{
-      //  if (tdPMax24h_a.textContent=='') {
-      //    load.style.display='none',arrows.style.display='flex'; cotizacionBTC.innerText=F(pVenta, n3)
-      //  }
-      //  else{
-      //   load.style.display='flex'; arrows.style.display='none'
-      //  }       
-      //}
+      if (tdPMax24h_a.textContent=='') {//SIN CONEXIÓN
+        load.style.display='none';arrows.style.display='none';//cotizacionBTC.innerText=F(P[i], n3); svgUP1.style.display='none';svgDOWN1.style.display='none';
+      } 
+      else{//CON CONEXIÓN
+        precio1= Number(cleanBox(document.getElementById("cotizacionBTC").textContent));
+        if(precio1 > old_price1){cotizacionBTC.style.color=v;svgDOWN1.style.display='none'; svgUP1.style.display='inline';} //else if(price==old_price){cotizacionBTC.style.color="white";}
+        else{cotizacionBTC.style.color=r;svgDOWN1.style.display='inline'; svgUP1.style.display='none';}
+        old_price1=precio1;
+        if (P[i] == '0') {
+          load.style.display='flex';  arrows.style.display='none'; pVenta=cleanBox(precioVenta.value) ;
+        } else {
+           load.style.display='none'; arrows.style.display='flex'; pVenta=p[i]; cotizacionBTC.innerText=F(pVenta, n3)  ;
+        }
+      }  
+      document.getElementById('cotizacionBTC').innerText=F(p[i], n3); document.getElementById('cotizacionBTC').style.opacity='1'; 
     }
-  }
- /*
-  switch (simbolo.textContent) {///IMPRIME PRECIO ACTUAL DE CADA MONEDA:
-    case 'AVAXUSDT'  : pVenta=AVAX  ; (avax  !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'BNBUSDT'   : pVenta=BNB   ; (bnb   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'BTCUSDT'   : pVenta=BTC   ; (btc   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'DOGEUSDT'  : pVenta=DOGE  ; (doge  !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'ETHUSDT'   : pVenta=ETH   ; (eth   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'SOLUSDT'   : pVenta=SOL   ; (sol   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'XRPUSDT'   : pVenta=XRP   ; (xrp   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'NEARUSDT'  : pVenta=NEAR  ; (near  !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'ICPUSDT'   : pVenta=ICP   ; (ipc   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'TAOUSDT'   : pVenta=TAO   ; (tao   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'FETUSDT'   : pVenta=FET   ; (fet   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'RENDERUSDT': pVenta=RENDER; (render!='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'GRTUSDT'   : pVenta=GRT   ; (grt   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'TIAUSDT'   : pVenta=TIA   ; (tia   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'MANTAUSDT' : pVenta=MANTA ; (manta !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'PYTHUSDT'  : pVenta=PYTH  ; (pyth  !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break;
-    case 'PEPEUSDT'  : pVenta=PEPE  ; (pepe  !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break; 
-    case 'SUIUSDT'   : pVenta=SUI   ; (sui   !='0')? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');break; //default: PV.innerText=0;   
-  }
-  */
+  } 
   c(pVenta,pCompra,comision,cuentaInicial);
-  //if (EDITAR!=1){
-    precioVenta.value    =F(pVenta ,ND(S));
-    //precioVentaVivo.value=F(pVenta ,ND(S));
-  //}
-  profit.value         =F(o.g    ,ND(S));
-  cuentaSpotF.value    =F(o.f    ,ND(S)); 
-  actualizaColor(profit,o.g,0);
-  actualizaColor(cuentaSpotF,o.f,cuentaInicial);
-  //for (let k = 0; k < ARRAY.length; k++) {
-  //  let P=[avax,bnb ,btc,doge ,eth ,sol,xrp ,near,ipc ,tao ,fet ,render,grt ,tia ,manta ,pyth,pepe,sui]
-  //  if (P[k]!='0') {
-  //    load.style.display='none';;arrows.style.display='flex';
-  //  } else {
-  //    load.style.display='flex';;arrows.style.display='none';
-  //    document.getElementById('cotizacionBTC').innerText=F(pVenta, n3); // formato(10000+Number(data.p));
-  //  }
-  //  
-  //}
+  //(tdPMax24h_a.textContent!='')?  precioVenta.value= F(cleanBox(precioVenta.value)  , ND(S)) : precioVenta.value= F(cleanBox(cotizacionBTC.textContent)  , ND(S)); 
+  //precioVenta.value    =F(pVenta ,ND(S));
+  //precioVentaVivo.value=F(pVenta ,ND(S));
+  //profit.value         =F(o.g    ,ND(S));
+  //cuentaSpotF.value    =F(o.f    ,ND(S)); 
+  //actualizaColor(profit,o.g,0);
+  //actualizaColor(cuentaSpotF,o.f,cuentaInicial);
 
   //document.getElementById('cotizacionBTC').innerText=F(pVenta, n3); 
-  precio1= Number(cleanBox(document.getElementById("cotizacionBTC").textContent));
-  if(precio1 > old_price1){cotizacionBTC.style.color=v;svgDOWN1.style.display='none'; svgUP1.style.display='inline';} //else if(price==old_price){cotizacionBTC.style.color="white";}
-  else{cotizacionBTC.style.color=r;svgDOWN1.style.display='inline'; svgUP1.style.display='none';}
-  old_price1=precio1;
-  actualizaDiferenciaPrecio(); //console.log('SUI................' ,SUI);
   
+  //actualizaDiferenciaPrecio(); //console.log('SUI................' ,SUI);
 }
 
 function actualizaColor1() {//............... FUNCION SIN USO 
@@ -3420,7 +3456,7 @@ function actualizaColor1() {//............... FUNCION SIN USO
   old_price1=precio1;
   ///console.log('old_price',old_price);
 } 
-function inicializarCardPrice24hr(){
+function inicializarCardPrice24hr(){//............... FUNCION SIN USO
   IMG1.innerHTML=''; monedas1.innerText=''; TEX1.innerText=''; volumen1.innerText='';volumen1a.innerText='';volumen2.innerText='';volumen2a.innerText='';
   //Precio maximo y precio minimo:
   tdPMax24h_a.innerText='0'+' USDT'; tdPMin24h_a.innerText='0'+' USDT';
@@ -3435,13 +3471,11 @@ function inicializarCardPrice24hr(){
 
 let svg='', tex='';
 function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bitcoin en 24 horas: (1): https://www.youtube.com/watch?v=O6e1aDVRfdo&t=184s  (2): https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md#24hr-ticker-price-change-statistics  
-  //tdPMax24h_a.innerText='0'+' USDT'; tdPMin24h_a.innerText='0'+' USDT';
-  //tdPMax24h_b.innerText='0'+' USDT'; tdPMin24h_b.innerText='0'+' USDT';
   let s ='["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT","SUIUSDT"]'  
-  , S=document.getElementById('simbolo').textContent; 
-  let SVG=[svgAVAX,svgBNB,svgBTC,svgDOGE,svgETH,svgSOL,svgXRP, svgNEAR,svgICP,svgTAO,svgFET,svgRENDER,svgGRT,svgTIA,svgMANTA,svgPYTH,svgPEPE,svgSUI];
-  let TEXTO= ['(Avalanche)','(BNB)','(Bitcoin)','(Dogecoin)','(Ethereum)','(Solana)','(XRP)','(NEAR Protocol)','(Internet Computer)','(Bittensor)','(Artificial Superintelligence Alliance)','(Render)','(The Graph)','(Celestia)','(Manta Network)','(Pyth Network)','(Pepe)','(Sui)']; 
-  let CADENA =["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT","SUIUSDT"]; 
+  , S=document.getElementById('simbolo').textContent  
+  , SVG=[svgAVAX,svgBNB,svgBTC,svgDOGE,svgETH,svgSOL,svgXRP, svgNEAR,svgICP,svgTAO,svgFET,svgRENDER,svgGRT,svgTIA,svgMANTA,svgPYTH,svgPEPE,svgSUI];
+  // let TEXTO= ['(Avalanche)','(BNB)','(Bitcoin)','(Dogecoin)','(Ethereum)','(Solana)','(XRP)','(NEAR Protocol)','(Internet Computer)','(Bittensor)','(Artificial Superintelligence Alliance)','(Render)','(The Graph)','(Celestia)','(Manta Network)','(Pyth Network)','(Pepe)','(Sui)']; 
+  // let CADENA =["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT","SUIUSDT"]; 
 
       fetch('https://api.binance.com/api/v3/ticker/24hr?symbols='+s)
       .then( respuesta => respuesta.json() )
@@ -3463,8 +3497,8 @@ function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bit
            (data[k].priceChange > 0)? (tdC24h_a.style.color=v , tdC24h_b.style.color=v) : (tdC24h_a.style.color=r , tdC24h_b.style.color=r);
            (data[k].priceChangePercent > 0)? (tdCp24h_a.style.color=v , tdCp24h_b.style.color=v) : (tdCp24h_a.style.color=r , tdCp24h_b.style.color=r);
            //24h Volumen(BTC),  24h Volumen(USDT) :
-           tdV24hBTC_a.innerText=F3(data[k].volume, n1)+''; tdV24hUSDT_a.innerText=F3(data[k].quoteVolume, n1)+' USDT '; 
-           tdV24hBTC_b.innerText=F3(data[k].volume, n1)+''; tdV24hUSDT_b.innerText=F3(data[k].quoteVolume, n1)+' USDT ';  
+           tdV24hBTC_b.innerText=F3(data[k].volume, n1)+' '; tdV24hUSDT_b.innerText=F3(data[k].quoteVolume, n1)+' USDT ';  
+           tdV24hBTC_a.innerText=F3(data[k].volume, n1)+' '; tdV24hUSDT_a.innerText=F3(data[k].quoteVolume, n1)+' USDT '; 
 
           switch (data[k].symbol) {///COLOCAR LOGO E IMPRIME PRECIO ACTUAL DE CADA MONEDA:
             case 'AVAXUSDT'  : svg=SVG[0] ;tex=TEX[0] ; break;
@@ -3555,9 +3589,9 @@ function wsXRP() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
 */
 
 function opacidad(p,a,S,CI,PC,PV,D,C,G,CF) {//opacidad(p,a,S,CI,PC,PV,D,C,G,CF) //MANTENER OPACIDAD EN CELDAS DE TABLA MIENTRAS NO CAMBIE DE '0'
-  let o1='1', o2='0.5', colorLetra = getComputedStyle(document.querySelector("#cuentaSpotI"));//console.log("","");  
+  let o1='1', o2='0.5', o3='0.5', colorLetra = getComputedStyle(document.querySelector("#cuentaSpotI"));//console.log("","");  
   if(p=='0') {
-    S.style.opacity=o2; CI.style.opacity=o2; PC.style.opacity=o2; PV.style.opacity=o2; D.style.opacity=o2; C.style.opacity=o2; G.style.opacity=o2; CF.style.opacity=o2;
+    S.style.opacity=o3; CI.style.opacity=o2; PC.style.opacity=o2; PV.style.opacity=o2; D.style.opacity=o2; C.style.opacity=o2; G.style.opacity=o2; CF.style.opacity=o2;
     D.style.color=colorLetra.getPropertyValue("color"); G.style.color=colorLetra.getPropertyValue("color"); CF.style.color=colorLetra.getPropertyValue("color");  
   }
   else {
@@ -3622,13 +3656,13 @@ function agregarAtabla(){
   //let FCI='',FPC='',FPV='', FDP='',FC='',FP='',FCF=''; FCI=F2(F1(cuentaI, n2));FPC=F2(F1(pCompra, n2));FPV=F2(F1(pVenta, n2));FDP=F2(F1(diferencia, n2));FC=F2(F1(comision, n2));FP=F2(F1(ganancia, n2));FCF=F2(F1(cuentaFinal, n2)); 
   let TR= "<tr       id='tr_"  +e+contC+"'"+" name='TR'>"+
   "<td class='td_cf' id='td_sp"+e+contC+"'><div class='d_s' id='p_s"+e+contC+"'>"+S+"</div></td>"+
-  "<td class='td_cf' id='td_ci"+e+contC+"'><div class='d_cf'><p                id='p_ci"+e+contC+"'>"+F(cuentaI, ND(s)) +"</p></div></td>"+ 
-  "<td class='td_cf' id='td_pc"+e+contC+"'><div class='d_cf'><p name='L"+e+"'  id='p_pc"+e+contC+"'>"+F(pCompra, ND(s)) +"</p></div></td>"+
-  "<td class='td_cf' id='td_pv"+e+contC+"'><div class='d_cf'><p name='L"+e+"1' id='p_pv"+e+contC+"'>"+F(pVenta, ND(s))  +"</p></div></td>"+
-  "<td class='td_cf' id='td_dp"+e+contC+"'><div class='d_cf'><p name='L"+e+"2' id='p_dp"+e+contC+"'>"+F(o.d, ND(s))     +"</p></div></td>"+
-  "<td class='td_cf' id='td_c" +e+contC+"'><div class='d_cf'><p name='L"+e+"'  id='p_c" +e+contC+"'>"+F(comision, ND(s))+"</p></div></td>"+
-  "<td class='td_cf' id='td_p" +e+contC+"'><div class='d_cf'><p name='L"+e+"3' id='p_p" +e+contC+"'>"+F(o.g, ND(s))     +"</p></div></td>"+
-  "<td class='td_cf' id='td_cf"+e+contC+"'><div class='d_cf'><p name='L"+e+"4' id='p_cf"+e+contC+"'>"+F(o.f,ND(s))      +"</p></div></td>"+
+  "<td class='td_cf' id='td_ci"+e+contC+"'><div class='d_cf'><p                id='p_ci"+e+contC+"'>"+F(cuentaI ,ND(s))+"</p></div></td>"+ 
+  "<td class='td_cf' id='td_pc"+e+contC+"'><div class='d_cf'><p name='L"+e+"'  id='p_pc"+e+contC+"'>"+F(pCompra ,ND(s))+"</p></div></td>"+
+  "<td class='td_cf' id='td_pv"+e+contC+"'><div class='d_cf'><p name='L"+e+"1' id='p_pv"+e+contC+"'>"+F(pVenta  ,ND(s))+"</p></div></td>"+
+  "<td class='td_cf' id='td_dp"+e+contC+"'><div class='d_cf'><p name='L"+e+"2' id='p_dp"+e+contC+"'>"+F(o.d     ,ND(s))+"</p></div></td>"+
+  "<td class='td_cf' id='td_c" +e+contC+"'><div class='d_cf'><p name='L"+e+"'  id='p_c" +e+contC+"'>"+F(comision,ND(s))+"</p></div></td>"+
+  "<td class='td_cf' id='td_p" +e+contC+"'><div class='d_cf'><p name='L"+e+"3' id='p_p" +e+contC+"'>"+F(o.g     ,ND(s))+"</p></div></td>"+
+  "<td class='td_cf' id='td_cf"+e+contC+"'><div class='d_cf'><p name='L"+e+"4' id='p_cf"+e+contC+"'>"+F(o.f     ,ND(s))+"</p></div></td>"+
   "<td onclick='eliminarTr"+e+"("+contC+")'"+" onmouseover='bordeOverTr"+e+"("+contC+")'"+" onmouseout='bordeOutTr"+e+"("+contC+")'"+" class='td_x' id='td_x"+e+contC+"'"+">"+
   "<div><svg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div>"+"</td>"+
   "</tr>"; 
@@ -3638,44 +3672,58 @@ function agregarAtabla(){
   //}
 
   for (let i = 1; i <= contC; i++) { 
-  actualizaColor(document.getElementById( 'td_dp'+e+contC), Number(pVenta), Number(pCompra));
-  actualizaColor(document.getElementById( 'td_p' +e+contC), o.g, 0);
-  actualizaColor( document.getElementById('td_cf'+e+contC), o.f, Number(cuentaI));
+  actualizaColor(document.getElementById('td_dp'+e+contC), Number(pVenta), Number(pCompra));
+  actualizaColor(document.getElementById('td_p' +e+contC),            o.g,               0);
+  actualizaColor(document.getElementById('td_cf'+e+contC),            o.f, Number(cuentaI));
   }
   suma(contD,'');suma(contE,'E');
 
-  actualizaColorTr(); actualizaPreciosCard();
+  actualizaColorTr(); 
+  //actualizaPreciosCard();
+  cuentaSpotI.value = F(cleanBox(cuentaSpotI.value ), ND(s));
+  precioCompra.value= F(cleanBox(precioCompra.value), ND(s));
+  precioVenta.value = F(cleanBox(precioVenta.value ), ND(s));
+  //Difprecio.value   = F(cleanBox(Difprecio.value   ), ND(s));
+  commission.value  = F(cleanBox(commission.value  ), ND(s));
+  //profit.value      = F(cleanBox(profit.value      ), ND(s));
+  //cuentaSpotF.value = F(cleanBox(cuentaSpotF.value ), ND(s));
+
   (EXPANDIR_D==1)? contraerD() : expandirD();
   (EXPANDIR_E==1)? contraerE() : expandirE();
   anchoDivsCeldas1();
   arrayBox=[0,0,0,0,0,0,0,0];//console.log('[0,0,0,0,0,0,0,0]',[0,0,0,0,0,0,0,0]); 
-
-  console.log('pVenta ######## %%%%%%%%',pVenta); 
 }
 
 function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS. 
-  let cuentaI= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)), comision= (cleanBox(commission.value)), pVenta='';
-  let s=document.getElementById('simbolo');
-  (EDITAR==1)? pVenta= (cleanBox(precioVenta.value)) : pVenta= (cleanBox(precioVenta.value));
-  
-  c(pVenta,pCompra,comision,cuentaI); //console.log('F(o.d,ND(s)),F(o.g,ND(s)),F(o.f,ND(s))' ,F(o.d,ND(s)),F(o.g,ND(s)),F(o.f,ND(s)) );
-  //var n = new Decimal(Number(pVenta));                     
-  //var diferencia = n.minus(Number(pCompra)).toNumber();  
-  //let gananciaXFraccion0= (diferencia - (((Number(pCompra)/100)*Number(comision)) +(((Number(pCompra) + diferencia)/100)*Number(comision))))*(Number(cuentaI)/Number(pCompra)) ;
-  //let cuentaFinal= Number(cuentaI)+gananciaXFraccion0;
-  //let gananciaXFraccion= gananciaXFraccion0;
+  let cuentaI= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)), comision= (cleanBox(commission.value)), pVenta='' 
+  , s=document.getElementById('simbolo')
+  , P=[avax,bnb,btc,doge,eth,sol,xrp,near,ipc,tao,fet,render,grt,tia,manta,pyth,pepe,sui], p=[AVAX,BNB,BTC,DOGE,ETH,SOL,XRP,NEAR,ICP,TAO,FET,RENDER,GRT,TIA,MANTA,PYTH,PEPE,SUI] ;
 
-  cuentaSpotI.value = F(cuentaI , ND(s));
-  precioCompra.value= F(pCompra , ND(s));
-  //if (EDITAR!=1){
-  precioVenta.value = F(pVenta  , ND(s));
-  //}
+  for (let i = 0; i < ARRAY.length; i++) {
+    if (simbolo.textContent==ARRAY[i]) {
+      if (tdPMax24h_a.textContent=='') {//SIN CONEXIÓN
+        precioVenta.value= F(cleanBox(precioVenta.value)  , ND(s))  ;
+      } 
+      else{//CON CONEXIÓN
+        if (P[i] == '0') {
+          precioVenta.value= F(cleanBox(cotizacionBTC.textContent)  , ND(s)); //cuentaSpotI.value= '' ;precioCompra.value= '' ;precioVenta.value= '' ;Difprecio.value= '' ;commission.value= '' ;profit.value= '' ;cuentaSpotF.value= '' ;
+        } else {
+          precioVenta.value= F(cleanBox(cotizacionBTC.textContent)  , ND(s)); 
+        }
+      }  
+    }
+  } 
+  (EDITAR==1)? pVenta= (cleanBox(precioVenta.value)) : pVenta= (cleanBox(precioVenta.value));
+  c(pVenta,pCompra,comision,cuentaI); //console.log();
   Difprecio.value   = F(o.d     , ND(s));
-  commission.value  = F(comision, ND(s));
   profit.value      = F(o.g     , ND(s));
   cuentaSpotF.value = F(o.f     , ND(s)); 
 
-  actualizaColor(profit,o.g,0);
+  cuentaSpotI.value = F(cuentaI , ND(s));
+  precioCompra.value= F(pCompra , ND(s));
+  commission.value  = F(comision, ND(s));
+
+  actualizaColor(profit     ,o.g,      0);
   actualizaColor(cuentaSpotF,o.f,cuentaI);
   
   actualizaDiferenciaPrecio(); 
@@ -5032,7 +5080,6 @@ l-128 12 -23 80 c-83 287 -292 546 -609 756 -111 74 -117 67 79 99 178 29 173
     `;
  }
  imagenesSVG();
-
 
 ////################ decimal.js #########################
 ////################ decimal.js #########################
