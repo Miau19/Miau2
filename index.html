@@ -55,7 +55,7 @@ html{background-color: var(--bg-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS 
 .hr{height: 2px;background-color: var(--text-color);  margin: 0 0.125rem;padding: 0;}
 a, .a1, a2{ color: var(--pr1mary-color);text-decoration: none;}
 img{ 
-    max-width: 100%;display: block;/*CUANDO NO SE REDONDEA CORRECTAMENTE UNA img AGREGAR display: block */
+    max-width: 100%;display: block; /*CUANDO NO SE REDONDEA CORRECTAMENTE UNA img AGREGAR display: block */
   }
 
 body{
@@ -63,6 +63,13 @@ body{
     margin: 0px;
     color: var(--text-color);font-family: var(--font-family1);font-weight: var(--font-weight1);/* "Roboto",'Poppins', 'Oswald', sans-serif; sans-serif, 'Times New Roman', 'Arial Narrow', fantasy, Impact */
     overflow:auto;
+   /* COLOCAR ESTE CODIGO PARA SITIO sites.google.com PARA NO MOSTRAR DOBLE overflow 
+    height: 100%;
+    overflow: hidden;
+   */
+   /* COLOCAR ESTE CODIGO PARA SITIO sites.google.com PARA NO MOSTRAR DOBLE overflow ; PERO ESTIRANDO EL HTML INSERTADO HASTA QUE SE VEA TODO EL CONTENIDO
+    overflow:hidden;
+   */
 }
   body::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
   body::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
@@ -270,7 +277,9 @@ z-index: 10;
 .tablaP24h{ 
     border-collapse: collapse;
     color: var(--text-color);
+    font-size: var(--font-size1);font-family: var(--font-family2);font-weight: var(--font-weight2);
 }
+@media screen and  (max-width: 960px) {.tablaP24h  {font-size: var(--font-size4);}}
 
 .tablaP24h .tdP24h{
     text-align: left;
@@ -321,7 +330,7 @@ z-index: 10;
  @media screen and (max-width: 320px) {.main_grid_1 {padding: 0.25rem  0.25rem 0  0.25rem;}}
 
  .columnLeftRigth{
-    display: flex;justify-content: center;margin-bottom: 1.5rem; height: 500px; background: rgba(50, 0, 0, 1);
+    display: flex;justify-content: center;margin-bottom: 1.5rem; height: 500px; 
  }
 
 .columnLeft{
@@ -1192,11 +1201,13 @@ transition: .5s ease all;
                 <div class="card__option"  onclick="navToggle()"><p class="s">Evolución del dólar</p></div></a>
               <a class="a2" href="https://miau19.github.io/Miau1/">
                 <div class="card__option"  onclick="navToggle()"><p class="s">Criptomonedas</p></div></a>
-              <a class="a2" href="#">
-                <div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
-                <a class="a2" href="https://www.tradingview.com/chart/syNGdsL8/"><div class="card__option"  onclick="navToggle()"><p class="s">Tradingview</p></div></a>
-                <a class="a2" href="https://www.binance.com/es/trade/BTC_USDT?theme=dark&type=spot"><div class="card__option"  onclick="navToggle()"><p class="s">Binance</p></div></a>
-                <a class="a2" href="https://derivatives.bitmart.com/es-ES?symbol=BTCUSDT&theme=dark"><div class="card__option"  onclick="navToggle()"><p class="s">Bitmart</p></div></a>     
+
+                <a class="a2" href="https://miau1-hqbpfjgpctgdb3ej.canadacentral-01.azurewebsites.net/"><div class="card__option"  onclick="navToggle()"><p class="s">Azure</p></div></a>
+
+                <a class="a2" href="https://sites.google.com/view/miau02/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
+                <a class="a2" href="https://sites.google.com/view/zeta19/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Tradingview</p></div></a>
+                <a class="a2" href="https://sites.google.com/view/zeta193/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Binance</p></div></a>
+                <a class="a2" href="https://sites.google.com/view/miau01/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Bitmart</p></div></a>  
               <br><br><br><br>
 
             </div> 
@@ -1223,10 +1234,13 @@ transition: .5s ease all;
                  <div class="card__option"  onclick="navToggle()"><p class="s">Evolución del dólar</p></div></a>
                <a class="a2" href="https://miau19.github.io/Miau1/">
                  <div class="card__option"  onclick="navToggle()"><p class="s">Criptomonedas</p></div></a>
-               <a class="a2" href="#"><div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
-               <a class="a2" href="https://www.tradingview.com/chart/syNGdsL8/"><div class="card__option"  onclick="navToggle()"><p class="s">Tradingview</p></div></a>
-               <a class="a2" href="https://www.binance.com/es/trade/BTC_USDT?theme=dark&type=spot"><div class="card__option"  onclick="navToggle()"><p class="s">Binance</p></div></a>
-               <a class="a2" href="https://derivatives.bitmart.com/es-ES?symbol=BTCUSDT&theme=dark"><div class="card__option"  onclick="navToggle()"><p class="s">Bitmart</p></div></a>
+                 
+                <a class="a2" href="https://miau1-hqbpfjgpctgdb3ej.canadacentral-01.azurewebsites.net/"><div class="card__option"  onclick="navToggle()"><p class="s">Azure</p></div></a>
+
+               <a class="a2" href="https://sites.google.com/view/miau02/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Ideas de inversi&oacute;n</p></div></a>
+               <a class="a2" href="https://sites.google.com/view/zeta19/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Tradingview</p></div></a>
+               <a class="a2" href="https://sites.google.com/view/zeta193/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Binance</p></div></a>
+               <a class="a2" href="https://sites.google.com/view/miau01/inicio"><div class="card__option"  onclick="navToggle()"><p class="s">Bitmart</p></div></a>
                <br><br><br><br>
               </div>
             </div>
@@ -2297,7 +2311,7 @@ transition: .5s ease all;
    
    <script src="js/decimal.min.js"></script> 
    -->
-<script> 
+<script type="text/javascript"> 
 //########################################################################### ↓↑ ⟵ ⟶  ⭠ ⭢  ← →     ⬆ ⬇ ➡ ⬅  ⇧ ⇩ ⇦ ⇨  ⬌ ⬍ [Solo funcionan en 'Gimp': ↓↑  ← → ⇧ ⇩ ⇦ ⇨ ]  //https://textkool.com/es/symbols/arrows-symbols  
 var N= "", cont=0, cont2=0, COLOR=0, booleanGT="", boleano="", IMPRIMIRTEXTO=1, ACTUALIZAPRECIO=0, CHECKBOX1=0, CHECKBOX2=1, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8=""; 
 //GENERAR TIEMPO 1:
